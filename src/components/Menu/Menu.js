@@ -36,12 +36,12 @@ function Menu({ isOpen, isDesktop, handleOnClick }) {
   
 
   return (
-    <div className={`items-center ${
+    <div className={`items-center border-r ${
       isOpen || isDesktop ? '' : 'hidden'
     } w-full mr-0 md:w-auto md:order-1`} id='navbar-cta'>
       <ul className={`flex flex-col font-medium p-4 mt-4 rounded-lg rtl:space-x-reverse md:flex-row md:mt-0 ${isDesktop === false ? 'shadow-lg' : ''} md:bg-white bg-transparent`}>
-          {routes.map(({ label, route, icon, subRoutes }) => (
-          (label !== 'Inicio' || isDesktop) && (
+          {routes.map(({ label, route, icon, subRoutes, miniRoutes }) => (
+          
             <li className='p-2  text-grey-cristal-400' key={route}
               onMouseEnter={() => handleMouseEnter(label)}
               onMouseLeave={handleMouseLeave}>
@@ -57,11 +57,10 @@ function Menu({ isOpen, isDesktop, handleOnClick }) {
                 showSubRoutes={showSubRoutes} 
                 label={label} 
                 handleIconClick={handleIconClick} 
-                
+                miniRoutes={miniRoutes}
             />}
 
             </li>
-          )
         ))}
       </ul>
     </div>

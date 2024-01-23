@@ -25,7 +25,7 @@ function SubMenu({ subRoutes, isDesktop, showSubRoutes, label, handleIconClick, 
     }
   };
 
-  const miniAllowedLabels = ['Hipopresivos'];
+  const miniAllowedLabels = ['Abordaje en Disfunciones de Suelo Pélvico'];
 
   const showMiniRoutes = (label) => {
     return miniAllowedLabels.includes(label) && ((isDesktop && hoveredMiniLabel === label) || (!isDesktop && clickedMiniLabel === label));
@@ -39,7 +39,7 @@ function SubMenu({ subRoutes, isDesktop, showSubRoutes, label, handleIconClick, 
             <li className='mb-3 p-2 border-b hover:text-purple-secondary-600 hover:-translate-y-1 hover:scale-110 transition-all duration-500 ease-in-out' key={route}
               onMouseEnter={() => handleMiniMouseEnter(label)}
               onMouseLeave={handleMiniMouseLeave}>
-              <Link className={`flex items-center justify-between  hover:text-purple-secondary-500`} href={route} onClick={(e) => handleMiniIconClick(e, label)}>
+              <Link key={route} className={`flex items-center justify-between  hover:text-purple-secondary-500`} href={route} onClick={(e) => handleMiniIconClick(e, label)}>
                 {label}
                 <span className={`${isDesktop ? 'ml-2' : 'ml-4'} `} onClick={handleOnClick} >{icon}</span>
               </Link>

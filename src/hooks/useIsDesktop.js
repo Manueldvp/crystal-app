@@ -5,7 +5,7 @@ function useIsDesktop() {
 
   useEffect(() => {
     const checkSize = () => {
-      setIsDesktop(window.innerWidth > 768);
+      setIsDesktop(window.innerWidth > 1260);
     };
 
     checkSize();
