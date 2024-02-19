@@ -78,35 +78,35 @@ const routes = [{
 {
     label: 'Galería',
     route: '/galeria',
-    icon: <ChevronDownIcon className="h-5"/>,
-    subRoutes: [
-        {
-            label: 'Videos',
-            route: '/galeria/videos'
-        },
-        {
-            label: 'Fotos',
-            route: '/galeria/fotos'
-        },
-    ]
+    // icon: <ChevronDownIcon className="h-5"/>,
+    // subRoutes: [
+    //     {
+    //         label: 'Videos',
+    //         route: '/galeria/videos'
+    //     },
+    //     {
+    //         label: 'Fotos',
+    //         route: '/galeria/fotos'
+    //     },
+    // ]
 },
 {
-    label: 'Eventos',
+    label: 'Talleres',
     route: '/eventos',
-    icon: <ChevronDownIcon className="h-5"/>,
-    subRoutes: [
-        {
-            label: 'Talleres',
-            route: '/eventos/talleres'
-        },
-    ]
+    // icon: <ChevronDownIcon className="h-5"/>,
+    // subRoutes: [
+    //     {
+    //         label: 'Talleres',
+    //         route: '/eventos/talleres'
+    //     },
+    // ]
 },
 {
     label: 'Blog',
     route: '/blogs'
 },{
     label: 'Contacto',
-    route: '/Contacto'
+    route: '/contacto'
 },  ]
 
 export default routes

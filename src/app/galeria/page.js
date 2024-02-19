@@ -1,6 +1,7 @@
 import { CarrouselGallery } from "@/components/Carrousel/CarrouselGallery";
 import Galeria from "@/components/Galeria/Galeria";
 import { QuadGallery } from "@/components/Galeria/QuadGallery";
+import Image from "next/image";
 import Link from "next/link";
 
 const GaleriaPage = () => {
@@ -9,13 +10,15 @@ const GaleriaPage = () => {
       <div className="w-full relative pb-10 px-6 xl:px-0">
         <div className="pt-32 lg:flex items-center relative z-10 container mx-auto">
           <div className="w-full mb-5 lg:w-1/2 h-full lg:pr-10 xl:pr-0">
-            <img
+            <Image
               tabIndex="0"
+              height={500}
+              width={500}
               role="img"
               aria-label="people smiling"
               className="mx-auto w-2/3"
               src="/Logo-Mobile.png"
-              alt="people smiling"
+              alt="Logo"
             />
           </div>
           <div role="contentinfo" className="w-full lg:w-1/2 h-full">
@@ -23,12 +26,11 @@ const GaleriaPage = () => {
               ¡Bienvenidos a nuestra galería!
             </p>
             <h1
-              tabIndex="0"
               className="text-gray-800 text-4xl lg:text-6xl font-black mb-8"
             >
               Salud y Bienestar
             </h1>
-            <p tabIndex="0" className="text-gray-800 font-regular mb-8">
+            <p  className="text-gray-800 font-regular mb-8">
               Son nuestra máxima prioridad. Cada imagen representa nuestro
               compromiso con la excelencia en el cuidado de nuestros pacientes.
               Desde nuestras modernas instalaciones hasta los momentos de
@@ -53,11 +55,11 @@ const GaleriaPage = () => {
                     />
                   </svg>
 
-                  <input
-                    aria-label="Doctor name"
-                    className="xl:w-32 text-center hover:cursor-pointer  tracking-normal text-gray-800 ml-2.5 placeholder-black"
-                    placeholder="Cristal Sarabia"
-                  />
+                  <p
+                    className="xl:w-32 text-center hover:cursor-pointer  tracking-normal text-gray-800 ml-2.5 placeholder-black"  
+                  >
+                    Cristal Sarabia
+                  </p>
                 </div>
               </div>
             </Link>
@@ -73,8 +75,8 @@ const GaleriaPage = () => {
       <div className="flex mt-10 justify-center">
         <QuadGallery />
       </div>
-      <div className="flex mt-10 justify-center">
-        <video className=" w-2/3 rounded-lg" controls autoPlay muted>
+      <div className="flex mt-10 p-4 justify-center">
+        <video className={`lg:w-2/3 sm:w-full rounded-lg`} controls autoPlay muted>
           <source
             src="https://docs.material-tailwind.com/demo.mp4"
             type="video/mp4"
@@ -92,91 +94,66 @@ const GaleriaPage = () => {
             </div>
             <div className="mt-4 lg:w-4/5 xl:w-3/5">
               <p className="text-base leading-6 text-gray-600">
-                ¡Descubre nuestra selección de videos en YouTube sobre salud pélvica!
-                 Estos videos están diseñados para informarte y guiarte en el camino 
-                 hacia una mejor salud pélvica.
+                ¡Descubre nuestra selección de videos en YouTube sobre salud
+                pélvica! Estos videos están diseñados para informarte y guiarte
+                en el camino hacia una mejor salud pélvica.
               </p>
             </div>
             <div className="mt-16 w-full">
-              <button className="px-4 shadow-md rounded-lg bg-grey-cristal-100 flex justify-between items-center w-full lg:w-72 h-14 text-gray-800 hover:bg-grey-cristal-200">
+              <a href="https://www.youtube.com/@CristalSarabia2046/videos" target="_blank" rel="noopener noreferrer" className="px-4 shadow-md rounded-lg bg-grey-cristal-100 flex justify-between items-center w-full lg:w-72 h-14 text-gray-800 hover:bg-grey-cristal-200">
                 <p className="text-xl font-medium leading-5">Ver ahora</p>
-                <svg class="w-10 h-10 text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                  <path fill-rule="evenodd" d="M21.7 8c0-.7-.4-1.3-.8-2-.5-.5-1.2-.8-2-.8C16.2 5 12 5 12 5s-4.2 0-7 .2c-.7 0-1.4.3-2 .9-.3.6-.6 1.2-.7 2l-.2 3.1v1.5c0 1.1 0 2.2.2 3.3 0 .7.4 1.3.8 2 .6.5 1.4.8 2.2.8l6.7.2s4.2 0 7-.2c.7 0 1.4-.3 2-.9.3-.5.6-1.2.7-2l.2-3.1v-1.6c0-1 0-2.1-.2-3.2ZM10 14.6V9l5.4 2.8-5.4 2.8Z" clip-rule="evenodd"/>
+                <svg
+                  className="w-10 h-10 text-red-600"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M21.7 8c0-.7-.4-1.3-.8-2-.5-.5-1.2-.8-2-.8C16.2 5 12 5 12 5s-4.2 0-7 .2c-.7 0-1.4.3-2 .9-.3.6-.6 1.2-.7 2l-.2 3.1v1.5c0 1.1 0 2.2.2 3.3 0 .7.4 1.3.8 2 .6.5 1.4.8 2.2.8l6.7.2s4.2 0 7-.2c.7 0 1.4-.3 2-.9.3-.5.6-1.2.7-2l.2-3.1v-1.6c0-1 0-2.1-.2-3.2ZM10 14.6V9l5.4 2.8-5.4 2.8Z"
+                    clipRule="evenodd"
+                  />
                 </svg>
-  
-              </button>
+              </a>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row jusitfy-center items-center sm:space-x-5 xl:space-x-8 space-y-4 sm:space-y-0">
-            <div>
-              <img
-                className="hidden lg:block"
+          <div className="flex flex-col sm:flex-row jusitfy-center items-center sm:space-x-5 xl:space-x-4 space-y-8 sm:space-y-0">
+            <div className="rounded-lg">
+              <Image
+                className=" rounded-lg "
                 src="/29.jpg"
                 width={400}
                 height={400}
-                alt="sofa"
+                alt="img"
               />
-              <img
-                className="w-80 sm:w-auto lg:hidden"
-                src="/29.jpg"
-                width={400}
-                height={400}
-                alt="sofa"
-              />
+              
             </div>
-            <div className="flex-col justify-center items-center space-y-4  sm:space-y-5 lg:space-y-5 xl:space-y-8">
-              <div>
-                <img
-                  className="hidden lg:block"
-                  src="/25.jpg"
+            <div className="flex-col justify-center items-center space-y-6  sm:space-y-10 lg:space-y-4 xl:space-y-4">
+              <div className="rounded-lg">
+                <Image
+                  className="rounded-lg"
+                  src="/15.jpg"
                   width={400}
                   height={400}
-                  alt="chairs"
-                />
-                <img
-                  className="w-80 sm:w-auto lg:hidden"
-                  src="/25.jpg"
-                  width={400}
-                  height={400}
-                  alt="chairs"
+                  alt="img"
                 />
               </div>
-              <div>
-                <img
-                  className="hidden lg:block"
-                  src="/25.jpg"
+              <div className="rounded-lg">
+                <Image
+                  className="rounded-lg"
+                  src="/13.jpg"
                   width={400}
                   height={400}
-                  alt="chairs"
+                  alt="img"
                 />
-                <img
-                  className="w-80 sm:w-auto lg:hidden"
-                  src="/25.jpg"
-                  width={400}
-                  height={400}
-                  alt="chairs"
-                />
+                
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* <div className="flex  mt-10 justify-center">
-          <div className=" p-10">
-            <video className=" rounded-lg" controls autoPlay muted>
-              <source src="https://docs.material-tailwind.com/demo.mp4" type="video/mp4" />
-              
-            </video>
-          </div>
-          <div className=" p-10">
-            <video className="  rounded-lg" controls autoPlay muted>
-              <source src="https://docs.material-tailwind.com/demo.mp4" type="video/mp4" />
-              
-            </video>
-          </div>
-        </div> */}
     </section>
   );
 };

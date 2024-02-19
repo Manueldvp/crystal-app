@@ -1,6 +1,5 @@
 'use client'
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 
 export default function Logo() {
   const [isMobile, setIsMobile] = useState(false);
@@ -21,9 +20,9 @@ export default function Logo() {
   return (
     <div className='absolute pt-5 pb-5 left-0'>
       {isMobile ? (
-        <Image className='pt-10' src="/Logo.png" alt="Logo Mobile" width={180} height={100} />
+        <img className='pt-8 w-44' src="/LogoDesktop.png" alt="Logo Mobile"  />
       ) : (
-        <Image src="/Logo.png" alt="Logo Desktop" width={400} height={100} />
+        <img src="/LogoDesktop.png" className='mb-5 w-96'  alt="Logo Desktop"  />
       )}
     </div>
   );

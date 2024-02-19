@@ -2,7 +2,7 @@ import Link from 'next/link';
 import MiniMenu from './MiniMenu';
 import { useState } from 'react';
 
-function SubMenu({ subRoutes, isDesktop, showSubRoutes, label, handleIconClick, handleOnClick }) {
+function SubMenu({ subRoutes, handleIsOpen, isDesktop, showSubRoutes, label, handleIconClick, handleOnClick }) {
   const [hoveredMiniLabel, setHoveredMiniLabel] = useState(null);
   const [clickedMiniLabel, setClickedMiniLabel] = useState(null);
 
@@ -40,7 +40,9 @@ function SubMenu({ subRoutes, isDesktop, showSubRoutes, label, handleIconClick, 
               onMouseEnter={() => handleMiniMouseEnter(label)}
               onMouseLeave={handleMiniMouseLeave}>
               <Link key={route} className={`flex items-center justify-between  hover:text-purple-secondary-500`} href={route} onClick={(e) => handleMiniIconClick(e, label)}>
+                <div onClick={handleIsOpen}>
                 {label}
+                </div>
                 <span className={`${isDesktop ? 'ml-2' : 'ml-4'} `} onClick={handleOnClick} >{icon}</span>
               </Link>
               {showMiniRoutes(label) && <MiniMenu 
@@ -54,9 +56,9 @@ function SubMenu({ subRoutes, isDesktop, showSubRoutes, label, handleIconClick, 
                 handleMouseEnter={handleMiniMouseEnter} 
                 handleMouseLeave={handleMiniMouseLeave} 
               />}
-            </li>
+               </li>
             
-          ))}
+              ))}
         </ul>
       )}
     </div>

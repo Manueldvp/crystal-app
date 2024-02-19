@@ -1,30 +1,52 @@
 'use client'
 import { Carousel } from "@material-tailwind/react";
+import { useFetch } from "@/hooks/useFetch";
+import useIsDesktop from "@/hooks/useIsDesktop";
+import Image from "next/image";
  
 export function CarrouselGallery() {
+  const isDesktop = useIsDesktop()
+  const image = useFetch('/galerias?populate=*')
+  const imagesData = image.data.data
+ 
+  const imagesObtained = () => {
+    // Verificar si imagesData está disponible
+    if (!imagesData || !imagesData[1] || !imagesData[1].attributes || !imagesData[1].attributes.Imagenes || !imagesData[1].attributes.Imagenes.data) {
+      return [];
+    }
+    
+    // Si los datos están disponibles, devolver los URLs de las imágenes
+    return imagesData[1].attributes.Imagenes.data.map(Imagenes => Imagenes.attributes.url);
+  }
+  
+  
+  const urls = imagesObtained()
+
   return (
-    <Carousel transition={{ duration: 2 }} className="rounded-xl w-2/3">
-      <img
-        src="/29.jpg"
-        alt="image 1"
-        width={400}
-        height={400}
+    <section className={`${isDesktop ? '' : ' px-4'} lg:w-2/3 sm:w-full`}>
+    <Carousel transition={{ duration: 2 }} className={`rounded-xl  `}>
+      <Image
+        src={urls.length > 0 ? urls[0] : '/NoFound.jpg'}
+        alt="image-carrousel-gallery"
+        width={2000}
+        height={2000}
         className=" object-cover"
       />
-      <img
-        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-        alt="image 2"
-        width={1400}
-        height={400}
+      <Image
+        src={urls.length > 0 ? urls[1] : '/NoFound.jpg'}
+        alt="image-carrousel-gallery"
+        width={2000}
+        height={2000}
         className=" object-cover"
       />
-      <img
-        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-        alt="image 3"
-        width={1400}
-        height={400}
+      <Image
+        src={urls.length > 0 ? urls[2] : '/NoFound.jpg'}
+        alt="image-carrousel-gallery"
+        width={2000}
+        height={2000}
         className=" object-cover"
       />
     </Carousel>
+    </section>
   );
 }

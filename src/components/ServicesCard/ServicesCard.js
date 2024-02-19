@@ -1,18 +1,22 @@
-'use client'
+"use client";
 import useIsDesktop from "@/hooks/useIsDesktop";
+import Link from "next/link";
 
 const ServicesCard = () => {
-  const isDesktop = useIsDesktop()
+  const isDesktop = useIsDesktop();
   return (
     <section className=" bg-white w-full">
-      <div className={`py-8 px-4 mx-auto ${isDesktop ? 'w-2/3 ' : ''}  lg:py-16`}>
+      <div
+        className={`py-8 px-4 mx-auto ${isDesktop ? "w-2/3 " : ""}  lg:py-16`}
+      >
         <div className=" bg-blue-health-500/60 shadow-xl transform transition duration-500  hover:scale-105 border-gray-200 rounded-lg p-8 md:p-12 mb-8">
           <a
-            href="#"
+            href="https://www.youtube.com/@CristalSarabia2046/videos"
+            target="blank_"
             className="bg-white  text-pink-secondary-600 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md mb-2"
           >
             <svg
-              className="w-2.5 h-2.5 me-1.5"
+              className="w-2.5 animate-pulse h-2.5 me-1.5"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -23,17 +27,18 @@ const ServicesCard = () => {
             Aprende
           </a>
           <h1 className="text-white  text-3xl md:text-5xl font-extrabold mb-2">
-                Salud Pélvica
+            Salud Pélvica
           </h1>
           <p className="text-lg font-normal text-white  mb-6">
-            Un profesional de la salud es la mejor fuente de información sobre su salud. 
-            Consulte a un profesional de la salud si usted tiene preguntas acerca de su salud.
+            Un profesional de la salud es la mejor fuente de información sobre
+            su salud. Consulte a un profesional de la salud si usted tiene
+            preguntas acerca de su salud.
           </p>
-          <a
-            href="#"
-            className="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-black hover:text-white rounded-lg bg-white hover:bg-blue-health-500 focus:ring-4 focus:ring-blue-300 "
+          <Link
+            href="/servicios"
+            className="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-purple-secondary-600 hover:text-white rounded-lg bg-white hover:bg-blue-health-500 focus:ring-4 focus:ring-blue-300 "
           >
-            Leer más
+            Más info
             <svg
               className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
               aria-hidden="true"
@@ -49,23 +54,23 @@ const ServicesCard = () => {
                 d="M1 5h12m0 0L9 1m4 4L9 9"
               />
             </svg>
-          </a>
+          </Link>
         </div>
         <div className="grid  md:grid-cols-2 gap-8">
           <div className="bg-gray-50 transform transition duration-500  hover:scale-105 shadow-xl border-gray-200  rounded-lg p-8 md:p-12">
-            
             <h2 className="text-gray-900  text-3xl font-extrabold mb-2">
-                Post Parto
+              Post Parto
             </h2>
             <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
-                Durante el posparto, el cuerpo de la mujer experimenta grandes cambios físicos, psíquicos y sociales.
-                Los órganos involucrados en el embarazo y el parto vuelven a su estado anterior.
+              Durante el posparto, el cuerpo de la mujer experimenta grandes
+              cambios físicos, psíquicos y sociales. Los órganos involucrados en
+              el embarazo y el parto vuelven a su estado anterior.
             </p>
-            <a
-              href="#"
-              className=" text-blue-health-500/60 hover:underline font-medium text-lg inline-flex items-center"
+            <Link
+              href="/servicios"
+              className=" text-purple-secondary-600 hover:underline font-medium text-lg inline-flex items-center"
             >
-              Leer más
+              Más info
               <svg
                 className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
                 aria-hidden="true"
@@ -81,23 +86,22 @@ const ServicesCard = () => {
                   d="M1 5h12m0 0L9 1m4 4L9 9"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
           <div className="bg-gray-50 shadow-xl transform transition duration-500 hover:scale-105   rounded-lg p-8 md:p-12">
-            
             <h2 className="text-gray-900  text-3xl font-extrabold mb-2">
-                Embarazo
+              Embarazo
             </h2>
             <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
-                Un embarazo es el período entre la concepción y el parto. Durante este período, 
-                el óvulo fecundado se desarrolla en el útero. En los seres humanos, 
-                el embarazo dura aproximadamente 288 días.
+              Un embarazo es el período entre la concepción y el parto. Durante
+              este período, el óvulo fecundado se desarrolla en el útero. En los
+              seres humanos, el embarazo dura aproximadamente 288 días.
             </p>
-            <a
-              href="#"
-              className="text-blue-health-500/60 hover:underline font-medium text-lg inline-flex items-center"
+            <Link
+              href="/servicios"
+              className="text-purple-secondary-600 hover:underline font-medium text-lg inline-flex items-center"
             >
-              Leer más
+              Más info
               <svg
                 className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
                 aria-hidden="true"
@@ -113,7 +117,7 @@ const ServicesCard = () => {
                   d="M1 5h12m0 0L9 1m4 4L9 9"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

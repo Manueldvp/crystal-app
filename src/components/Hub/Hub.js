@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link";
 import useIsDesktop from "@/hooks/useIsDesktop";
 const Hub = () => {
 
@@ -20,8 +21,9 @@ const Hub = () => {
         </p>
         <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
           <a
-            href="#"
-            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-fuchsia-pink-400 hover:bg-fuchsia-pink-600 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+            href="https://linktr.ee/cristalsarabia_"
+            target="blank_"
+            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-fuchsia-pink-400 hover:bg-fuchsia-pink-600 "
           >
             Contacto
             <svg
@@ -40,8 +42,8 @@ const Hub = () => {
               />
             </svg>
           </a>
-          <a
-            href="#"
+          <Link
+            href="/servicios"
             className="justify-center
              bg-blue-health-300 
               items-center py-3 px-5 sm:ms-4 text-base 
@@ -49,7 +51,7 @@ const Hub = () => {
               hover:bg-blue-health-500 focus:ring-4 focus:ring-gray-400"
           >
             Aprende más
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -6,8 +6,19 @@ import {
     Typography,
     Button,
   } from "@material-tailwind/react";
+  import Link from "next/link";
+  import Image from "next/image";
+
+  
    
-  export function BlogCard() {
+  export function BlogCard({blog}) {
+    const {attributes} = blog;
+    const text = attributes.Cardtext;
+    const title = attributes.title
+    const author = attributes.author;
+    const imgUrl = attributes.Cover.data.attributes.url
+   
+
     return (
       <Card className="w-full mb-4 max-w-[48rem] flex-row">
         <CardHeader
@@ -15,28 +26,28 @@ import {
           floated={false}
           className="m-0 w-2/5 shrink-0 rounded-r-none"
         >
-          <img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
-            alt="card-image"
+          <Image
+            src={imgUrl}
+            width={1000}
+            height={1000}
+            quality={100}
             className="h-full w-full object-cover"
+            alt='img'
           />
         </CardHeader>
         <CardBody>
           <Typography variant="h6" color="gray" className="mb-4 uppercase">
-            startups
+            {author}
           </Typography>
-          <Typography variant="h4" color="blue-gray" className="mb-2">
-            Lyft launching cross-platform service this week
+          <Typography variant="h4" color="gray" className="mb-2">
+            {title}
           </Typography>
           <Typography color="gray" className="mb-8 font-normal">
-            Like so many organizations these days, Autodesk is a company in
-            transition. It was until recently a traditional boxed software company
-            selling licenses. Yet its own business model disruption is only part
-            of the story
+            {text}
           </Typography>
-          <a href="#" className="inline-block">
-            <Button variant="text" className="flex items-center gap-2">
-              Learn More
+          <Link href={`/blogs/${blog.attributes.slug}`} className="inline-block">
+            <Button variant="text" className="flex text-purple-secondary-600 items-center gap-2">
+              Leer más
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -52,7 +63,7 @@ import {
                 />
               </svg>
             </Button>
-          </a>
+          </Link>
         </CardBody>
       </Card>
     );

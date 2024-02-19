@@ -1,31 +1,42 @@
 'use client'
 import { Typography } from "@material-tailwind/react";
+import Image from "next/image";
+import useIsDesktop from "@/hooks/useIsDesktop";
 import Logo from "../Logo/Logo";
  
 const LINKS = [
   {
     title: "Servicios",
-    items: ["Salud Pelvica", "Hipopresivos", "Acupuntura", "Rehabilitacion"],
+    items: [
+      { name: "Salud Pelvica", url: "/servicios/fisioterapia-pelvica" },
+      { name: "Hipopresivos", url: "/servicios/hipopresivos" },
+      { name: "Acupuntura", url: "/servicios/acupuntura" },
+      { name: "Rehabilitacion Abdominal", url: "/servicios/rehabilitacion-abdominal" }
+    ],
   },
   {
-    title: "Galeria",
-    items: ["Videos", "Fotos"],
+    title: "Eventos",
+    items: [
+    {name: "Galería", url: '/galeria'}, 
+    {name: "Talleres", url: '/eventos'}
+    ],
   },
   {
     title: "Recursos",
-    items: ["Blog", "Eventos"],
+    items: [{name:"Blog", url:"/blogs"}, ],
   },
 ];
  
 const currentYear = new Date().getFullYear();
  
 export function FooterWithSocialLinks() {
+  const isDesktop = useIsDesktop()
   return (
-    <footer className="relative mt-20 w-full">
-      <div className="mx-auto w-full max-w-7xl px-8">
+    <footer className="relative  mt-20 w-full">
+      <div className="mx-auto w-full  px-8">
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
           <div className="mt-[-100px]">
-            <img src="/Logo.png" height={400} width={400} className=" relative"/>
+            <Image alt="img" src="/Logo.png" height={400} width={400} className={`${isDesktop ? 'absolute' : 'relative'} `}/>
           </div>
           <div className="grid grid-cols-3 justify-between gap-4">
             {LINKS.map(({ title, items }) => (
@@ -38,14 +49,14 @@ export function FooterWithSocialLinks() {
                   {title}
                 </Typography>
                 {items.map((link) => (
-                  <li key={link}>
+                  <li key={link.name}>
                     <Typography
                       as="a"
-                      href="#"
+                      href={link.url}
                       color="gray"
                       className="py-1.5 font-normal transition-colors hover:text-blue-gray-900"
                     >
-                      {link}
+                      {link.name}
                     </Typography>
                   </li>
                 ))}
@@ -62,7 +73,7 @@ export function FooterWithSocialLinks() {
             Rights Reserved.
           </Typography>
           <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
-            <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
+            <Typography as="a" href="https://www.facebook.com/FisioterapiaCristal" className="opacity-80 transition-opacity hover:opacity-100">
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   fillRule="evenodd"
@@ -71,7 +82,7 @@ export function FooterWithSocialLinks() {
                 />
               </svg>
             </Typography>
-            <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
+            <Typography as="a" href="https://www.instagram.com/cristalsarabia_/" className="opacity-80 transition-opacity hover:opacity-100">
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   fillRule="evenodd"
@@ -80,29 +91,21 @@ export function FooterWithSocialLinks() {
                 />
               </svg>
             </Typography>
-            <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-              </svg>
+            <Typography as="a" href="https://api.whatsapp.com/send?phone=5212223590967&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta" className="opacity-80 transition-opacity hover:opacity-100">
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+            />
+          </svg>
             </Typography>
-            <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  fillRule="evenodd"
-                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </Typography>
-            <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  fillRule="evenodd"
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </Typography>
+            
+            
           </div>
         </div>
       </div>

@@ -1,6 +1,15 @@
-import { ButtonColors } from "@/components/Buttom/Buttom";
+'use client'
+import Link from "next/link";
+import Image from "next/image";
+import { useFetch } from "@/hooks/useFetch";
+import { AboutCardServices } from "@/components/Card/AboutCardServices";
+import { SimpleCard } from "@/components/Card/SimpleCard";
+import { Button } from "@material-tailwind/react";
 
 const about = () => {
+  const services = useFetch('/services?populate=*')
+  const servicesData = services.data.data
+
   return (
       
       <section className="2xl:container justify-center 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
@@ -16,113 +25,127 @@ const about = () => {
         </div>
         </div>
         <div className="flex flex-col lg:flex-row justify-between gap-8">
-          <div className="w-full lg:w-5/12 flex flex-col justify-center">
-            <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-gray-800 pb-4">
+          <div className="w-full lg:w-5/12 flex flex-col justify-start">
+            <h2 className="text-3xl mb-5 text-center  mt-5 lg:text-4xl font-bold leading-9 text-gray-800 pb-4">
               Acerca de mi
-            </h1>
-            <p className="font-normal  text-base leading-6 text-gray-600 ">
+            </h2>
+            <p className="font-normal text-justify  text-base leading-6 text-gray-600 ">
               Con más de 4 años de experiencia en Puebla, México.
               Me especializo en ayudar a las mujeres a mejorar 
               su salud pélvica en todas las etapas de su vida.
-              
-              <span className="mt-2">
+            </p>
+            <p className="mt-5 font-normal text-justify  text-base leading-6 text-gray-600">
               Estoy comprometida con proporcionar atención de alta calidad a mis pacientes.
               Creo que todas las mujeres merecen sentirse bien con su salud pélvica, 
               y estoy aquí para ayudarlas a
               lograrlo.
-              </span>
+            </p>
+            <p className="mt-5 font-normal text-justify  text-base leading-6 text-gray-600">
+             Me gradué de la Licenciatura en Fisioterapia en la 
+             Benemérita Universidad Autónoma de Puebla en el año 2020. 
+             Durante su carrera, realizó prácticas clínicas en la Clínica 
+             Escuela Integral de Fisioterapia de la BUAP, el Hospital 
+             Universitario de la BUAP y el Instituto Nacional de 
+             Cancerología de Colombia.
+            </p>
+            <p className="mt-5 font-normal text-justify  text-base leading-6 text-gray-600">
+              En 2022, completé un Diplomado Internacional 
+              en Fisioterapia del Suelo Pélvico en Andare 
+              Certificaciones en la Ciudad de México. Posteriormente, 
+              realicé en Brasil el Posgrado en Uroginecología y 
+              Sexualidad Funcional en la Faculdade Inspirar.
+            </p>
+            <p className="mt-5 font-normal text-justify  text-base leading-6 text-gray-600">
+              Soy Trainer Certificada en Hipopresivos por Low 
+              Pressure Fitness y Educadora Perinatal por LAMAZE.
+            </p>
+            <p className="mt-5 font-normal text-justify  text-base leading-6 text-gray-600">
+              Actualmente, soy miembro activo de la mesa directiva 
+              de la Sociedad Mexicana de Fisioterapia de Piso Pélvico,  
+              <strong><a href="https://www.somefipp.com/" target="_blank" rel="noopener noreferrer"> SOMEFIPP</a></strong>.
+
             </p>
           </div>
-          <div className="w-full lg:w-8/12 ">
-            <img
+          <div className="w-full max-h-svh lg:w-8/12 ">
+            <Image
               className="w-full rounded-lg shadow-lg h-full"
-              src="/25.jpg"
+              height={1000}
+              width={1000}
+              src="/27.jpg"
               alt="A group of People"
             />
           </div>
         </div>
 
-        <div className="flex lg:flex-row flex-col justify-between gap-8 pt-12">
-          <div className="w-full lg:w-5/12 flex flex-col justify-center">
-            <h1 className="text-3xl lg:text-4xl mb-2 font-bold leading-9 text-gray-800 pb-4">
-              Especializate Conmigo
-            </h1>
-            <h1 className="mb-2 text-gray-800 font-extrabold">
-            Mejora Pélvica
-            </h1>
-            <p className="font-normal mb-6 text-base leading-6 text-gray-600 ">
-            
-            Nuestro curso de Mejora Pélvica está diseñado para ayudarte a 
-            fortalecer y tonificar los músculos del suelo pélvico. Este curso es 
-            ideal para cualquier persona que busque mejorar su postura, reducir el 
-            dolor de espalda y aumentar la estabilidad del núcleo. A través de una 
-            serie de ejercicios prácticos y teoría educativa, aprenderás cómo 
-            fortalecer eficazmente esta área crucial del cuerpo.
-            </p>
-            <h1 className="mb-2 text-gray-800 font-extrabold">
-            Hipopresivos
-            </h1>
-            <p className="font-normal text-base leading-6 text-gray-600 ">
-            Nuestro curso de Hipopresivos se centra en una técnica revolucionaria 
-            que ayuda a reducir la presión en las cavidades torácica, abdominal y pélvica. 
-            A través de la respiración y la postura, los hipopresivos pueden ayudar a 
-            reducir la cintura, resolver problemas de incontinencia, mejorar la postura y 
-            mucho más. Este curso es perfecto para aquellos que buscan una solución no 
-            quirúrgica para mejorar la salud pélvica.
-            </p>
-            <ButtonColors/>
-          </div>
-          <div className="w-full lg:w-8/12   lg:pt-8">
-               <h1 className="text-3xl lg:text-4xl mb-2 font-bold leading-9 text-gray-800 pb-4 text-center">
-                  Cursos
+
+        <div className="flex lg:flex-row mt-10 flex-col justify-between gap-8 ">
           
-                </h1>
-            <div className="grid mb-0 mt-10 md:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-4  rounded-md">
-                
-              <div className="p-4 pb-6 hover:cursor-pointer transform transition duration-500  hover:scale-105 flex justify-center flex-col items-center">
-                <img
-                  className="md:block  rounded-lg "
-                  src="/27.jpg"
-                  alt="Alexa featured Img"
-                />
-               
-                <p className="font-medium text-xl leading-5 text-gray-800 mt-4">
-                  Fisioterapia
-                </p>
-              </div>
-              <div className="p-4 pb-6 flex transform transition duration-500  hover:scale-105 hover:cursor-pointer justify-center flex-col items-center">
-                <img
-                  className="md:block rounded-lg "
-                  src="/27.jpg"
-                  alt="Olivia featured Img"
-                />
-                
-                <p className="font-medium  text-xl leading-5 text-gray-800 mt-4">
-                  Hipopresivos
-                </p>
-              </div>
-              <div className="p-4 pb-6 flex transform transition duration-500  hover:scale-105 justify-center hover:cursor-pointer flex-col items-center">
-                <img
-                  className="md:block rounded-lg "
-                  src="/27.jpg"
-                  alt="Liam featued Img"
-                />
-                
-                <p className="font-medium hover:cursor-pointer text-xl leading-5 text-gray-800 mt-4">
-                  Acupuntura
-                </p>
-              </div>
-              <div className="p-4 pb-6 flex transform transition duration-500  hover:scale-105 justify-center hover:cursor-pointer flex-col items-center">
-                <img
-                  className="md:block rounded-lg"
-                  src="/27.jpg"
-                  alt="Elijah featured img"
-                />
-                
-                <p className="font-medium text-xl  leading-5 text-gray-800 mt-4">
-                  Rehabilitacion
-                </p>
-              </div>
+          <div className="w-full lg:w-5/12  flex flex-col justify-center">
+            {/* <h2 className="text-3xl mb-10 lg:text-4xl  font-bold 
+            leading-9 text-gray-800 pb-4 text-center">Nuestra Identidad</h2> */}
+            <h2 className="text-3xl lg:text-4xl mb-2 font-bold leading-9 text-gray-800 pb-4">
+             Misión
+            </h2> 
+            <p className="font-normal text-justify mb-6 text-base leading-6 text-gray-600 ">
+              Brindar atención integral de fisioterapia del 
+              suelo pélvico a mujeres y hombres de todas las 
+              edades, con el objetivo de mejorar su calidad de vida.
+            </p>
+
+            <h2 className="text-3xl lg:text-4xl mb-2 font-bold leading-9 text-gray-800 pb-4">
+             Visión
+            </h2>
+            <p className="font-normal text-justify text-base leading-6 text-gray-600 ">
+             Ser una clínica de referencia en fisioterapia del 
+             suelo pélvico en Puebla, México, y ofrecer un 
+             servicio de excelencia, basado en la evidencia
+              científica y la ética profesional.
+            </p>
+            <h2 className="text-3xl text-justify mt-5 lg:text-4xl  font-bold leading-9 text-gray-800 pb-4">
+            Valores
+            </h2>
+            <h3 className="font-normal text-base leading-6 text-gray-600 ">
+            <p className="mt-2 text-justify"><strong>Profesionalismo:</strong> Compromiso con la excelencia en la atención al paciente.</p>
+
+
+            <p className="mt-2 text-justify"><strong>Competencia:</strong> Conocimiento y habilidades actualizadas en fisioterapia del suelo pélvico.</p>
+
+
+            <p className="mt-2 text-justify"><strong>Empatía:</strong> Escucha activa y comprensión de las necesidades del paciente.</p>
+
+
+            <p className="mt-2 text-justify"><strong>Trabajo en equipo:</strong>  Colaboración con otros profesionales para ofrecer un servicio integral al paciente.</p>
+
+
+            <p className="mt-2 text-justify"><strong>Investigación:</strong> Actualización constante en el conocimiento científico sobre fisioterapia del suelo pélvico.</p>
+            
+            </h3>
+            <h2 className="text-3xl mt-10 lg:text-4xl mb-2 font-bold leading-9 text-gray-800 pb-4">
+              ¡Despierta! Tu Salud Te Necesita
+            </h2>
+            <p className="font-normal text-justify text-base leading-6 text-gray-600 ">
+              Es hora de hablar 
+              sobre un tema que a menudo dejamos de lado: nuestra 
+              salud. No, no te vayas aún. Esto es importante. ¿Sabías 
+              que tu salud es tu mayor riqueza? Sin ella, todas las 
+              otras cosas en la vida pierden su brillo.
+              </p>
+              <Link className="mt-10 flex justify-center items-center" href='/'>
+               <Button className="bg-purple-secondary-600 w-2/3" >Contactame</Button>
+              </Link>
+          
+          </div>
+          <div className="w-full lg:w-8/12 flex-row items-center justify-center   lg:pt-6">
+               <h2 className="text-3xl lg:text-4xl mb-2  font-bold leading-9 text-gray-800 pb-4 text-center">
+                  Servicios
+                </h2>
+            <div className="grid mb-2 mt-2 md:grid-cols-2 sm:grid-cols-1 gap-6  rounded-md">
+          
+            {servicesData && servicesData.slice(0, 4).map((service, index) => (
+             <AboutCardServices key={index} services={service} />
+           ))}
+            
+              
             </div>
           </div>
         </div>

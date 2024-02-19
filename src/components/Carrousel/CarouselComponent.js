@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { Carousel } from "@material-tailwind/react";
  
 export function CarouselComponent() {
@@ -19,22 +20,22 @@ export function CarouselComponent() {
         </div>
       )}
     >
-      <img
+      <Image
         src="/29.jpg"
         alt="image 1"
         width={600}
         height={400}
         className="object-cover"
       />
-      <img
-        src="/29.jpg"
+      <Image
+        src="/13.jpg"
         alt="image 2"
         width={600}
         height={400}
         className=" object-cover"
       />
-      <img
-        src="/29.jpg"
+      <Image
+        src="/27.jpg"
         alt="image 3"
         width={600}
         height={400}

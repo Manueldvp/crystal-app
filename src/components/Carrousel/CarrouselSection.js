@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link"
 import { CarouselComponent } from "./CarouselComponent"
 import useIsDesktop from "@/hooks/useIsDesktop"
 
@@ -22,8 +23,8 @@ const CarrouselSection = () => {
                 Recuerda, tu salud pélvica es importante. ¡No la descuides!
               </p>
               <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0">
-                <a
-                  href="#"
+                <Link
+                  href="/servicios"
                   className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-purple-secondary-500 hover:bg-purple-secondary-700 focus:ring-4  "
                 >
                   Servicios
@@ -42,7 +43,7 @@ const CarrouselSection = () => {
                       d="M1 5h12m0 0L9 1m4 4L9 9"
                     />
                   </svg>
-                </a>
+                </Link>
             
               </div>
             </div>
