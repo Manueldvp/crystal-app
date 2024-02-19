@@ -109,7 +109,7 @@ export default function BlogPage() {
                           <ExclamationCircleIcon className="w-6 h-6 text-purple-secondary-600 " />
                         </div>
                         <div className="opacity-0 absolute mb-5 group-hover:opacity-100 transition-opacity duration-200 bottom-full  left-1/2 transform -translate-x-1/2">
-                          <Link href="/blogs">
+                          <Link href="https://api.whatsapp.com/send?phone=5212223590967&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta">
                             <p className="text-xs rounded-full bg-purple-secondary-500 hover:bg-purple-secondary-700 p-4 leading-none text-white pt-2 pb-2 ">
                               Aprender
                             </p>

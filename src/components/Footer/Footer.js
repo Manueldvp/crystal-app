@@ -35,8 +35,8 @@ export function FooterWithSocialLinks() {
     <footer className="relative  mt-20 w-full">
       <div className="mx-auto w-full  px-8">
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
-          <div className="mt-[-100px]">
-            <Image alt="img" src="/Logo.png" height={400} width={400} className={`${isDesktop ? 'absolute' : 'relative'} `}/>
+          <div className="">
+            <Image alt="img" src="/LogoDesktop.png" height={400} width={400} className={`${isDesktop ? 'absolute mt-5' : 'relative mb-10'} `}/>
           </div>
           <div className="grid grid-cols-3 justify-between gap-4">
             {LINKS.map(({ title, items }) => (

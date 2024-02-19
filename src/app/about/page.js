@@ -6,7 +6,7 @@ import { AboutCardServices } from "@/components/Card/AboutCardServices";
 import { SimpleCard } from "@/components/Card/SimpleCard";
 import { Button } from "@material-tailwind/react";
 
-const about = () => {
+const About = () => {
   const services = useFetch('/services?populate=*')
   const servicesData = services.data.data
 
@@ -153,4 +153,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;
