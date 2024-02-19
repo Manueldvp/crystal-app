@@ -17,6 +17,7 @@ const ServiciosLanding = ({ service }) => {
                   {service.attributes.ServiceText}
                 </h2>
               </div>
+              <Link href='https://api.whatsapp.com/send?phone=5212223590967&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta'>
               <div className="flex items-center max-w-64 cursor-pointer pb-4 md:pb-0">
                 <h3 className="f-f-r bg-blue-health-500 hover:bg-blue-health-700 p-4 rounded-lg text-lg lg:text-2xl font-semibold text-white">
                   Agenda tu Cita
@@ -36,6 +37,7 @@ const ServiciosLanding = ({ service }) => {
                   </svg>
                 </div>
               </div>
+              </Link>
             </div>
 
             <div className="lg:w-1/3 mt-5 shadow-lg md:w-1/2 w-full relative h-96 flex items-end justify-center">

@@ -13,7 +13,7 @@ const Card = ({ course }) => {
     <div className={`${isDesktop ? '' : 'p-4'}`}>
       <div
         className={`${
-          isDesktop ? "max-w-md" : "max-w-5xl"
+          isDesktop ? "max-w-sm" : "max-w-5xl"
         } shadow-lg  bg-white border border-gray-200 rounded-lg h-full`}
       >
         <Link href="/eventos">
@@ -38,7 +38,7 @@ const Card = ({ course }) => {
             {description}
           </p>
           <Link
-            href="#"
+            href="https://api.whatsapp.com/send?phone=5212223590967&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta"
             className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-purple-secondary-500 rounded-lg hover:bg-purple-secondary-700 focus:ring-4 focus:outline-none focus:ring-gray-100"
           >
             Contactar
