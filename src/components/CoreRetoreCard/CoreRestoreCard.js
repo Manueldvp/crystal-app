@@ -2,6 +2,7 @@
 import Card from "../Card/Card"
 import useIsDesktop from "@/hooks/useIsDesktop"
 import { useFetch } from "@/hooks/useFetch"
+import { RevealWrapper  } from "next-reveal";
 
 const CoreRestoreCard = () => {
     const courses = useFetch(`/courses?populate=*`);
@@ -11,6 +12,7 @@ const CoreRestoreCard = () => {
     const isDesktop = useIsDesktop()
 
   return (
+    <RevealWrapper>
     <div className={`${isDesktop ? 'flex flex-col justify-between' : ''} `}>
       <div className={`mb-4 ${isDesktop ? 'flex gap-4  ' : 'relative flex-col'} `}>
         {coursesData && coursesData.map((course) => (
@@ -18,7 +20,7 @@ const CoreRestoreCard = () => {
         ))}
       </div>
     </div>
-
+    </RevealWrapper>
   )
 }
 

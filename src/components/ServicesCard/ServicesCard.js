@@ -1,10 +1,12 @@
 "use client";
 import useIsDesktop from "@/hooks/useIsDesktop";
 import Link from "next/link";
+import { RevealWrapper  } from "next-reveal";
 
 const ServicesCard = () => {
   const isDesktop = useIsDesktop();
   return (
+    <RevealWrapper>
     <section className=" bg-white w-full">
       <div
         className={`py-8 px-4 mx-auto ${isDesktop ? "w-2/3 " : ""}  lg:py-16`}
@@ -122,6 +124,7 @@ const ServicesCard = () => {
         </div>
       </div>
     </section>
+    </RevealWrapper>
   );
 };
 

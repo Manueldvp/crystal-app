@@ -2,6 +2,7 @@
 import useIsDesktop from "@/hooks/useIsDesktop";
 import Image from "next/image";
 import Link from "next/link";
+import { lazy } from "react";
 
 const Card = ({ course }) => {
   const { attributes } = course;
@@ -23,6 +24,7 @@ const Card = ({ course }) => {
             width={800}
             src={imgUrl}
             alt="img"
+            loading="lazy"
           />
         </Link>
         <div className="p-5">

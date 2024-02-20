@@ -1,11 +1,13 @@
 'use client'
 import Rating from "../Rating/Rating";
 import useIsDesktop from "@/hooks/useIsDesktop";
+import { RevealWrapper  } from "next-reveal";
 const TestimonialCard = () => {
   const isDesktop = useIsDesktop()
   return (
     
     <div className={`grid mt-10 ${isDesktop ? 'w-2/3 ' : ' rounded-none'} mb-8 border border-gray-200 rounded-lg shadow-sm  md:mb-12 md:grid-cols-2 bg-white`}>
+      <RevealWrapper>
       <figure className="flex flex-col hover:bg-gray-100 items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e ">
         <Rating/>
         <blockquote className="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 ">
@@ -35,6 +37,8 @@ const TestimonialCard = () => {
           </div>
         </figcaption>
       </figure>
+      </RevealWrapper>
+      <RevealWrapper>
       <figure className="flex flex-col hover:bg-gray-100 items-center justify-center p-8 text-center bg-white border-b border-gray-200 md:rounded-se-lg ">
         <Rating/>
         <blockquote className="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 ">
@@ -59,6 +63,8 @@ const TestimonialCard = () => {
           </div>
         </figcaption>
       </figure>
+      </RevealWrapper>
+      <RevealWrapper>
       <figure className="flex flex-col hover:bg-gray-100 items-center justify-center p-8 text-center bg-white border-b border-gray-200 md:rounded-es-lg md:border-b-0 md:border-e ">
         <Rating/>
         <blockquote className="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 ">
@@ -83,6 +89,8 @@ const TestimonialCard = () => {
           </div>
         </figcaption>
       </figure>
+      </RevealWrapper>
+      <RevealWrapper>
       <figure className="flex flex-col hover:bg-gray-100 items-center justify-center p-8 text-center bg-white border-gray-200 rounded-b-lg md:rounded-se-lg ">
         <Rating/>
         <blockquote className="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 ">
@@ -107,7 +115,9 @@ const TestimonialCard = () => {
           </div>
         </figcaption>
       </figure>
+      </RevealWrapper>
     </div>
+
   );
 };
 

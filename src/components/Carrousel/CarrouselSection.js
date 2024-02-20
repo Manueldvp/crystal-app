@@ -2,7 +2,7 @@
 import Link from "next/link"
 import { CarouselComponent } from "./CarouselComponent"
 import useIsDesktop from "@/hooks/useIsDesktop"
-
+import { RevealWrapper  } from "next-reveal";
 const CarrouselSection = () => {
   const isDesktop = useIsDesktop()
   return (
@@ -10,7 +10,7 @@ const CarrouselSection = () => {
         
         <section className="bg-white   w-full  dark:bg-gray-900">
           <div className="py-8 px-4 mx-auto max-w-screen-xl rounded-xl  lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
-            <div className="flex flex-col  justify-center">
+          <RevealWrapper className="flex flex-col  justify-center">
               <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
               ¡ATENCIÓN! CUIDA TU SALUD PÉLVICA
               </h1>
@@ -46,10 +46,12 @@ const CarrouselSection = () => {
                 </Link>
             
               </div>
-            </div>
+           </RevealWrapper>
+           <RevealWrapper>
             <div className=" shadow-lg">
               <CarouselComponent />
             </div>
+            </RevealWrapper>
           </div>
         </section>
       </div>

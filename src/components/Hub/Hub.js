@@ -1,12 +1,14 @@
 'use client'
 import Link from "next/link";
 import useIsDesktop from "@/hooks/useIsDesktop";
+import { RevealWrapper  } from "next-reveal";
 const Hub = () => {
 
   const isDesktop = useIsDesktop()
   
 
   return (
+    <RevealWrapper>
     <section className={`bg-left w-full bg-contain mx-auto  bg-no-repeat bg-[url('/278.png')] ${isDesktop ? 'bg-white' : 'bg-black/50'}   bg-blend-multiply`}>
       <div className="px-8 text-center py-24 lg:py-60">
         <h1 className={`mb-8 text-4xl font-extrabold tracking-tight leading-none ${isDesktop ? 'text-fuchsia-pink-400' : 'text-white'}  md:text-5xl lg:text-6xl`}>
@@ -55,6 +57,7 @@ const Hub = () => {
         </div>
       </div>
     </section>
+    </RevealWrapper>
   );
 };
 

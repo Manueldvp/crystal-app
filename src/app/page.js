@@ -1,4 +1,4 @@
-import Image from "next/image";
+import './globals.css'
 import Hub from "@/components/Hub/Hub";
 import ServicesCard from "@/components/ServicesCard/ServicesCard";
 import CoreRestoreCard from "@/components/CoreRetoreCard/CoreRestoreCard";
@@ -10,8 +10,10 @@ import Link from "next/link";
 import BlogComponent from "@/components/Blog/BlogComponent";
 
 
+
 export default function Home() {
   return (
+    
     <main className="flex min-h-screen flex-col overflow-visible items-center justify-between">
       <Hub />
       <ServicesCard />
@@ -28,12 +30,12 @@ export default function Home() {
           </p>
         </div>
       </Link>
-      <CoreRestoreCard />
+      <CoreRestoreCard /> 
       <AccordionComponent />
       <Galeria />
+     
       <div className="lg:w-2/3 sm:w-full  flex justify-center  mt-10">
-        <BlogComponent/>
-        
+        <BlogComponent/>   
       </div>
       <section className="p-4 lg:w-2/3 sm:w-full mt-10">
       <div className=" p-4 text-center bg-white border border-gray-200 rounded-lg shadow-lg ">

@@ -7,7 +7,8 @@ import {
 } from "@material-tailwind/react";
 import { useState } from "react";
 import useIsDesktop from "@/hooks/useIsDesktop";
- 
+import { RevealWrapper  } from "next-reveal";
+
 export function AccordionComponent() {
   const [open, setOpen] = useState(1);
   const isDesktop = useIsDesktop()
@@ -16,7 +17,7 @@ export function AccordionComponent() {
  
   return (
     <>
-      <div className={`${isDesktop ? 'w-2/3' : 'w-full px-4'} `}>
+    <RevealWrapper className={`${isDesktop ? 'w-2/3' : 'w-full px-4'} `}>
       <Accordion open={open === 1} className={`mb-5 mt-10 rounded-lg border border-blue-gray-100 px-4`}>
         <AccordionHeader
           onClick={() => handleOpen(1)}
@@ -35,9 +36,8 @@ export function AccordionComponent() {
            cuerpo, permitir el movimiento y proteger la columna vertebral.
         </AccordionBody>
       </Accordion>
-      </div>
-
-      <div className={`${isDesktop ? 'w-2/3' : 'w-full px-4'} `}>
+      </RevealWrapper>
+      <RevealWrapper className={`${isDesktop ? 'w-2/3' : 'w-full px-4'} `}>
       <Accordion open={open === 2} className="mb-2  rounded-lg border border-blue-gray-100 px-4">
         <AccordionHeader
           onClick={() => handleOpen(2)}
@@ -55,8 +55,8 @@ export function AccordionComponent() {
          que resulta en una “succión” o “aspiración” del diafragma.
         </AccordionBody>
       </Accordion>
-      </div>
-      <div className={`${isDesktop ? 'w-2/3' : 'w-full px-4'} `}>
+      </RevealWrapper>
+      <RevealWrapper className={`${isDesktop ? 'w-2/3' : 'w-full px-4'} `}>
       <Accordion open={open === 3} className="rounded-lg  border border-blue-gray-100 px-4">
         <AccordionHeader
           onClick={() => handleOpen(3)}
@@ -75,7 +75,8 @@ export function AccordionComponent() {
           la salud y el bienestar.
         </AccordionBody>
       </Accordion>
-      </div>
+      </RevealWrapper>
+      
     </>
   );
 }
