@@ -1,19 +1,19 @@
 "use client";
 import { usePageMicroServices } from "@/hooks/usePageMicroServices";
 import Skeleton from "@/components/Skeleton/Skeleton";
-import useIsDesktop from "@/hooks/useIsDesktop";
 import MicroServicesPage from "@/components/Servicios/MicroServicesPage";
+import { RevealWrapper } from "next-reveal";
 
 export default function ServicesPageLoad() {
   const microServices = usePageMicroServices();
-  const isDesktop = useIsDesktop();
 
   if (!microServices) {
     return <Skeleton/>;
   }
 
   return (
-    
+    <RevealWrapper>
     <MicroServicesPage services={microServices}/>
+    </RevealWrapper>
   );
 }

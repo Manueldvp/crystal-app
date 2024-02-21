@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
 import { NavbarBottom } from "@/components/NavbarBottom/NavbarBottom";
 import useIsDesktop from "@/hooks/useIsDesktop";
+import Skeleton from "@/components/Skeleton/Skeleton";
+import { RevealWrapper  } from "next-reveal";
 
 
 export default function BlogPage() {
@@ -12,11 +14,12 @@ export default function BlogPage() {
   const isDesktop = useIsDesktop();
 
   if (!blog) {
-    return <div>Cargando...</div>;
+    return <Skeleton/>;
   }
 
   
   return (
+    <RevealWrapper>
     <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
       <div className={`${isDesktop ? 'flex' : 'flex-row'} items-center justify-between mb-5`}>
         <div className={`flex ${isDesktop ? '' : 'mb-10'} items-center justify-center`}>
@@ -134,5 +137,6 @@ export default function BlogPage() {
       </div>
       
     </div>
+    </RevealWrapper>
   );
 }

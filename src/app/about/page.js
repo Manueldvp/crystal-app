@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useFetch } from "@/hooks/useFetch";
 import { AboutCardServices } from "@/components/Card/AboutCardServices";
-import { SimpleCard } from "@/components/Card/SimpleCard";
 import { Button } from "@material-tailwind/react";
+import { RevealWrapper  } from "next-reveal";
 
 const About = () => {
   const services = useFetch('/services?populate=*')
@@ -13,6 +13,7 @@ const About = () => {
   return (
       
       <section className="2xl:container justify-center 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
+        <RevealWrapper>
         <div className="bg-center mb-20 rounded-xl  bg-no-repeat bg-[url('/29.jpg')] bg-gray-500 bg-blend-multiply">
         <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
           <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
@@ -24,7 +25,10 @@ const About = () => {
           </p>
         </div>
         </div>
+        </RevealWrapper>
+        <RevealWrapper>
         <div className="flex flex-col lg:flex-row justify-between gap-8">
+        
           <div className="w-full lg:w-5/12 flex flex-col justify-start">
             <h2 className="text-3xl mb-5 text-center  mt-5 lg:text-4xl font-bold leading-9 text-gray-800 pb-4">
               Acerca de mi
@@ -75,14 +79,13 @@ const About = () => {
               alt="A group of People"
             />
           </div>
+          
         </div>
-
+        </RevealWrapper>
 
         <div className="flex lg:flex-row mt-10 flex-col justify-between gap-8 ">
-          
-          <div className="w-full lg:w-5/12  flex flex-col justify-center">
-            {/* <h2 className="text-3xl mb-10 lg:text-4xl  font-bold 
-            leading-9 text-gray-800 pb-4 text-center">Nuestra Identidad</h2> */}
+        <RevealWrapper className="w-full lg:w-5/12  flex flex-col justify-center">
+
             <h2 className="text-3xl lg:text-4xl mb-2 font-bold leading-9 text-gray-800 pb-4">
              Misión
             </h2> 
@@ -133,9 +136,8 @@ const About = () => {
               <Link className="mt-10 flex justify-center items-center" href='/'>
                <Button className="bg-purple-secondary-600 w-2/3" >Contactame</Button>
               </Link>
-          
-          </div>
-          <div className="w-full lg:w-8/12 flex-row items-center justify-center   lg:pt-6">
+          </RevealWrapper>
+          <RevealWrapper className="w-full lg:w-8/12 flex-row items-center justify-center   lg:pt-6">
                <h2 className="text-3xl lg:text-4xl mb-2  font-bold leading-9 text-gray-800 pb-4 text-center">
                   Servicios
                 </h2>
@@ -144,10 +146,8 @@ const About = () => {
             {servicesData && servicesData.slice(0, 4).map((service, index) => (
              <AboutCardServices key={index} services={service} />
            ))}
-            
-              
-            </div>
           </div>
+          </RevealWrapper>
         </div>
       </section>
   );
