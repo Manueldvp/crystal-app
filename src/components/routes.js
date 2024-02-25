@@ -60,7 +60,7 @@ const routes = [{
                 },
                 {
                     label: 'Prolapsos',
-                    route: '/servicios/abordaje-en-disfunciones-de-suelo-pelvico/Prolapsos'
+                    route: '/servicios/abordaje-en-disfunciones-de-suelo-pelvico/prolapsos'
                 },
                 {
                     label: 'Disfunciónes Coloproctologicas',
