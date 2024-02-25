@@ -4,17 +4,20 @@ import ServicesCard from "@/components/ServicesCard/ServicesCard";
 import CoreRestoreCard from "@/components/CoreRetoreCard/CoreRestoreCard";
 import {AccordionComponent} from "@/components/Accordion/Accordion";
 import Galeria from "@/components/Galeria/Galeria";
-import TestimonialCard from "@/components/TestimonialCard/TestimonialCard";
 import CarrouselSection from "@/components/Carrousel/CarrouselSection";
 import Link from "next/link";
 import BlogComponent from "@/components/Blog/BlogComponent";
+import TestimonialCard from '@/components/TestimonialCard/TestimonialCard';
+
 
 
 
 export default function Home() {
+  
   return (
     
     <main className="flex min-h-screen flex-col overflow-visible items-center justify-between">
+      
       <Hub />
       <ServicesCard />
       <Link className="lg:w-2/3 sm:w-full p-4" href='/eventos'>
@@ -30,6 +33,7 @@ export default function Home() {
           </p>
         </div>
       </Link>
+      
       <CoreRestoreCard /> 
       <AccordionComponent />
       <Galeria />
@@ -45,10 +49,13 @@ export default function Home() {
         <p className="mb-5 text-base text-gray-500 sm:text-lg ">
           Conoce a través de nuestros pacientes el resultado de un
           acompañamiento de nuestro tratamiento
+          
         </p>
+        
       </div>
       </section>
-      <TestimonialCard />
+      
+      <TestimonialCard/>
       <CarrouselSection/>
       
     </main>

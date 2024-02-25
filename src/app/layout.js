@@ -28,7 +28,8 @@ export default function RootLayout({ children }) {
         <SocialMediaButton/>
      
         {children}  
-           
+        
+        
         <footer >
           <FooterWithSocialLinks/>
         </footer>
