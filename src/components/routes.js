@@ -41,8 +41,8 @@ const routes = [{
             route: '/servicios/acupuntura'
         },
         {
-            label: 'Gravitación de Diastasis Abdominal',
-            route: '/servicios/gravitacion-de-diastasis-abdominal'
+            label: 'Gravitación de la Diastasis Abdominal',
+            route: '/servicios/gravitacion-de-la-diastasis-abdominal'
         },
         
         {
