@@ -8,9 +8,9 @@ const useScroll = () => {
 
     function handleScroll() {
       let st = window.scrollY || document.documentElement.scrollTop;
-      if (st > lastScrollTop + 50) { // Reducir la diferencia de píxeles a 10
+      if (st > lastScrollTop + 60) { // Reducir la diferencia de píxeles a 10
         setIsVisible(false);
-      } else if (st < lastScrollTop - 50 || st === 0) { // Reducir la diferencia de píxeles a 10
+      } else if (st < lastScrollTop - 60 || st === 0) { // Reducir la diferencia de píxeles a 10
         setIsVisible(true);
       }
       lastScrollTop = st <= 0 ? 0 : st;

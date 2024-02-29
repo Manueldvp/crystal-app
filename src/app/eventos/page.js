@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import TallerCards from "@/components/Card/TallerCards";
+import Image from "next/image";
 import { useFetch } from "@/hooks/useFetch";
 import { RevealWrapper } from "next-reveal";
 
@@ -129,17 +130,14 @@ const Eventos = () => {
           </div>
         </RevealWrapper>
       </div>
+
       <div className="2xl:mx-auto 2xl:container  lg:px-40 xl:px-20 md:py-12 md:px-6 py-9 px-4">
         <RevealWrapper className="flex flex-col items-center justify-center">
           <h1 className="text-4xl mb-5 font-bold leading-9 text-gray-800">
-            Talleres
+           Programas
           </h1>
           <p className="text-base mb-5 font-medium leading-6 text-justify text-gray-600 sm:w-96 md:w-9/12 lg:w-1/2 mt-4">
-            ¡Descubre, aprende y crece con nuestros talleres! ¿Estás buscando
-            una forma de expandir tus habilidades, explorar nuevas pasiones o
-            simplemente pasar un buen rato? ¡Nuestros talleres son la solución
-            perfecta! Ofrecemos una variedad de talleres diseñados para todos
-            los niveles de experiencia y en una amplia gama de temas.
+            Los programas son sesiones progresivas con una evaluación realizada por Cristal Sarabia, lo cual ayudaría a cumplir objetivos y metas en la salud pélvica.
           </p>
         </RevealWrapper>
 
@@ -149,6 +147,96 @@ const Eventos = () => {
               <TallerCards key={course.id} course={course} />
             ))}
         </RevealWrapper>
+      </div>
+      
+      <div className="2xl:mx-auto 2xl:container  lg:px-40 xl:px-20 md:py-12 md:px-6 py-9 px-4">
+        <RevealWrapper className="flex flex-col items-center justify-center">
+          <h1 className="text-4xl mb-5 font-bold leading-9 text-gray-800">
+           Talleres
+          </h1>
+          <p className="text-base mb-5 font-medium leading-6 text-justify text-gray-600 sm:w-96 md:w-9/12 lg:w-1/2 mt-4">
+          Tienes a tu disponibilidad el Taller Core Restore más que Hipopresivos, su duración puede ser corta pero con un gran impacto de aprendizaje, rutinas personalizadas. 
+          </p>
+        </RevealWrapper>
+          
+        <div className="relative  mb-5 p-4 rounded-xl flex items-center justify-center">
+          <Image
+                width={600}
+                height={800}
+                style={{ width: 'auto', height: '600px' }}
+                src='/27.jpg'
+                className="rounded-xl brightness-50 "
+                alt="chair"
+          />
+          
+          <div className="absolute p-4 top-0  flex flex-col w-full  h-full items-center justify-between py-10">
+            <div className="flex items-center  justify-center flex-col h-full">
+              <h2 className="xl:px-10 md:px-2 px-7 text-2xl font-bold sm:w-auto leading-normal text-center text-white">
+                Taller Core Restore 
+              </h2>
+              <h2 className="xl:px-10 md:px-2 px-7 text-2xl font-bold sm:w-auto leading-normal text-center text-white">
+              Online y presencial
+              </h2>
+              <p className="xl:px-10 md:px-2 px-7 text-base font-medium leading-normal text-center text-white mt-4">
+                Este taller está enfocado en el 
+
+              </p>
+              <p className="xl:px-10 md:px-2 px-7 text-base font-medium leading-normal text-center text-white ">
+            
+                complejo Abdomino-Lumbo-Pélvico,
+              </p>
+              <p className="xl:px-10 md:px-2 px-7 text-base font-medium leading-normal text-center text-white ">
+            
+                y 
+                te ayudará a:
+
+              </p>
+              <div className="items-center text-justify">
+              <p className="xl:px-10 md:px-2 px-7 text-base font-medium leading-normal text-center text-white mt-4">
+              ✅ Tonificar tu suelo pélvico
+              </p>
+              <p className="xl:px-10 md:px-2 px-7 text-base font-medium leading-normal text-center text-white mt-4">
+              ✅ Mejorar tu presión abdominopélvica
+              </p>
+              <p className="xl:px-10 md:px-2 px-7 text-base font-medium leading-normal text-center text-white mt-4">
+              ✅ Mejorar tu postura
+              </p>
+              <p className="xl:px-10 md:px-2 px-7 text-base font-medium leading-normal text-center text-white mt-4">
+              ✅ Fortalecer tu faja abdominal
+              </p>
+              <p className="xl:px-10 md:px-2 px-7 text-base font-medium leading-normal text-center text-white mt-4">
+              ✅ Tratar dolores lumbares
+              </p>
+              </div>
+            </div>
+            <div className="flex justify-center md:w-auto w-full">
+              <button className="rounded-lg hover:bg-gray-300 transition duration-150 text-base font-semibold leading-none text-center text-white hover:text-grey-cristal-800 py-4 px-12 bg-purple-secondary-600 focus:outline-none">
+                Empezar Ya
+              </button>
+            </div>
+          </div>
+          
+        </div>
+        <div className="2xl:mx-auto 2xl:container  lg:px-40 xl:px-20 md:py-2 md:px-6 py-9 px-4">
+        <RevealWrapper className="flex flex-col items-center justify-center">
+          
+          <h2 className="text-base mb-5 font-medium leading-6 text-justify text-gray-600 sm:w-96 md:w-9/12 lg:w-1/2 mt-4">
+          Las clases serán supervisadas por una fisioterapeuta pélvica y certificada internacionalmente como entrenadora de Hipopresivos por Low Pressure Fitness por Cristal Sarabia.
+          </h2>
+          <h3 className="text-base mb-5 font-medium leading-6 text-justify text-gray-600 sm:w-96 md:w-9/12 lg:w-1/2 mt-4">
+          Aprenderás tanto recursos y contenido práctico como teórico:
+          </h3>
+          <p className="text-base mb-5 font-medium leading-6 text-left text-gray-600 sm:w-96 md:w-9/12 lg:w-1/2 mt-4">
+          - Valoración para personalización de rutinas.
+          </p>
+          <p className="text-base mb-5 font-medium leading-6 text-left text-gray-600 sm:w-96 md:w-9/12 lg:w-1/2 mt-4">
+          - Atención personalizada.
+          </p>
+          <p className="text-base mb-5 font-medium leading-6 text-left text-gray-600 sm:w-96 md:w-9/12 lg:w-1/2 mt-4">
+          - Certificado de asistencia.
+          </p>
+        </RevealWrapper>
+      </div>
       </div>
     </>
   );

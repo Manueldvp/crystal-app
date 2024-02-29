@@ -32,9 +32,8 @@ const ServicesCard = () => {
             Salud Pélvica
           </h1>
           <p className="text-lg font-normal text-white  mb-6">
-            Un profesional de la salud es la mejor fuente de información sobre
-            su salud. Consulte a un profesional de la salud si usted tiene
-            preguntas acerca de su salud.
+            Según estudios: 70% de las mujeres mexicanas nunca había escuchado hablar del suelo pélvico y 40% de las mujeres que sufren de incontinencia urinaria no había buscado ayuda médica. ¿Es tu caso?
+
           </p>
           <Link
             href="/servicios"

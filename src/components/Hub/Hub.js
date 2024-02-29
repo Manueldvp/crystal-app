@@ -11,15 +11,16 @@ const Hub = () => {
     <RevealWrapper>
     <section className={`bg-left w-full bg-contain mx-auto  bg-no-repeat bg-[url('/278.png')] ${isDesktop ? 'bg-white' : 'bg-black/50'}   bg-blend-multiply`}>
       <div className="px-8 text-center py-24 lg:py-60">
-        <h1 className={`mb-8 text-4xl font-extrabold tracking-tight leading-none ${isDesktop ? 'text-fuchsia-pink-400' : 'text-white'}  md:text-5xl lg:text-6xl`}>
-          Potenciando la salud con Fisioterapia Pélvica especializada
+        <h1 className={`mb-8 text-4xl  font-extrabold tracking-tight leading-none ${isDesktop ? 'text-fuchsia-pink-400' : 'text-white'}  md:text-5xl lg:text-6xl`}>
+          Impulsando y concientizando en la salud pélvica especializada
         </h1>
         <p className={`mb-8 text-lg font-semibold ${isDesktop ? 'text-black/50 ' : ' text-white'}  lg:text-xl sm:px-16 lg:px-48`}>
-          Creo que todas las mujeres merecen sentirse bien con su salud pélvica,
-          y estoy aquí para ayudarlas a lograrlo.
+          Especializada en Uroginecología & Sexualidad Funcional.
         </p>
         <p className={`mb-8 text-lg font-normal ${isDesktop ? 'text-black/50 ' : ' text-white'} lg:text-xl sm:px-16 lg:px-48`}>
-          Con más de 4 años de experiencia en Puebla, México.
+          Más 4 años de experiencia ayudando a elevar la Salud Pélvica
+          en sus diferentes etapas.
+
         </p>
         <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
           <a
