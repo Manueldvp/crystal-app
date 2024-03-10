@@ -91,8 +91,8 @@ const routes = [{
     // ]
 },
 {
-    label: 'Talleres',
-    route: '/eventos',
+    label: 'Programas',
+    route: '/programas',
     // icon: <ChevronDownIcon className="h-5"/>,
     // subRoutes: [
     //     {

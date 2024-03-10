@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 function TallerCards({ course }) {
   const { attributes } = course
@@ -27,9 +28,10 @@ function TallerCards({ course }) {
           </p>
         </div>
         <div className="flex justify-center md:w-auto w-full">
-          <button className="rounded-lg hover:bg-gray-300 transition duration-150 text-base font-semibold leading-none text-center text-white hover:text-grey-cristal-800 py-4 px-12 bg-purple-secondary-600 focus:outline-none">
+          
+          <Link href='https://api.whatsapp.com/send?phone=5212223590967&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta' className="rounded-lg hover:bg-gray-300 transition duration-150 text-base font-semibold leading-none text-center text-white hover:text-grey-cristal-800 py-4 px-12 bg-purple-secondary-600 focus:outline-none">
             Empezar Ya
-          </button>
+          </Link>
         </div>
       </div>
       
