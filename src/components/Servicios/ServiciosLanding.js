@@ -9,7 +9,7 @@ const ServiciosLanding = ({ service }) => {
             <div className="md:w-1/2 lg:w-2/3 w-full xl:pr-20 md:pr-6">
               <div className="py-2 text-color">
                 <Link href={`/servicios/${service.attributes.slug}`}>
-                  <h1 className=" text-gray-800 text-base lg:text-4xl md:leading-snug   font-black">
+                  <h1 className="  text-purple-secondary-500 hover:text-purple-secondary-700  text-base lg:text-4xl md:leading-snug   font-black">
                     {service.attributes.title}
                   </h1>
                 </Link>

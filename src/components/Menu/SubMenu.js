@@ -2,7 +2,7 @@ import Link from 'next/link';
 import MiniMenu from './MiniMenu';
 import { useState } from 'react';
 
-function SubMenu({ subRoutes, handleIsOpen, isDesktop, showSubRoutes, label, handleIconClick, handleOnClick }) {
+function SubMenu({ subRoutes, handleIsOpen, isDesktop, showSubRoutes, label, handleOnClick }) {
   const [hoveredMiniLabel, setHoveredMiniLabel] = useState(null);
   const [clickedMiniLabel, setClickedMiniLabel] = useState(null);
 
@@ -39,11 +39,11 @@ function SubMenu({ subRoutes, handleIsOpen, isDesktop, showSubRoutes, label, han
             <li className='mb-3 p-2 border-b hover:text-purple-secondary-600 hover:-translate-y-1 hover:scale-110 transition-all duration-500 ease-in-out' key={route}
               onMouseEnter={() => handleMiniMouseEnter(label)}
               onMouseLeave={handleMiniMouseLeave}>
-              <Link key={route} className={`flex items-center justify-between  hover:text-purple-secondary-500`} href={route} onClick={(e) => handleMiniIconClick(e, label)}>
-                <div onClick={handleIsOpen}>
+              <Link key={route} className={`flex items-center justify-between  hover:text-purple-secondary-500`} href={route} >
+                <div  onClick={handleIsOpen}>
                 {label}
                 </div>
-                <span className={`${isDesktop ? 'ml-2' : 'ml-4'} `} onClick={handleOnClick} >{icon}</span>
+                <span className={`${isDesktop ? 'ml-2' : 'ml-4'} `} onClick={(e) => handleMiniIconClick(e, label)} >{icon}</span>
               </Link>
               {showMiniRoutes(label) && <MiniMenu 
                 miniRoutes={miniRoutes} 

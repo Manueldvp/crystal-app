@@ -19,8 +19,8 @@ const ServiceCard = ({ service }) => {
             </Link>
             <div className="p-5">
                 <div className="p-2">
-                    <Link href="#">
-                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
+                    <Link href={`/servicios/${actualPage}/${service.attributes.slug}`}>
+                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-purple-secondary-700 hover:text-purple-secondary-500">
                         {service.attributes.title}
                         </h5>
                     </Link>

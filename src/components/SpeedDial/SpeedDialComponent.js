@@ -35,7 +35,7 @@ export default function SocialMediaButton() {
 
       <div
         className={`absolute ${
-          isDesktop ? "bottom-20 py-10" : "bottom-14 py-5 "
+          isDesktop ? " bottom-16 py-10" : "bottom-14 py-5 "
         }    flex flex-col items-center space-y-6 ${
           isOpen ? "opacity-100" : "opacity-0"
         } transition-opacity`}

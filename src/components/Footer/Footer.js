@@ -3,6 +3,7 @@ import { Typography } from "@material-tailwind/react";
 import Image from "next/image";
 import useIsDesktop from "@/hooks/useIsDesktop";
 import Logo from "../Logo/Logo";
+import Link from "next/link";
  
 const LINKS = [
   {
@@ -18,7 +19,7 @@ const LINKS = [
     title: "Eventos",
     items: [
     {name: "Galería", url: '/galeria'}, 
-    {name: "Talleres", url: '/eventos'}
+    {name: "Programas", url: '/programas'}
     ],
   },
   {
@@ -69,8 +70,8 @@ export function FooterWithSocialLinks() {
             variant="small"
             className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0"
           >
-            &copy; {currentYear} <a href="https://material-tailwind.com/">Cristal Sarabia</a>. All
-            Rights Reserved.
+            &copy; {currentYear} <a className="mr-4" href="/">Cristal Sarabia.</a> All
+            Rights Reserved  <Link className="ml-4" href='/aviso-legal'>  Aviso Legal</Link>
           </Typography>
           <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
             <Typography as="a" href="https://www.facebook.com/FisioterapiaCristal" className="opacity-80 transition-opacity hover:opacity-100">

@@ -198,6 +198,7 @@ const Eventos = () => {
                        </Link>
                     <div className="h-5 w-2" />
                 </div>
+                <hr className="border border-gray-100 w-full" />
           </div>
 
       </div>

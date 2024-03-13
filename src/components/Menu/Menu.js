@@ -20,14 +20,13 @@ function Menu({ isOpen, setIsOpen, isDesktop, handleOnClick }) {
   };
 
   const handleIsOpen = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   const handleIconClick = (e, label) => {
     if (!isDesktop && allowedLabels.includes(label)) {
       e.preventDefault();
       setClickedLabel(clickedLabel === label ? null : label);
-      
     }
   };
 
@@ -59,21 +58,17 @@ function Menu({ isOpen, setIsOpen, isDesktop, handleOnClick }) {
             key={route}
             onMouseEnter={() => handleMouseEnter(label)}
             onMouseLeave={handleMouseLeave}
-            
           >
             <Link
-            
               className={`flex items-center ${
                 isDesktop ? "" : "justify-between border-b mt-2 p-2"
               } hover:text-purple-secondary-500`}
               href={route}
             >
-              <div onClick={handleIsOpen}>
-              {label}
-              </div>
+              <div onClick={handleIsOpen}>{label}</div>
               <span
                 className={`${isDesktop ? "ml-2" : "ml-4"} `}
-                onClick={(e) => handleIconClick(e, label) }
+                onClick={(e) => handleIconClick(e, label)}
               >
                 {icon}
               </span>

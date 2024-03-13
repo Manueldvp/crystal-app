@@ -133,7 +133,7 @@ const About = () => {
               que tu salud es tu mayor riqueza? Sin ella, todas las 
               otras cosas en la vida pierden su brillo.
               </p>
-              <Link className="mt-10 flex justify-center items-center" href='/'>
+              <Link className="mt-10 flex justify-center items-center" href='https://api.whatsapp.com/send?phone=5212223590967&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta'>
                <Button className="bg-purple-secondary-600 w-2/3" >Contactame</Button>
               </Link>
           </RevealWrapper>
