@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar/Navbar'
 import SocialMediaButton from '@/components/SpeedDial/SpeedDialComponent'
+import CookiesModal from '@/components/Cookies/Cookies'
 import { FooterWithSocialLinks } from '@/components/Footer/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -29,7 +30,7 @@ export default function RootLayout({ children }) {
      
         {children}  
         
-        
+        <CookiesModal/>
         <footer >
           <FooterWithSocialLinks/>
         </footer>
