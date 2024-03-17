@@ -177,7 +177,7 @@ export default function CookiesModal() {
                    También utilizamos cookies para realizar análisis 
                    estadísticos que nos permiten entender cómo se utiliza
                     nuestro sitio web y cómo podemos mejorarlo. Al hacer clic 
-                    en "Aceptar", usted consiente el uso de todas las cookies. Lea 
+                    en Aceptar, usted consiente el uso de todas las cookies. Lea 
                         nuestra <Link  className="text-fuchsia-pink-500 hover:text-fuchsia-pink-700" href="/politica-de-cookies">
                         Política de Cookies</Link> para más información.
 
