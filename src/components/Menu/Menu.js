@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link as ScrollLink } from 'react-scroll';
 import Link from "next/link";
 import routes from "../routes";
 import SubMenu from "./SubMenu";
@@ -6,6 +7,13 @@ import SubMenu from "./SubMenu";
 function Menu({ isOpen, setIsOpen, isDesktop, handleOnClick }) {
   const [hoveredLabel, setHoveredLabel] = useState(null);
   const [clickedLabel, setClickedLabel] = useState(null);
+  const [mainLocation, setMainLocation] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setMainLocation(window.location.pathname === '/');
+    }
+  }, []);
 
   const handleMouseEnter = (label) => {
     if (isDesktop) {
@@ -52,14 +60,28 @@ function Menu({ isOpen, setIsOpen, isDesktop, handleOnClick }) {
           isDesktop === false ? "shadow-lg" : ""
         } md:bg-white bg-transparent`}
       >
-        {routes.map(({ label, route, icon, subRoutes, miniRoutes }) => (
+        {routes.map(({ label, route, scroll, mainRoute, icon, subRoutes, miniRoutes }) => (  
+          
           <li
             className="p-2  text-grey-cristal-400"
             key={route}
             onMouseEnter={() => handleMouseEnter(label)}
             onMouseLeave={handleMouseLeave}
           >
-            <Link
+            {scroll && mainLocation ? (
+              <ScrollLink
+              className={`flex items-center ${isDesktop ? "" : "justify-between border-b mt-2 p-2"} hover:text-purple-secondary-500`}
+              to={mainRoute}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              <div className="cursor-pointer" onClick={handleIsOpen}>{label}</div>
+            </ScrollLink>
+            ) : (
+              <Link
+              
               className={`flex items-center ${
                 isDesktop ? "" : "justify-between border-b mt-2 p-2"
               } hover:text-purple-secondary-500`}
@@ -73,6 +95,8 @@ function Menu({ isOpen, setIsOpen, isDesktop, handleOnClick }) {
                 {icon}
               </span>
             </Link>
+            )}
+           
             {showSubRoutes(label) && (
               <SubMenu
                 handleIsOpen={handleIsOpen}

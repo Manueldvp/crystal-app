@@ -12,14 +12,14 @@ const CoreRestoreCard = () => {
     const isDesktop = useIsDesktop()
 
   return (
-    <RevealWrapper>
-    <div className={`${isDesktop ? 'flex flex-col justify-between' : ''} `}>
-      <div className={`mb-4 ${isDesktop ? 'flex gap-4  ' : 'relative flex-col'} `}>
+    <RevealWrapper className='flex justify-center xl:w-2/3 lg:w-full'>
+    
+      <div className={`mb-4  ${isDesktop ? 'flex  gap-4' : 'relative flex-col'} `}>
         {coursesData && coursesData.map((course) => (
             <Card key={course.id} course={course}/>
         ))}
       </div>
-    </div>
+  
     </RevealWrapper>
   )
 }

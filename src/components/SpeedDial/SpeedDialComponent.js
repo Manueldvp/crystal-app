@@ -1,6 +1,7 @@
 "use client";
 import useIsDesktop from "@/hooks/useIsDesktop";
 import { useState } from "react";
+
 export default function SocialMediaButton() {
   const [isOpen, setIsOpen] = useState(false);
   const isDesktop = useIsDesktop();
@@ -11,14 +12,16 @@ export default function SocialMediaButton() {
           ? "right-10 w-16 h-16 bottom-20"
           : "right-1 w-11 h-11 bottom-2"
       }    bg-fuchsia-pink-400 hover:bg-fuchsia-pink-600 rounded-2xl flex items-center justify-center  group`}
-      onClick={() => !isDesktop && setIsOpen(!isOpen)}
       onMouseEnter={() => isDesktop && setIsOpen(true)}
-      onMouseLeave={() => isDesktop && setIsOpen(false)}
+      onMouseLeave={() => isDesktop && setIsOpen(false)} 
     >
       <svg
         className={`${
           isDesktop ? "w-8 h-8" : "w-6 h-6"
         }  text-white hover:animate-pulse `}
+        onClick={() => !isDesktop && setIsOpen(!isOpen)}
+        onMouseEnter={() => isDesktop && setIsOpen(true)}
+       
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -33,11 +36,12 @@ export default function SocialMediaButton() {
         />
       </svg>
 
+    {isOpen && (
       <div
         className={`absolute ${
           isDesktop ? " bottom-16 py-10" : "bottom-14 py-5 "
         }    flex flex-col items-center space-y-6 ${
-          isOpen ? "opacity-100" : "opacity-0"
+          isOpen ? "opacity-100" : "opacity-0 "
         } transition-opacity`}
       >
         <a
@@ -124,6 +128,8 @@ export default function SocialMediaButton() {
           </svg>
         </a>
       </div>
+      )}
     </div>
+    
   );
 }

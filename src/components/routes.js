@@ -92,7 +92,9 @@ const routes = [{
 },
 {
     label: 'Programas',
+    mainRoute: 'programas',
     route: '/programas',
+    scroll: true
     // icon: <ChevronDownIcon className="h-5"/>,
     // subRoutes: [
     //     {
@@ -106,7 +108,9 @@ const routes = [{
     route: '/blogs'
 },{
     label: 'Contacto',
-    route: '/contacto'
+    route: '/contacto',
+    mainRoute: 'contacto',
+    scroll: true
 },  ]
 
 export default routes

@@ -10,7 +10,7 @@ const Contacto = () => {
       <RevealWrapper>
         <div
           className={`${
-            isDesktop ? "flex" : "flex-row"
+            isDesktop ? "flex" : "flex-row "
           } py-4 lg:py-8  relative`}
         >
           <Image
@@ -20,10 +20,10 @@ const Contacto = () => {
             className="h-2/5 lg:h-full w-full lg:w-1/2 absolute inset-0 opacity-35 object-cover object-center xl:block hidden"
             alt="map"
           />
-          <div className="xl:mx-auto xl:container  relative ">
-            <div className="flex flex-wrap xl:mx-auto xl:container">
-              <div className="w-full relative lg:w-1/2 xl:mt-10 mb-10 2xl:pr-24 2xl:pl-0 xl:pl-12 pl-0 ">
-                <div className="w-full flex flex-col items-start  xl:justify-start  relative z-20 xl:px-0 px-4 xl:py-0 py-4">
+          <div className=" xl:container flex  relative ">
+            <div className="flex flex-wrap  ">
+              <div className="w-full relative lg:w-1/2 xl:mt-10 mb-10  2xl:pl-0 xl:pl-12 pl-0 ">
+                <div className="w-full flex flex-col xl:items-start lg:items-center  xl:justify-start lg:justify-center md:justify-center  relative z-20 xl:px-0 px-4 xl:py-0 py-4">
                   <div className="w-full 2xl:pl-48 xl:pt-1">
                     <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-wider text-gray-800">
                       PUEDES LOCALIZAR
@@ -37,7 +37,7 @@ const Contacto = () => {
                           Dirección
                         </h2>
                         <h2 className="text-gray-800 text-base md:text-lg leading-8 tracking-wider mt-2">
-                          Puebla, México.
+                        Torres Médicas Angelópolis, periférico Ecológico #3507 Tlax, 72820. San Andrés Cholula.
                         </h2>
                       </div>
                       <div className="mt-4 md:mt-8">
@@ -45,10 +45,7 @@ const Contacto = () => {
                           Contacto
                         </h2>
                         <h2 className="text-gray-800 text-base md:text-lg leading-8 tracking-wider mt-2">
-                          +xx 051 4567890 (Telefono)
-                        </h2>
-                        <h2 className="text-gray-800 text-base md:text-lg leading-8 tracking-wider mt-2">
-                          +xx 123 4567890 (Movil)
+                        +52 1 222 359 0967 (Telefono)
                         </h2>
                       </div>
                       <div className="mt-4 md:mt-8">
@@ -65,8 +62,8 @@ const Contacto = () => {
               </div>
             </div>
           </div>
-          <div className="flex md:flex-row flex-col-reverse md:items-stretch items-center justify-center">
-            <div className="md:py-20 xl:w-1/2 sm:w-1/2 lg:mr-20 md:mr-6 flex flex-col md:items-end items-center justify-center xl:mr-28">
+          <div className="flex md:flex-row flex-col-reverse  items-center justify-center">
+            <div className="md:py-10  flex flex-col  items-center justify-center ">
               <div className="flex flex-col items-center justify-center">
                 <h2 className="md:text-5xl text-3xl font-bold text-center text-gray-800 dark:text-white">
                   MEJORA TU SALUD

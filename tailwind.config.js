@@ -8,6 +8,14 @@ module.exports = withMT({
   ],
   theme: {
     extend: {
+      transitionProperty: {
+        'opacity': 'opacity',
+      },
+      transitionDuration: {
+        '2000': '2000ms',
+      },
+    
+    
       colors: {
         "fuchsia-pink": {
           50: "#fcf7fc",

@@ -1,11 +1,12 @@
 'use client'
 import useIsDesktop from "@/hooks/useIsDesktop";
+import useIsTablet from "@/hooks/useIsTablet";
 import { useFetch } from "@/hooks/useFetch";
 import Image from "next/image";
 import { RevealWrapper } from "next-reveal";
 
 const Galeria = () => {
-
+    const isTablet = useIsTablet()
     const image = useFetch('/galerias?populate=*')
     const imagesData = image.data.data
 
@@ -94,7 +95,7 @@ const Galeria = () => {
           <Image
             height={500}
             width={500}
-            className={`${isDesktop ? ' h-80' : 'h-80'} max-w-full rounded-lg object-cover object-center`}
+            className={`${isDesktop ? ' h-80' : 'h-96'} max-w-full rounded-lg object-cover object-center`}
             src={urls.length > 0 ? urls[5] : '/NoFound.jpg'}
             loading="lazy"
             alt='img-gallery'
@@ -102,8 +103,9 @@ const Galeria = () => {
         </div>
         </RevealWrapper>
       </div>
+      
       <div className="grid gap-4">
-      <RevealWrapper >
+        {isDesktop || isTablet ? <RevealWrapper >
         <div className="transform transition duration-500 hover:scale-105">
           <Image
             height={500}
@@ -114,8 +116,9 @@ const Galeria = () => {
             alt='img-gallery'
           />
         </div>
-        </RevealWrapper>
-        <RevealWrapper >
+        </RevealWrapper> : '' }
+      
+        {isDesktop || isTablet ? <RevealWrapper >
         <div className="transform transition duration-500 hover:scale-105">
           <Image
             height={500}
@@ -126,8 +129,9 @@ const Galeria = () => {
             alt='img-gallery'
           />
         </div>
-        </RevealWrapper>
-        <RevealWrapper >
+        </RevealWrapper> : '' }
+        
+        {isDesktop || isTablet ? <RevealWrapper >
         <div className="transform transition duration-500 hover:scale-105">
           <Image
             height={500}
@@ -138,10 +142,11 @@ const Galeria = () => {
             alt='img-gallery'
           />
         </div>
-        </RevealWrapper>
+        </RevealWrapper> : '' }
+        
       </div>
       <div className="grid gap-4">
-      <RevealWrapper >
+        {isDesktop || isTablet ? <RevealWrapper >
         <div className="transform transition duration-500 hover:scale-105">
           <Image
             height={500}
@@ -152,8 +157,9 @@ const Galeria = () => {
             alt='img-gallery'
           />
         </div>
-        </RevealWrapper>
-        <RevealWrapper >
+        </RevealWrapper> : '' }
+      
+        {isDesktop || isTablet ? <RevealWrapper >
         <div className="transform transition duration-500 hover:scale-105">
           <Image
             height={500}
@@ -164,8 +170,9 @@ const Galeria = () => {
             alt='img-gallery'
           />
         </div>
-        </RevealWrapper>
-        <RevealWrapper >
+        </RevealWrapper> : ''}
+        
+        {isDesktop || isTablet ? <RevealWrapper >
         <div className="transform transition duration-500 hover:scale-105">
           <Image
             height={500}
@@ -176,8 +183,10 @@ const Galeria = () => {
             alt='img-gallery'
           />
         </div>
-        </RevealWrapper>
-      </div>
+        </RevealWrapper> : ''}
+        
+        </div>
+      
     </div>
     
   );

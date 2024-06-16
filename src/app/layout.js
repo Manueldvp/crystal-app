@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
         {children}  
         
         <CookiesModal/>
-        <footer >
+        <footer id='contacto'>
           <FooterWithSocialLinks/>
         </footer>
         

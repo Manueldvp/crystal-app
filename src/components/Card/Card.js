@@ -2,7 +2,6 @@
 import useIsDesktop from "@/hooks/useIsDesktop";
 import Image from "next/image";
 import Link from "next/link";
-import { lazy } from "react";
 
 const Card = ({ course }) => {
   const { attributes } = course;
@@ -14,14 +13,14 @@ const Card = ({ course }) => {
     <div className={`${isDesktop ? '' : 'p-4'}`}>
       <div
         className={`${
-          isDesktop ? "max-w-sm" : "max-w-5xl"
+          isDesktop ? "max-w-md" : ""
         } shadow-lg  bg-white border border-gray-200 rounded-lg h-full`}
       >
-        <Link href="/eventos">
+        <Link className="flex items-center justify-center" href="/eventos">
           <Image
             className="rounded-t-lg h-64 object-cover"
             height={1000}
-            width={800}
+            width={1200}
             src={imgUrl}
             alt="img"
             loading="lazy"

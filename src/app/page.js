@@ -8,6 +8,7 @@ import CarrouselSection from "@/components/Carrousel/CarrouselSection";
 import Link from "next/link";
 import BlogComponent from "@/components/Blog/BlogComponent";
 import TestimonialCard from '@/components/TestimonialCard/TestimonialCard';
+import Faq from '@/components/FAQ/Faq';
 
 
 
@@ -20,7 +21,7 @@ export default function Home() {
       
       <Hub />
       <ServicesCard />
-      <Link className="lg:w-2/3 sm:w-full p-4" href='/eventos'>
+      <Link id='programas'  className="xl:w-2/3 lg:w-full sm:w-full p-4" href='/programas'>
         <div className=" mb-10 p-4 text-center hover:cursor-pointer hover:bg-gray-100 bg-white   rounded-lg shadow-lg sm:p-8 ">
           <h4 className="mb-5 text-3xl  font-bold text-gray-900 ">
             PUEDES FORMARTE CONMIGO
@@ -36,14 +37,14 @@ export default function Home() {
         </div>
       </Link>
       
-      <CoreRestoreCard /> 
+      <CoreRestoreCard/> 
       <AccordionComponent />
       <Galeria />
      
-      <div className="lg:w-2/3 sm:w-full  flex justify-center  mt-10">
+      <div className="xl:w-2/3 lg:w-full sm:w-full  flex justify-center  mt-10">
         <BlogComponent/>   
       </div>
-      <section className="p-4 lg:w-2/3 sm:w-full mt-10">
+      <section className="p-4 xl:w-2/3 lg:w-full sm:w-full mt-10">
       <div className=" p-4 text-center bg-white border border-gray-200 rounded-lg shadow-lg ">
         <h5 className="mb-2 text-3xl font-bold text-gray-800 ">
           Qué dicen de nosotros
@@ -57,9 +58,9 @@ export default function Home() {
       </div>
       </section>
       
-      <TestimonialCard/>
+      {/* <TestimonialCard/> */}
       <CarrouselSection/>
-      
+      <Faq/>
     </main>
   );
 }

@@ -2,6 +2,7 @@
 import { Typography } from "@material-tailwind/react";
 import Image from "next/image";
 import useIsDesktop from "@/hooks/useIsDesktop";
+import { MapPinIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import Logo from "../Logo/Logo";
 import Link from "next/link";
  
@@ -24,7 +25,9 @@ const LINKS = [
   },
   {
     title: "Recursos",
-    items: [{name:"Blog", url:"/blogs"}, ],
+    items: [{name:"Blog", url:"/blogs"},
+            {name:"Contacto", url:"/contacto"},
+            {name:"Sobre mi", url:"/about"} ],
   },
 ];
  
@@ -64,6 +67,32 @@ export function FooterWithSocialLinks() {
               </ul>
             ))}
           </div>
+          
+        </div>
+        <div className="mt-10 mb-[-30px]">
+        {isDesktop ? <Link href='https://maps.app.goo.gl/5317ZztLRFisfYZ76' className="flex w-full font-light text-sm items-center justify-between ">
+        
+        <div className="flex ml-6 items-center">
+        <h2 className="flex gap-2 hover:text-purple-secondary-700"><MapPinIcon className="h-4 w-4 text-purple-secondary-700"/> Torres Médicas Angelópolis, periférico Ecológico #3507 Tlax, 72820. San Andrés Cholula. Puebla, México.</h2>
+        </div>
+        <div>
+        <h3 className="flex mr-12 gap-2 items-center hover:text-purple-secondary-700" > 
+         <PhoneIcon className="w-4 h-4 text-purple-secondary-700"/>
+         Teléfono: +52 1 222 359 0967</h3> 
+        
+        </div>
+       </Link> : <Link href='https://maps.app.goo.gl/5317ZztLRFisfYZ76' className="flex w-full font-lightm mt-1 text-xs items-center justify-between ">
+        
+        <div className="flex  relative items-center">
+        <h2 className="flex gap-2 hover:text-purple-secondary-700"><MapPinIcon className="h-4 w-4 text-purple-secondary-700"/>Puebla, México.</h2>
+        </div>
+        <div>
+        <h3 className="flex mr-3 gap-2 items-center hover:text-purple-secondary-700" > 
+         <PhoneIcon className="w-4 h-4  text-purple-secondary-700"/>
+        +52 1 222 359 0967</h3> 
+        
+        </div>
+       </Link> }
         </div>
         <div className="mt-12 flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
           <Typography
@@ -108,7 +137,9 @@ export function FooterWithSocialLinks() {
             
             
           </div>
+          
         </div>
+        
       </div>
     </footer>
   );

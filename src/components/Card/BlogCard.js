@@ -20,7 +20,7 @@ import {
    
 
     return (
-      <Card className="w-full mb-4 max-w-[48rem] flex-row">
+      <Card className="w-full mb-4 flex-row">
         <CardHeader
           shadow={false}
           floated={false}
