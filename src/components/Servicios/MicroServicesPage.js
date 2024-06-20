@@ -85,7 +85,7 @@ const MicroServicesPage = ({ services }) => {
           </nav>
           <div className="relative rounded-md">
             <Image
-              src='/25.jpg'
+              src={imgUrl}
               priority
               height={1000}
               width={1000}
@@ -106,7 +106,7 @@ const MicroServicesPage = ({ services }) => {
                   {services.attributes.title}
                 </h1>
                 <p className="text-lg leading-6 text-white xl:w-5/12 lg:w-8/12 md:w-10/12 text-justify  2xl:pr-12 mt-4">
-                  {services.attributes.ServicePageText}
+                  {services.attributes.Cardtext}
                 </p>
               </div>
               <div className="md:mt-12 mt-20">

@@ -28,7 +28,7 @@ export default function BlogPage() {
             </div>
             <div className="w-full shadow-lg flex justify-center md:justify-end">
             <video className={`h-full w-full object-cover ${isDesktop ? 'rounded-r-lg' : ' rounded-lg'} shadow-lg`}  autoPlay muted loop>
-              <source src='/BlogVideo.mp4' type="video/mp4" />
+              <source src='/Cristal.mp4' type="video/mp4" />
             </video>
             </div>
             

@@ -26,7 +26,7 @@ const Contacto = () => {
                 <div className="w-full flex flex-col xl:items-start lg:items-center  xl:justify-start lg:justify-center md:justify-center  relative z-20 xl:px-0 px-4 xl:py-0 py-4">
                   <div className="w-full 2xl:pl-48 xl:pt-1">
                     <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-wider text-gray-800">
-                      PUEDES LOCALIZAR
+                      PUEDES LOCALIZARME
                     </h1>
                     <div className="w-full md:w-10/12 mt-3">
                       <h2 className="text-gray-800 text-base md:text-lg leading-8 tracking-wider">

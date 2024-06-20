@@ -3,11 +3,11 @@ import Link from "next/link";
 const ServiciosLanding = ({ service }) => {
   return (
     <div className="md:mx-auto md:container px-4">
-      <div className="pt-10 md:pt-40">
+      <div className="pt-5 md:pt-20">
         <div className="container mx-auto">
           <div className="flex flex-wrap items-center pb-12">
             <div className="md:w-1/2 lg:w-2/3 w-full xl:pr-20 md:pr-6">
-              <div className="py-2 text-color">
+              <div className="text-color">
                 <Link href={`/servicios/${service.attributes.slug}`}>
                   <h1 className="  text-purple-secondary-500 hover:text-purple-secondary-700  text-base lg:text-4xl md:leading-snug   font-black">
                     {service.attributes.title}
