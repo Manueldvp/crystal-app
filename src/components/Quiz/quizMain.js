@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import useIsDesktop from "@/hooks/useIsDesktop";
 
 const preguntasRespuestas = [
     { numero: 1, pregunta: "¿Sientes pesadez o presión en la zona pélvica?", respuesta: "", diagnostico: "" },
@@ -14,6 +15,7 @@ const preguntasRespuestas = [
   ];
   
   const Quiz = () => {
+    const isDesktop = useIsDesktop()
     const [preguntaActual, setPreguntaActual] = useState(0);
     const [respuestasUsuario, setRespuestasUsuario] = useState({});
     const [diagnostico, setDiagnostico] = useState(null);
@@ -52,10 +54,10 @@ const preguntasRespuestas = [
       <div>
         {preguntaActual < preguntasRespuestas.length ? (
           <div className="" key={preguntasRespuestas[preguntaActual].numero}>
-            <p className="text-xl md:text-2xl lg:text-4xl xl:text-4xl lg:w-10/12 text-white font-black leading-6 lg:leading-10 md:text-left text-center">{preguntasRespuestas[preguntaActual].pregunta}</p>
-            <div className="flex gap-6">
-                <button className="lg:mt-8 py-3 lg:py-2 lg:px-10 bg-white font-bold text-fuchsia-pink-500 rounded-lg text-sm lg:text-lg xl:text-xl hover:bg-opacity-90  focus:ring-2 focus:ring-offset-2 focus:ring-white focus:outline-none" onClick={() => manejarRespuesta(preguntasRespuestas[preguntaActual].numero, 'Sí')}>Sí</button>
-                <button className="lg:mt-8 py-3 lg:py-2 lg:px-10 bg-white font-bold text-pink-secondary-700 rounded-lg text-sm lg:text-lg xl:text-xl hover:bg-opacity-90  focus:ring-2 focus:ring-offset-2 focus:ring-white focus:outline-none" onClick={() => manejarRespuesta(preguntasRespuestas[preguntaActual].numero, 'No')}>No</button>
+            <p className="text-xl mb-10 md:text-2xl lg:text-4xl xl:text-4xl lg:w-10/12 text-white font-black leading-6 lg:leading-10 md:text-left text-center">{preguntasRespuestas[preguntaActual].pregunta}</p>
+            <div className={`flex gap-6 ${isDesktop ? " items-start  justify-start" : "items-center justify-center"} `}>
+                <button className="lg:mt-8 py-3 lg:py-2 px-10 lg:px-10 bg-white font-bold text-fuchsia-pink-500 rounded-lg text-sm lg:text-lg xl:text-xl hover:bg-opacity-90  focus:ring-2 focus:ring-offset-2 focus:ring-white focus:outline-none" onClick={() => manejarRespuesta(preguntasRespuestas[preguntaActual].numero, 'Sí')}>Sí</button>
+                <button className="lg:mt-8 py-3 lg:py-2 px-10 lg:px-10 bg-white font-bold text-pink-secondary-700 rounded-lg text-sm lg:text-lg xl:text-xl hover:bg-opacity-90  focus:ring-2 focus:ring-offset-2 focus:ring-white focus:outline-none" onClick={() => manejarRespuesta(preguntasRespuestas[preguntaActual].numero, 'No')}>No</button>
             </div>
           </div>
         ) : (
