@@ -28,18 +28,11 @@ const GaleriaPage = () => {
           <RevealWrapper role="contentinfo" className="w-full lg:w-1/2 h-full">
             <div>
               <p tabIndex="0" className="text-gray-800 uppercase text-2xl mb-4">
-                ¡Bienvenidos a nuestra galería!
+              ¡Bienvenido a mi mundo!
               </p>
-              <h1 className="text-gray-800 text-4xl lg:text-6xl font-black mb-8">
-                Salud y Bienestar
-              </h1>
+              
               <p className="text-gray-800 font-regular mb-8">
-                Son nuestra máxima prioridad. Cada imagen representa nuestro
-                compromiso con la excelencia en el cuidado de nuestros
-                pacientes. Desde nuestras modernas instalaciones hasta los
-                momentos de triunfo en el camino de la recuperación de nuestros
-                pacientes, esperamos que estas imágenes te inspiren confianza en
-                nuestra dedicación a tu bienestar. ¡Disfruta del recorrido!
+              La salud y el bienestar son más que un trabajo para mí, son mi pasión. A través de estas imágenes, quiero compartir contigo la alegría, la esperanza y la emoción que experimentamos cada día en nuestra clínica. Desde los momentos más desafiantes hasta los triunfos más grandes, cada foto refleja nuestro compromiso contigo. ¡Espero que te sientas inspirado y conectado!"
               </p>
               <Link href="/about">
                 <div className="bg-white w-full lg:mt-16 hover:shadow-xl  py-4 px-2  sm:flex-row   shadow-lg rounded-lg">
@@ -91,7 +84,7 @@ const GaleriaPage = () => {
           muted
         >
           <source
-            src="https://docs.material-tailwind.com/demo.mp4"
+            src="Cristal.mp4"
             type="video/mp4"
           />
         </video>

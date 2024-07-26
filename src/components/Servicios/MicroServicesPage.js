@@ -87,8 +87,8 @@ const MicroServicesPage = ({ services }) => {
             <Image
               src={imgUrl}
               priority
-              height={1000}
-              width={1000}
+              height={2000}
+              width={2000}
               alt="hero img"
               className="w-full h-full rounded-md  object-center object-fill absolute sm:block hidden"
             />

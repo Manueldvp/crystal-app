@@ -18,7 +18,7 @@ const Eventos = () => {
             <div className="lg:max-w-[1440px]  relative inset-0 md:max-w-[744px] max-w-[375px] mx-auto bg-white lg:px-20 md:px-6 px-4 md:py-12 py-9">
               <div className="relative rounded-lg">
                 <img
-                  src="/CoursesBanner.jpg"
+                  src="/bannercourse.png"
                   className="w-full rounded-lg object-cover lg:h-[330px] lg:block md:hidden "
                 />
                 <div className="w-full rounded-lg h-full bg-black opacity-50 absolute top-0 left-0" />

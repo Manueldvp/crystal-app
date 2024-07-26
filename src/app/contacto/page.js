@@ -10,22 +10,22 @@ const Contacto = () => {
       <RevealWrapper>
         <div
           className={`${
-            isDesktop ? "flex" : "flex-row "
-          } py-4 lg:py-8  relative`}
+            isDesktop ? "flex" : "flex-row"
+          } py-4 lg:py-8 justify-around relative`}
         >
           <Image
             src="/map.png"
             height={1200}
             width={1000}
-            className="h-2/5 lg:h-full w-full lg:w-1/2 absolute inset-0 opacity-35 object-cover object-center xl:block hidden"
+            className="h-2/5 lg:h-full w-full lg:w-1/2 absolute inset-0 opacity-35 object-cover object-center "
             alt="map"
           />
-          <div className=" xl:container flex  relative ">
+          <div className=" flex  relative ">
             <div className="flex flex-wrap  ">
               <div className="w-full relative lg:w-1/2 xl:mt-10 mb-10  2xl:pl-0 xl:pl-12 pl-0 ">
                 <div className="w-full flex flex-col xl:items-start lg:items-center  xl:justify-start lg:justify-center md:justify-center  relative z-20 xl:px-0 px-4 xl:py-0 py-4">
                   <div className="w-full 2xl:pl-48 xl:pt-1">
-                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-wider text-gray-800">
+                    <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-wider text-gray-800">
                       PUEDES LOCALIZARME
                     </h1>
                     <div className="w-full md:w-10/12 mt-3">
@@ -62,9 +62,9 @@ const Contacto = () => {
               </div>
             </div>
           </div>
-          <div className="flex md:flex-row flex-col-reverse  items-center justify-center">
+          <div className="flex md:flex-row flex-col-reverse ">
             <div className="md:py-10  flex flex-col  items-center justify-center ">
-              <div className="flex flex-col items-center justify-center">
+              <div className="flex pt-20 flex-col items-center justify-center">
                 <h2 className="md:text-5xl text-3xl font-bold text-center text-gray-800 dark:text-white">
                   MEJORA TU SALUD
                 </h2>

@@ -11,7 +11,7 @@ function QuizLayout() {
                             <div className="flex flex-wrap items-center md:flex-row flex-col-reverse">
                                 <div className="md:w-2/3 w-full pb-6 md:pb-0 md:pr-6 flex-col md:block flex items-center justify-center md:pt-0 pt-4">
                                     <div>
-                                        <h1 role="heading" className="text-md md:text-md lg:text-md xl:text-md lg:w-full text-white font-black leading-6 mb-10 md:text-left text-center">¡Realiza un diagnóstico breve con este cuestionario!</h1>
+                                        <h1 role="heading" className="text-xl md:text-xl lg:text-4xl xl:text-5xl lg:w-full text-white font-black leading-6 mb-10 md:text-left text-center">¡Realiza un diagnóstico breve con este cuestionario!</h1>
                                     </div>
                     
                                     <Quiz/>

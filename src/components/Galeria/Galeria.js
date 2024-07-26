@@ -31,7 +31,7 @@ const Galeria = () => {
       <RevealWrapper >
         <div className="transform transition duration-500 rounded-lg hover:scale-105">
           <Image
-            className={`${isDesktop ? 'h-64' : 'h-80'}  w-full rounded-lg object-cover object-center`}
+            className={`${isDesktop ? 'h-72' : 'h-96'}  w-full rounded-lg object-cover object-center`}
             height={500}
             width={500}
             src={urls.length > 0 ? urls[0] : '/NoFound.jpg'}
@@ -43,9 +43,9 @@ const Galeria = () => {
         <RevealWrapper >
         <div className="transform transition duration-500 hover:scale-105">
           <Image
-            height={500}
-            width={500}
-            className={`${isDesktop ? 'h-90' : 'h-80'} w-full rounded-lg object-cover object-center `}
+            height={1000}
+            width={1000}
+            className={`${isDesktop ? ' h-90' : 'h-96'} w-full rounded-lg object-cover object-center `}
             src={urls.length > 0 ? urls[1] : '/NoFound.jpg'}
             loading="lazy"
             alt='img-gallery'
@@ -57,8 +57,8 @@ const Galeria = () => {
           <Image
             height={500}
             width={500}
-            className={`${isDesktop ? ' h-64' : 'h-80'} w-full rounded-lg object-cover object-center`}
-            src={urls.length > 0 ? urls[2] : '/NoFound.jpg'}
+            className={`${isDesktop ? ' h-72' : 'h-96'} w-full rounded-lg object-cover object-center`}
+            src={urls.length > 0 ? urls[6] : '/NoFound.jpg'}
             loading="lazy"
             alt='img-gallery'
           />
@@ -71,8 +71,8 @@ const Galeria = () => {
           <Image
             height={500}
             width={500}
-            className={`${isDesktop ? 'h-80' : 'h-90'} w-full rounded-lg object-cover object-center`}
-            src={urls.length > 0 ? urls[2] : '/NoFound.jpg'}
+            className={`${isDesktop ? 'h-80' : 'h-96'} w-full rounded-lg object-cover object-center`}
+            src={urls.length > 0 ? urls[7] : '/NoFound.jpg'}
             loading="lazy"
             alt='img-gallery'
           />
@@ -83,7 +83,7 @@ const Galeria = () => {
           <Image
             height={500}
             width={500}
-            className={`${isDesktop ? ' h-96' : 'h-80'} max-w-full rounded-lg object-cover object-center`}
+            className={`${isDesktop ? ' h-96' : 'h-96'} max-w-full rounded-lg object-cover object-center`}
             src={urls.length > 0 ? urls[4] : '/NoFound.jpg'}
             loading="lazy"
             alt='img-gallery'
@@ -110,8 +110,8 @@ const Galeria = () => {
           <Image
             height={500}
             width={500}
-            className={`${isDesktop ? ' h-80' : 'h-80'} w-full rounded-lg object-cover object-center`}
-            src={urls.length > 0 ? urls[6] : '/NoFound.jpg'}
+            className={`${isDesktop ? ' h-80' : 'h-96'} w-full rounded-lg object-cover object-center`}
+            src={urls.length > 0 ? urls[2] : '/NoFound.jpg'}
             loading="lazy"
             alt='img-gallery'
           />
@@ -123,8 +123,8 @@ const Galeria = () => {
           <Image
             height={500}
             width={500}
-            className={`${isDesktop ? ' h-96 ' : 'h-80'} max-w-full rounded-lg object-cover object-center`}
-            src={urls.length > 0 ? urls[7] : '/NoFound.jpg'}
+            className={`${isDesktop ? ' h-96 ' : 'h-96'} max-w-full rounded-lg object-cover object-center`}
+            src={urls.length > 0 ? urls[3] : '/NoFound.jpg'}
             loading="lazy"
             alt='img-gallery'
           />
@@ -136,7 +136,7 @@ const Galeria = () => {
           <Image
             height={500}
             width={500}
-            className={`${isDesktop ? ' h-80' : 'h-80'} max-w-full rounded-lg object-cover object-center`}
+            className={`${isDesktop ? ' h-80' : 'h-96'} max-w-full rounded-lg object-cover object-center`}
             src={urls.length > 0 ? urls[8] : '/NoFound.jpg'}
             loading="lazy"
             alt='img-gallery'
@@ -151,7 +151,7 @@ const Galeria = () => {
           <Image
             height={500}
             width={500}
-            className={`${isDesktop ? ' h-64' : 'h-80'} max-w-full rounded-lg object-cover object-center`}
+            className={`${isDesktop ? ' h-72' : 'h-96'} max-w-full rounded-lg object-cover object-center`}
             src={urls.length > 0 ? urls[9] : '/NoFound.jpg'}
             loading="lazy"
             alt='img-gallery'
@@ -164,8 +164,8 @@ const Galeria = () => {
           <Image
             height={500}
             width={500}
-            className={`${isDesktop ? ' h-90' : 'h-80'} max-w-full rounded-lg object-cover object-center`}
-            src={urls.length > 0 ? urls[1] : '/NoFound.jpg'}
+            className={`${isDesktop ? ' h-90' : 'h-96'} max-w-full rounded-lg object-cover object-center`}
+            src={urls.length > 0 ? urls[11] : '/NoFound.jpg'}
             loading="lazy"
             alt='img-gallery'
           />
@@ -177,8 +177,8 @@ const Galeria = () => {
           <Image
             height={500}
             width={500}
-            className={`${isDesktop ? ' h-64' : 'h-80'} max-w-full rounded-lg object-cover object-center`}
-            src={urls.length > 0 ? urls[5] : '/NoFound.jpg'}
+            className={`${isDesktop ? ' h-64' : 'h-96'} max-w-full rounded-lg object-cover object-center`}
+            src={urls.length > 0 ? urls[10] : '/NoFound.jpg'}
             loading="lazy"
             alt='img-gallery'
           />
