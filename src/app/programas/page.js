@@ -17,7 +17,9 @@ const Eventos = () => {
           <div className=" px-3 ">
             <div className="lg:max-w-[1440px]  relative inset-0 md:max-w-[744px] max-w-[375px] mx-auto bg-white lg:px-20 md:px-6 px-4 md:py-12 py-9">
               <div className="relative rounded-lg">
-                <img
+                <Image
+                  width={1000}
+                  height={1000}
                   src="/bannercourse.png"
                   className="w-full rounded-lg object-cover lg:h-[330px] lg:block md:hidden "
                 />
@@ -150,7 +152,7 @@ const Eventos = () => {
         </RevealWrapper>
           
         <div className="mt-10">
-            <img className="w-full rounded-t-lg" src="/25.jpg" alt="computer" />
+            <Image width={1000} height={1000} className="w-full rounded-t-lg" src="/25.jpg" alt="computer" />
             <div className="py-4 px-8 w-full flex justify-between  bg-purple-secondary-600">
               <p className="text-sm text-white font-semibold tracking-wide">Cristal Sarabia</p>
                  <p className="text-sm text-white font-semibold tracking-wide">Core Restore</p>
