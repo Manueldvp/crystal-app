@@ -38,7 +38,7 @@ const Hub = () => {
       Ofrecemos atención experta para el embarazo, el postparto, el dolor pélvico por endometriosis, la menopausia y la salud sexual. ¿No estás segura de si la fisioterapia del piso pélvico es adecuada para ti? Tenemos un cuestionario para ayudarte a decidir.
     </p>
     <p className={`mb-8 text-lg font-normal ${isDesktop ? 'text-black/50 ' : ' text-white'} lg:text-xl sm:px-16 lg:px-48 animate-slideInFromRight`}>
-      "Impulsando tu salud pélvica: fuerza y bienestar en cada etapa desde tu centro"
+      Impulsando tu salud pélvica: fuerza y bienestar en cada etapa desde tu centro
     </p>
     <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
       <a

@@ -27,12 +27,11 @@ const GaleriaPage = () => {
           </div>
           <RevealWrapper role="contentinfo" className="w-full lg:w-1/2 h-full">
             <div>
-              <p tabIndex="0" className="text-gray-800 uppercase text-2xl mb-4">
+              <h1 tabIndex="0" className="text-gray-800 uppercase text-2xl mb-4">
               ¡Bienvenido a mi mundo!
-              </p>
-              
+              </h1>
               <p className="text-gray-800 font-regular mb-8">
-              La salud y el bienestar son más que un trabajo para mí, son mi pasión. A través de estas imágenes, quiero compartir contigo la alegría, la esperanza y la emoción que experimentamos cada día en nuestra clínica. Desde los momentos más desafiantes hasta los triunfos más grandes, cada foto refleja nuestro compromiso contigo. ¡Espero que te sientas inspirado y conectado!"
+              La salud y el bienestar son más que un trabajo para mí, son mi pasión. A través de estas imágenes, quiero compartir contigo la alegría, la esperanza y la emoción que experimentamos cada día en nuestra clínica. Desde los momentos más desafiantes hasta los triunfos más grandes, cada foto refleja nuestro compromiso contigo. ¡Espero que te sientas inspirado y conectado!
               </p>
               <Link href="/about">
                 <div className="bg-white w-full lg:mt-16 hover:shadow-xl  py-4 px-2  sm:flex-row   shadow-lg rounded-lg">
