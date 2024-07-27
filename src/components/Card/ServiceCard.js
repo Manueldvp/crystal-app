@@ -10,7 +10,7 @@ const ServiceCard = ({ service }) => {
     const isDesktop = useIsDesktop()
   return (
     
-    <div className='p-4 '>
+    <div className={`${isDesktop ? 'p-4' : 'pb-4'}`}>
         
         <div className={`${isDesktop ? 'max-w-sm' : 'max-w-5xl'} shadow-lg  bg-white border border-gray-200 rounded-lg h-full`}>
             

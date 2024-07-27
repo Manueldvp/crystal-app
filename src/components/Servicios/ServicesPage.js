@@ -15,7 +15,7 @@ const ServicesPage = ({ services }) => {
   return (
     <section className=" dark:text-gray-100">
       <RevealWrapper>
-        <div className="container max-w-xl p-6  mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
+        <div className="container max-w-xl p-2  mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
           <div className="2xl:mx-auto 2xl:container md:px-20 px-4 md:py-12 py-9">
             <nav className="flex mb-5" aria-label="Breadcrumb">
               <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
@@ -96,7 +96,7 @@ const ServicesPage = ({ services }) => {
                 height={1000}
                 width={1000}
                 alt="hero img"
-                className="w-full h-full rounded-md  object-center object-fill absolute sm:block hidden"
+                className="w-full h-full rounded-md  object-center object-fill absolute "
               />
               <Image
                 src={imgUrl}
@@ -104,9 +104,9 @@ const ServicesPage = ({ services }) => {
                 height={1000}
                 width={1000}
                 alt="hero img"
-                className="w-full h-full rounded-md absolute object-center object-fill sm:hidden"
+                className="w-full h-full rounded-md absolute object-center object-fill "
               />
-              <div className="text-xl shadow-lg relative bg-gradient-to-r from-purple-secondary-600 to-transparent w-full h-full z-40 top-0 md:p-16 p-6 flex flex-col justify-between rounded-md ">
+              <div className=" shadow-lg relative bg-gradient-to-r from-purple-secondary-600 to-transparent w-full h-full z-40 top-0 md:p-16 p-6 flex flex-col justify-between rounded-md ">
                 <div>
                   <h1 className="md:text-5xl text-3xl font-bold md:leading-10 leading-9 text-white sm:w-auto w-64">
                     {services.attributes.title}
@@ -152,7 +152,7 @@ const ServicesPage = ({ services }) => {
                 </div>
               </div>
             </div>
-            <div className="py-12 xl:w-1/2 lg:w-1/3 sm:w-1/2">
+            <div className="xl:w-1/2 lg:w-1/3 sm:w-1/2">
               <Image
                 src={services.attributes.ServicePageImg.data.attributes.url}
                 height={1000}
@@ -165,7 +165,7 @@ const ServicesPage = ({ services }) => {
 
           {services.attributes.micro_services.data &&
           services.attributes.micro_services.data.length > 0 ? (
-            <div className="flex-row mt-10 ">
+            <div className="flex-row mt-2 ">
               <CollapseDefault
                 services={services}
                 microServiceData={microServiceData}
