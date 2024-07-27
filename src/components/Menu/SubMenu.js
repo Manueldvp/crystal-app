@@ -43,9 +43,9 @@ function SubMenu({ subRoutes, handleIsOpen, isDesktop, showSubRoutes, label, han
                 <div  onClick={handleIsOpen}>
                 {label}
                 </div>
-                <span className={`${isDesktop ? 'ml-2' : 'ml-4'} `} onClick={(e) => handleMiniIconClick(e, label)} >{icon}</span>
+                <span className={`${isDesktop ? 'ml-2' : 'ml-4'} `} onClick={(e) => handleMiniIconClick(e, label)} ></span>
               </Link>
-              {showMiniRoutes(label) && <MiniMenu 
+              {/* {showMiniRoutes(label) && <MiniMenu 
                 miniRoutes={miniRoutes} 
                 isDesktop={isDesktop} 
                 showMiniRoutes={showMiniRoutes} 
@@ -55,7 +55,7 @@ function SubMenu({ subRoutes, handleIsOpen, isDesktop, showSubRoutes, label, han
                 clickedMiniLabel={clickedMiniLabel} 
                 handleMouseEnter={handleMiniMouseEnter} 
                 handleMouseLeave={handleMiniMouseLeave} 
-              />}
+              />} */}
                </li>
             
               ))}

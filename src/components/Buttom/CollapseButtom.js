@@ -12,13 +12,15 @@ export default function CollapseDefault({ microServiceData, services }) {
 
   return (
     <>
-    <div className="flex justify-center">
+    <div className="flex flex-col items-center justify-center">
+    <p className="text-gray-700 mt-10 text-center font-medium">Ver más</p>
     <ChevronDoubleDownIcon
       className="text-purple-secondary-600 w-20 h-20 hover:cursor-pointer flex items-center justify-center p-4 hover:shadow-lg  rounded-lg"
       width={100}
       height={100}
       onClick={toggleOpen}
     ></ChevronDoubleDownIcon>
+    
     </div>
       <Collapse open={open}>
         <Card className="my-4 ">

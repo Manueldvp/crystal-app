@@ -31,13 +31,13 @@ const Hub = () => {
     </div> : '' }
   
   <div className="w-2/3 text-center py-12 lg:py-52">
-    <h1 className={`mb-8 text-4xl font-extrabold tracking-tight leading-none ${isDesktop ? 'text-fuchsia-pink-400' : 'text-white'} md:text-5xl lg:text-5xl animate-slideInFromRight`}>
+    <h1 className={`mb-4 text-4xl font-extrabold tracking-tight leading-none ${isDesktop ? 'text-fuchsia-pink-400' : 'text-white'} md:text-5xl lg:text-5xl animate-slideInFromRight`}>
       Fisioterapia especializada para el piso pélvico en cada etapa de tu vida
     </h1>
-    <p className={`mb-8 text-md font-semibold ${isDesktop ? 'text-black/50 ' : ' text-white'} lg:text-xl sm:px-16 lg:px-48 animate-slideInFromRight`}>
+    <p className={`mb-4 text-md font-semibold ${isDesktop ? 'text-black/50 ' : ' text-white'} lg:text-lg sm:px-16 lg:px-32 animate-slideInFromRight`}>
       Ofrecemos atención experta para el embarazo, el postparto, el dolor pélvico por endometriosis, la menopausia y la salud sexual. ¿No estás segura de si la fisioterapia del piso pélvico es adecuada para ti? Tenemos un cuestionario para ayudarte a decidir.
     </p>
-    <p className={`mb-8 text-lg font-normal ${isDesktop ? 'text-black/50 ' : ' text-white'} lg:text-xl sm:px-16 lg:px-48 animate-slideInFromRight`}>
+    <p className={`mb-4 text-lg font-normal ${isDesktop ? 'text-black/50 ' : ' text-white'} lg:text-xl sm:px-16 lg:px-48 animate-slideInFromRight`}>
       Impulsando tu salud pélvica: fuerza y bienestar en cada etapa desde tu centro
     </p>
     <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">

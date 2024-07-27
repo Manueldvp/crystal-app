@@ -14,7 +14,7 @@ const About = () => {
       
       <section className="2xl:container justify-center 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
         <RevealWrapper>
-        <div className="bg-center mb-20 rounded-xl  bg-no-repeat bg-[url('/32.png')] bg-gray-500 bg-blend-multiply">
+        <div className="bg-center mb-20 rounded-xl  bg-no-repeat bg-[url('/43.png')] bg-gray-500 bg-blend-multiply">
         <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
           <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
             ¿Quién es Cristal Sarabia?
