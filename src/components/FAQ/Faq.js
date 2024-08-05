@@ -309,7 +309,9 @@ const Faq = () => {
         </div>
       </div>
       {!searchTerm && (
-        <Faqs open={open} open2={open2} open3={open3} open4={open4} open5={open5}/>
+        <Faqs open={open} setOpen={setOpen}
+        setOpen2={setOpen2} setOpen3={setOpen3} setOpen4={setOpen4} setOpen5={setOpen5}
+        open2={open2} open3={open3} open4={open4} open5={open5}/>
       )}
       
     </div>

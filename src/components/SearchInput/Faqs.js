@@ -1,4 +1,4 @@
-export default function Faqs({open, open1, open2, open3, open4, open5}) {
+export default function Faqs({open, setOpen, setOpen2, setOpen3, setOpen4, setOpen5, open1, open2, open3, open4, open5}) {
     return (
         <div className="lg:w-8/12 w-full mx-auto">
         <hr className=" w-full lg:mt-10 md:mt-12 md:mb-8 my-8" />

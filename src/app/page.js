@@ -61,9 +61,10 @@ export default function Home() {
         </p>
         </Link>
       </div>
-      </section>
       
-      {/* <TestimonialCard/> */}
+      </section>
+      <TestimonialCard/>
+      
       <CarrouselSection/>
       <Faq/>
     </main>
