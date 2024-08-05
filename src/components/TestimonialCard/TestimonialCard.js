@@ -8,8 +8,8 @@ function Reviews() {
 
   useEffect(() => {
     const fetchReviews = async () => {
-      const proxyUrl = 'http://localhost:3000/'
-      const url = `${proxyUrl}https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJ4dhTKFS5z4UR3fEa8TxPeGw&fields=reviews&key=AIzaSyC3MM52_oMQ3_k4TeCSWq27vHNjvo9ucVY`
+      // const proxyUrl = 'http://localhost:3000/'
+      const url = `https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJ4dhTKFS5z4UR3fEa8TxPeGw&fields=reviews&key=AIzaSyC3MM52_oMQ3_k4TeCSWq27vHNjvo9ucVY`
       try {
         const response = await fetch(url);
         const data = await response.json();
@@ -27,7 +27,7 @@ function Reviews() {
       <ul className='grid grid-cols-3  gap-4 w-2/3 mt-10'>
         {reviews.map((review) => (
           
-          <li key={review.place_id} className=''>
+          <li key={review.author_name} className=''>
             
               <div>
                 <Link href={review.author_url} target='blank' >
