@@ -44,9 +44,9 @@ function Navbar() {
          
             <Link href='/core-restore'
               type="button"
-              className={`text-white  bg-aquamarine-blue-300 hover:bg-fuchsia-pink-400   font-medium rounded-full text-sm  ${isDesktop ? 'mr-4 px-4' : 'px-4'} py-2 text-center`}
+              className={`text-white items-center bg-aquamarine-blue-300 hover:bg-fuchsia-pink-400   font-medium rounded-full text-sm  ${isDesktop ? 'mr-4 px-4' : 'px-4'} py-2 text-center`}
             >
-              Core Restore
+              HIPO POWER
             </Link>
             <button
               data-collapse-toggle="navbar-cta"

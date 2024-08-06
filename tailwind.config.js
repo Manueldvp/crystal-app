@@ -8,6 +8,9 @@ module.exports = withMT({
   ],
   theme: {
     extend: {
+      height: {
+        '90vh': '90vh',
+      },
       transitionProperty: {
         'opacity': 'opacity',
       },

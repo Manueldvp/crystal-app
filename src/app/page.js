@@ -30,12 +30,7 @@ export default function Home() {
             PUEDES FORMARTE CONMIGO
           </h4>
           <h4 className="mb-5 text-base text-gray-500 sm:text-lg ">
-           Conforme a la mesa directiva de La Sociedad Mexicana 
-           de Fisioterapia en Piso Pélvico <strong>SOMEFIPP</strong>, 
-           brinda desarrollo profesional en este campo, 
-           su misión es promover la salud pélvica a través 
-           de la investigación, la educación y la práctica 
-           de la fisioterapia.
+          Consulta nuestros próximos talleres y eventos. Para más información sobre nuestros talleres públicos o profesionales, o para organizar un evento, contáctanos al correo <strong>info@cristalsarabia.com</strong>
           </h4>
         </div>
       </Link>

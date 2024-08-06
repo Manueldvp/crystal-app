@@ -64,15 +64,11 @@ export function AccordionComponent() {
             open === 3 ? "text-purple-secondary-500 hover:!text-purple-secondary-700" : ""
           }`}
         >
-          ¿Qué es la acupuntura?
+          Fisioterapia invasiva en piso pélvico
         </AccordionHeader>
         <AccordionBody className="pt-0 text-base font-normal">
-          La acupuntura es una técnica que implica la inserción de 
-          agujas muy finas en puntos específicos del cuerpo. Según 
-          la medicina tradicional china, estos puntos se encuentran 
-          en meridianos por donde fluye la energía vital, o “qi”. La 
-          acupuntura busca equilibrar el flujo de “qi” para promover 
-          la salud y el bienestar.
+         Cristal Sarabia es experta en fisioterapia invasiva, piso pélvico y acupuntura. En sus tratamientos para el síndrome de dolor miofascial del piso pélvico, utiliza una visión integral con punción seca y neuromodulación, basados en conceptos neurofisiológicos y acupuntura, obteniendo resultados desde la primera sesión.
+
         </AccordionBody>
       </Accordion>
       </RevealWrapper>

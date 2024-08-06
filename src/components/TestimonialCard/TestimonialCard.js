@@ -1,32 +1,57 @@
 'use client'
 import { StarIcon } from '@heroicons/react/24/solid';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-function Reviews() {
-  const [reviews, setReviews] = useState([]);
 
-  useEffect(() => {
-    const fetchReviews = async () => {
-      // const proxyUrl = 'http://localhost:3000/'
-      const url = `https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJ4dhTKFS5z4UR3fEa8TxPeGw&fields=reviews&key=AIzaSyC3MM52_oMQ3_k4TeCSWq27vHNjvo9ucVY`
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        setReviews(data.result.reviews);
-        console.log(reviews);
-      } catch (error) {
-        console.error('Error fetching reviews:', error);
+function Reviews() {
+
+  const [reviews, setReviews] = useState([]);
+  const [error, setError] = useState([]);
+
+    useEffect(() => {
+        
+      async function fetchData() {
+        try {
+          const response = await fetch('/api/google');
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          const data = await response.json();
+          setReviews(data.result.reviews);
+        } catch (error) {
+          setError(error.message);
+        }
       }
-    };
-    fetchReviews();
-  }, []);
+
+      fetchData();
+    }, []);
+
+    console.log(reviews);
+  // const [reviews, setReviews] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchReviews = async () => {
+  //     // const proxyUrl = 'http://localhost:3000/'
+  //     const apiKey = process.env.GOOGLE_MAPS_API_KEY
+  //     const url = `https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJ4dhTKFS5z4UR3fEa8TxPeGw&fields=reviews&key=${apiKey}`
+  //     try {
+  //       const response = await fetch(url);
+  //       const data = await response.json();
+  //       setReviews(data.result.reviews);
+  //       console.log(reviews);
+  //     } catch (error) {
+  //       console.error('Error fetching reviews:', error);
+  //     }
+  //   };
+  //   fetchReviews();
+  // }, []);
 
   return (
     
       <ul className='grid grid-cols-3  gap-4 w-2/3 mt-10'>
         {reviews.map((review) => (
-          
+        
           <li key={review.author_name} className=''>
             
               <div>
