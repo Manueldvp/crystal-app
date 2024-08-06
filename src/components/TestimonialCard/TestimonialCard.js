@@ -27,7 +27,6 @@ function Reviews() {
       fetchData();
     }, []);
 
-    console.log(reviews);
   // const [reviews, setReviews] = useState([]);
 
   // useEffect(() => {
