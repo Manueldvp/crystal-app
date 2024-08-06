@@ -19,37 +19,40 @@ export default function Home() {
                 role="heading"
                 className="focus:outline-none md:w-60 font-bold md:text-6xl text-4xl leading-tight text-gray-800"
               >
-                Core<span className="font-normal italic"> Restore </span>
+                Hipo<span className="font-normal italic"> Power </span>
               </h1>
               <p
                 role="contentinfo"
                 className="focus:outline-none text-base leading-6 mt-8 text-gray-600 2xl:pr-24 xl:pr-0 pr-12"
               >
-                ¿Has practicado o escuchado sobre los hipopresivos? 
-                  Es una técnica que proporciona:
-                  Una tonificación de la musculatura abdominal, de la faja abdominal y te ayuda a fortalecer la musculatura del suelo pélvico.
+                Es un taller restaurativo con un montón de técnicas y adicional una clase en vivo online para repasar y  aprender diferentes posturas y respiraciones de HIPOPRESIVOS y Piso Pélvico. 
               </p>
               <h2
                 role="contentinfo"
-                className="focus:outline-none text-base leading-6 mt-8 text-gray-600 2xl:pr-24 xl:pr-0 pr-12"
+                className="flex flex-col gap-4 text-base  mt-8 text-gray-600 2xl:pr-24 xl:pr-0 pr-12"
               >
-               Beneficios:
+               <strong className="mb-5">Clases especializadas para aprender hacer Hipopresivos:</strong>
               <p>- Tonificar abdomen y piso pélvico</p>
               <p>- Disminuir perímetro de cintura</p>
               <p>- Mejorar tu postura y respiración</p>
               <p>- Disminuir dolor lumbar y ciática</p>
               <p>- Mejorar motilidad intestinal</p>
-              <p>- Mejorar la recuperación posparto segura y eficiente</p>
+              <p>- Mejorar la recuperación posparto segura</p>
               <p>- Mejorar rendimiento deportivo</p>
-              <p>- Puede ayudar al periodo menstrual</p>
+              
 
               </h2>
+              <h3 className="flex flex-col gap-4 text-base  mt-8 text-gray-600 2xl:pr-24 xl:pr-0 pr-12">
+              Es un curso enfocado para mujeres que deseen restaurar y potenciar su abdomen y piso pélvico guiado por mi, soy especializada en Fisioterapia pélvica y entrenamiento de Hipopresivos.
+              <p>Así que si estás lista para aprender y tener resultados, inscríbete.</p>
+              </h3>
               <div className="mt-10">
                 <Link
-                  href="/servicios"
+                  target="blank"
+                  href="https://api.whatsapp.com/send?phone=5212223590967&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta"
                   className="flex items-center md:p-3 p-1  text-xl font-medium leading-5 text-purple-secondary-500 hover:text-purple-secondary-600"
                 >
-                  Descubre más
+                  INSCRIBETE 
                   <svg
                     className="ml-8 text-purple-secondary-500 hover:animate-pulse"
                     width={45}
@@ -105,7 +108,7 @@ export default function Home() {
               </p>
               <div className="w-full rounded-lg">
                 <Image
-                  src="/15.jpg"
+                  src="/99.png"
                   height={500}
                   width={500}
                   alt="img"
@@ -116,7 +119,7 @@ export default function Home() {
                     role="contentinfo"
                     className="text-xl focus:outline-none italic font-italic leading-5 pl-2 text-gray-700"
                   >
-                   ¿En qué consiste Core restore?
+                   ¿En qué consiste Hipo Power?
                    Son clases de entrenamiento especializadas y personalizadas para las personas que quieren obtener ¡RESULTADOS REALES! puede ser online o presencial.
                   </p>
                 </div>

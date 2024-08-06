@@ -25,10 +25,10 @@ export function AccordionComponent() {
             open === 1 ? "text-purple-secondary-500 hover:!text-purple-secondary-700" : ""
           }`}
         >
-          ¿Qué es el Core Restore?
+          ¿Qué es HIPO POWER?
         </AccordionHeader>
         <AccordionBody className="pt-0 text-base font-normal">
-          El “Core Restore” es un enfoque de fisioterapia que se 
+          El “HIPO POWER” es un enfoque de fisioterapia que se 
           centra en fortalecer y restaurar la funcionalidad del núcleo 
           del cuerpo. El núcleo se refiere a los músculos del abdomen, 
           la espalda baja, las caderas, la pelvis y los glúteos. Estos

@@ -42,7 +42,7 @@ function Navbar() {
         <div className="flex justify-end">
           <div className="flex space-x-3 md:space-x-0 rtl:space-x-reverse">
          
-            <Link href='/core-restore'
+            <Link href='/hipo-power'
               type="button"
               className={`text-white items-center bg-aquamarine-blue-300 hover:bg-fuchsia-pink-400   font-medium rounded-full text-sm  ${isDesktop ? 'mr-4 px-4' : 'px-4'} py-2 text-center`}
             >

@@ -16,7 +16,7 @@ const Card = ({ course }) => {
           isDesktop ? "max-w-md" : ""
         } shadow-lg  bg-white border border-gray-200 rounded-lg h-full`}
       >
-        <Link className="flex items-center justify-center" href="/eventos">
+        <Link className="flex items-center justify-center" href="/programas">
           <Image
             className="rounded-t-lg h-64 object-cover"
             height={1000}
@@ -28,7 +28,7 @@ const Card = ({ course }) => {
         </Link>
         <div className="p-5">
           <Link
-            href="/eventos"
+            href="/programas"
             className="hover:underline hover:transition-all hover:duration-500"
           >
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">

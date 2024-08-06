@@ -9,46 +9,8 @@ const routes = [{
     icon: <ChevronDownIcon className="h-5"/>,
     subRoutes: [
         {
-            label: 'Fisioterapia Pélvica',
-            route: '/servicios/fisioterapia-pelvica'
-        },
-        {
-            label: 'Hipopresivos',
-            route: '/servicios/hipopresivos',
-            // icon: <ChevronDownIcon className="h-5"/>,
-            // miniRoutes: [
-            //     {
-            //         label: 'Online',
-            //         route: '/servicios/hipopresivos/online'
-            //     },
-            //     {
-            //         label: 'Presencial',
-            //         route: '/servicios/hipopresivos'
-            //     }
-            // ]
-        },
-        {
-            label: 'Abordaje de Postparto inmediato',
-            route: '/servicios/abordaje-de-postparto-inmediato'
-        },
-        {
-            label: 'Rehabilitación Abdominal',
-            route: '/servicios/rehabilitacion-abdominal'
-        },
-        
-        {
-            label: 'Acupuntura',
-            route: '/servicios/acupuntura'
-        },
-        {
-            label: 'Gravitación de la Diastasis Abdominal',
-            route: '/servicios/gravitacion-de-la-diastasis-abdominal'
-        },
-        
-        {
-            label: 'Abordaje en Disfunciones de Suelo Pélvico',
-            route: '/servicios/abordaje-en-disfunciones-de-suelo-pelvico',
-            icon: <ChevronDownIcon className="h-5"/>,
+            label: 'Disfunciones Pélvicas en el adulto',
+            route: '/servicios/disfunciones-pelvicas-en-el-adulto',
             miniRoutes: [
                 {
                     label: 'Incontinencia Urinaria',
@@ -71,6 +33,45 @@ const routes = [{
                     route: '/servicios/abordaje-en-disfunciones-de-suelo-pelvico/disfuncion-sexual'
                 }
             ]
+        },
+        {
+            label: 'Dolor pélvico por Endometriosis',
+            route: '/servicios/dolor-pelvico-por-endometriosis',
+            // icon: <ChevronDownIcon className="h-5"/>,
+            // miniRoutes: [
+            //     {
+            //         label: 'Online',
+            //         route: '/servicios/hipopresivos/online'
+            //     },
+            //     {
+            //         label: 'Presencial',
+            //         route: '/servicios/hipopresivos'
+            //     }
+            // ]
+        },
+        {
+            label: 'Embarazo y Preparación al parto',
+            route: '/servicios/embarazo-y-preparacion-al-parto'
+        },
+        {
+            label: 'Postparto',
+            route: '/servicios/postparto'
+        },
+        
+        {
+            label: 'Rehabilitación de diástasis Abdominal',
+            route: '/servicios/rehabilitacion-de-diastasis-abdominal'
+        },
+        {
+            label: 'Disfunción Sexual',
+            route: '/servicios/disfuncion-sexual'
+        },
+        
+        {
+            label: 'Disfunciones pélvicas en la infancia',
+            route: '/servicios/disfunciones-pelvicas-en-la-infancia',
+            icon: <ChevronDownIcon className="h-5"/>,
+            
         },
         
     ]
