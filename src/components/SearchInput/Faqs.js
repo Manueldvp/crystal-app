@@ -9,7 +9,7 @@ export default function Faqs({open, setOpen, setOpen2, setOpen3, setOpen4, setOp
             className="flex justify-between items-center w-full"
           >
             <div className=" ">
-              <p className="flex justify-center items-center font-medium text-base leading-6 md:leading-4 text-gray-800">
+              <p onClick={() => setOpen(!open)} className="flex cursor-pointer justify-center items-center font-medium text-base leading-6 md:leading-4 text-gray-800">
                 {" "}
                 <span className="  lg:mr-6 mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">
                   P1.
@@ -62,7 +62,7 @@ export default function Faqs({open, setOpen, setOpen2, setOpen3, setOpen4, setOp
             className="flex justify-between items-center w-full"
           >
             <div className="">
-              <p className="flex justify-center items-center font-medium text-base leading-6 lg:leading-4 text-gray-800">
+              <p onClick={() => setOpen2(!open2)} className="flex cursor-pointer justify-center items-center font-medium text-base leading-6 lg:leading-4 text-gray-800">
                 {" "}
                 <span className="  lg:mr-6 mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">
                   P2.
@@ -114,7 +114,7 @@ export default function Faqs({open, setOpen, setOpen2, setOpen3, setOpen4, setOp
             className="flex justify-between items-center w-full"
           >
             <div className="">
-              <p className="flex justify-center items-center font-medium text-base leading-6 lg:leading-4 text-gray-800">
+              <p onClick={() => setOpen3(!open3)} className="flex cursor-pointer justify-center items-center font-medium text-base leading-6 lg:leading-4 text-gray-800">
                 {" "}
                 <span className="  lg:mr-6 mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">
                   P3.
@@ -167,7 +167,7 @@ export default function Faqs({open, setOpen, setOpen2, setOpen3, setOpen4, setOp
             className="flex justify-between items-center w-full"
           >
             <div className="">
-              <p className="flex justify-center items-center font-medium text-base leading-6 lg:leading-4 text-gray-800">
+              <p onClick={() => setOpen4(!open4)} className="flex cursor-pointer justify-center items-center font-medium text-base leading-6 lg:leading-4 text-gray-800">
                 {" "}
                 <span className="  lg:mr-6 mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">
                   P4.
@@ -219,7 +219,7 @@ export default function Faqs({open, setOpen, setOpen2, setOpen3, setOpen4, setOp
             className="flex justify-between items-center w-full"
           >
             <div className="">
-              <p className="flex justify-center items-center font-medium text-base leading-6 lg:leading-4 text-gray-800">
+              <p onClick={() => setOpen5(!open5)} className="flex cursor-pointer justify-center items-center font-medium text-base leading-6 lg:leading-4 text-gray-800">
                 {" "}
                 <span className="  lg:mr-6 mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">
                   P5.
