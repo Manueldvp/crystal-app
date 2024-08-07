@@ -14,14 +14,13 @@ const About = () => {
       
       <section className="2xl:container justify-center 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
         <RevealWrapper>
-        <div className="bg-center mb-20 rounded-xl  bg-no-repeat bg-[url('/43.png')] bg-gray-500 bg-blend-multiply">
-        <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-          <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+        <div className="bg-right mb-20 bg-contain rounded-xl  bg-no-repeat bg-[url('/111.png')] bg-gray-400 ">
+        <div className="px-4 mx-auto max-w-screen-xl flex flex-col items-left py-24 lg:py-56">
+          <h1 className="mb-4 text-4xl font-extrabold tracking-tight  text-white md:text-5xl lg:text-6xl">
             ¿Quién es Cristal Sarabia?
           </h1>
-          <p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
-            Fisioterapeuta Pélvica Especializada en Uroginecologia & Sexualidad
-            Funcional.
+          <p className="text-lg text-pretty max-w-2xl text-center font-normal text-white lg:text-xl  ">
+            Especialista en piso pélvico, dolor pélvico por endometriosis, embarazo, postparto, climaterio, menstruación y sexualidad funcional.
           </p>
         </div>
         </div>
@@ -34,41 +33,29 @@ const About = () => {
               Acerca de mi
             </h2>
             <p className="font-normal text-justify  text-base leading-6 text-gray-600 ">
-              Con más de 4 años de experiencia en Puebla, México.
-              Me especializo en ayudar a las mujeres a mejorar 
-              su salud pélvica en todas las etapas de su vida.
+            ¡Hola! <strong>Soy Cristal Sarabia </strong>y soy Fisioterapeuta por la Universidad Autónoma de Puebla y desde 2014 comencé a estudiar el mundo de la Fisioterapia para prevenir, desarrollar, mantener y restaurar el máximo movimiento y capacidades funcionales del cuerpo humano. Desde que salí de mi carrera me he especializado en Fisioterapia Pélvica, que es una especialidad de la fisioterapia que se centra en el tratamiento de las disfunciones del suelo pélvico. En mi trayectoria de especialización realice posgrado en Brasil en Fisioterapia pélvica, Uroginecología y Sexualidad Funcional. Además, estoy certificada en diversas áreas como salud pélvica, salud sexual, embarazo, postparto, hipopresivos, pilates terapéutico, ozonoterapia y acupuntura.
             </p>
             <p className="mt-5 font-normal text-justify  text-base leading-6 text-gray-600">
-              Estoy comprometida con proporcionar atención de alta calidad a mis pacientes.
-              Creo que todas las mujeres merecen sentirse bien con su salud pélvica, 
-              y estoy aquí para ayudarlas a
-              lograrlo.
+            Soy ponente nacional e internacional y profesora en formaciones de Piso Pélvico. Fundé en Puebla el primer espacio dedicado exclusivamente a la Fisioterapia del Piso Pélvico, dolor pélvico y bienestar sexual. Ofrezco atención personalizada en consultas y talleres grupales sobre salud pélvica, sexual, embarazo, postparto y entrenamientos de hipopresivos.
             </p>
             <p className="mt-5 font-normal text-justify  text-base leading-6 text-gray-600">
-             Me gradué de la Licenciatura en Fisioterapia en la 
-             Benemérita Universidad Autónoma de Puebla en el año 2020. 
-             Durante su carrera, realizó prácticas clínicas en la Clínica 
-             Escuela Integral de Fisioterapia de la BUAP, el Hospital 
-             Universitario de la BUAP y el Instituto Nacional de 
-             Cancerología de Colombia.
+            He ayudado a cientos de mujeres a mejorar su bienestar y calidad de vida, con numerosos casos de éxito. Los testimonios de mis pacientes me inspiran a continuar educando, apoyando y guiando en tratamientos especializados.
+
             </p>
             <p className="mt-5 font-normal text-justify  text-base leading-6 text-gray-600">
-              En 2022, completé un Diplomado Internacional 
-              en Fisioterapia del Suelo Pélvico en Andare 
-              Certificaciones en la Ciudad de México. Posteriormente, 
-              realicé en Brasil el Posgrado en Uroginecología y 
-              Sexualidad Funcional en la Faculdade Inspirar.
+            ¡Estoy aquí para concientizar y no normalizar el dolor ni la incomodidad en el piso pélvico, sino tomar medidas para cuidar y tratar esta parte crucial de nuestro cuerpo!.
+
             </p>
             <p className="mt-5 font-normal text-justify  text-base leading-6 text-gray-600">
-              Soy Trainer Certificada en Hipopresivos por Low 
-              Pressure Fitness y Educadora Perinatal por LAMAZE.
+            ¡Bienvenid@s a un espacio seguro de salud pélvica para adquirir conocimiento y en mis consultas, talleres y cursos mejorar tu bienestar para tu abdomen y  piso pélvico!
+
             </p>
-            <p className="mt-5 font-normal text-justify  text-base leading-6 text-gray-600">
+            {/* <p className="mt-5 font-normal text-justify  text-base leading-6 text-gray-600">
               Actualmente, soy miembro activo de la mesa directiva 
               de la Sociedad Mexicana de Fisioterapia de Piso Pélvico,  
               <strong><a href="https://www.somefipp.com/" target="_blank" rel="noopener noreferrer"> SOMEFIPP</a></strong>.
 
-            </p>
+            </p> */}
           </div>
           <div className="w-full max-h-svh lg:w-8/12 ">
             <Image

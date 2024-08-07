@@ -31,7 +31,7 @@ function Reviews() {
 
   return (
     
-      <ul className='grid grid-cols-3  gap-4 w-2/3 mt-10'>
+      <ul className='grid md:grid-cols-1 lg:grid-cols-3 p-4 gap-4 md:w-full lg:w-2/3 mt-10'>
         {reviews.map((review) => (
         
           <li key={review.author_name} className=''>
