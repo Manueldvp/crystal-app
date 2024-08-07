@@ -12,9 +12,9 @@ const ServicesCard = () => {
         className={`py-8 px-4 mx-auto ${isDesktop ? "w-2/3 " : ""}  lg:py-16`}
       >
         <div className=" bg-blue-health-500/60 shadow-xl transform transition duration-500  hover:scale-105 border-gray-200 rounded-lg p-8 md:p-12 mb-8">
-          <a
+          <Link
             href="https://www.youtube.com/@CristalSarabia2046/videos"
-            target="blank_"
+            target="blank"
             className="bg-white  text-pink-secondary-600 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md mb-2"
           >
             <svg
@@ -27,7 +27,7 @@ const ServicesCard = () => {
               <path d="M11 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm8.585 1.189a.994.994 0 0 0-.9-.138l-2.965.983a1 1 0 0 0-.685.949v8a1 1 0 0 0 .675.946l2.965 1.02a1.013 1.013 0 0 0 1.032-.242A1 1 0 0 0 20 12V2a1 1 0 0 0-.415-.811Z" />
             </svg>
             Aprende
-          </a>
+          </Link>
           <h1 className="text-white  text-3xl md:text-5xl font-extrabold mb-2">
             Salud Pélvica
           </h1>
@@ -36,7 +36,7 @@ const ServicesCard = () => {
 
           </p>
           <Link
-            href="/servicios"
+            href="/servicios/disfunciones-pelvicas-en-el-adulto"
             className="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-purple-secondary-600 hover:text-white rounded-lg bg-white hover:bg-blue-health-500 focus:ring-4 focus:ring-blue-300 "
           >
             Más info
@@ -66,7 +66,7 @@ const ServicesCard = () => {
             ¿Puedes recuperar tu cuerpo en el post parto? Con nuestro Programa Postparto por fisioterapia pélvica ha demostrado ser eficaz en el tratamiento faja abdominal, DIÁSTASIS ABDOMINAL y afecciones del piso pélvico.
             </p>
             <Link
-              href="/servicios"
+              href="/servicios/postparto"
               className=" text-purple-secondary-600 hover:underline font-medium text-lg inline-flex items-center"
             >
               Más info
@@ -95,7 +95,7 @@ const ServicesCard = () => {
             ¡Felicidades mamá! A través de sesiones individuales te acompaño durante todo tu proceso con calidez y cercanía. Brindado las herramientas para la preparación de parto o cesárea. Cómo calmar los dolores, orientación de posturas y más.
             </p>
             <Link
-              href="/servicios"
+              href="/servicios/embarazo-y-preparacion-al-parto"
               className="text-purple-secondary-600 hover:underline font-medium text-lg inline-flex items-center"
             >
               Más info
@@ -118,9 +118,9 @@ const ServicesCard = () => {
           </div>
         </div>
         <div className=" bg-blue-health-500/60 mt-8 shadow-xl transform transition duration-500  hover:scale-105 border-gray-200 rounded-lg p-8 md:p-12 mb-8">
-          <a
+          <Link
             href="https://www.youtube.com/@CristalSarabia2046/videos"
-            target="blank_"
+            target="blank"
             className="bg-white  text-pink-secondary-600 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md mb-2"
           >
             <svg
@@ -133,7 +133,7 @@ const ServicesCard = () => {
               <path d="M11 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm8.585 1.189a.994.994 0 0 0-.9-.138l-2.965.983a1 1 0 0 0-.685.949v8a1 1 0 0 0 .675.946l2.965 1.02a1.013 1.013 0 0 0 1.032-.242A1 1 0 0 0 20 12V2a1 1 0 0 0-.415-.811Z" />
             </svg>
             Más +
-          </a>
+          </Link>
           <h1 className="text-white  text-3xl md:text-5xl font-extrabold mb-2">
            Dolor Pélvico
           </h1>
@@ -143,7 +143,7 @@ const ServicesCard = () => {
 
           </p>
           <Link
-            href="/servicios"
+            href="/servicios/dolor-pelvico-por-endometriosis"
             className="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-purple-secondary-600 hover:text-white rounded-lg bg-white hover:bg-blue-health-500 focus:ring-4 focus:ring-blue-300 "
           >
             Más info

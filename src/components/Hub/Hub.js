@@ -40,10 +40,21 @@ const Hub = () => {
     <p className={`mb-5 text-lg font-normal ${isDesktop ? 'text-black/50 ' : ' text-white'} lg:text-xl sm:px-16 lg:px-48 animate-slideInFromRight`}>
       Impulsando tu salud pélvica: fuerza y bienestar en cada etapa desde tu centro
     </p>
-    <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-      <a
+    <div className="flex flex-col gap-6 mt-5 sm:flex-row sm:justify-center sm:space-y-0">
+      
+      <Link
+        href="/servicios"
+        className="justify-center
+         bg-blue-health-400 shadow-lg border-2 border-blue-health-300
+          items-center py-3 px-5 sm:ms-4 text-xl
+          font-medium text-center text-white rounded-lg
+          hover:bg-blue-health-600 "
+      >
+        Aprende más
+      </Link>
+      <Link
         href="https://linktr.ee/cristalsarabia_"
-        target="blank_"
+        target="blank"
         className="inline-flex border-2 border-fuchsia-pink-300 text-xl shadow-lg justify-center items-center py-3 px-5 font-medium text-center text-white rounded-lg bg-fuchsia-pink-400 hover:bg-fuchsia-pink-600 "
       >
         Contacto
@@ -62,16 +73,6 @@ const Hub = () => {
             d="M1 5h12m0 0L9 1m4 4L9 9"
           />
         </svg>
-      </a>
-      <Link
-        href="/servicios"
-        className="justify-center
-         bg-blue-health-400 shadow-lg border-2 border-blue-health-300
-          items-center py-3 px-5 sm:ms-4 text-xl
-          font-medium text-center text-white rounded-lg
-          hover:bg-blue-health-600 "
-      >
-        Aprende más
       </Link>
     </div>
     

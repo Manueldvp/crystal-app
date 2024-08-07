@@ -132,7 +132,8 @@ const ServicesPage = ({ services }) => {
       <RevealWrapper>
         <div className="2xl:mx-auto 2xl:container  2xl:px-16 mt-10 px-6 ">
           <div className="flex md:flex-row  flex-col md:items-stretch items-center justify-center">
-            <div className=" xl:w-1/2  md:w-2/3 lg:mr-20 md:mr-6 flex  items-center justify-center ">
+            <div className="  flex  items-center justify-center ">
+            {/* <div className=" xl:w-1/2  md:w-2/3 lg:mr-20 md:mr-6 flex  items-center justify-center "></div> */}
               <div className="flex flex-col items-center justify-center">
                 <h1 className="md:text-5xl text-3xl font-bold text-center mb-5 text-gray-800">
                   MEJORA TU SALUD
@@ -153,7 +154,7 @@ const ServicesPage = ({ services }) => {
                 </div>
               </div>
             </div>
-            <div className="xl:w-1/2 lg:w-1/3 sm:w-1/2">
+            {/* <div className="xl:w-1/2 lg:w-1/3 sm:w-1/2">
               <Image
                 src={services.attributes.ServicePageImg.data.attributes.url}
                 height={1000}
@@ -161,7 +162,7 @@ const ServicesPage = ({ services }) => {
                 alt="image"
                 className="h-full shadow-lg  rounded-md object-cover object-center "
               />
-            </div>
+            </div> */}
           </div>
           <Link href='https://api.whatsapp.com/send?phone=5212223590967&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta'>
               <div className="flex items-center mt-10 max-w-64 cursor-pointer pb-4 md:pb-0">

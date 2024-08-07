@@ -1,6 +1,11 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline"
 
-const routes = [{
+const routes = [
+    {
+        label: 'Inicio',
+        route: '/'
+    },
+    {
     label: 'Sobre Mi',
     route: '/about'
 }, {

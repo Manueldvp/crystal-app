@@ -1,32 +1,27 @@
 import axios from 'axios';
 import { NextResponse } from 'next/server';
 
-   export async function GET() {
+export async function GET() {
 
-     try {
-      const placeId = "ChIJ4dhTKFS5z4UR3fEa8TxPeGw"
-      const apiKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
-      if (!apiKey) {
-        return res.status(500).json({ error: 'Missing Google Maps API key' });
-      }
-  
-      const url = `https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&fields=reviews&key=${apiKey}`;
-       const response = await axios.get(url, {
-         params: {
-           // Add any necessary query parameters here
-         },
-         headers: {
-           'Authorization': `Bearer ${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}`, // If needed
-           // Add any other necessary headers here
-         },
-       });
+  try {
+    const placeId = "ChIJ4dhTKFS5z4UR3fEa8TxPeGw";
+    const apiKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
+    if (!apiKey) {
+      return res.status(500).json({ error: 'Missing Google Maps API key' });
+    }
 
-       return NextResponse.json(response.data);
-     } catch (error) {
-       console.error(error);
-       return NextResponse.error();
-     }
-   }
+    const desiredLanguage = 'es'; // Change this to your desired language code
+
+    const url = `https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&fields=reviews&key=${apiKey}&language=${desiredLanguage}`;
+
+    const response = await axios.get(url);
+
+    return NextResponse.json(response.data);
+  } catch (error) {
+    console.error(error);
+    return NextResponse.error();
+  }
+}
    
 // export default async function handler(req, res) {
 //     try {

@@ -14,11 +14,15 @@ function Reviews() {
       async function fetchData() {
         try {
           const response = await fetch('/api/google');
+         
+          
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
           const data = await response.json();
           setReviews(data.result.reviews);
+         
+          
         } catch (error) {
           setError(error.message);
         }
