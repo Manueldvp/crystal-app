@@ -43,13 +43,13 @@ export default function Home() {
         <BlogComponent/>   
       </div>
       <section className="p-4  xl:w-2/3 lg:w-full sm:w-full mt-10">
-      <div  className="p-4 hover:bg-purple-200 cursor-pointer text-center text-gray-700  hover:text-white bg-white border border-gray-200 rounded-lg shadow-lg ">
+      <div  className=" p-10 flex items-center justify-center hover:bg-purple-200 cursor-pointer  text-gray-700  hover:text-white bg-white border border-gray-200 rounded-lg shadow-lg ">
         <Link href='https://www.google.com/maps/place/Fisioterapeuta+de+Piso+P%C3%A9lvico,+Pelvic+Health+Physical+Therapy,+Cristal+Sarabia./@19.0201926,-98.2676374,17z/data=!3m1!4b1!4m12!1m5!8m4!1e1!2s100161799802564451464!3m1!1e1!3m5!1s0x85cfb9542853d8e1:0x6c784f3cf11af1dd!8m2!3d19.0201875!4d-98.2650625!16s%2Fg%2F11s2m_3z_9?hl=es&entry=ttu' target='blank' >
-        <h5 className="mb-2 flex items-center justify-center gap-4 text-3xl  font-bold  ">
+        <h5 className=" flex items-center justify-center text-center gap-4 text-3xl  font-bold  ">
           Qué dicen de nosotros
           <ArrowTopRightOnSquareIcon width={20} height={20}/>
         </h5>
-        <p className="mb-5 text-base  sm:text-lg ">
+        <p className="text-base  sm:text-lg ">
           Conoce a través de nuestros pacientes el resultado de un
           acompañamiento de nuestro tratamiento
           
