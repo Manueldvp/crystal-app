@@ -98,9 +98,9 @@ const routes = [
 },
 {
     label: 'Programas',
-    mainRoute: 'programas',
     route: '/programas',
-    scroll: true
+    scroll: true,
+    mainRoute: 'programas'
     // icon: <ChevronDownIcon className="h-5"/>,
     // subRoutes: [
     //     {
@@ -115,7 +115,6 @@ const routes = [
 },{
     label: 'Contacto',
     route: '/contacto',
-    mainRoute: 'contacto',
     scroll: true
 },  ]
 

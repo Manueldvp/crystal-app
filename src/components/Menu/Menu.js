@@ -68,18 +68,7 @@ function Menu({ isOpen, setIsOpen, isDesktop, handleOnClick }) {
             onMouseEnter={() => handleMouseEnter(label)}
             onMouseLeave={handleMouseLeave}
           >
-            {scroll && mainLocation ? (
-              <ScrollLink
-              className={`flex items-center ${isDesktop ? "" : "justify-between border-b mt-2 p-2"} hover:text-purple-secondary-500`}
-              to={mainRoute}
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              <div className="cursor-pointer" onClick={handleIsOpen}>{label}</div>
-            </ScrollLink>
-            ) : (
+            
               <Link
               
               className={`flex items-center ${
@@ -95,8 +84,7 @@ function Menu({ isOpen, setIsOpen, isDesktop, handleOnClick }) {
                 {icon}
               </span>
             </Link>
-            )}
-           
+                
             {showSubRoutes(label) && (
               <SubMenu
                 handleIsOpen={handleIsOpen}
