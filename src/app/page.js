@@ -24,7 +24,7 @@ export default function Home() {
       <Hub />
       <ServicesCard />
       <QuizLayout/>
-      <Link id='programas'  className="xl:w-2/3 lg:w-full sm:w-full p-4" href='/programas'>
+      <Link className="xl:w-2/3 lg:w-full sm:w-full p-4" href='/programas'>
         <div className=" mb-10 p-4 text-center hover:cursor-pointer hover:bg-gray-100 bg-white   rounded-lg shadow-lg sm:p-8 ">
           <h4 className="mb-5 text-3xl  font-bold text-gray-900 ">
             PUEDES FORMARTE CONMIGO

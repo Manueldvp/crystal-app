@@ -14,7 +14,7 @@ const Eventos = () => {
     <>
       <div className="bg-white ">
         <RevealWrapper>
-          <div className=" px-4 ">
+          <div className=" px-6 ">
             <div className="lg:w-2/3 md:w-full  mx-auto py-4 bg-white ">
               <div className="relative rounded-lg">
                 <Image
@@ -126,18 +126,18 @@ const Eventos = () => {
 
 
       <div className="">
-      
-      <div className="flex flex-col items-center ">
-      <RevealWrapper className="flex py-10 lg:w-2/3 px-4 flex-col items-center justify-center">
-          <h1 className="text-4xl  font-bold leading-9 text-gray-800">
-           Programas
-          </h1>
-          <p className="text-base  font-medium leading-6 text-center text-gray-600  mt-4">
-            Los programas son sesiones progresivas con una evaluación realizada por Cristal Sarabia, lo cual ayudaría a cumplir objetivos y metas en la salud pélvica.
-          </p>
-      </RevealWrapper>
+        
+        <div className="flex flex-col  items-center ">
+          <RevealWrapper className="flex py-10 lg:w-2/3 px-4 flex-col items-center justify-center">
+              <h1 className="text-4xl  font-bold leading-9 text-gray-800">
+              Programas
+              </h1>
+              <p className="text-base  font-medium leading-6 text-center text-gray-600  mt-4">
+                Los programas son sesiones progresivas con una evaluación realizada por Cristal Sarabia, lo cual ayudaría a cumplir objetivos y metas en la salud pélvica.
+              </p>
+          </RevealWrapper>
 
-          <RevealWrapper className="grid lg:w-2/3 px-4  md:w-full items-center sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 gap-8 mt-4">
+          <RevealWrapper className="grid lg:w-2/3 md:w-full  px-4   items-center sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 2xl:grid-cols-3 gap-4 mt-4">
             {coursesData &&
               coursesData.map((course) => (
                 <TallerCards key={course.id} course={course} />
@@ -186,13 +186,27 @@ const Eventos = () => {
                         - Certificado de asistencia.
                         </p>
                     <div className="flex justify-end">
-                    <Link href='https://api.whatsapp.com/send?phone=5212223590967&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta' className=" w-fit hover:bg-purple-secondary-700 p-4 rounded-lg bg-purple-secondary-600 mt-4 justify-end flex items-center cursor-pointer">
-                        <p className="text-base tracking-wide font-semibold text-white">Empezar Ya</p>
-                     <svg className="ml-3 lg:ml-6" xmlns="http://www.w3.org/2000/svg" width={20} height={18} viewBox="0 0 20 18" fill="none">
-                      <path d="M11.7998 1L18.9998 8.53662L11.7998 16.0732" stroke="#f7f7fb" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                           <path d="M1 8.53662H19" stroke="#f7f7fb" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                      </Link>
+                    <Link href='https://api.whatsapp.com/send?phone=5212223590967&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta'>
+              <div className="flex items-center max-w-64 cursor-pointer pb-4 md:pb-0">
+                <h3 className="f-f-r bg-fuchsia-pink-500 hover:bg-fuchsia-pink-700 p-4 rounded-lg text-lg lg:text-2xl font-semibold text-white">
+                  Empezar ya
+                </h3>
+                <div className="pl-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={24}
+                    height={24}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M13.1719 12L8.22192 7.04999L9.63592 5.63599L15.9999 12L9.63592 18.364L8.22192 16.95L13.1719 12Z"
+                      fill="#D53F8C"
+                    />
+                  </svg>
+                </div>
+              </div>
+              </Link>
                     </div>
                 </div>
                 

@@ -8,7 +8,14 @@ import Notification from "@/components/notification/notification";
 
 const Contacto = () => {
   const isDesktop = useIsDesktop();
-
+  const iframeStyle = {
+    width: '600px',
+    height: '450px',
+    border: '0',
+    loading: 'lazy',
+    allowFullScreen: true,
+    referrerPolicy: 'no-referrer-when-downgrade'
+  };
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,13 +58,13 @@ const Contacto = () => {
     <>
       <RevealWrapper>
         <div className="py-4 lg:py-8  relative">
-          <Image
+          {/* <Image
             width={2000}
             height={2000}
             src="/map.png"
             className="h-2/5 lg:h-full opacity-20 w-full lg:w-1/2 absolute inset-0 object-cover object-center xl:block hidden"
             alt="map"
-          />
+          /> */}
           <div className="xl:mx-auto xl:container  relative ">
             <div className="flex flex-wrap xl:mx-auto xl:container">
               <div className="w-full relative lg:w-1/2 xl:mt-10 mb-10 2xl:pr-24 2xl:pl-0 xl:pl-12 pl-0 ">
@@ -177,6 +184,10 @@ const Contacto = () => {
             </div>
           </div>
         </div>
+        <iframe
+      style={iframeStyle}
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAh3qa66HN2ibIXMP-5qM6nrhe9Vc-rBtg&q=Space+Needle,Seattle+WA"
+    ></iframe>
       </RevealWrapper>
     </>
   );
