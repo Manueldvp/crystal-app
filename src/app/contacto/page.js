@@ -88,7 +88,7 @@ const Contacto = () => {
                           Contacto
                         </h2>
                         <h2 className="text-gray-800 text-base md:text-lg leading-8 tracking-wider mt-2">
-                        +52 222 359 0967 (Phone)
+                        +52 222 359 0967 (Teléfono)
                         </h2>
                         
                       </div>
@@ -162,7 +162,7 @@ const Contacto = () => {
                       </div>
                       <button
                         type="submit"
-                        className="mt-8 inline-block px-6 py-2.5 bg-indigo-600 text-white font-medium rounded-md shadow sm:mt-0 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        className="mt-8 inline-block px-6 py-2.5 bg-fuchsia-pink-500 text-white font-medium rounded-md shadow sm:mt-0 hover:bg-fuchsia-pink-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                       >
                         Enviar
                       </button>
