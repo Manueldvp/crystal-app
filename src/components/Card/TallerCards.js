@@ -8,13 +8,13 @@ function TallerCards({ course }) {
    
   return (
     
-    <section className="relative hover:shadow-lg mb-5 rounded-xl flex items-center justify-center">
+    <section className="relative hover:shadow-lg  rounded-xl flex items-center justify-center">
       <Image
-            width={400}
-            height={600}
-            style={{ width: 'auto', height: '450px' }}
+            width={2000}
+            height={2000}
+            style={{ width: 'full', height: '450px' }}
             src={imgUrl}
-            className="rounded-xl brightness-50 "
+            className="rounded-xl brightness-50"
             alt="chair"
       />
        
@@ -29,7 +29,7 @@ function TallerCards({ course }) {
         </div>
         <div className="flex justify-center md:w-auto w-full">
           
-          <Link href='https://api.whatsapp.com/send?phone=5212223590967&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta' className="rounded-lg hover:bg-gray-300 transition duration-150 text-base font-semibold leading-none text-center text-white hover:text-grey-cristal-800 py-4 px-12 bg-purple-secondary-600 focus:outline-none">
+          <Link href='https://api.whatsapp.com/send?phone=5212223590967&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta' className="rounded-lg hover:bg-purple-secondary-700 transition duration-150 text-base font-semibold leading-none text-center text-white py-4 px-12 bg-purple-secondary-600 ">
             Empezar Ya
           </Link>
         </div>

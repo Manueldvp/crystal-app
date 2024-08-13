@@ -14,15 +14,15 @@ const Eventos = () => {
     <>
       <div className="bg-white ">
         <RevealWrapper>
-          <div className=" px-3 ">
-            <div className="lg:max-w-[1440px]  relative inset-0 md:max-w-[744px] max-w-[375px] mx-auto bg-white lg:px-20 md:px-6 px-4 md:py-12 py-9">
+          <div className=" px-4 ">
+            <div className="lg:w-2/3 md:w-full  mx-auto py-4 bg-white ">
               <div className="relative rounded-lg">
                 <Image
                   width={1000}
                   height={1000}
                   src="/bannercourse.png"
                   alt="banner"
-                  className="w-full rounded-lg object-cover lg:h-[330px] lg:block md:hidden "
+                  className="w-full rounded-lg object-cover lg:h-[330px] lg:block  "
                 />
                 <div className="w-full rounded-lg h-full bg-black opacity-50 absolute top-0 left-0" />
 
@@ -124,41 +124,45 @@ const Eventos = () => {
         </RevealWrapper>
       </div>
 
-      <div className="2xl:mx-auto 2xl:container  lg:px-40 xl:px-20 md:py-12 md:px-6 py-9 px-4">
-        <RevealWrapper className="flex flex-col items-center justify-center">
-          <h1 className="text-4xl mb-5 font-bold leading-9 text-gray-800">
+
+      <div className="">
+      
+      <div className="flex flex-col items-center ">
+      <RevealWrapper className="flex py-10 lg:w-2/3 px-4 flex-col items-center justify-center">
+          <h1 className="text-4xl  font-bold leading-9 text-gray-800">
            Programas
           </h1>
-          <p className="text-base mb-5 font-medium leading-6 text-justify text-gray-600 sm:w-96 md:w-9/12 lg:w-1/2 mt-4">
+          <p className="text-base  font-medium leading-6 text-center text-gray-600  mt-4">
             Los programas son sesiones progresivas con una evaluación realizada por Cristal Sarabia, lo cual ayudaría a cumplir objetivos y metas en la salud pélvica.
           </p>
-        </RevealWrapper>
+      </RevealWrapper>
 
-        <RevealWrapper className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 lg:gap-x-8 md:gap-6 gap-4 lg:mt-12 md:mt-9 mt-6">
-          {coursesData &&
-            coursesData.map((course) => (
-              <TallerCards key={course.id} course={course} />
-            ))}
-        </RevealWrapper>
-      </div>
+          <RevealWrapper className="grid lg:w-2/3 px-4  md:w-full items-center sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 gap-8 mt-4">
+            {coursesData &&
+              coursesData.map((course) => (
+                <TallerCards key={course.id} course={course} />
+              ))}
+          </RevealWrapper>
       
-      <div className="2xl:mx-auto 2xl:container  lg:px-40 xl:px-20  md:px-6  px-4">
-        <RevealWrapper className="flex flex-col items-center justify-center">
-          <h1 className="text-4xl mb-5 font-bold leading-9 text-gray-800">
-            Taller Core Restore Online y Presencial
+        </div>
+        <div className="flex flex-col items-center ">
+        <RevealWrapper className="flex py-14 lg:w-2/3 px-4  flex-col items-center justify-center">
+          <h1 className="text-4xl text-center  font-bold  text-gray-800">
+            Taller HIPO POWER Online y Presencial
           </h1>
-          <p className="text-base mb-5 font-medium leading-6 text-justify text-gray-600 sm:w-96 md:w-9/12 lg:w-1/2 mt-4">
+          <p className="text-base font-medium text-center text-gray-600  mt-4">
           Tienes a tu disponibilidad el Taller Core Restore más que Hipopresivos, su duración puede ser corta pero con un gran impacto de aprendizaje, rutinas personalizadas. 
           </p>
         </RevealWrapper>
-          
-        <div className="mt-10">
-            <Image width={1000} height={1000}  className="w-full rounded-t-lg" src="/25.jpg" alt="computer" />
-            <div className="py-4 px-8 w-full flex justify-between  bg-purple-secondary-600">
+        </div>
+        <RevealWrapper className="flex    flex-col items-center justify-center"> 
+        <div className="lg:w-2/3 md:w-full px-4 flex  flex-col items-center justify-center">
+            <Image width={2000} height={2000}  className="w-full rounded-t-lg" src="/25.jpg" alt="computer" />
+            <div className="py-4 px-8 w-full flex justify-between   bg-purple-secondary-600">
               <p className="text-sm text-white font-semibold tracking-wide">Cristal Sarabia</p>
-                 <p className="text-sm text-white font-semibold tracking-wide">Core Restore</p>
+                 <p className="text-sm text-white font-semibold tracking-wide">HIPO POWER</p>
                   </div>
-                   <div className="bg-white px-10 py-6 rounded-bl-3xl rounded-br-3xl">
+                   <div className="bg-white shadow-lg rounded-b-lg px-10 py-6  ">
                      <h1 className="text-3xl text-gray-800 font-semibold tracking-wider">Este taller está enfocado en el complejo Abdomino-Lumbo-Pélvico, y te ayudará a:</h1>
                       <p className="text-gray-700 text-base lg:text-lg  lg:leading-8 tracking-wide mt-6 w-11/12">Tonificar tu suelo pélvico,
                         Mejorar tu presión abdominopélvica,
@@ -181,20 +185,21 @@ const Eventos = () => {
                         <p className="text-gray-700 text-base lg:text-lg  lg:leading-8 tracking-wide mt-6 w-11/12">
                         - Certificado de asistencia.
                         </p>
-
-                    <Link href='https://api.whatsapp.com/send?phone=5212223590967&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta' className="w-full mt-4 justify-end flex items-center cursor-pointer">
-                        <p className="text-base tracking-wide font-semibold text-purple-secondary-500">Empezar Ya</p>
+                    <div className="flex justify-end">
+                    <Link href='https://api.whatsapp.com/send?phone=5212223590967&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta' className=" w-fit hover:bg-purple-secondary-700 p-4 rounded-lg bg-purple-secondary-600 mt-4 justify-end flex items-center cursor-pointer">
+                        <p className="text-base tracking-wide font-semibold text-white">Empezar Ya</p>
                      <svg className="ml-3 lg:ml-6" xmlns="http://www.w3.org/2000/svg" width={20} height={18} viewBox="0 0 20 18" fill="none">
-                      <path d="M11.7998 1L18.9998 8.53662L11.7998 16.0732" stroke="#978dc5" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-                           <path d="M1 8.53662H19" stroke="#978dc5" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M11.7998 1L18.9998 8.53662L11.7998 16.0732" stroke="#f7f7fb" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                           <path d="M1 8.53662H19" stroke="#f7f7fb" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
-                       </Link>
-                    <div className="h-5 w-2" />
+                      </Link>
+                    </div>
                 </div>
-                <hr className="border border-gray-100 w-full" />
+                
           </div>
-
-      </div>
+          </RevealWrapper>
+          </div>
+              
     </>
   );
 };

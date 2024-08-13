@@ -11,14 +11,14 @@ export const POST = async (req) => {
     secure: true,
     auth: {
       user: 'donkhengrag@gmail.com',
-      pass: 'wmrz gnth wund yatw',
+      pass: process.env.NEXT_PUBLIC_PASS_TOKEN,
     },
   });
 
   // Crear el correo electrónico
   const mailOptions = {
     from: email,
-    to: 'smitecollectorgod@gmail.com',
+    to: 'info@cristalsarabia.com',
     subject: 'Nuevo mensaje desde Cristalsarabia.com',
     text: `Nombre: ${name}\nCorreo: ${email}\nMensaje: ${message}`,
   };

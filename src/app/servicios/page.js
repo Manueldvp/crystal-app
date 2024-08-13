@@ -30,14 +30,14 @@ const Servicios = () => {
             </div>
             <div className="w-full shadow-lg mt-8 md:mt-0 flex justify-center md:justify-end">
               <video
-                className={`h-full w-full ${
+                className={`h-full bg-cover w-full ${
                   isDesktop ? "rounded-r-lg" : " rounded-lg"
                 } shadow-lg`}
                 autoPlay
                 muted
                 loop
               >
-                <source src="/Path.mp4" type="video/mp4" />
+                <source src="/vid12.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
