@@ -9,9 +9,9 @@ import Notification from "@/components/notification/notification";
 const Contacto = () => {
   const isDesktop = useIsDesktop();
   const iframeStyle = {
-    width: '600px',
-    height: '450px',
-    border: '0',
+    width: '1080px',
+    height: '520px',
+    border: '2',
     loading: 'lazy',
     allowFullScreen: true,
     referrerPolicy: 'no-referrer-when-downgrade'
@@ -65,9 +65,9 @@ const Contacto = () => {
             className="h-2/5 lg:h-full opacity-20 w-full lg:w-1/2 absolute inset-0 object-cover object-center xl:block hidden"
             alt="map"
           /> */}
-          <div className="xl:mx-auto xl:container  relative ">
-            <div className="flex flex-wrap xl:mx-auto xl:container">
-              <div className="w-full relative lg:w-1/2 xl:mt-10 mb-10 2xl:pr-24 2xl:pl-0 xl:pl-12 pl-0 ">
+          <div className="xl:mx-auto xl:container   relative ">
+            <div className="flex flex-wrap   xl:mx-auto xl:container">
+              <div className="w-full  relative lg:w-1/2  xl:mt-10 mb-10 2xl:pr-24 2xl:pl-0 xl:pl-12 pl-0 ">
                 {/* <Image
                 width={2000}
                 height={2000}
@@ -75,8 +75,8 @@ const Contacto = () => {
                   className="h-full w-full xl:w-1/2 absolute inset-0 bg-cover bg-center xl:hidden"
                   alt="map"
                 /> */}
-                <div className="w-full flex flex-col items-start  xl:justify-start  relative z-20 xl:px-0 px-4 xl:py-0 py-4">
-                  <div className="w-full 2xl:pl-48 xl:pt-1">
+                <div className="w-full flex  flex-col items-start  xl:justify-start  relative z-20 xl:px-0 px-4 xl:py-0 py-4">
+                  <div className="w-full  2xl:pl-48 xl:pt-1">
                     <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-wider text-gray-800">
                       Aquí puedes localizarme
                     </h1>
@@ -184,10 +184,13 @@ const Contacto = () => {
             </div>
           </div>
         </div>
-        <iframe
-      style={iframeStyle}
-      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAh3qa66HN2ibIXMP-5qM6nrhe9Vc-rBtg&q=Space+Needle,Seattle+WA"
-    ></iframe>
+        <div className="flex items-center p-4 justify-center">
+            <iframe
+            className="flex items-center rounded-lg shadow-2xl justify-center"
+            style={iframeStyle}
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAR8NpMLAirFo4Hi1oEfxs-IBNAja7ayNw&q=place_id:ChIJ4dhTKFS5z4UR3fEa8TxPeGw"
+                ></iframe>
+        </div>
       </RevealWrapper>
     </>
   );
