@@ -72,13 +72,13 @@ function Navbar() {
     <div className="flex ml-6 relative items-center">
       <h2 className="flex gap-2 hover:text-purple-secondary-700">
         <MapPinIcon className="h-4 w-4 text-purple-secondary-700"/>
-        Torres Médicas Angelópolis II, Piso 6, Consultorio 602. Puebla, Puebla.
+        Torres Médicas Angelópolis II, Piso 4, Consultorio 408. Puebla, Puebla.
       </h2>
     </div>
     <div>
       <h3 className="flex mr-12 gap-2 items-center cursor-text " onClick={(e) => e.preventDefault()}>
         <PhoneIcon className="w-4 h-4 text-purple-secondary-700"/>
-        Teléfono: +52 222 359 0967
+        Teléfono: +52 222 423 7337
       </h3>
     </div>
   </Link>
@@ -93,7 +93,7 @@ function Navbar() {
     <div>
       <h3 className="flex mr-3 gap-2 items-center cursor-text " onClick={(e) => e.preventDefault()}>
         <PhoneIcon className="w-4 h-4 text-purple-secondary-700"/>
-        +52 222 359 0967
+        +52 222 423 7337
       </h3>
     </div>
   </Link>
