@@ -1,27 +1,23 @@
 "use client";
-import useIsDesktop from "@/hooks/useIsDesktop";
-import Image from "next/image";
-import Link from "next/link";
 import { RevealWrapper } from "next-reveal";
 import { useState } from "react";
 import Notification from "@/components/notification/notification";
 
 const Contacto = () => {
-  const isDesktop = useIsDesktop();
   const iframeStyle = {
-    width: '1080px',
-    height: '520px',
-    border: '2',
-    loading: 'lazy',
+    width: "1080px",
+    height: "520px",
+    border: "2",
+    loading: "lazy",
     allowFullScreen: true,
-    referrerPolicy: 'no-referrer-when-downgrade'
+    referrerPolicy: "no-referrer-when-downgrade",
   };
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const [success, setSuccess] = useState(false)
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -34,9 +30,8 @@ const Contacto = () => {
       alert("Por favor, completa todos los campos.");
       return;
     }
-    setFormData({ name: '', email: '', message: '' });
-    setSuccess(true)
-  ;
+    setFormData({ name: "", email: "", message: "" });
+    setSuccess(true);
     try {
       const response = await fetch("/api/contacto", {
         method: "POST",
@@ -58,36 +53,22 @@ const Contacto = () => {
     <>
       <RevealWrapper>
         <div className="py-4 lg:py-8  relative">
-          {/* <Image
-            width={2000}
-            height={2000}
-            src="/map.png"
-            className="h-2/5 lg:h-full opacity-20 w-full lg:w-1/2 absolute inset-0 object-cover object-center xl:block hidden"
-            alt="map"
-          /> */}
           <div className="xl:mx-auto xl:container   relative ">
             <div className="flex flex-wrap   xl:mx-auto xl:container">
               <div className="w-full  relative lg:w-1/2  xl:mt-10 mb-10 2xl:pr-24 2xl:pl-0 xl:pl-12 pl-0 ">
-                {/* <Image
-                width={2000}
-                height={2000}
-                  src="/map.png"
-                  className="h-full w-full xl:w-1/2 absolute inset-0 bg-cover bg-center xl:hidden"
-                  alt="map"
-                /> */}
                 <div className="w-full flex  flex-col items-start  xl:justify-start  relative z-20 xl:px-0 px-4 xl:py-0 py-4">
                   <div className="w-full  2xl:pl-48 xl:pt-1">
                     <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-wider text-gray-800">
                       Aquí puedes localizarme
                     </h1>
                     <div className="w-full md:w-10/12 mt-3">
-                     
                       <div className="mt-4 md:mt-8">
                         <h2 className="text-sm md:text-base text-fuchsia-pink-500 font-semibold">
                           Dirección
                         </h2>
                         <h2 className="text-gray-800 text-base md:text-lg leading-8 tracking-wider mt-2">
-                        Torres Médicas Angelópolis II, Piso 6, Consultorio 602. Puebla, Puebla.
+                          Torres Médicas Angelópolis II, Piso 4, Consultorio
+                          408. Puebla, Puebla.
                         </h2>
                       </div>
                       <div className="mt-4 md:mt-8">
@@ -95,20 +76,20 @@ const Contacto = () => {
                           Contacto
                         </h2>
                         <h2 className="text-gray-800 text-base md:text-lg leading-8 tracking-wider mt-2">
-                        +52 222 359 0967 (Teléfono)
+                          +52 222 423 7337 (Teléfono)
                         </h2>
-                        
                       </div>
                       <div className="mt-4 md:mt-8">
                         <h2 className="text-sm md:text-base text-fuchsia-pink-500 font-semibold">
-                         Correo Electrónico
+                          Correo Electrónico
                         </h2>
                         <h2 className="text-gray-800 text-base md:text-lg leading-8 tracking-wider mt-2">
                           info@cristalsarabia.com
                         </h2>
                       </div>
                       <h2 className="text-gray-800 mt-10 text-base md:text-lg leading-8 tracking-wider">
-                      La innovación digital es el motor que impulsa nuestro compromiso con tu salud.
+                        La innovación digital es el motor que impulsa nuestro
+                        compromiso con tu salud.
                       </h2>
                     </div>
                   </div>
@@ -117,11 +98,12 @@ const Contacto = () => {
               <div className="w-full lg:w-1/2   xl:pt-10 lg:pl-24">
                 <div className="flex flex-col items-start xl:justify-start 2xl:justify-end xl:px-0 px-4">
                   <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-wider text-fuchsia-pink-400">
-                  Contáctame
+                    Contáctame
                   </h1>
                   <div className="w-full 2xl:w-8/12 mt-3">
                     <h2 className="text-gray-800 text-base md:text-lg leading-8 tracking-wider">
-                    Para consultas, envíenos un correo electrónico utilizando el siguiente formulario.
+                      Para consultas, envíenos un correo electrónico utilizando
+                      el siguiente formulario.
                     </h2>
                     <form onSubmit={handleSubmit}>
                       <div className="mt-4 md:mt-8">
@@ -164,7 +146,6 @@ const Contacto = () => {
                           name="message"
                           value={formData.message}
                           onChange={handleChange}
-                         
                         />
                       </div>
                       <button
@@ -173,11 +154,8 @@ const Contacto = () => {
                       >
                         Enviar
                       </button>
-                      
                     </form>
-                    {success && (
-                      <Notification  />
-                    )}
+                    {success && <Notification />}
                   </div>
                 </div>
               </div>
@@ -185,11 +163,11 @@ const Contacto = () => {
           </div>
         </div>
         <div className="flex items-center p-4 justify-center">
-            <iframe
+          <iframe
             className="flex items-center rounded-lg shadow-2xl justify-center"
             style={iframeStyle}
             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAR8NpMLAirFo4Hi1oEfxs-IBNAja7ayNw&q=place_id:ChIJ4dhTKFS5z4UR3fEa8TxPeGw"
-                ></iframe>
+          ></iframe>
         </div>
       </RevealWrapper>
     </>
