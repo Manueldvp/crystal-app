@@ -17,26 +17,26 @@ const ServiciosLanding = ({ service }) => {
                   {service.attributes.ServiceText}
                 </h2>
               </div>
-              <Link href='https://api.whatsapp.com/send?phone=5212223590967&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta'>
-              <div className="flex items-center max-w-64 cursor-pointer pb-4 md:pb-0">
-                <h3 className="f-f-r bg-blue-health-500 hover:bg-blue-health-700 p-4 rounded-lg text-lg lg:text-2xl font-semibold text-white">
-                  Agenda tu Cita
-                </h3>
-                <div className="pl-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M13.1719 12L8.22192 7.04999L9.63592 5.63599L15.9999 12L9.63592 18.364L8.22192 16.95L13.1719 12Z"
-                      fill="#D53F8C"
-                    />
-                  </svg>
+              <Link href="https://api.whatsapp.com/send?phone=5212224237337&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta">
+                <div className="flex items-center max-w-64 cursor-pointer pb-4 md:pb-0">
+                  <h3 className="f-f-r bg-blue-health-500 hover:bg-blue-health-700 p-4 rounded-lg text-lg lg:text-2xl font-semibold text-white">
+                    Agenda tu Cita
+                  </h3>
+                  <div className="pl-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={24}
+                      height={24}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M13.1719 12L8.22192 7.04999L9.63592 5.63599L15.9999 12L9.63592 18.364L8.22192 16.95L13.1719 12Z"
+                        fill="#D53F8C"
+                      />
+                    </svg>
+                  </div>
                 </div>
-              </div>
               </Link>
             </div>
 
@@ -46,7 +46,7 @@ const ServiciosLanding = ({ service }) => {
                 height={500}
                 width={500}
                 src={service.attributes.Cover.data.attributes.url}
-                alt='img'
+                alt="img"
               />
             </div>
           </div>

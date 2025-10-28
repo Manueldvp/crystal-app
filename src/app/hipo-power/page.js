@@ -25,34 +25,42 @@ export default function Home() {
                 role="contentinfo"
                 className="focus:outline-none text-base leading-6 mt-8 text-gray-600 2xl:pr-24 xl:pr-0 pr-12"
               >
-                Es un taller restaurativo con un montón de técnicas y adicional una clase en vivo online para repasar y  aprender diferentes posturas y respiraciones de HIPOPRESIVOS y Piso Pélvico. 
+                Es un taller restaurativo con un montón de técnicas y adicional
+                una clase en vivo online para repasar y aprender diferentes
+                posturas y respiraciones de HIPOPRESIVOS y Piso Pélvico.
               </p>
               <h2
                 role="contentinfo"
                 className="flex flex-col gap-4 text-base  mt-8 text-gray-600 2xl:pr-24 xl:pr-0 pr-12"
               >
-               <strong className="mb-5">Clases especializadas para aprender hacer Hipopresivos:</strong>
-              <p>- Tonificar abdomen y piso pélvico</p>
-              <p>- Disminuir perímetro de cintura</p>
-              <p>- Mejorar tu postura y respiración</p>
-              <p>- Disminuir dolor lumbar y ciática</p>
-              <p>- Mejorar motilidad intestinal</p>
-              <p>- Mejorar la recuperación posparto segura</p>
-              <p>- Mejorar rendimiento deportivo</p>
-              
-
+                <strong className="mb-5">
+                  Clases especializadas para aprender hacer Hipopresivos:
+                </strong>
+                <p>- Tonificar abdomen y piso pélvico</p>
+                <p>- Disminuir perímetro de cintura</p>
+                <p>- Mejorar tu postura y respiración</p>
+                <p>- Disminuir dolor lumbar y ciática</p>
+                <p>- Mejorar motilidad intestinal</p>
+                <p>- Mejorar la recuperación posparto segura</p>
+                <p>- Mejorar rendimiento deportivo</p>
               </h2>
               <h3 className="flex flex-col gap-4 text-base  mt-8 text-gray-600 2xl:pr-24 xl:pr-0 pr-12">
-              Es un curso enfocado para mujeres que deseen restaurar y potenciar su abdomen y piso pélvico guiado por mi, soy especializada en Fisioterapia pélvica y entrenamiento de Hipopresivos.
-              <p>Así que si estás lista para aprender y tener resultados, inscríbete.</p>
+                Es un curso enfocado para mujeres que deseen restaurar y
+                potenciar su abdomen y piso pélvico guiado por mi, soy
+                especializada en Fisioterapia pélvica y entrenamiento de
+                Hipopresivos.
+                <p>
+                  Así que si estás lista para aprender y tener resultados,
+                  inscríbete.
+                </p>
               </h3>
               <div className="mt-10">
                 <Link
                   target="blank"
-                  href="https://api.whatsapp.com/send?phone=5212223590967&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta"
+                  href="https://api.whatsapp.com/send?phone=5212224237337&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta"
                   className="flex items-center md:p-3 p-1  text-xl font-medium leading-5 text-purple-secondary-500 hover:text-purple-secondary-600"
                 >
-                  INSCRIBETE 
+                  INSCRIBETE
                   <svg
                     className="ml-8 text-purple-secondary-500 hover:animate-pulse"
                     width={45}
@@ -92,20 +100,16 @@ export default function Home() {
                 role="contentinfo"
                 className=" focus:outline-none text-base leading-6 mb-8 text-gray-600 md:mt-0 mt-10"
               >
-                Actualmente estoy certificada internacionalmente como entrenadora de Hipopresivos por low pressure fitness.
-
-                Sentir que puedo ser parte de la solución hacia mamás en postparto, personas que tienen: 
-                Diástasis.
-                Ayudar a ejercitar la faja abdominal.
-                Ayudar a deportistas a mejorar su rendimiento.
-                
+                Actualmente estoy certificada internacionalmente como
+                entrenadora de Hipopresivos por low pressure fitness. Sentir que
+                puedo ser parte de la solución hacia mamás en postparto,
+                personas que tienen: Diástasis. Ayudar a ejercitar la faja
+                abdominal. Ayudar a deportistas a mejorar su rendimiento.
               </p>
               <p
                 role="contentinfo"
                 className=" focus:outline-none text-base leading-6 mb-8 text-gray-600 md:mt-0 mt-10"
-              >
-                
-              </p>
+              ></p>
               <div className="w-full rounded-lg">
                 <Image
                   src="/99.png"
@@ -119,8 +123,10 @@ export default function Home() {
                     role="contentinfo"
                     className="text-xl focus:outline-none italic font-italic leading-5 pl-2 text-gray-700"
                   >
-                   ¿En qué consiste Hipo Power?
-                   Son clases de entrenamiento especializadas y personalizadas para las personas que quieren obtener ¡RESULTADOS REALES! puede ser online o presencial.
+                    ¿En qué consiste Hipo Power? Son clases de entrenamiento
+                    especializadas y personalizadas para las personas que
+                    quieren obtener ¡RESULTADOS REALES! puede ser online o
+                    presencial.
                   </p>
                 </div>
               </div>
