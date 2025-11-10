@@ -44,7 +44,7 @@ export default function SocialMediaButton() {
           } transition-opacity`}
         >
           <a
-            href="https://www.facebook.com/FisioterapiaCristal"
+            href="https://www.facebook.com/FisioPelvicaCristalSarabia"
             target="_blank"
             className=" rounded-full px-2  py-1 w-24 text-center flex items-center justify-center"
           >

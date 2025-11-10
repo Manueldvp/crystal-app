@@ -141,7 +141,7 @@ export function FooterWithSocialLinks() {
           <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
             <Typography
               as="a"
-              href="https://www.facebook.com/FisioterapiaCristal"
+              href="https://www.facebook.com/FisioPelvicaCristalSarabia"
               className="opacity-80 transition-opacity hover:opacity-100"
             >
               <svg
