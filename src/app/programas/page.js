@@ -75,7 +75,7 @@ const Eventos = () => {
                         </g>
                       </svg>
                     </Link>
-                    <Link href="https://www.facebook.com/FisioterapiaCristal">
+                    <Link href="https://www.facebook.com/FisioPelvicaCristalSarabia">
                       <svg
                         className="text-white hover:text-gray-300 cursor-pointer"
                         width={20}
@@ -146,67 +146,120 @@ const Eventos = () => {
         </div>
         <div className="flex flex-col items-center ">
           <RevealWrapper className="flex py-14 lg:w-2/3 px-4  flex-col items-center justify-center">
+            {/* Logo de Hipopower */}
+            <div className="flex justify-center mb-6">
+              <Image
+                src="/hipopower-logo.png"
+                alt="Hipopower Logo"
+                width={280}
+                height={112}
+                className="h-auto"
+              />
+            </div>
             <h1 className="text-4xl text-center  font-bold  text-gray-800">
-              Taller HIPO POWER Online y Presencial
+              Taller Presencial + Online
             </h1>
-            <p className="text-base font-medium text-center text-gray-600  mt-4">
-              Tienes a tu disponibilidad el Taller Core Restore más que
-              Hipopresivos, su duración puede ser corta pero con un gran impacto
-              de aprendizaje, rutinas personalizadas.
+            <p className="text-lg font-medium text-center text-gray-600  mt-4 max-w-3xl">
+              Fortalece tu abdomen y piso pélvico de forma funcional, firme y estética. 
+              Una experiencia integral que combina teoría, práctica y seguimiento personalizado.
             </p>
           </RevealWrapper>
         </div>
-        <RevealWrapper className="flex    flex-col items-center justify-center">
-          <div className="lg:w-2/3 md:w-full px-4 flex  flex-col items-center justify-center">
+        <RevealWrapper className="flex flex-col items-center justify-center">
+          <div className="lg:w-2/3 md:w-full px-4 flex flex-col items-center justify-center">
             <Image
               width={2000}
               height={2000}
               className="w-full rounded-t-lg"
-              src="/25.jpg"
-              alt="computer"
+              src="/hipopower-group.jpg"
+              alt="Grupo Hipopower"
             />
-            <div className="py-4 px-8 w-full flex justify-between   bg-purple-secondary-600">
+            <div className="py-4 px-8 w-full flex justify-between bg-gradient-to-r from-fuchsia-pink-500 to-purple-secondary-600">
               <p className="text-sm text-white font-semibold tracking-wide">
                 Cristal Sarabia
               </p>
               <p className="text-sm text-white font-semibold tracking-wide">
-                HIPO POWER
+                HIPOPOWER
               </p>
             </div>
-            <div className="bg-white shadow-lg rounded-b-lg px-10 py-6  ">
-              <h1 className="text-3xl text-gray-800 font-semibold tracking-wider">
-                Este taller está enfocado en el complejo Abdomino-Lumbo-Pélvico,
-                y te ayudará a:
-              </h1>
-              <p className="text-gray-700 text-base lg:text-lg  lg:leading-8 tracking-wide mt-6 w-11/12">
-                Tonificar tu suelo pélvico, Mejorar tu presión abdominopélvica,
-                Mejorar tu postura, Fortalecer tu faja abdominal, Tratar dolores
-                lumbares,
+            <div className="bg-white shadow-lg rounded-b-lg px-10 py-6">
+              <h2 className="text-3xl text-gray-800 font-bold tracking-wider mb-6">
+                ¿Qué incluye el programa?
+              </h2>
+              
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start gap-3">
+                  <span className="text-fuchsia-pink-500 font-bold text-xl">+</span>
+                  <p className="text-gray-700 text-base lg:text-lg">
+                    <strong>Taller presencial de 3 horas</strong> - Aprende la técnica correcta de hipopresivos
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-fuchsia-pink-500 font-bold text-xl">+</span>
+                  <p className="text-gray-700 text-base lg:text-lg">
+                    <strong>8 clases online en vivo</strong> - Miércoles 9:00 PM durante 8 semanas
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-aquamarine-blue-500 font-bold text-xl">+</span>
+                  <p className="text-gray-700 text-base lg:text-lg">
+                    <strong>Acceso a Hipopower Academy por 2 meses</strong> - Plataforma digital con videos on-demand y seguimiento de progreso
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-fuchsia-pink-500 font-bold text-xl">+</span>
+                  <p className="text-gray-700 text-base lg:text-lg">
+                    <strong>Material exclusivo</strong> - E-book, material impreso y bolsa HIPOPOWER
+                  </p>
+                </div>
+              </div>
+
+              <h3 className="text-2xl text-gray-800 font-bold tracking-wider mb-4">
+                Beneficios
+              </h3>
+              <div className="grid md:grid-cols-2 gap-3 mb-8">
+                <div className="flex items-center gap-2">
+                  <span className="text-purple-secondary-500">●</span>
+                  <p className="text-gray-700">Tonifica abdomen y piso pélvico</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-purple-secondary-500">●</span>
+                  <p className="text-gray-700">Reduce perímetro de cintura</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-purple-secondary-500">●</span>
+                  <p className="text-gray-700">Mejora postura y respiración</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-purple-secondary-500">●</span>
+                  <p className="text-gray-700">Ideal para postparto y diástasis</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-purple-secondary-500">●</span>
+                  <p className="text-gray-700">Reduce dolor lumbar</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-purple-secondary-500">●</span>
+                  <p className="text-gray-700">Mejora rendimiento deportivo</p>
+                </div>
+              </div>
+
+              <p className="text-gray-600 text-base lg:text-lg mb-6 italic">
+                Guiado por Cristal Sarabia, fisioterapeuta experta en piso pélvico con más de 6 años de experiencia 
+                y certificaciones internacionales en España y Brasil.
               </p>
-              <p className="text-gray-700 text-base lg:text-lg  lg:leading-8 tracking-wide mt-6 w-11/12">
-                Las clases serán supervisadas por una fisioterapeuta pélvica y
-                certificada internacionalmente como entrenadora de Hipopresivos
-                por Low Pressure Fitness por Cristal Sarabia.
-              </p>
-              <p className="text-gray-700 text-base lg:text-lg  lg:leading-8 tracking-wide mt-6 w-11/12">
-                Aprenderás tanto recursos y contenido práctico como teórico:
-              </p>
-              <p className="text-gray-700 text-base lg:text-lg  lg:leading-8 tracking-wide mt-10 w-11/12">
-                - Valoración para personalización de rutinas.
-              </p>
-              <p className="text-gray-700 text-base lg:text-lg  lg:leading-8 tracking-wide mt-6 w-11/12">
-                - Atención personalizada
-              </p>
-              <p className="text-gray-700 text-base lg:text-lg  lg:leading-8 tracking-wide mt-6 w-11/12">
-                - Certificado de asistencia.
-              </p>
-              <div className="flex justify-end">
-                <Link href="https://api.whatsapp.com/send?phone=5212224237337&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta">
-                  <div className="flex items-center max-w-64 cursor-pointer pb-4 md:pb-0">
-                    <h3 className="f-f-r bg-fuchsia-pink-500 hover:bg-fuchsia-pink-700 p-4 rounded-lg text-lg lg:text-2xl font-semibold text-white">
-                      Empezar ya
+
+              <div className="flex justify-between items-center">
+                <div className="text-left">
+                  <p className="text-sm text-gray-500">Próxima fecha:</p>
+                  <p className="text-lg font-bold text-fuchsia-pink-600">{process.env.NEXT_PUBLIC_HIPOPOWER_DATE || "Por confirmar"}</p>
+                </div>
+                <Link href="/hipo-power">
+                  <div className="flex items-center cursor-pointer group">
+                    <h3 className="bg-gradient-to-r from-fuchsia-pink-500 to-purple-secondary-600 hover:from-fuchsia-pink-600 hover:to-purple-secondary-700 p-4 rounded-lg text-lg lg:text-xl font-bold text-white transition-all duration-300">
+                      Ver más información
                     </h3>
-                    <div className="pl-2">
+                    <div className="pl-2 group-hover:translate-x-1 transition-transform duration-300">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width={24}

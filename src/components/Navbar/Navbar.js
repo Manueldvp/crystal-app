@@ -46,7 +46,7 @@ function Navbar() {
               type="button"
               className={`text-white items-center bg-aquamarine-blue-300 hover:bg-fuchsia-pink-400   font-medium rounded-full text-sm  ${isDesktop ? 'mr-4 px-4' : 'px-4'} py-2 text-center`}
             >
-              HIPO POWER
+              HIPOPOWER
             </Link>
             <button
               data-collapse-toggle="navbar-cta"
