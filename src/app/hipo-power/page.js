@@ -65,6 +65,16 @@ export default function HipoPowerPage() {
                 FORTALECE • TRANSFORMA • EMPODERA
               </p>
 
+              {/* Próxima fecha */}
+              <div className="mb-8 inline-block px-6 py-3 bg-white/10 backdrop-blur-md rounded-2xl border-2 border-white/30">
+                <p className="text-sm text-purple-secondary-100 uppercase tracking-wider mb-1">
+                  Próxima fecha
+                </p>
+                <p className="text-2xl md:text-3xl font-black text-white">
+                  {process.env.NEXT_PUBLIC_HIPOPOWER_DATE || "Por confirmar"}
+                </p>
+              </div>
+
               {/* Description */}
               <p className="text-base md:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed">
                 El taller más completo de entrenamiento hipopresivo y
@@ -113,7 +123,7 @@ export default function HipoPowerPage() {
 
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
                   <div className="text-4xl mb-2 font-black text-fuchsia-pink-200">
-                    11
+                    8
                   </div>
                   <div className="text-3xl font-bold text-white mb-1">
                     semanas
