@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useFetch } from "@/hooks/useFetch";
 import { AboutCardServices } from "@/components/Card/AboutCardServices";
 import { Button } from "@material-tailwind/react";
-import { RevealWrapper } from "next-reveal";
+import { RevealWrapper } from "@/components/RevealWrapper/RevealWrapper";
 
 const About = () => {
   const services = useFetch("/services?populate=*");

@@ -4,7 +4,7 @@ import Galeria from "@/components/Galeria/Galeria";
 import { QuadGallery } from "@/components/Galeria/QuadGallery";
 import Image from "next/image";
 import Link from "next/link";
-import { RevealWrapper } from "next-reveal";
+import { RevealWrapper } from "@/components/RevealWrapper/RevealWrapper";
 
 const GaleriaPage = () => {
   return (

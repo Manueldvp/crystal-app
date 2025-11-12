@@ -9,16 +9,15 @@ module.exports = withMT({
   theme: {
     extend: {
       height: {
-        '90vh': '90vh',
+        "90vh": "90vh",
       },
       transitionProperty: {
-        'opacity': 'opacity',
+        opacity: "opacity",
       },
       transitionDuration: {
-        '2000': '2000ms',
+        2000: "2000ms",
       },
-    
-    
+
       colors: {
         "fuchsia-pink": {
           50: "#fcf7fc",

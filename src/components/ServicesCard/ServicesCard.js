@@ -1,7 +1,7 @@
 "use client";
 import useIsDesktop from "@/hooks/useIsDesktop";
 import Link from "next/link";
-import { RevealWrapper  } from "next-reveal";
+import { RevealWrapper  } from "@/components/RevealWrapper/RevealWrapper";
 
 const ServicesCard = () => {
   const isDesktop = useIsDesktop();
