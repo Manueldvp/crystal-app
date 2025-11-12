@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Link from "next/link";
 import useIsDesktop from "@/hooks/useIsDesktop";
-import { RevealWrapper  } from "next-reveal";
+import { RevealWrapper } from "@/components/RevealWrapper/RevealWrapper";
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 const images = ['/278.png', '/bg-2.png', '/bg-3.png'];

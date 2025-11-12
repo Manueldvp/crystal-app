@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import useIsDesktop from "@/hooks/useIsDesktop";
-import { RevealWrapper } from "next-reveal";
+import { RevealWrapper } from "@/components/RevealWrapper/RevealWrapper";
 import {
   Accordion,
   AccordionHeader,

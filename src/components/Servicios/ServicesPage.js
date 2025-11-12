@@ -4,7 +4,7 @@ import useIsDesktop from "@/hooks/useIsDesktop";
 import { useFetch } from "@/hooks/useFetch";
 import CollapseDefault from "../Buttom/CollapseButtom";
 import ServiceCard from "../Card/ServiceCard";
-import { RevealWrapper } from "next-reveal";
+import { RevealWrapper } from "@/components/RevealWrapper/RevealWrapper";
 
 const ServicesPage = ({ services }) => {
   const imgUrl = services.attributes.Cover.data.attributes.url;

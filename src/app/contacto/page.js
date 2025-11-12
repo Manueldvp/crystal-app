@@ -1,5 +1,5 @@
 "use client";
-import { RevealWrapper } from "next-reveal";
+import { RevealWrapper } from "@/components/RevealWrapper/RevealWrapper";
 import { useState } from "react";
 import Notification from "@/components/notification/notification";
 

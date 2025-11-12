@@ -3,7 +3,7 @@ import useIsDesktop from "@/hooks/useIsDesktop";
 import useIsTablet from "@/hooks/useIsTablet";
 import { useFetch } from "@/hooks/useFetch";
 import Image from "next/image";
-import { RevealWrapper } from "next-reveal";
+import { RevealWrapper } from "@/components/RevealWrapper/RevealWrapper";
 
 const Galeria = () => {
     const isTablet = useIsTablet()

@@ -3,7 +3,7 @@ import ServiciosLanding from "@/components/Servicios/ServiciosLanding";
 import useIsDesktop from "@/hooks/useIsDesktop";
 import Link from "next/link";
 import { useFetch } from "@/hooks/useFetch";
-import { RevealWrapper } from "next-reveal";
+import { RevealWrapper } from "@/components/RevealWrapper/RevealWrapper";
 
 const Servicios = () => {
   const isDesktop = useIsDesktop();

@@ -2,7 +2,7 @@
 import { BlogCard } from "../Card/BlogCard"
 import { useFetch } from "@/hooks/useFetch"
 import useIsDesktop from "@/hooks/useIsDesktop"
-import { RevealWrapper  } from "next-reveal";
+import { RevealWrapper  } from "@/components/RevealWrapper/RevealWrapper";
 
 const BlogComponent =  () => {
     const isDesktop = useIsDesktop()

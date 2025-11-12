@@ -7,7 +7,7 @@ import {
 } from "@material-tailwind/react";
 import { useState } from "react";
 import useIsDesktop from "@/hooks/useIsDesktop";
-import { RevealWrapper } from "next-reveal";
+import { RevealWrapper } from "@/components/RevealWrapper/RevealWrapper";
 
 export function AccordionComponent() {
   const [open, setOpen] = useState(1);

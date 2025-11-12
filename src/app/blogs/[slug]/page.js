@@ -6,7 +6,7 @@ import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
 import { NavbarBottom } from "@/components/NavbarBottom/NavbarBottom";
 import useIsDesktop from "@/hooks/useIsDesktop";
 import Skeleton from "@/components/Skeleton/Skeleton";
-import { RevealWrapper } from "next-reveal";
+import { RevealWrapper } from "@/components/RevealWrapper/RevealWrapper";
 
 export default function BlogPage() {
   const blog = usePageBlogs();

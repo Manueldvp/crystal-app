@@ -2,7 +2,7 @@
 import Card from "../Card/Card"
 import useIsDesktop from "@/hooks/useIsDesktop"
 import { useFetch } from "@/hooks/useFetch"
-import { RevealWrapper  } from "next-reveal";
+import { RevealWrapper  } from "@/components/RevealWrapper/RevealWrapper";
 
 const CoreRestoreCard = () => {
     const courses = useFetch(`/courses?populate=*`);

@@ -2,7 +2,7 @@
 import Link from "next/link"
 import { CarouselComponent } from "./CarouselComponent"
 import useIsDesktop from "@/hooks/useIsDesktop"
-import { RevealWrapper  } from "next-reveal";
+import { RevealWrapper  } from "@/components/RevealWrapper/RevealWrapper";
 const CarrouselSection = () => {
   const isDesktop = useIsDesktop()
   return (
