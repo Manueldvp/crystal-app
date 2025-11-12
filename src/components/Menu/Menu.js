@@ -38,7 +38,7 @@ function Menu({ isOpen, setIsOpen, isDesktop, handleOnClick }) {
     }
   };
 
-  const allowedLabels = ["Servicios", "Eventos", "Galería"];
+  const allowedLabels = ["Servicios", "Eventos", "Programas"];
 
   const showSubRoutes = (label) => {
     return (
