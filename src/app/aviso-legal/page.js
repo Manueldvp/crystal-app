@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export default function AvisoLegal() {
     return (
@@ -6,7 +7,7 @@ export default function AvisoLegal() {
                 <div className="w-full flex flex-col justify-center items-center">
                     <div className="flex flex-col justify-center items-center text-center space-y-4">
                         <h1 className="text-3xl lg:text-4xl font-bold leading-9 md:leading-7 lg:leading-9 text-gray-800">Aviso Legal y de Privacidad</h1>
-                        <p className="text-base leading-6 text-center text-gray-600 w-full md:w-10/12">Este aviso legal recoge las condiciones generales que regulan el acceso y el uso de la página web <a href="/" className=" cursor-pointer text-purple-secondary-500 hover:text-gray-600">cristalsarabia.com</a></p>
+                        <p className="text-base leading-6 text-center text-gray-600 w-full md:w-10/12">Este aviso legal recoge las condiciones generales que regulan el acceso y el uso de la página web <Link href="/" className=" cursor-pointer text-purple-secondary-500 hover:text-gray-600">cristalsarabia.com</Link></p>
                     </div>
                     
                     <div className="mt-16 flex justify-center flex-col items-center w-full text-left space-y-8">

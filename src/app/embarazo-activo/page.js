@@ -55,7 +55,7 @@ export default function EmbarazoActivoPage() {
               </h1>
 
               <p className="text-xl md:text-2xl lg:text-3xl text-white/90 font-semibold mb-6 leading-relaxed italic">
-                "Conecta con tu cuerpo, tu bebé y tu poder interior"
+                &ldquo;Conecta con tu cuerpo, tu bebé y tu poder interior&rdquo;
               </p>
 
               <p className="text-base md:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
@@ -110,7 +110,7 @@ export default function EmbarazoActivoPage() {
               </div>
 
               <p className="mt-12 text-lg md:text-xl text-white/80 italic font-light max-w-2xl mx-auto">
-                "Cuando nace un bebé, también nace una nueva esencia de ti"
+                &ldquo;Cuando nace un bebé, también nace una nueva esencia de ti&rdquo;
               </p>
             </RevealWrapper>
           </div>
@@ -355,9 +355,9 @@ export default function EmbarazoActivoPage() {
             <div className="max-w-3xl mx-auto text-center flex items-center gap-4 md:gap-6">
               <HeartIcon className="w-10 h-10 md:w-12 md:h-12 text-white flex-shrink-0" />
               <p className="text-lg md:text-xl lg:text-2xl text-white font-bold leading-snug">
-                "Tu cuerpo está diseñado para esta experiencia. Cuidarlo durante
+                &ldquo;Tu cuerpo está diseñado para esta experiencia. Cuidarlo durante
                 el embarazo no es un lujo, es una inversión en tu salud y la de
-                tu bebé."
+                tu bebé.&rdquo;
               </p>
             </div>
           </RevealWrapper>
@@ -528,9 +528,9 @@ export default function EmbarazoActivoPage() {
               con fuerza y serenidad
             </h2>
             <p className="text-xl md:text-2xl text-white/90 mb-10 italic">
-              "Ellas ya vivieron la experiencia de moverse con propósito.
+              &ldquo;Ellas ya vivieron la experiencia de moverse con propósito.
               <br />
-              Ahora es tu turno."
+              Ahora es tu turno.&rdquo;
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

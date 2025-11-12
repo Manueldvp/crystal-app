@@ -125,9 +125,9 @@ export function FooterWithSocialLinks() {
             className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0"
           >
             &copy; {currentYear}{" "}
-            <a className="mr-4" href="/">
+            <Link className="mr-4" href="/">
               Cristal Sarabia.
-            </a>{" "}
+            </Link>{" "}
             All Rights Reserved{" "}
             <Link className="ml-4" href="/aviso-legal">
               {" "}
