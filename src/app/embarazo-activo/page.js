@@ -110,7 +110,8 @@ export default function EmbarazoActivoPage() {
               </div>
 
               <p className="mt-12 text-lg md:text-xl text-white/80 italic font-light max-w-2xl mx-auto">
-                &ldquo;Cuando nace un bebé, también nace una nueva esencia de ti&rdquo;
+                &ldquo;Cuando nace un bebé, también nace una nueva esencia de
+                ti&rdquo;
               </p>
             </RevealWrapper>
           </div>
@@ -355,9 +356,9 @@ export default function EmbarazoActivoPage() {
             <div className="max-w-3xl mx-auto text-center flex items-center gap-4 md:gap-6">
               <HeartIcon className="w-10 h-10 md:w-12 md:h-12 text-white flex-shrink-0" />
               <p className="text-lg md:text-xl lg:text-2xl text-white font-bold leading-snug">
-                &ldquo;Tu cuerpo está diseñado para esta experiencia. Cuidarlo durante
-                el embarazo no es un lujo, es una inversión en tu salud y la de
-                tu bebé.&rdquo;
+                &ldquo;Tu cuerpo está diseñado para esta experiencia. Cuidarlo
+                durante el embarazo no es un lujo, es una inversión en tu salud
+                y la de tu bebé.&rdquo;
               </p>
             </div>
           </RevealWrapper>
@@ -369,7 +370,7 @@ export default function EmbarazoActivoPage() {
           <RevealWrapper>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-pink-secondary-700 mb-6">
-                Sobre la Especialista
+                Sobre mí
               </h2>
               <div className="w-24 h-1 bg-pink-secondary-500 mx-auto"></div>
             </div>
