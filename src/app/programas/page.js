@@ -3,7 +3,7 @@ import Link from "next/link";
 import TallerCards from "@/components/Card/TallerCards";
 import Image from "next/image";
 import { useFetch } from "@/hooks/useFetch";
-import { RevealWrapper } from "next-reveal";
+import { RevealWrapper } from "@/components/RevealWrapper/RevealWrapper";
 
 const Eventos = () => {
   const courses = useFetch(`/courses?populate=*`);
@@ -124,6 +124,109 @@ const Eventos = () => {
         </RevealWrapper>
       </div>
 
+      <div className="bg-gradient-to-b from-white to-pink-secondary-50 py-12">
+        <div className="max-w-6xl mx-auto px-4">
+          <RevealWrapper>
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4">
+              Talleres Presenciales
+            </h2>
+            <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
+              Experiencias transformadoras guiadas por Cristal Sarabia
+            </p>
+          </RevealWrapper>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <RevealWrapper>
+              <a href="#hipopower" className="block group">
+                <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 border-transparent hover:border-purple-secondary-300">
+                  <div className="relative h-64">
+                    <Image
+                      src="/hipopower-group.jpg"
+                      alt="Hipopower"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <Image
+                        src="/hipopower-logo.png"
+                        alt="Hipopower Logo"
+                        width={180}
+                        height={72}
+                        className="mb-2"
+                      />
+                      <p className="text-white text-sm">
+                        Taller Presencial + Online
+                      </p>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-purple-secondary-600 transition-colors">
+                      HIPOPOWER
+                    </h3>
+                    <p className="text-gray-600 mb-4 line-clamp-2">
+                      Fortalece tu abdomen y piso pélvico de forma funcional, firme y estética.
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-semibold text-purple-secondary-600">
+                        Ver detalles ↓
+                      </span>
+                      <div className="flex gap-1">
+                        <span className="w-2 h-2 rounded-full bg-fuchsia-pink-400"></span>
+                        <span className="w-2 h-2 rounded-full bg-purple-secondary-400"></span>
+                        <span className="w-2 h-2 rounded-full bg-aquamarine-blue-400"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </RevealWrapper>
+
+            <RevealWrapper>
+              <a href="#embarazo-activo" className="block group">
+                <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 border-transparent hover:border-pink-secondary-300">
+                  <div className="relative h-64">
+                    <Image
+                      src="/images/taller-embarazo/hero.jpg"
+                      alt="Embarazo Activo"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <h3 className="text-3xl font-black text-white mb-2">
+                        EMBARAZO ACTIVO
+                      </h3>
+                      <p className="text-white text-sm">
+                        Taller Presencial
+                      </p>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-pink-secondary-600 transition-colors">
+                      Preparación al Parto
+                    </h3>
+                    <p className="text-gray-600 mb-4 line-clamp-2">
+                      Conecta con tu cuerpo, tu bebé y tu poder interior en 4 clases presenciales.
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-semibold text-pink-secondary-600">
+                        Ver detalles ↓
+                      </span>
+                      <div className="flex gap-1">
+                        <span className="w-2 h-2 rounded-full bg-pink-secondary-400"></span>
+                        <span className="w-2 h-2 rounded-full bg-fuchsia-pink-400"></span>
+                        <span className="w-2 h-2 rounded-full bg-purple-secondary-400"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </RevealWrapper>
+          </div>
+        </div>
+      </div>
+
       <div className="">
         <div className="flex flex-col  items-center ">
           <RevealWrapper className="flex py-10 lg:w-2/3 px-4 flex-col items-center justify-center">
@@ -144,9 +247,8 @@ const Eventos = () => {
               ))}
           </RevealWrapper>
         </div>
-        <div className="flex flex-col items-center ">
+        <div id="hipopower" className="flex flex-col items-center scroll-mt-20">
           <RevealWrapper className="flex py-14 lg:w-2/3 px-4  flex-col items-center justify-center">
-            {/* Logo de Hipopower */}
             <div className="flex justify-center mb-6">
               <Image
                 src="/hipopower-logo.png"
@@ -270,6 +372,139 @@ const Eventos = () => {
                         <path
                           d="M13.1719 12L8.22192 7.04999L9.63592 5.63599L15.9999 12L9.63592 18.364L8.22192 16.95L13.1719 12Z"
                           fill="#D53F8C"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </RevealWrapper>
+
+        <div id="embarazo-activo" className="flex flex-col items-center mt-20 scroll-mt-20">
+          <RevealWrapper className="flex py-14 lg:w-2/3 px-4 flex-col items-center justify-center">
+            <h1 className="text-4xl text-center font-bold text-gray-800">
+              Embarazo Activo y Preparación al Parto
+            </h1>
+            <p className="text-lg font-medium text-center text-gray-600 mt-4 max-w-3xl">
+              Conecta con tu cuerpo, tu bebé y tu poder interior. 4 clases presenciales 
+              para fortalecer tu cuerpo y vivir un embarazo más consciente.
+            </p>
+          </RevealWrapper>
+        </div>
+
+        <RevealWrapper className="flex flex-col items-center justify-center">
+          <div className="lg:w-2/3 md:w-full px-4 flex flex-col items-center justify-center">
+            <Image
+              width={2000}
+              height={2000}
+              className="w-full rounded-t-lg object-cover max-h-[600px]"
+              src="/images/taller-embarazo/hero.jpg"
+              alt="Embarazo Activo"
+            />
+            <div className="py-4 px-8 w-full flex justify-between bg-gradient-to-r from-pink-secondary-500 via-fuchsia-pink-500 to-purple-secondary-600">
+              <p className="text-sm text-white font-semibold tracking-wide">
+                Cristal Sarabia
+              </p>
+              <p className="text-sm text-white font-semibold tracking-wide">
+                EMBARAZO ACTIVO
+              </p>
+            </div>
+            <div className="bg-white shadow-lg rounded-b-lg px-10 py-6">
+              <h2 className="text-3xl text-gray-800 font-bold tracking-wider mb-6">
+                ¿Qué incluye el taller?
+              </h2>
+              
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start gap-3">
+                  <span className="text-pink-secondary-500 font-bold text-xl">●</span>
+                  <p className="text-gray-700 text-base lg:text-lg">
+                    <strong>4 clases presenciales de 1 hora</strong> - Todos los viernes a las 6:00 PM
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-pink-secondary-500 font-bold text-xl">●</span>
+                  <p className="text-gray-700 text-base lg:text-lg">
+                    <strong>Cambios corporales y pelvis libre</strong> - Movimiento y conciencia del cuerpo durante el embarazo
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-fuchsia-pink-500 font-bold text-xl">●</span>
+                  <p className="text-gray-700 text-base lg:text-lg">
+                    <strong>Fortalecimiento y flexibilidad</strong> - Ejercicios seguros adaptados a cada trimestre
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-pink-secondary-500 font-bold text-xl">●</span>
+                  <p className="text-gray-700 text-base lg:text-lg">
+                    <strong>Respiración y técnicas de relajación</strong> - Manejo del dolor con herramientas naturales
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-fuchsia-pink-500 font-bold text-xl">●</span>
+                  <p className="text-gray-700 text-base lg:text-lg">
+                    <strong>Preparación física y emocional</strong> - Masaje perineal y técnicas para el parto y postparto
+                  </p>
+                </div>
+              </div>
+
+              <h3 className="text-2xl text-gray-800 font-bold tracking-wider mb-4">
+                Beneficios
+              </h3>
+              <div className="grid md:grid-cols-2 gap-3 mb-8">
+                <div className="flex items-center gap-2">
+                  <span className="text-pink-secondary-500">●</span>
+                  <p className="text-gray-700">Salud física óptima durante el embarazo</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-pink-secondary-500">●</span>
+                  <p className="text-gray-700">Fortalecimiento abdomino-pélvico</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-pink-secondary-500">●</span>
+                  <p className="text-gray-700">Previene dolor lumbar</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-pink-secondary-500">●</span>
+                  <p className="text-gray-700">Confianza y conexión con tu bebé</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-pink-secondary-500">●</span>
+                  <p className="text-gray-700">Preparación integral para el parto</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-pink-secondary-500">●</span>
+                  <p className="text-gray-700">Comunidad de apoyo entre madres</p>
+                </div>
+              </div>
+
+              <p className="text-gray-600 text-base lg:text-lg mb-6 italic">
+                Guiado por Cristal Sarabia, fisioterapeuta pélvica y educadora perinatal con más de 6 años de experiencia 
+                y certificaciones internacionales.
+              </p>
+
+              <div className="flex justify-between items-center">
+                <div className="text-left">
+                  <p className="text-sm text-gray-500">Inversión:</p>
+                  <p className="text-lg font-bold text-pink-secondary-600">$1,600 - 4 clases completas</p>
+                </div>
+                <Link href="/embarazo-activo">
+                  <div className="flex items-center cursor-pointer group">
+                    <h3 className="bg-gradient-to-r from-pink-secondary-500 to-fuchsia-pink-500 hover:from-pink-secondary-600 hover:to-fuchsia-pink-600 p-4 rounded-lg text-lg lg:text-xl font-bold text-white transition-all duration-300">
+                      Ver más información
+                    </h3>
+                    <div className="pl-2 group-hover:translate-x-1 transition-transform duration-300">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={24}
+                        height={24}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M13.1719 12L8.22192 7.04999L9.63592 5.63599L15.9999 12L9.63592 18.364L8.22192 16.95L13.1719 12Z"
+                          fill="#EC4899"
                         />
                       </svg>
                     </div>
