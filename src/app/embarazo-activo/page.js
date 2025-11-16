@@ -66,7 +66,7 @@ export default function EmbarazoActivoPage() {
                 <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 text-center">
                   <CalendarDaysIcon className="w-8 h-8 text-white mb-2 mx-auto" />
                   <div className="text-white font-bold text-sm mb-1">
-                    24, 27 Y 28 DE NOVIEMBRE
+                    21, 25 Y 28 DE NOVIEMBRE
                   </div>
                   <div className="text-white/80 text-sm">18:30 - 20:30 hrs</div>
                 </div>
@@ -83,7 +83,7 @@ export default function EmbarazoActivoPage() {
                     $1,800
                   </div>
                   <div className="text-white/80 text-sm">
-                    Por pareja + 1 mes de clases
+                    Por pareja + Acceso a plataforma
                   </div>
                 </div>
               </div>
@@ -422,7 +422,8 @@ export default function EmbarazoActivoPage() {
                         $1,800 por pareja
                       </p>
                       <p className="text-sm text-pink-secondary-600">
-                        + 1 mes de clases de ejercicio en embarazo
+                        + 8 clases pregrabadas con acceso por 1 mes a la
+                        plataforma
                       </p>
                     </div>
                   </div>
@@ -433,7 +434,7 @@ export default function EmbarazoActivoPage() {
                       <h4 className="font-bold text-lg text-pink-secondary-700 mb-1">
                         Fechas
                       </h4>
-                      <p className="text-gray-700">24, 27 y 28 de noviembre</p>
+                      <p className="text-gray-700">21, 25 y 28 de noviembre</p>
                     </div>
                   </div>
 
