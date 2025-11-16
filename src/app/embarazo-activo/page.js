@@ -41,57 +41,56 @@ export default function EmbarazoActivoPage() {
               <div className="inline-block mb-6 px-6 py-2 bg-white/20 backdrop-blur-md rounded-full border border-white/30">
                 <p className="text-sm md:text-base text-white font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
                   <span className="text-pink-secondary-200">●</span>
-                  Taller Presencial
+                  Taller Online en Vivo
                   <span className="text-pink-secondary-200">●</span>
                 </p>
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-6 tracking-tight leading-tight">
-                Embarazo Activo y
+                Preparándome para
                 <br />
-                <span className="text-white drop-shadow-lg">
-                  Preparación al Parto
-                </span>
+                <span className="text-white drop-shadow-lg">el Parto</span>
               </h1>
 
               <p className="text-xl md:text-2xl lg:text-3xl text-white/90 font-semibold mb-6 leading-relaxed italic">
-                &ldquo;Conecta con tu cuerpo, tu bebé y tu poder interior&rdquo;
+                &ldquo;Prepárate física y emocionalmente para el nacimiento de
+                tu bebé&rdquo;
               </p>
 
               <p className="text-base md:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-                4 clases presenciales para fortalecer tu cuerpo y vivir un
-                embarazo más consciente
+                3 sesiones online para vivir tu parto con mayor confianza,
+                conocimiento y serenidad
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-10">
                 <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 text-center">
                   <CalendarDaysIcon className="w-8 h-8 text-white mb-2 mx-auto" />
                   <div className="text-white font-bold text-sm mb-1">
-                    TODOS LOS VIERNES
+                    24, 27 Y 28 DE NOVIEMBRE
                   </div>
-                  <div className="text-white/80 text-sm">6:00 PM</div>
+                  <div className="text-white/80 text-sm">18:30 - 20:30 hrs</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 text-center">
-                  <MapPinIcon className="w-8 h-8 text-white mb-2 mx-auto" />
+                  <ClockIcon className="w-8 h-8 text-white mb-2 mx-auto" />
                   <div className="text-white font-bold text-sm mb-1">
-                    TORRES MÉDICAS 2
+                    MODALIDAD ONLINE
                   </div>
-                  <div className="text-white/80 text-sm">Consultorio 408</div>
+                  <div className="text-white/80 text-sm">En vivo por Zoom</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 text-center">
                   <CurrencyDollarIcon className="w-8 h-8 text-white mb-2 mx-auto" />
                   <div className="text-white font-bold text-sm mb-1">
-                    $1,600
+                    $1,800
                   </div>
                   <div className="text-white/80 text-sm">
-                    4 clases completas
+                    Por pareja + 1 mes de clases
                   </div>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link
-                  href="https://wa.me/5212224237337?text=%C2%A1Hola%2C%20Cristal%21%20%C2%A1Quiero%20inscribirme%20al%20Taller%20de%20Embarazo%21"
+                  href="https://wa.me/5212224237337?text=%C2%A1Hola%2C%20Cristal%21%20Quiero%20inscribirme%20al%20taller%20Prepar%C3%A1ndome%20para%20el%20Parto"
                   target="_blank"
                   className="group relative px-8 py-4 bg-gradient-to-r from-pink-secondary-500 to-fuchsia-pink-500 text-white font-bold text-lg rounded-full hover:from-pink-secondary-600 hover:to-fuchsia-pink-600 transition-all duration-300 hover:scale-110 hover:shadow-2xl shadow-xl"
                 >
@@ -129,15 +128,18 @@ export default function EmbarazoActivoPage() {
           <RevealWrapper>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-pink-secondary-700 mb-6">
-                Sobre el Programa
+                ¿Qué es este taller?
               </h2>
               <div className="w-24 h-1 bg-pink-secondary-500 mx-auto mb-8"></div>
               <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-                Este programa está diseñado para acompañarte en una de las
-                etapas más importantes de tu vida. A través del movimiento, la
-                respiración y la conciencia corporal, aprenderás a cuidar tu
-                suelo pélvico y prepararte para el parto y el postparto con
-                seguridad, fuerza y confianza.
+                Un programa de preparación integral donde aprenderás a moverte,
+                respirar, relajarte y comprender tu cuerpo para vivir tu parto
+                con mayor confianza. Integra conocimientos actualizados de
+                fisioterapia pélvica en obstetricia para optimizar la
+                preparación corporal para el trabajo de parto.
+              </p>
+              <p className="text-base md:text-lg text-pink-secondary-600 font-semibold mt-4">
+                Ideal para mujeres a partir de la semana 20 de embarazo
               </p>
             </div>
           </RevealWrapper>
@@ -172,17 +174,17 @@ export default function EmbarazoActivoPage() {
           <RevealWrapper>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-pink-secondary-700 mb-6">
-                Contenido del Programa
+                Lo que aprenderás
               </h2>
               <div className="w-24 h-1 bg-pink-secondary-500 mx-auto mb-8"></div>
               <p className="text-lg text-gray-600">
-                4 semanas de transformación y preparación
+                3 sesiones completas de preparación para el parto
               </p>
             </div>
           </RevealWrapper>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Semana 1 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Sesión 1 */}
             <RevealWrapper className="h-full">
               <div className="h-full bg-gradient-to-br from-pink-secondary-50 to-fuchsia-pink-50 rounded-2xl p-8 border-2 border-pink-secondary-200 hover:shadow-xl transition-all duration-300 hover:scale-105 flex flex-col">
                 <div className="flex items-center gap-4 mb-4">
@@ -191,22 +193,20 @@ export default function EmbarazoActivoPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-pink-secondary-700">
-                      SEMANA 1
+                      SESIÓN 1
                     </h3>
-                    <p className="text-sm text-gray-600">Conciencia Corporal</p>
+                    <p className="text-sm text-gray-600">Biomecánica</p>
                   </div>
                 </div>
-                <h4 className="font-bold text-lg text-gray-800 mb-2">
-                  Cambios corporales y pelvis libre en el embarazo
-                </h4>
-                <p className="text-gray-600 flex-grow">
-                  Movimiento y conciencia del cuerpo. Aprende a reconocer los
-                  cambios y adaptarte a ellos.
-                </p>
+                <ul className="text-gray-600 flex-grow space-y-2 text-sm">
+                  <li>• Biomecánica de la pelvis durante el parto</li>
+                  <li>• Movimientos que facilitan el descenso del bebé</li>
+                  <li>• Posiciones para el trabajo de parto</li>
+                </ul>
               </div>
             </RevealWrapper>
 
-            {/* Semana 2 */}
+            {/* Sesión 2 */}
             <RevealWrapper className="h-full">
               <div className="h-full bg-gradient-to-br from-pink-secondary-50 to-fuchsia-pink-50 rounded-2xl p-8 border-2 border-pink-secondary-200 hover:shadow-xl transition-all duration-300 hover:scale-105 flex flex-col">
                 <div className="flex items-center gap-4 mb-4">
@@ -215,22 +215,20 @@ export default function EmbarazoActivoPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-pink-secondary-700">
-                      SEMANA 2
+                      SESIÓN 2
                     </h3>
-                    <p className="text-sm text-gray-600">Fortalecimiento</p>
+                    <p className="text-sm text-gray-600">Técnicas</p>
                   </div>
                 </div>
-                <h4 className="font-bold text-lg text-gray-800 mb-2">
-                  Fortalecimiento y flexibilidad
-                </h4>
-                <p className="text-gray-600 flex-grow">
-                  Participación del acompañante. Fortalece tu cuerpo de manera
-                  segura y efectiva.
-                </p>
+                <ul className="text-gray-600 flex-grow space-y-2 text-sm">
+                  <li>• Técnicas de respiración funcional</li>
+                  <li>• Métodos no farmacológicos para aliviar el dolor</li>
+                  <li>• Rol activo del acompañante</li>
+                </ul>
               </div>
             </RevealWrapper>
 
-            {/* Semana 3 */}
+            {/* Sesión 3 */}
             <RevealWrapper className="h-full">
               <div className="h-full bg-gradient-to-br from-pink-secondary-50 to-fuchsia-pink-50 rounded-2xl p-8 border-2 border-pink-secondary-200 hover:shadow-xl transition-all duration-300 hover:scale-105 flex flex-col">
                 <div className="flex items-center gap-4 mb-4">
@@ -239,42 +237,16 @@ export default function EmbarazoActivoPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-pink-secondary-700">
-                      SEMANA 3
+                      SESIÓN 3
                     </h3>
-                    <p className="text-sm text-gray-600">Respiración</p>
+                    <p className="text-sm text-gray-600">Cuidado Pélvico</p>
                   </div>
                 </div>
-                <h4 className="font-bold text-lg text-gray-800 mb-2">
-                  Respiración y relajación
-                </h4>
-                <p className="text-gray-600 flex-grow">
-                  Manejo del dolor con técnicas naturales. Aprende herramientas
-                  prácticas para el trabajo de parto.
-                </p>
-              </div>
-            </RevealWrapper>
-
-            {/* Semana 4 */}
-            <RevealWrapper className="h-full">
-              <div className="h-full bg-gradient-to-br from-pink-secondary-50 to-fuchsia-pink-50 rounded-2xl p-8 border-2 border-pink-secondary-200 hover:shadow-xl transition-all duration-300 hover:scale-105 flex flex-col">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-pink-secondary-400 to-fuchsia-pink-400 rounded-full flex items-center justify-center text-white text-2xl font-black flex-shrink-0">
-                    4
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-pink-secondary-700">
-                      SEMANA 4
-                    </h3>
-                    <p className="text-sm text-gray-600">Preparación Final</p>
-                  </div>
-                </div>
-                <h4 className="font-bold text-lg text-gray-800 mb-2">
-                  Preparación física y emocional para el parto y postparto
-                </h4>
-                <p className="text-gray-600 flex-grow">
-                  Masaje perineal y alivio natural. Todo lo que necesitas para
-                  sentirte preparada.
-                </p>
+                <ul className="text-gray-600 flex-grow space-y-2 text-sm">
+                  <li>• Cuidado y protección del piso pélvico</li>
+                  <li>• Masaje perineal y relajación pélvica</li>
+                  <li>• Activación efectiva de la faja abdominal</li>
+                </ul>
               </div>
             </RevealWrapper>
           </div>
@@ -296,39 +268,38 @@ export default function EmbarazoActivoPage() {
             {[
               {
                 icon: SparklesIcon,
-                title: "Salud física óptima",
+                title: "Mayor confianza",
                 description:
-                  "Ejercicios adaptados específicamente a cada trimestre del embarazo",
+                  "Vive tu parto con conocimiento y seguridad en tu cuerpo",
               },
               {
                 icon: HandRaisedIcon,
-                title: "Fortalecimiento abdomino-pélvico",
+                title: "Herramientas prácticas",
                 description:
-                  "Previene dolor lumbar y disfunciones del suelo pélvico",
+                  "Técnicas de respiración, movimiento y manejo del dolor",
               },
               {
                 icon: HeartIcon,
-                title: "Confianza y conexión",
-                description:
-                  "Aprende a conocer y escuchar tu cuerpo durante esta etapa",
+                title: "Conexión profunda",
+                description: "Fortalece el vínculo con tu bebé y tu pareja",
               },
               {
                 icon: AcademicCapIcon,
-                title: "Apoyo profesional",
+                title: "Conocimiento actualizado",
                 description:
-                  "Acompañamiento por fisioterapeuta pélvica y educadora perinatal",
+                  "Basado en evidencia científica y fisioterapia pélvica",
               },
               {
                 icon: UserIcon,
-                title: "Preparación integral",
+                title: "Preparación completa",
                 description:
-                  "Física, emocional y sensorial para el parto y postparto",
+                  "Física, emocional y mental para el momento del parto",
               },
               {
                 icon: UsersIcon,
-                title: "Comunidad de apoyo",
+                title: "Flexibilidad online",
                 description:
-                  "Comparte experiencias con otras madres en tu misma etapa",
+                  "Desde la comodidad de tu casa, en vivo con Cristal",
               },
             ].map((benefit, index) => {
               const IconComponent = benefit.icon;
@@ -445,21 +416,24 @@ export default function EmbarazoActivoPage() {
                     <CurrencyDollarIcon className="w-10 h-10 text-pink-secondary-500 flex-shrink-0" />
                     <div>
                       <h4 className="font-bold text-lg text-pink-secondary-700 mb-1">
-                        Costo
+                        Inversión
                       </h4>
-                      <p className="text-gray-700">$1,600 por 4 clases</p>
+                      <p className="text-gray-700 font-semibold">
+                        $1,800 por pareja
+                      </p>
+                      <p className="text-sm text-pink-secondary-600">
+                        + 1 mes de clases de ejercicio en embarazo
+                      </p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <MapPinIcon className="w-10 h-10 text-pink-secondary-500 flex-shrink-0" />
+                    <CalendarDaysIcon className="w-10 h-10 text-pink-secondary-500 flex-shrink-0" />
                     <div>
                       <h4 className="font-bold text-lg text-pink-secondary-700 mb-1">
-                        Lugar
+                        Fechas
                       </h4>
-                      <p className="text-gray-700">
-                        Torres Médicas 2, Consultorio 408, Piso 4
-                      </p>
+                      <p className="text-gray-700">24, 27 y 28 de noviembre</p>
                     </div>
                   </div>
 
@@ -469,19 +443,10 @@ export default function EmbarazoActivoPage() {
                       <h4 className="font-bold text-lg text-pink-secondary-700 mb-1">
                         Horario
                       </h4>
-                      <p className="text-gray-700">
-                        Todos los viernes, 6:00 PM
+                      <p className="text-gray-700">18:30 - 20:30 hrs</p>
+                      <p className="text-sm text-gray-500">
+                        2 horas por sesión
                       </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <ClockIcon className="w-10 h-10 text-pink-secondary-500 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-bold text-lg text-pink-secondary-700 mb-1">
-                        Duración
-                      </h4>
-                      <p className="text-gray-700">1 hora por sesión</p>
                     </div>
                   </div>
 
@@ -491,7 +456,8 @@ export default function EmbarazoActivoPage() {
                       <h4 className="font-bold text-lg text-pink-secondary-700 mb-1">
                         Modalidad
                       </h4>
-                      <p className="text-gray-700">Grupal, presencial</p>
+                      <p className="text-gray-700">Online en vivo por Zoom</p>
+                      <p className="text-sm text-gray-500">Cupo limitado</p>
                     </div>
                   </div>
 
@@ -499,9 +465,24 @@ export default function EmbarazoActivoPage() {
                     <ChatBubbleLeftRightIcon className="w-10 h-10 text-pink-secondary-500 flex-shrink-0" />
                     <div>
                       <h4 className="font-bold text-lg text-pink-secondary-700 mb-1">
-                        Inscripciones
+                        Reserva tu lugar
                       </h4>
-                      <p className="text-gray-700">WhatsApp: 222 423 7337</p>
+                      <p className="text-gray-700">Aparta con $500</p>
+                      <p className="text-sm text-gray-500">
+                        WhatsApp: 222 423 7337
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <SparklesIcon className="w-10 h-10 text-pink-secondary-500 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-bold text-lg text-pink-secondary-700 mb-1">
+                        Ideal para
+                      </h4>
+                      <p className="text-gray-700">
+                        Mujeres desde la semana 20 de embarazo
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -536,18 +517,18 @@ export default function EmbarazoActivoPage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
-                href="https://wa.me/5212224237337?text=%C2%A1Hola%2C%20Cristal%21%20%C2%A1Quiero%20inscribirme%20al%20Taller%20de%20Embarazo%21"
+                href="https://wa.me/5212224237337?text=%C2%A1Hola%2C%20Cristal%21%20Quiero%20inscribirme%20al%20taller%20Prepar%C3%A1ndome%20para%20el%20Parto"
                 target="_blank"
                 className="group relative px-10 py-5 bg-white text-pink-secondary-600 font-black text-xl rounded-full hover:bg-pink-secondary-50 transition-all duration-300 hover:scale-110 shadow-2xl"
               >
                 <span className="relative z-10 flex items-center gap-3">
-                  INSCRÍBETE AHORA
+                  RESERVA TU LUGAR
                   <HeartIcon className="w-6 h-6" />
                 </span>
               </Link>
 
               <Link
-                href={`https://api.whatsapp.com/send?phone=5212224237337&text=Hola%20Cristal%20%F0%9F%91%8B%20quiero%20información%20sobre%20el%20taller%20de%20Embarazo%20Activo`}
+                href={`https://api.whatsapp.com/send?phone=5212224237337&text=Hola%20Cristal%20%F0%9F%91%8B%20quiero%20información%20sobre%20el%20taller%20Preparándome%20para%20el%20Parto`}
                 target="_blank"
                 className="px-10 py-5 bg-transparent border-3 border-white text-white font-bold text-xl rounded-full hover:bg-white hover:text-pink-secondary-600 transition-all duration-300 hover:scale-105"
               >
