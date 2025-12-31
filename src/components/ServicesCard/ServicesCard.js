@@ -1,16 +1,12 @@
 "use client";
-import useIsDesktop from "@/hooks/useIsDesktop";
 import Link from "next/link";
 import { RevealWrapper  } from "@/components/RevealWrapper/RevealWrapper";
 
 const ServicesCard = () => {
-  const isDesktop = useIsDesktop();
   return (
     <RevealWrapper>
-    <section className=" bg-white w-full">
-      <div
-        className={`py-8 px-4 mx-auto ${isDesktop ? "w-2/3 " : ""}  lg:py-16`}
-      >
+    <section className="bg-white w-full py-12">
+      <div className="max-w-6xl mx-auto px-4">
         <div className=" bg-blue-health-500/60 shadow-xl transform transition duration-500  hover:scale-105 border-gray-200 rounded-lg p-8 md:p-12 mb-8">
           <Link
             href="https://www.youtube.com/@CristalSarabia2046/videos"
