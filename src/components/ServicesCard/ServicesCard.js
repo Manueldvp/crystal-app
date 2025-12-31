@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { RevealWrapper } from "@/components/RevealWrapper/RevealWrapper";
+import { StarIcon } from "@heroicons/react/24/solid";
 
 const SERVICIOS = [
   {
@@ -75,8 +76,9 @@ const ServicesCard = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                     {servicio.destacado && (
-                      <span className="absolute top-4 left-4 bg-fuchsia-pink-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                        ⭐ Especializado
+                      <span className="absolute top-4 left-4 bg-fuchsia-pink-500 text-white text-xs font-semibold px-3 py-1 rounded-full inline-flex items-center gap-1">
+                        <StarIcon className="w-3 h-3" />
+                        Especializado
                       </span>
                     )}
                   </div>

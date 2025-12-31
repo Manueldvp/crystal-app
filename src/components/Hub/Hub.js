@@ -2,21 +2,23 @@
 import Link from "next/link";
 import Image from "next/image";
 import { RevealWrapper } from "@/components/RevealWrapper/RevealWrapper";
+import { SparklesIcon, StarIcon } from "@heroicons/react/24/solid";
 
 const Hub = () => {
   return (
-    <section className="w-full min-h-screen bg-fuchsia-pink-100 relative overflow-hidden">
+    <section className="w-full bg-fuchsia-pink-100 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-32 h-32 bg-fuchsia-pink-200 rounded-full blur-3xl opacity-60" />
       <div className="absolute bottom-20 right-10 w-48 h-48 bg-purple-secondary-200 rounded-full blur-3xl opacity-50" />
       
-      <div className="max-w-7xl mx-auto px-4 py-12 lg:py-0 min-h-screen flex items-center">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full">
+      <div className="max-w-7xl mx-auto px-4 py-16 lg:py-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Texto */}
           <RevealWrapper>
             <div className="text-center lg:text-left order-2 lg:order-1">
-              <p className="inline-block bg-white/80 backdrop-blur text-fuchsia-pink-700 font-semibold px-4 py-2 rounded-full text-sm mb-6">
-                ✨ Fisioterapia Pélvica Especializada
+              <p className="inline-flex items-center gap-2 bg-white/80 backdrop-blur text-fuchsia-pink-700 font-semibold px-4 py-2 rounded-full text-sm mb-6">
+                <SparklesIcon className="w-4 h-4" />
+                Fisioterapia Pélvica Especializada
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-[1.1] mb-6">
                 Cuida tu piso pélvico en cada etapa
@@ -36,7 +38,7 @@ const Hub = () => {
                   href="/quiz"
                   className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-gray-900 font-semibold py-4 px-8 rounded-full border-2 border-gray-200 transition-all hover:scale-105"
                 >
-                  Hacer cuestionario
+                  Empieza aquí
                 </Link>
               </div>
               
@@ -57,23 +59,21 @@ const Hub = () => {
           {/* Imagen */}
           <RevealWrapper>
             <div className="relative order-1 lg:order-2">
-              <div className="relative">
-                <Image
-                  src="/43.png"
-                  alt="Cristal Sarabia - Fisioterapeuta Pélvica"
-                  width={700}
-                  height={800}
-                  className="w-full h-auto object-cover rounded-3xl"
-                  priority
-                />
-                {/* Floating card */}
-                <div className="absolute -bottom-4 -left-4 lg:bottom-8 lg:-left-8 bg-white rounded-2xl shadow-xl p-4 max-w-[200px]">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-2xl">⭐</span>
-                    <span className="font-bold text-gray-900">5.0</span>
-                  </div>
-                  <p className="text-xs text-gray-600">Calificación en Google Reviews</p>
+              <Image
+                src="/43.png"
+                alt="Cristal Sarabia - Fisioterapeuta Pélvica"
+                width={600}
+                height={700}
+                className="w-full max-w-md lg:max-w-none mx-auto h-auto object-cover rounded-3xl"
+                priority
+              />
+              {/* Floating card */}
+              <div className="absolute bottom-4 left-4 lg:bottom-8 lg:left-0 bg-white rounded-2xl shadow-xl p-4 max-w-[200px]">
+                <div className="flex items-center gap-2 mb-2">
+                  <StarIcon className="w-6 h-6 text-yellow-400" />
+                  <span className="font-bold text-gray-900">5.0</span>
                 </div>
+                <p className="text-xs text-gray-600">Calificación en Google Reviews</p>
               </div>
             </div>
           </RevealWrapper>
