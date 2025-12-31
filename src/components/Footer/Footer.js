@@ -10,20 +10,18 @@ const LINKS = [
   {
     title: "Servicios",
     items: [
-      { name: "Salud Pelvica", url: "/servicios/fisioterapia-pelvica" },
-      { name: "Hipopresivos", url: "/servicios/hipopresivos" },
-      { name: "Acupuntura", url: "/servicios/acupuntura" },
-      {
-        name: "Rehabilitacion Abdominal",
-        url: "/servicios/rehabilitacion-abdominal",
-      },
+      { name: "Dolor en Endometriosis", url: "/servicios/endometriosis-adenomiosis" },
+      { name: "Embarazo y Parto", url: "/servicios/embarazo-y-preparacion-al-parto" },
+      { name: "Postparto", url: "/servicios/postparto" },
+      { name: "Disfunciones Pélvicas", url: "/servicios/disfunciones-pelvicas-en-el-adulto" },
+      { name: "Diástasis Abdominal", url: "/servicios/rehabilitacion-de-diastasis-abdominal" },
     ],
   },
   {
-    title: "Eventos",
+    title: "Programas",
     items: [
-      { name: "Galería", url: "/galeria" },
-      { name: "Programas", url: "/programas" },
+      { name: "Hipopower", url: "/hipo-power" },
+      { name: "Embarazo Activo", url: "/embarazo-activo" },
     ],
   },
   {
