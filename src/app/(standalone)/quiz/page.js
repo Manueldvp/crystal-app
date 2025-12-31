@@ -1,7 +1,6 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 
 const QUIZZES = [
   { value: "pelvic-health", label: "Test Salud Pélvica" },
@@ -153,8 +152,8 @@ export default function QuizPage() {
   return (
     <div className="min-h-screen flex flex-col bg-fuchsia-pink-50">
       {/* Header */}
-      <header className="w-full py-4 px-6 flex items-center justify-between">
-        {step !== 'welcome' && (
+      <header className="w-full py-4 px-6 flex items-center justify-between relative">
+        {step !== 'welcome' ? (
           <button
             onClick={handleBack}
             className="flex items-center gap-1 text-gray-600 hover:text-gray-900 text-sm font-medium px-3 py-2 rounded-full border border-gray-200 bg-white transition-colors"
@@ -164,11 +163,24 @@ export default function QuizPage() {
             </svg>
             Volver
           </button>
+        ) : (
+          <Link
+            href="/"
+            className="flex items-center gap-1 text-gray-600 hover:text-gray-900 text-sm font-medium px-3 py-2 rounded-full border border-gray-200 bg-white transition-colors"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            Inicio
+          </Link>
         )}
-        {step === 'welcome' && <div />}
+        
         <Link href="/" className="absolute left-1/2 -translate-x-1/2">
-          <Image src="/logo.webp" alt="Logo" width={120} height={40} className="h-8 w-auto" />
+          <span className="text-xl font-bold text-fuchsia-pink-600" style={{ fontFamily: 'Georgia, serif' }}>
+            Cristal Sarabia
+          </span>
         </Link>
+        
         <div className="w-20" />
       </header>
 
@@ -188,11 +200,11 @@ export default function QuizPage() {
       )}
 
       {/* Content */}
-      <main className="flex-1 flex flex-col items-center justify-center px-6 pb-32 relative">
+      <main className="flex-1 flex flex-col items-center justify-center px-6 relative">
         
         {/* Welcome Screen */}
         {step === 'welcome' && (
-          <div className="text-center max-w-lg animate-fadeIn">
+          <div className="text-center max-w-lg animate-fadeIn pb-32">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
               Bienvenida. Me alegra que estés aquí.
             </h1>
@@ -204,7 +216,7 @@ export default function QuizPage() {
             </p>
             <button
               onClick={() => setStep('select')}
-              className="inline-flex items-center gap-2 bg-fuchsia-pink-400 hover:bg-fuchsia-pink-500 text-white font-semibold py-4 px-10 rounded-lg transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 bg-fuchsia-pink-500 hover:bg-fuchsia-pink-600 text-white font-semibold py-4 px-10 rounded-lg transition-all hover:scale-105"
             >
               Comenzar
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -263,13 +275,13 @@ export default function QuizPage() {
 
         {/* Info Screen */}
         {showInfo && (
-          <div className="text-center max-w-lg animate-fadeIn">
+          <div className="text-center max-w-lg animate-fadeIn pb-32">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
               {INFO_MESSAGES[infoIndex % INFO_MESSAGES.length]}
             </h2>
             <button
               onClick={handleInfoContinue}
-              className="inline-flex items-center gap-2 bg-fuchsia-pink-400 hover:bg-fuchsia-pink-500 text-white font-semibold py-4 px-10 rounded-lg transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 bg-fuchsia-pink-500 hover:bg-fuchsia-pink-600 text-white font-semibold py-4 px-10 rounded-lg transition-all hover:scale-105"
             >
               Siguiente
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -326,3 +338,4 @@ export default function QuizPage() {
     </div>
   )
 }
+
