@@ -4,27 +4,29 @@ import Quiz from "./quizMain";
 
 function QuizLayout() {
     return (
-        
-                <div className="xl:w-2/3 lg:w-full sm:w-full p-4 flex justify-center">
-                    <div className="bg-gradient-to-r rounded-lg from-pink-secondary-600 to-fuchsia-pink-400 md:py-8 md:px-8 px-8 py-4 xl:px-12 xl:py-16">
-                        <div>
-                            <div className="flex flex-wrap items-center md:flex-row flex-col-reverse">
-                                <div className="md:w-2/3 w-full pb-6 md:pb-0 md:pr-6 flex-col md:block flex items-center justify-center md:pt-0 pt-4">
-                                    <div>
-                                        <h1 role="heading" className="text-xl md:text-xl lg:text-4xl xl:text-5xl lg:w-full text-white font-black leading-6 mb-10 md:text-left text-center">¡Realiza un diagnóstico breve con este cuestionario!</h1>
-                                    </div>
+        <section className="w-full px-4 py-8">
+            <div className="max-w-5xl mx-auto">
+                <div className="relative overflow-hidden bg-purple-secondary-700 rounded-2xl p-8 md:p-12">
+                    {/* Decorative circles */}
+                    <div className="absolute -right-10 -top-10 w-40 h-40 rounded-full border-2 border-white/10" />
+                    <div className="absolute -left-5 -bottom-5 w-24 h-24 rounded-full border-2 border-white/10" />
+                    <div className="absolute right-1/4 bottom-10 w-16 h-16 rounded-full border-2 border-white/10" />
                     
-                                    <Quiz/>
-                                </div>
-                                <div className="md:w-1/3 w-2/3">
-                                    <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/CTA.png" alt="cartoon avatars" />
-                                </div>
-                            </div>
-                        </div>
+                    <div className="relative z-10">
+                        <p className="text-fuchsia-pink-200 font-medium tracking-wide uppercase text-xs mb-3">
+                            Cuestionario de salud
+                        </p>
+                        <h2 className="text-2xl md:text-3xl lg:text-4xl text-white font-bold leading-tight mb-4">
+                            ¿Necesitas fisioterapia pélvica?
+                        </h2>
+                        <p className="text-purple-secondary-100 mb-8 max-w-2xl">
+                            Responde algunas preguntas para conocer si podrías beneficiarte de un tratamiento especializado.
+                        </p>
+                        <Quiz/>
                     </div>
                 </div>
-          
-
+            </div>
+        </section>
     );
 }
 
