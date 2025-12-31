@@ -71,40 +71,42 @@ export default function Home() {
 
       <ServicesCard />
       
-      {/* Estadística destacada - Estilo Origin */}
-      <section className="w-full py-16 bg-fuchsia-pink-50">
+      {/* Estadística destacada - Estilo impactante */}
+      <section className="w-full py-20 bg-gradient-to-br from-fuchsia-pink-100 via-fuchsia-pink-50 to-purple-secondary-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <RevealWrapper>
               <div className="relative">
+                <div className="absolute -top-6 -left-6 w-full h-full bg-fuchsia-pink-300 rounded-3xl" />
                 <Image
                   src="/99.png"
                   alt="Salud pélvica"
                   width={500}
                   height={600}
-                  className="rounded-3xl shadow-lg w-full h-auto object-cover"
+                  className="relative rounded-3xl w-full h-auto object-cover"
                 />
               </div>
             </RevealWrapper>
             <RevealWrapper>
               <div>
-                <p className="text-fuchsia-pink-600 font-semibold mb-4">¿Sabías que...</p>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                  1 de cada 3 mujeres sufre disfunciones del piso pélvico
+                <div className="inline-block bg-fuchsia-pink-200 text-fuchsia-pink-800 font-semibold px-4 py-2 rounded-full text-sm mb-6">
+                  ¿Sabías que...?
+                </div>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                  1 de cada 3 mujeres sufre problemas de piso pélvico
                 </h2>
-                <p className="text-gray-600 text-lg mb-6">
-                  La mayoría normaliza síntomas como incontinencia, dolor pélvico o molestias durante las relaciones. 
-                  <strong className="text-gray-800"> Pero no tienen que ser parte de tu vida.</strong>
+                <p className="text-xl text-gray-700 mb-6">
+                  Incontinencia, dolor, molestias... <strong className="text-fuchsia-pink-600">No son normales.</strong>
                 </p>
-                <p className="text-gray-600 mb-8">
-                  La fisioterapia pélvica puede ayudarte a recuperar tu calidad de vida. 
-                  No esperes más para sentirte bien.
+                <p className="text-gray-600 text-lg mb-8">
+                  La fisioterapia pélvica puede ayudarte a recuperar tu calidad de vida. No esperes más.
                 </p>
                 <Link 
-                  href="/servicios"
-                  className="inline-flex items-center gap-2 text-fuchsia-pink-600 hover:text-fuchsia-pink-700 font-semibold transition-colors"
+                  href="https://api.whatsapp.com/send?phone=5212224237337&text=Hola%20Cristal%20%F0%9F%91%8B%20quisiera%20más%20información"
+                  target="_blank"
+                  className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-semibold py-4 px-8 rounded-full transition-all hover:scale-105"
                 >
-                  Conoce nuestros servicios
+                  Agenda tu consulta
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -116,7 +118,7 @@ export default function Home() {
       </section>
       
       {/* Quiz - Sección destacada */}
-      <section className="w-full py-16 bg-purple-secondary-700 relative overflow-hidden">
+      <section id="quiz" className="w-full py-20 bg-purple-secondary-700 relative overflow-hidden scroll-mt-20">
         <div className="absolute -right-20 -top-20 w-64 h-64 rounded-full border-2 border-white/10" />
         <div className="absolute -left-10 -bottom-10 w-40 h-40 rounded-full border-2 border-white/10" />
         

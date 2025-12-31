@@ -5,56 +5,75 @@ import { RevealWrapper } from "@/components/RevealWrapper/RevealWrapper";
 
 const Hub = () => {
   return (
-    <section className="w-full bg-gradient-to-br from-fuchsia-pink-50 via-purple-secondary-50 to-fuchsia-pink-100 min-h-[90vh] flex items-center">
-      <div className="max-w-7xl mx-auto px-4 py-16 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section className="w-full min-h-screen bg-fuchsia-pink-100 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-fuchsia-pink-200 rounded-full blur-3xl opacity-60" />
+      <div className="absolute bottom-20 right-10 w-48 h-48 bg-purple-secondary-200 rounded-full blur-3xl opacity-50" />
+      
+      <div className="max-w-7xl mx-auto px-4 py-12 lg:py-0 min-h-screen flex items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full">
           {/* Texto */}
           <RevealWrapper>
-            <div className="text-center lg:text-left">
-              <p className="text-fuchsia-pink-600 font-semibold tracking-wide uppercase text-sm mb-4">
-                Fisioterapia Pélvica Especializada
+            <div className="text-center lg:text-left order-2 lg:order-1">
+              <p className="inline-block bg-white/80 backdrop-blur text-fuchsia-pink-700 font-semibold px-4 py-2 rounded-full text-sm mb-6">
+                ✨ Fisioterapia Pélvica Especializada
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight mb-6">
-                Salud pélvica para cada etapa de tu vida
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-[1.1] mb-6">
+                Cuida tu piso pélvico en cada etapa
               </h1>
-              <p className="text-lg text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
-                Atención experta para embarazo, postparto, dolor pélvico, endometriosis, menopausia y salud sexual. Tu bienestar empieza aquí.
+              <p className="text-xl text-gray-700 mb-8 max-w-lg mx-auto lg:mx-0">
+                Atención experta para embarazo, postparto, dolor pélvico, endometriosis y salud sexual.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link
                   href="https://api.whatsapp.com/send?phone=5212224237337&text=Hola%20Cristal%20%F0%9F%91%8B%20quisiera%20agendar%20una%20consulta"
                   target="_blank"
-                  className="inline-flex items-center justify-center gap-2 bg-purple-secondary-700 hover:bg-purple-secondary-800 text-white font-semibold py-4 px-8 rounded-full transition-colors"
+                  className="inline-flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-semibold py-4 px-8 rounded-full transition-all hover:scale-105"
                 >
                   Agendar cita
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
                 </Link>
                 <Link
-                  href="/servicios"
-                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-purple-secondary-700 font-semibold py-4 px-8 rounded-full border-2 border-purple-secondary-200 transition-colors"
+                  href="#quiz"
+                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-gray-900 font-semibold py-4 px-8 rounded-full border-2 border-gray-200 transition-all hover:scale-105"
                 >
-                  Ver servicios
+                  Hacer cuestionario
                 </Link>
+              </div>
+              
+              {/* Trust badge */}
+              <div className="mt-10 flex items-center gap-3 justify-center lg:justify-start">
+                <div className="flex -space-x-2">
+                  <div className="w-8 h-8 rounded-full bg-purple-secondary-300 border-2 border-white" />
+                  <div className="w-8 h-8 rounded-full bg-fuchsia-pink-300 border-2 border-white" />
+                  <div className="w-8 h-8 rounded-full bg-blue-health-300 border-2 border-white" />
+                </div>
+                <p className="text-sm text-gray-600">
+                  <strong className="text-gray-900">+500</strong> pacientes atendidas
+                </p>
               </div>
             </div>
           </RevealWrapper>
           
           {/* Imagen */}
           <RevealWrapper>
-            <div className="relative">
-              <div className="absolute -top-4 -left-4 w-72 h-72 bg-fuchsia-pink-200 rounded-full blur-3xl opacity-30" />
-              <div className="absolute -bottom-4 -right-4 w-72 h-72 bg-purple-secondary-200 rounded-full blur-3xl opacity-30" />
-              <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
+            <div className="relative order-1 lg:order-2">
+              <div className="relative">
                 <Image
                   src="/43.png"
                   alt="Cristal Sarabia - Fisioterapeuta Pélvica"
-                  width={600}
-                  height={700}
-                  className="w-full h-auto object-cover"
+                  width={700}
+                  height={800}
+                  className="w-full h-auto object-cover rounded-3xl"
                   priority
                 />
+                {/* Floating card */}
+                <div className="absolute -bottom-4 -left-4 lg:bottom-8 lg:-left-8 bg-white rounded-2xl shadow-xl p-4 max-w-[200px]">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-2xl">⭐</span>
+                    <span className="font-bold text-gray-900">5.0</span>
+                  </div>
+                  <p className="text-xs text-gray-600">Calificación en Google Reviews</p>
+                </div>
               </div>
             </div>
           </RevealWrapper>
