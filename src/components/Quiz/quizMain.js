@@ -174,8 +174,15 @@ const Quiz = () => {
   const [todasLasPreguntasRespondidas, setTodasLasPreguntasRespondidas] =
     useState(false);
   const manejarCambioProblema = (nuevoProblema) => {
-    setProblemaSeleccionado(nuevoProblema);
-    setPreguntaActual(0); // Reiniciar preguntaActual al cambiar de problema
+    if (nuevoProblema === "" || nuevoProblema === "null") {
+      setProblemaSeleccionado(null);
+    } else {
+      setProblemaSeleccionado(nuevoProblema);
+    }
+    setPreguntaActual(0);
+    setRespuestasUsuario({});
+    setMostrarDiagnostico(false);
+    setDiagnostico(null);
   };
   const [mostrarDiagnostico, setMostrarDiagnostico] = useState(false);
   const [problemaSeleccionado, setProblemaSeleccionado] = useState(null);
@@ -248,7 +255,7 @@ const Quiz = () => {
   return (
     <div>
       <div className="mb-10">
-  <p className="text-lg text-white mb-4 md:text-xl lg:text-xl xl:text-xl font-bold">
+  <p className="text-base text-purple-secondary-100 mb-4 md:text-lg font-medium">
     Selecciona el problema que más te afecta:
   </p>
   <select
@@ -256,7 +263,7 @@ const Quiz = () => {
     value={problemaSeleccionado || ""}
     onChange={(e) => manejarCambioProblema(e.target.value)}
   >
-    <option value={null}>Seleccionar...</option>
+    <option value="">Seleccionar...</option>
     {problemas.map((problema) => (
       <option key={problema.value} value={problema.value}>
         {problema.label}
@@ -265,33 +272,23 @@ const Quiz = () => {
   </select>
 </div>
 
-      {problemaSeleccionado && !mostrarDiagnostico && (
+      {problemaSeleccionado && preguntasRespuestas[problemaSeleccionado] && !mostrarDiagnostico && (
         <div
           className=""
-          key={
-            problemaSeleccionado &&
-            preguntasRespuestas[problemaSeleccionado] &&
-            preguntasRespuestas[problemaSeleccionado][preguntaActual]
-          }
+          key={`${problemaSeleccionado}-${preguntaActual}`}
         >
-          <p className="text-xl mb-10 md:text-2xl lg:text-4xl xl:text-4xl lg:w-10/12 text-white font-black leading-6 lg:leading-10 md:text-left text-center">
-            {preguntasRespuestas[problemaSeleccionado][preguntaActual].pregunta}
+          <p className="text-xl mb-8 md:text-2xl lg:text-3xl text-white font-bold leading-tight">
+            {preguntasRespuestas[problemaSeleccionado][preguntaActual]?.pregunta}
           </p>
-          <div
-            className={`flex gap-6 ${
-              isDesktop
-                ? " items-start  justify-start"
-                : "items-center justify-center"
-            } `}
-          >
+          <div className="flex gap-4">
             <button
-              className="lg:mt-8 py-3 lg:py-2 px-10 lg:px-10 bg-white font-bold text-fuchsia-pink-500 rounded-lg text-sm lg:text-lg xl:text-xl hover:bg-opacity-90  focus:ring-2 focus:ring-offset-2 focus:ring-white focus:outline-none"
+              className="py-3 px-8 bg-fuchsia-pink-500 hover:bg-fuchsia-pink-600 font-semibold text-white rounded-full text-base transition-colors"
               onClick={() => manejarRespuesta(preguntaActual, "Sí")}
             >
               Sí
             </button>
             <button
-              className="lg:mt-8 py-3 lg:py-2 px-10 lg:px-10 bg-white font-bold text-pink-secondary-700 rounded-lg text-sm lg:text-lg xl:text-xl hover:bg-opacity-90  focus:ring-2 focus:ring-offset-2 focus:ring-white focus:outline-none"
+              className="py-3 px-8 bg-white hover:bg-gray-100 font-semibold text-purple-secondary-700 rounded-full text-base transition-colors"
               onClick={() => manejarRespuesta(preguntaActual, "No")}
             >
               No
@@ -299,37 +296,26 @@ const Quiz = () => {
           </div>
         </div>
       )}
-      <div className="text-lg md:text-xl lg:text-xl xl:text-xl lg:w-10/12 text-white font-black leading-6 lg:leading-10 md:text-left text-center">
+      <div className="text-white">
         {mostrarDiagnostico && (
-          <div className="flex-col">
-            <p className="mb-5">{diagnostico}</p>
+          <div className="bg-white/10 backdrop-blur rounded-xl p-6">
+            <p className="text-lg text-white mb-6 leading-relaxed">{diagnostico}</p>
             <a
-              href="https://linktr.ee/cristalsarabia_"
-              target="blank_"
-              className="inline-flex border-2  border-fuchsia-pink-300 text-base shadow-lg justify-center items-center py-2 px-3 font-medium text-center text-white rounded-lg bg-fuchsia-pink-400 hover:bg-fuchsia-pink-600"
+              href="https://api.whatsapp.com/send?phone=5212224237337&text=Hola%20Cristal%20%F0%9F%91%8B%20realicé%20el%20cuestionario%20y%20quisiera%20agendar%20una%20consulta"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-fuchsia-pink-500 hover:bg-fuchsia-pink-600 text-white font-semibold py-3 px-6 rounded-full transition-colors"
             >
-              Contacto
-              <svg
-                className="w-3 h-3 ms-2 rtl:rotate-180"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M1 5h12m0 0L9 1m4 4L9 9"
-                />
+              Agendar consulta
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
           </div>
         )}
 
         {!problemaSeleccionado && (
-          <p>Por favor, selecciona un problema para comenzar.</p>
+          <p className="text-purple-secondary-200">Por favor, selecciona un problema para comenzar.</p>
         )}
       </div>
     </div>
