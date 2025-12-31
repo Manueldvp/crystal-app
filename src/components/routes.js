@@ -62,10 +62,6 @@ const routes = [
     ],
   },
   {
-    label: "Blog",
-    route: "/blogs",
-  },
-  {
     label: "Contacto",
     route: "/contacto",
     scroll: true,

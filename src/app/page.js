@@ -1,11 +1,9 @@
 import './globals.css'
 import Hub from "@/components/Hub/Hub";
 import ServicesCard from "@/components/ServicesCard/ServicesCard";
-import CoreRestoreCard from "@/components/CoreRetoreCard/CoreRestoreCard";
 import {AccordionComponent} from "@/components/Accordion/Accordion";
 import CarrouselSection from "@/components/Carrousel/CarrouselSection";
 import Link from "next/link";
-import BlogComponent from "@/components/Blog/BlogComponent";
 import TestimonialCard from '@/components/TestimonialCard/TestimonialCard';
 import Faq from '@/components/FAQ/Faq';
 import QuizLayout from '@/components/Quiz/quiz';
@@ -51,12 +49,7 @@ export default function Home() {
         </div>
       </section>
       
-      <CoreRestoreCard/> 
       <AccordionComponent />
-     
-      <div className="xl:w-2/3 lg:w-full sm:w-full  flex justify-center  mt-10">
-        <BlogComponent/>   
-      </div>
       <section className="p-4 xl:w-2/3 lg:w-full sm:w-full mt-10">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">

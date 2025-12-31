@@ -1,15 +1,9 @@
 "use client";
 import Link from "next/link";
-import TallerCards from "@/components/Card/TallerCards";
 import Image from "next/image";
-import { useFetch } from "@/hooks/useFetch";
 import { RevealWrapper } from "@/components/RevealWrapper/RevealWrapper";
 
 const Eventos = () => {
-  const courses = useFetch(`/courses?populate=*`);
-
-  const coursesData = courses.data.data;
-
   return (
     <>
       <div className="bg-white ">
@@ -228,25 +222,6 @@ const Eventos = () => {
       </div>
 
       <div className="">
-        <div className="flex flex-col  items-center ">
-          <RevealWrapper className="flex py-10 lg:w-2/3 px-4 flex-col items-center justify-center">
-            <h1 className="text-4xl  font-bold leading-9 text-gray-800">
-              Programas
-            </h1>
-            <p className="text-base  font-medium leading-6 text-center text-gray-600  mt-4">
-              Los programas son sesiones progresivas con una evaluación
-              realizada por Cristal Sarabia, lo cual ayudaría a cumplir
-              objetivos y metas en la salud pélvica.
-            </p>
-          </RevealWrapper>
-
-          <RevealWrapper className="grid lg:w-2/3 md:w-full  px-4   items-center sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 2xl:grid-cols-3 gap-4 mt-4">
-            {coursesData &&
-              coursesData.map((course) => (
-                <TallerCards key={course.id} course={course} />
-              ))}
-          </RevealWrapper>
-        </div>
         <div id="hipopower" className="flex flex-col items-center scroll-mt-20">
           <RevealWrapper className="flex py-14 lg:w-2/3 px-4  flex-col items-center justify-center">
             <div className="flex justify-center mb-6">

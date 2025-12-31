@@ -27,7 +27,6 @@ const LINKS = [
   {
     title: "Recursos",
     items: [
-      { name: "Blog", url: "/blogs" },
       { name: "Contacto", url: "/contacto" },
       { name: "Sobre mi", url: "/about" },
     ],
