@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -60,24 +60,20 @@ function getDiagnosis(yesCount) {
   return "No parece haber una afección grave. Aún así, consulta a un profesional para evaluar tu situación."
 }
 
-// Decorative waves component
 function WavesDecoration() {
   return (
     <div className="absolute bottom-0 left-0 right-0 h-48 overflow-hidden pointer-events-none">
       <svg viewBox="0 0 1440 320" className="absolute bottom-0 w-full" preserveAspectRatio="none">
         <path 
-          fill="#fcd5ce" 
-          fillOpacity="0.6"
+          className="fill-fuchsia-pink-200/60"
           d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,170.7C960,160,1056,192,1152,197.3C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
         />
         <path 
-          fill="#f8ad9d" 
-          fillOpacity="0.7"
+          className="fill-fuchsia-pink-300/70"
           d="M0,256L48,240C96,224,192,192,288,186.7C384,181,480,203,576,218.7C672,235,768,245,864,234.7C960,224,1056,192,1152,181.3C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
         />
         <path 
-          fill="#f4978e" 
-          fillOpacity="0.5"
+          className="fill-fuchsia-pink-400/50"
           d="M0,288L48,282.7C96,277,192,267,288,261.3C384,256,480,256,576,266.7C672,277,768,299,864,293.3C960,288,1056,256,1152,245.3C1248,235,1344,245,1392,250.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
         />
       </svg>
@@ -86,7 +82,7 @@ function WavesDecoration() {
 }
 
 export default function QuizPage() {
-  const [step, setStep] = useState('welcome') // welcome, select, questions, info, results
+  const [step, setStep] = useState('welcome')
   const [selectedQuiz, setSelectedQuiz] = useState(null)
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answers, setAnswers] = useState({})
@@ -108,7 +104,6 @@ export default function QuizPage() {
     const newAnswers = { ...answers, [currentQuestion]: answer }
     setAnswers(newAnswers)
 
-    // Show info message every 3 questions
     if ((currentQuestion + 1) % 3 === 0 && currentQuestion < totalQuestions - 1) {
       setInfoIndex(Math.floor((currentQuestion + 1) / 3) - 1)
       setShowInfo(true)
@@ -156,7 +151,7 @@ export default function QuizPage() {
   const yesCount = Object.values(answers).filter(a => a === 'yes').length
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#faf8f3' }}>
+    <div className="min-h-screen flex flex-col bg-fuchsia-pink-50">
       {/* Header */}
       <header className="w-full py-4 px-6 flex items-center justify-between">
         {step !== 'welcome' && (
@@ -180,9 +175,9 @@ export default function QuizPage() {
       {/* Progress bar */}
       {step === 'questions' && !showInfo && (
         <div className="w-full max-w-md mx-auto px-6">
-          <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
+          <div className="h-1 bg-fuchsia-pink-100 rounded-full overflow-hidden">
             <div 
-              className="h-full bg-fuchsia-pink-400 transition-all duration-300"
+              className="h-full bg-fuchsia-pink-500 transition-all duration-300"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -209,8 +204,7 @@ export default function QuizPage() {
             </p>
             <button
               onClick={() => setStep('select')}
-              className="inline-flex items-center gap-2 text-gray-800 font-semibold py-4 px-10 rounded-lg transition-all hover:brightness-95"
-              style={{ backgroundColor: '#f8ad9d' }}
+              className="inline-flex items-center gap-2 bg-fuchsia-pink-400 hover:bg-fuchsia-pink-500 text-white font-semibold py-4 px-10 rounded-lg transition-all hover:scale-105"
             >
               Comenzar
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -232,10 +226,10 @@ export default function QuizPage() {
                 <button
                   key={quiz.value}
                   onClick={() => handleSelectQuiz(quiz.value)}
-                  className="w-full text-left p-5 bg-white rounded-xl border border-gray-200 hover:border-fuchsia-pink-300 hover:shadow-md transition-all flex items-center gap-4 group"
+                  className="w-full text-left p-5 bg-white rounded-xl border border-gray-200 hover:border-fuchsia-pink-400 hover:shadow-md transition-all flex items-center gap-4 group"
                 >
-                  <div className="w-5 h-5 rounded-full border-2 border-gray-300 group-hover:border-fuchsia-pink-400 flex items-center justify-center transition-colors">
-                    <div className="w-2.5 h-2.5 rounded-full bg-fuchsia-pink-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="w-5 h-5 rounded-full border-2 border-gray-300 group-hover:border-fuchsia-pink-500 flex items-center justify-center transition-colors">
+                    <div className="w-2.5 h-2.5 rounded-full bg-fuchsia-pink-500 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                   <span className="text-lg text-gray-800 font-medium">{quiz.label}</span>
                 </button>
@@ -253,14 +247,13 @@ export default function QuizPage() {
             <div className="flex gap-4 justify-center">
               <button
                 onClick={() => handleAnswer('yes')}
-                className="flex-1 max-w-[140px] py-4 px-8 rounded-lg font-semibold text-gray-800 transition-all hover:brightness-95"
-                style={{ backgroundColor: '#f8ad9d' }}
+                className="flex-1 max-w-[140px] py-4 px-8 rounded-lg font-semibold text-white bg-fuchsia-pink-500 hover:bg-fuchsia-pink-600 transition-all"
               >
                 Sí
               </button>
               <button
                 onClick={() => handleAnswer('no')}
-                className="flex-1 max-w-[140px] py-4 px-8 bg-white border-2 border-gray-200 rounded-lg font-semibold text-gray-700 hover:border-gray-300 transition-all"
+                className="flex-1 max-w-[140px] py-4 px-8 bg-white border-2 border-gray-200 rounded-lg font-semibold text-gray-700 hover:border-fuchsia-pink-300 transition-all"
               >
                 No
               </button>
@@ -276,8 +269,7 @@ export default function QuizPage() {
             </h2>
             <button
               onClick={handleInfoContinue}
-              className="inline-flex items-center gap-2 text-gray-800 font-semibold py-4 px-10 rounded-lg transition-all hover:brightness-95"
-              style={{ backgroundColor: '#f8ad9d' }}
+              className="inline-flex items-center gap-2 bg-fuchsia-pink-400 hover:bg-fuchsia-pink-500 text-white font-semibold py-4 px-10 rounded-lg transition-all hover:scale-105"
             >
               Siguiente
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -294,7 +286,7 @@ export default function QuizPage() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
               Tus resultados están listos.
             </h2>
-            <div className="bg-white rounded-2xl p-6 mb-8 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-2xl p-6 mb-8 shadow-sm border border-fuchsia-pink-100">
               <p className="text-lg text-gray-700 leading-relaxed">
                 {getDiagnosis(yesCount)}
               </p>
@@ -304,8 +296,7 @@ export default function QuizPage() {
                 href="https://api.whatsapp.com/send?phone=5212224237337&text=Hola%20Cristal%20%F0%9F%91%8B%20realicé%20el%20cuestionario%20y%20quisiera%20agendar%20una%20consulta"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 text-gray-800 font-semibold py-4 px-8 rounded-lg transition-all hover:brightness-95"
-                style={{ backgroundColor: '#f8ad9d' }}
+                className="flex-1 inline-flex items-center justify-center gap-2 bg-fuchsia-pink-500 hover:bg-fuchsia-pink-600 text-white font-semibold py-4 px-8 rounded-lg transition-all"
               >
                 Agendar consulta
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -314,7 +305,7 @@ export default function QuizPage() {
               </a>
               <button
                 onClick={handleRestart}
-                className="flex-1 py-4 px-8 bg-white border-2 border-gray-200 rounded-lg font-semibold text-gray-700 hover:border-gray-300 transition-all"
+                className="flex-1 py-4 px-8 bg-white border-2 border-gray-200 rounded-lg font-semibold text-gray-700 hover:border-fuchsia-pink-300 transition-all"
               >
                 Hacer otro test
               </button>
@@ -335,4 +326,3 @@ export default function QuizPage() {
     </div>
   )
 }
-

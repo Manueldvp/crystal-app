@@ -116,14 +116,14 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Quiz CTA - Origin style */}
-      <section className="w-full py-24 relative overflow-hidden" style={{ backgroundColor: '#faf8f3' }}>
+      {/* Quiz CTA */}
+      <section className="w-full py-24 bg-fuchsia-pink-50 relative overflow-hidden">
         {/* Decorative waves */}
         <div className="absolute bottom-0 left-0 right-0 h-40 overflow-hidden pointer-events-none">
           <svg viewBox="0 0 1440 320" className="absolute bottom-0 w-full" preserveAspectRatio="none">
-            <path fill="#fcd5ce" fillOpacity="0.6" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,170.7C960,160,1056,192,1152,197.3C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
-            <path fill="#f8ad9d" fillOpacity="0.7" d="M0,256L48,240C96,224,192,192,288,186.7C384,181,480,203,576,218.7C672,235,768,245,864,234.7C960,224,1056,192,1152,181.3C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
-            <path fill="#f4978e" fillOpacity="0.5" d="M0,288L48,282.7C96,277,192,267,288,261.3C384,256,480,256,576,266.7C672,277,768,299,864,293.3C960,288,1056,256,1152,245.3C1248,235,1344,245,1392,250.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
+            <path className="fill-fuchsia-pink-200/60" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,170.7C960,160,1056,192,1152,197.3C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
+            <path className="fill-fuchsia-pink-300/70" d="M0,256L48,240C96,224,192,192,288,186.7C384,181,480,203,576,218.7C672,235,768,245,864,234.7C960,224,1056,192,1152,181.3C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
+            <path className="fill-fuchsia-pink-400/50" d="M0,288L48,282.7C96,277,192,267,288,261.3C384,256,480,256,576,266.7C672,277,768,299,864,293.3C960,288,1056,256,1152,245.3C1248,235,1344,245,1392,250.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
           </svg>
         </div>
         
@@ -140,8 +140,7 @@ export default function Home() {
             </p>
             <Link
               href="/quiz"
-              className="inline-flex items-center gap-2 text-gray-800 font-semibold py-4 px-10 rounded-lg transition-all hover:brightness-95 hover:scale-105"
-              style={{ backgroundColor: '#f8ad9d' }}
+              className="inline-flex items-center gap-2 bg-fuchsia-pink-500 hover:bg-fuchsia-pink-600 text-white font-semibold py-4 px-10 rounded-lg transition-all hover:scale-105"
             >
               Comenzar cuestionario
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
