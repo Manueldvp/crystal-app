@@ -7,7 +7,6 @@ import Link from "next/link";
 import Image from "next/image";
 import TestimonialCard from '@/components/TestimonialCard/TestimonialCard';
 import Faq from '@/components/FAQ/Faq';
-import QuizLayout from '@/components/Quiz/quiz';
 import { RevealWrapper } from '@/components/RevealWrapper/RevealWrapper';
 import { 
   ArrowTopRightOnSquareIcon, 
@@ -117,33 +116,39 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Quiz - Sección destacada */}
-      <section id="quiz" className="w-full py-20 bg-purple-secondary-700 relative overflow-hidden scroll-mt-20">
-        <div className="absolute -right-20 -top-20 w-64 h-64 rounded-full border-2 border-white/10" />
-        <div className="absolute -left-10 -bottom-10 w-40 h-40 rounded-full border-2 border-white/10" />
+      {/* Quiz CTA - Origin style */}
+      <section className="w-full py-24 relative overflow-hidden" style={{ backgroundColor: '#faf8f3' }}>
+        {/* Decorative waves */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 overflow-hidden pointer-events-none">
+          <svg viewBox="0 0 1440 320" className="absolute bottom-0 w-full" preserveAspectRatio="none">
+            <path fill="#fcd5ce" fillOpacity="0.6" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,170.7C960,160,1056,192,1152,197.3C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
+            <path fill="#f8ad9d" fillOpacity="0.7" d="M0,256L48,240C96,224,192,192,288,186.7C384,181,480,203,576,218.7C672,235,768,245,864,234.7C960,224,1056,192,1152,181.3C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
+            <path fill="#f4978e" fillOpacity="0.5" d="M0,288L48,282.7C96,277,192,267,288,261.3C384,256,480,256,576,266.7C672,277,768,299,864,293.3C960,288,1056,256,1152,245.3C1248,235,1344,245,1392,250.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
+          </svg>
+        </div>
         
-        <div className="max-w-6xl mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <RevealWrapper>
-              <div>
-                <p className="text-fuchsia-pink-300 font-medium tracking-wide uppercase text-sm mb-3">
-                  Cuestionario de salud
-                </p>
-                <h2 className="text-3xl md:text-4xl text-white font-bold leading-tight mb-4">
-                  ¿Necesitas fisioterapia pélvica?
-                </h2>
-                <p className="text-purple-secondary-200 text-lg">
-                  Responde algunas preguntas para conocer si podrías beneficiarte de un tratamiento especializado. 
-                  Es rápido, confidencial y te dará una orientación inicial.
-                </p>
-              </div>
-            </RevealWrapper>
-            <RevealWrapper>
-              <div className="bg-white/10 backdrop-blur rounded-2xl p-6">
-                <QuizLayout />
-              </div>
-            </RevealWrapper>
-          </div>
+        <div className="max-w-2xl mx-auto px-4 text-center relative z-10">
+          <RevealWrapper>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+              ¿Necesitas fisioterapia pélvica?
+            </h2>
+            <p className="text-lg md:text-xl text-gray-700 mb-2">
+              Responde algunas preguntas sobre tus síntomas para saber cómo puedo ayudarte.
+            </p>
+            <p className="text-gray-600 mb-8">
+              Solo toma unos minutos.
+            </p>
+            <Link
+              href="/quiz"
+              className="inline-flex items-center gap-2 text-gray-800 font-semibold py-4 px-10 rounded-lg transition-all hover:brightness-95 hover:scale-105"
+              style={{ backgroundColor: '#f8ad9d' }}
+            >
+              Comenzar cuestionario
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </RevealWrapper>
         </div>
       </section>
       
