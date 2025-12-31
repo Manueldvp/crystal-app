@@ -97,13 +97,13 @@ export default function EndometriosisPage() {
                 </svg>
                 Volver a servicios
               </Link>
-              <p className="text-fuchsia-pink-400 font-semibold tracking-widest uppercase text-sm mb-4">
+              <p className="text-white/80 font-semibold tracking-widest uppercase text-sm mb-4">
                 Abordaje desde la Fisioterapia Pélvica
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
                 Dolor en Endometriosis y Adenomiosis
               </h1>
-              <div className="w-24 h-1 bg-fuchsia-pink-500 mb-6" />
+              <div className="w-24 h-1 bg-white mb-6" />
               <p className="text-xl text-purple-secondary-100 leading-relaxed max-w-2xl">
                 Tu dolor es real. Tu experiencia es válida. Y mereces un acompañamiento que lo reconozca.
               </p>
