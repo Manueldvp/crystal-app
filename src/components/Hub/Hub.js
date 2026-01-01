@@ -21,10 +21,10 @@ const Hub = () => {
                 Fisioterapia Pélvica Especializada
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-[1.1] mb-6">
-                Cuida tu piso pélvico en cada etapa
+                Fisioterapia Pélvica Especializada: Cuida tu Piso Pélvico en Cada Etapa
               </h1>
               <p className="text-xl text-gray-700 mb-8 max-w-lg mx-auto lg:mx-0">
-                Atención experta para embarazo, postparto, dolor pélvico, endometriosis y salud sexual.
+                Atención experta en fisioterapia pélvica para embarazo, postparto, dolor pélvico, endometriosis y salud sexual. Cuida tu piso pélvico con especialistas en Puebla.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link
@@ -68,7 +68,7 @@ const Hub = () => {
                 priority
               />
               {/* Floating card */}
-              <div className="absolute bottom-4 left-4 lg:bottom-8 lg:left-0 bg-white rounded-2xl shadow-xl p-4 max-w-[200px]">
+              <div className="absolute bottom-6 left-6 lg:bottom-10 lg:left-8 bg-white rounded-2xl shadow-2xl p-4 max-w-[200px] transform rotate-[4deg] hover:rotate-0 transition-transform duration-300">
                 <div className="flex items-center gap-2 mb-2">
                   <StarIcon className="w-6 h-6 text-yellow-400" />
                   <span className="font-bold text-gray-900">5.0</span>
