@@ -22,21 +22,21 @@ export function CarouselComponent() {
     >
       <Image
         src="/29.jpg"
-        alt="image 1"
+        alt="Fisioterapia pélvica - Tratamiento especializado"
         width={600}
         height={400}
         className="object-cover"
       />
       <Image
         src="/13.jpg"
-        alt="image 2"
+        alt="Fisioterapia pélvica - Acompañamiento en embarazo y postparto"
         width={600}
         height={400}
         className=" object-cover"
       />
       <Image
         src="/27.jpg"
-        alt="image 3"
+        alt="Fisioterapia pélvica - Atención profesional y especializada"
         width={600}
         height={400}
         className=" object-cover"
