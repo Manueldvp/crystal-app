@@ -2,6 +2,7 @@
 import { StarIcon } from '@heroicons/react/24/solid';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 function Reviews() {
@@ -83,7 +84,7 @@ function Reviews() {
                             </div>
                         </div>
                         <div className="flex flex-col items-center justify-center mt-10">
-                            <img src={review.profile_photo_url} alt="profile pictre" className="w-12 h-12" />
+                            <Image src={review.profile_photo_url} alt="profile picture" width={48} height={48} className="w-12 h-12 rounded-full" unoptimized />
                             <p className="text-base font-semibold leading-4 my-2 text-gray-800">{review.author_name}</p>
                             <p className="text-base flex justify-center items-center gap-2  text-center text-gray-600">{review.rating} <StarIcon height={15} width={15} className=' text-fuchsia-pink-400'/> </p>
                         </div>
