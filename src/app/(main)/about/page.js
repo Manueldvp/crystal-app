@@ -184,13 +184,15 @@ const About = () => {
               <div className="order-1 lg:order-2">
                 <div className="relative">
                   <div className="absolute -inset-3 bg-gradient-to-tr from-fuchsia-pink-300 to-purple-secondary-300 rounded-2xl -rotate-2" />
-            <Image
-              src="/27.jpg"
-                    alt="Cristal Sarabia"
-                    width={600}
-                    height={700}
-                    className="relative rounded-2xl shadow-xl object-cover w-full aspect-[4/5]"
-            />
+                  <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+                    <Image
+                      src="/27.jpg"
+                      alt="Cristal Sarabia"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </div>
                 </div>
           </div>
         </div>

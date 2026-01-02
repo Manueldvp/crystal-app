@@ -96,7 +96,7 @@ const Servicios = () => {
   return (
     <main className="bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center">
+      <section className="relative min-h-[500px] md:min-h-[600px] flex items-center">
         <div className="absolute inset-0">
           <video
             className="w-full h-full object-cover"
@@ -151,12 +151,13 @@ const Servicios = () => {
                   /* Servicio Destacado */
                   <div className="bg-gradient-to-r from-purple-secondary-700 to-purple-secondary-800 rounded-3xl overflow-hidden shadow-2xl">
                     <div className="grid lg:grid-cols-2">
-                      <div className="relative aspect-[4/3] lg:aspect-auto">
+                      <div className="relative aspect-[4/3] lg:aspect-[3/4]">
                         <Image
                           src={servicio.imagen}
                           alt={servicio.titulo}
                           fill
                           className="object-cover"
+                          sizes="(max-width: 1024px) 100vw, 50vw"
                         />
                       </div>
                       <div className="p-8 lg:p-12 flex flex-col justify-center">

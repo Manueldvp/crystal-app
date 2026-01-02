@@ -20,7 +20,7 @@ export default function HipoPowerPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section - POWER EDITION */}
-      <div className="relative w-full min-h-[50vh] md:min-h-[60vh] overflow-hidden bg-gradient-to-br from-fuchsia-pink-600 via-purple-secondary-700 to-pink-secondary-800">
+      <div className="relative w-full min-h-[500px] md:min-h-[600px] overflow-hidden bg-gradient-to-br from-fuchsia-pink-600 via-purple-secondary-700 to-pink-secondary-800">
         {/* Animated Background Layers */}
         <div className="absolute inset-0">
           <Image
@@ -29,6 +29,7 @@ export default function HipoPowerPage() {
             fill
             className="object-cover opacity-30"
             priority
+            sizes="100vw"
           />
         </div>
 
@@ -40,7 +41,7 @@ export default function HipoPowerPage() {
         <div className="absolute top-10 right-5 md:top-20 md:right-10 w-32 h-32 md:w-72 md:h-72 bg-fuchsia-pink-400/30 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-10 left-5 md:bottom-20 md:left-10 w-40 h-40 md:w-96 md:h-96 bg-purple-secondary-400/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
 
-        <div className="relative h-full min-h-[50vh] md:min-h-[60vh] flex items-center justify-center">
+        <div className="relative h-full min-h-[500px] md:min-h-[600px] flex items-center justify-center">
           <div className="text-center px-4 py-8 md:py-12 max-w-6xl mx-auto">
             <RevealWrapper>
               {/* Badge/Tag */}
@@ -175,11 +176,11 @@ export default function HipoPowerPage() {
         <section className="max-w-6xl mx-auto px-4 md:px-8 py-12">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Video vertical explicativo */}
-            <div className="relative h-[500px] md:h-[600px] max-w-[350px] mx-auto rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-fuchsia-pink-100 to-purple-secondary-100">
+            <div className="relative aspect-[350/600] max-w-[350px] mx-auto rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-fuchsia-pink-100 to-purple-secondary-100">
               <iframe
                 src="https://www.canva.com/design/DAGwY1AQ5BU/yAJYSRxHUi7AtC1fJ0Zv9w/watch?embed"
                 allow="fullscreen"
-                className="w-full h-full"
+                className="absolute inset-0 w-full h-full"
                 title="¿Qué es Hipopower?"
               ></iframe>
             </div>

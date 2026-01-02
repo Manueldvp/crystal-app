@@ -4,9 +4,10 @@ import { Carousel } from "@material-tailwind/react";
 
 export function CarouselComponent() {
   return (
-    <Carousel
-      className="rounded-xl"
-      navigation={({ setActiveIndex, activeIndex, length }) => (
+    <div className="w-full h-[600px] rounded-xl overflow-hidden">
+      <Carousel
+        className="h-full rounded-xl"
+        navigation={({ setActiveIndex, activeIndex, length }) => (
         <div className="absolute bottom-4  left-2/4 z-50 flex -translate-x-2/4 gap-2">
           {new Array(length).fill("").map((_, i) => (
             <span
@@ -20,27 +21,34 @@ export function CarouselComponent() {
         </div>
       )}
     >
-      <Image
-        src="/29.jpg"
-        alt="Fisioterapia pélvica - Tratamiento especializado"
-        width={600}
-        height={400}
-        className="object-cover"
-      />
-      <Image
-        src="/images/home/slide-2.jpg"
-        alt="Fisioterapia pélvica - Acompañamiento en embarazo y postparto"
-        width={600}
-        height={400}
-        className=" object-cover"
-      />
-      <Image
-        src="/images/home/slide-3.jpg"
-        alt="Fisioterapia pélvica - Atención profesional y especializada"
-        width={600}
-        height={400}
-        className=" object-cover"
-      />
+      <div className="relative w-full h-full">
+        <Image
+          src="/29.jpg"
+          alt="Fisioterapia pélvica - Tratamiento especializado"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
+      <div className="relative w-full h-full">
+        <Image
+          src="/images/home/slide-2.jpg"
+          alt="Fisioterapia pélvica - Acompañamiento en embarazo y postparto"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
+      <div className="relative w-full h-full">
+        <Image
+          src="/images/home/slide-3.jpg"
+          alt="Fisioterapia pélvica - Atención profesional y especializada"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
     </Carousel>
+    </div>
   );
 }

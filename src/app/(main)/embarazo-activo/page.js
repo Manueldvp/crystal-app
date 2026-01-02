@@ -20,7 +20,7 @@ import {
 export default function EmbarazoActivoPage() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="relative w-full min-h-[60vh] md:min-h-[70vh] overflow-hidden">
+      <div className="relative w-full min-h-[500px] md:min-h-[600px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/taller-embarazo/hero.jpg"
@@ -28,6 +28,7 @@ export default function EmbarazoActivoPage() {
             fill
             className="object-cover"
             priority
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-pink-secondary-900/70 via-fuchsia-pink-900/60 to-purple-secondary-900/70"></div>
         </div>
@@ -35,7 +36,7 @@ export default function EmbarazoActivoPage() {
         <div className="absolute top-20 right-10 w-72 h-72 bg-pink-secondary-300/30 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-fuchsia-pink-300/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
 
-        <div className="relative h-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center">
+        <div className="relative h-full min-h-[500px] md:min-h-[600px] flex items-center justify-center">
           <div className="text-center px-4 py-16 max-w-6xl mx-auto">
             <RevealWrapper>
               <div className="inline-block mb-6 px-6 py-2 bg-white/20 backdrop-blur-md rounded-full border border-white/30">
@@ -351,12 +352,13 @@ export default function EmbarazoActivoPage() {
             <div className="max-w-4xl mx-auto bg-gradient-to-br from-pink-secondary-50 to-fuchsia-pink-50 rounded-3xl p-8 md:p-12 border-2 border-pink-secondary-200">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                 <div className="md:col-span-1">
-                  <div className="relative w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-pink-secondary-300 shadow-xl">
+                  <div className="relative w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-pink-secondary-300 shadow-xl aspect-square">
                     <Image
                       src="/images/taller-embarazo/about-me.jpg"
                       alt="Cristal Sarabia - Fisioterapeuta Pélvica"
                       fill
                       className="object-cover"
+                      sizes="192px"
                     />
                   </div>
                 </div>

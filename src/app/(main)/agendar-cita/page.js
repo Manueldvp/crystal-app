@@ -1,7 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import { RevealWrapper } from "@/components/RevealWrapper/RevealWrapper";
-import { CalendarIcon, MapPinIcon, ClockIcon, CheckCircleIcon } from "@heroicons/react/24/outline";
+import {
+  CalendarIcon,
+  MapPinIcon,
+  ClockIcon,
+  CheckCircleIcon,
+} from "@heroicons/react/24/outline";
 
 export default function AgendarCitaPage() {
   const [selectedType, setSelectedType] = useState(null);
@@ -9,8 +14,10 @@ export default function AgendarCitaPage() {
 
   useEffect(() => {
     // Load Calendly script only once
-    const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
-    
+    const existingScript = document.querySelector(
+      'script[src="https://assets.calendly.com/assets/external/widget.js"]'
+    );
+
     if (!existingScript) {
       const script = document.createElement("script");
       script.src = "https://assets.calendly.com/assets/external/widget.js";
@@ -39,9 +46,11 @@ export default function AgendarCitaPage() {
     if (selectedType && scriptLoaded && window.Calendly) {
       // Small delay to ensure DOM is updated
       setTimeout(() => {
-        const widgetElement = document.querySelector('.calendly-inline-widget');
+        const widgetElement = document.querySelector(".calendly-inline-widget");
         if (widgetElement) {
-          const url = consultaTypes.find((t) => t.id === selectedType)?.calendlyUrl;
+          const url = consultaTypes.find(
+            (t) => t.id === selectedType
+          )?.calendlyUrl;
           // Destroy existing widget if it exists
           if (widgetElement.calendlyWidget) {
             widgetElement.calendlyWidget.destroy();
@@ -68,7 +77,8 @@ export default function AgendarCitaPage() {
         "Explicación del plan de tratamiento",
         "Inicio de tratamiento si es posible",
       ],
-      calendlyUrl: "https://calendly.com/cristalsarabia/primera-consulta?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=C267C0",
+      calendlyUrl:
+        "https://calendly.com/cristalsarabia/primera-consulta?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=C267C0",
     },
     {
       id: "seguimiento",
@@ -81,7 +91,8 @@ export default function AgendarCitaPage() {
         "Tratamiento manual o instrumental cuando sea necesario",
         "Resolución de dudas y definición de siguientes pasos",
       ],
-      calendlyUrl: "https://calendly.com/cristalsarabia/consultas?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=C267C0",
+      calendlyUrl:
+        "https://calendly.com/cristalsarabia/consultas?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=C267C0",
     },
   ];
 
@@ -129,7 +140,9 @@ export default function AgendarCitaPage() {
                         <h3 className="text-base font-bold text-gray-900 mb-1">
                           {type.title}
                         </h3>
-                        <p className="text-sm text-gray-600 mb-2">{type.description}</p>
+                        <p className="text-sm text-gray-600 mb-2">
+                          {type.description}
+                        </p>
                         <div className="flex items-center gap-2 text-xs text-gray-500">
                           <ClockIcon className="w-3 h-3" />
                           <span>Duración: {type.duration}</span>
@@ -227,8 +240,11 @@ export default function AgendarCitaPage() {
                   <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
                     Selecciona tu fecha y hora
                   </h2>
-                  {scriptLoaded ? (
-                    <div className="rounded-lg overflow-hidden border border-gray-200">
+                  <div
+                    className="rounded-lg overflow-hidden border border-gray-200"
+                    style={{ minHeight: "600px" }}
+                  >
+                    {scriptLoaded ? (
                       <div
                         key={selectedType}
                         className="calendly-inline-widget"
@@ -238,23 +254,31 @@ export default function AgendarCitaPage() {
                         }
                         style={{ minWidth: "320px", height: "600px" }}
                       />
-                    </div>
-                  ) : (
-                    <div className="rounded-lg border border-gray-200 flex items-center justify-center bg-gray-50" style={{ minHeight: "600px" }}>
-                      <p className="text-gray-500">Cargando calendario...</p>
-                    </div>
-                  )}
+                    ) : (
+                      <div className="flex items-center justify-center h-full bg-gray-50">
+                        <p className="text-gray-500">Cargando calendario...</p>
+                      </div>
+                    )}
+                  </div>
                 </div>
               ) : (
                 <div className="pt-12">
-                  <div className="bg-white rounded-lg p-8 text-center border-2 border-dashed border-gray-300">
+                  <div
+                    className="bg-white rounded-lg p-8 text-center border-2 border-dashed border-gray-300"
+                    style={{
+                      minHeight: "600px",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                    }}
+                  >
                     <CalendarIcon className="w-12 h-12 text-gray-400 mx-auto mb-3" />
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       Selecciona un tipo de consulta
                     </h3>
                     <p className="text-sm text-gray-600">
-                      Elige entre primera consulta o consulta de seguimiento para
-                      ver los horarios disponibles
+                      Elige entre primera consulta o consulta de seguimiento
+                      para ver los horarios disponibles
                     </p>
                   </div>
                 </div>
@@ -266,4 +290,3 @@ export default function AgendarCitaPage() {
     </div>
   );
 }
-

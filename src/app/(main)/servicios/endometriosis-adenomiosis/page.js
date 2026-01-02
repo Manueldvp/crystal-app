@@ -73,7 +73,7 @@ export default function EndometriosisPage() {
   return (
     <main className="bg-white">
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center">
+      <section className="relative min-h-[600px] md:min-h-[700px] flex items-center">
         <div className="absolute inset-0">
           <Image
             src="/images/endometriosis/image.png"
@@ -81,6 +81,7 @@ export default function EndometriosisPage() {
             fill
             className="object-cover"
             priority
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-purple-secondary-900/50" />
         </div>

@@ -4,14 +4,6 @@ import { useState } from "react";
 import Notification from "@/components/notification/notification";
 
 const Contacto = () => {
-  const iframeStyle = {
-    width: "1080px",
-    height: "520px",
-    border: "2",
-    loading: "lazy",
-    allowFullScreen: true,
-    referrerPolicy: "no-referrer-when-downgrade",
-  };
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -163,11 +155,15 @@ const Contacto = () => {
           </div>
         </div>
         <div className="flex items-center p-4 justify-center">
-          <iframe
-            className="flex items-center rounded-lg shadow-2xl justify-center"
-            style={iframeStyle}
-            src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=place_id:ChIJ4dhTKFS5z4UR3fEa8TxPeGw`}
-          ></iframe>
+          <div className="relative w-full max-w-[1080px] aspect-[1080/520] rounded-lg shadow-2xl overflow-hidden">
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=place_id:ChIJ4dhTKFS5z4UR3fEa8TxPeGw`}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
       </RevealWrapper>
     </>

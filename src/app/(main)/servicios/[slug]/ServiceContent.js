@@ -285,7 +285,7 @@ export default function ServiceContent({ slug }) {
   return (
     <main className="bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center">
+      <section className="relative min-h-[500px] md:min-h-[600px] flex items-center">
         <div className="absolute inset-0">
           <Image
             src={servicio.imagen}
@@ -293,6 +293,7 @@ export default function ServiceContent({ slug }) {
             fill
             className="object-cover"
             priority
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-purple-secondary-900/70" />
         </div>
