@@ -30,14 +30,14 @@ function Navbar() {
           <Logo />
         </Link>
 
-          {/* Right side: HIPOPOWER + Menu + Mobile button */}
+          {/* Right side: Agendar Cita + Menu + Mobile button */}
           <div className="flex items-center gap-4">
-            {/* HIPOPOWER button */}
+            {/* Agendar Cita button */}
             <Link 
-              href='/hipo-power'
-              className="text-white bg-aquamarine-blue-300 hover:bg-fuchsia-pink-400 font-medium rounded-full text-sm px-4 py-2 transition-colors"
+              href='/agendar-cita'
+              className="text-white bg-fuchsia-pink-500 hover:bg-fuchsia-pink-600 font-medium rounded-full text-sm px-4 py-2 transition-colors"
             >
-              HIPOPOWER
+              Agendar Cita
             </Link>
 
             {/* Desktop menu */}
