@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function Logo() {
   const [isMobile, setIsMobile] = useState(false);
@@ -10,20 +11,21 @@ export default function Logo() {
     };
 
     window.addEventListener('resize', handleResize);
-    handleResize(); // Llama a la función al montar el componente
+    handleResize();
 
     return () => {
-      window.removeEventListener('resize', handleResize); // Limpia el evento al desmontar el componente
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   return (
-    <div className='absolute pt-5 pb-5 left-0'>
-      {isMobile ? (
-        <img className='pt-8 w-44' src="/LogoDesktop.png" alt="Logo Mobile"  />
-      ) : (
-        <img src="/LogoDesktop.png" className='mb-5 w-96'  alt="Logo Desktop"  />
-      )}
-    </div>
+    <Image 
+      src="/LogoDesktop.png" 
+      alt="Cristal Sarabia" 
+      width={isMobile ? 140 : 280}
+      height={isMobile ? 40 : 80}
+      className={isMobile ? 'h-10 w-auto' : 'h-16 w-auto'}
+      priority
+    />
   );
 }

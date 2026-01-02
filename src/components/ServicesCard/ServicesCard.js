@@ -1,159 +1,154 @@
 "use client";
-import useIsDesktop from "@/hooks/useIsDesktop";
 import Link from "next/link";
-import { RevealWrapper  } from "@/components/RevealWrapper/RevealWrapper";
+import Image from "next/image";
+import { RevealWrapper } from "@/components/RevealWrapper/RevealWrapper";
+import { StarIcon } from "@heroicons/react/24/solid";
+
+const SERVICIOS = [
+  {
+    titulo: "Dolor Pélvico y Endometriosis",
+    descripcion: "Abordaje especializado para dolor crónico",
+    imagen: "/images/endometriosis/main.png",
+    link: "/servicios/endometriosis-adenomiosis",
+    destacado: true
+  },
+  {
+    titulo: "Embarazo",
+    descripcion: "Preparación al parto y acompañamiento",
+    imagen: "/images/servicios/embarazo.jpg",
+    link: "/servicios/embarazo-y-preparacion-al-parto"
+  },
+  {
+    titulo: "Postparto",
+    descripcion: "Recuperación y rehabilitación",
+    imagen: "/images/servicios/postparto.png",
+    link: "/servicios/postparto"
+  },
+  {
+    titulo: "Disfunciones Pélvicas",
+    descripcion: "Incontinencia, prolapsos y más",
+    imagen: "/278.png",
+    link: "/servicios/disfunciones-pelvicas-en-el-adulto"
+  },
+  {
+    titulo: "Diástasis Abdominal",
+    descripcion: "Rehabilitación de la faja abdominal",
+    imagen: "/images/servicios/diastasis.png",
+    link: "/servicios/rehabilitacion-de-diastasis-abdominal"
+  },
+  {
+    titulo: "Disfunción Sexual",
+    descripcion: "Dolor, vaginismo y dispareunia",
+    imagen: "/images/servicios/disfuncion.png",
+    link: "/servicios/disfuncion-sexual"
+  }
+];
 
 const ServicesCard = () => {
-  const isDesktop = useIsDesktop();
   return (
+    <section className="w-full py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-4">
     <RevealWrapper>
-    <section className=" bg-white w-full">
-      <div
-        className={`py-8 px-4 mx-auto ${isDesktop ? "w-2/3 " : ""}  lg:py-16`}
-      >
-        <div className=" bg-blue-health-500/60 shadow-xl transform transition duration-500  hover:scale-105 border-gray-200 rounded-lg p-8 md:p-12 mb-8">
-          <Link
-            href="https://www.youtube.com/@CristalSarabia2046/videos"
-            target="blank"
-            className="bg-white  text-pink-secondary-600 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md mb-2"
-          >
-            <svg
-              className="w-2.5 animate-pulse h-2.5 me-1.5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 14"
-            >
-              <path d="M11 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm8.585 1.189a.994.994 0 0 0-.9-.138l-2.965.983a1 1 0 0 0-.685.949v8a1 1 0 0 0 .675.946l2.965 1.02a1.013 1.013 0 0 0 1.032-.242A1 1 0 0 0 20 12V2a1 1 0 0 0-.415-.811Z" />
-            </svg>
-            Aprende
-          </Link>
-          <h1 className="text-white  text-3xl md:text-5xl font-extrabold mb-2">
-            Salud Pélvica
-          </h1>
-          <p className="text-lg font-normal text-white  mb-6">
-            Según estudios: 70% de las mujeres mexicanas nunca había escuchado hablar del suelo pélvico y 40% de las mujeres que sufren de incontinencia urinaria no había buscado ayuda médica. ¿Es tu caso?
+          <div className="text-center mb-12">
+            <p className="text-fuchsia-pink-600 font-semibold uppercase text-sm mb-3">
+              Servicios especializados
+            </p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              ¿En qué puedo ayudarte?
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Atención fisioterapéutica especializada para cada etapa de tu vida
+            </p>
+          </div>
+        </RevealWrapper>
 
-          </p>
-          <Link
-            href="/servicios/disfunciones-pelvicas-en-el-adulto"
-            className="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-purple-secondary-600 hover:text-white rounded-lg bg-white hover:bg-blue-health-500 focus:ring-4 focus:ring-blue-300 "
-          >
-            Más info
-            <svg
-              className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M1 5h12m0 0L9 1m4 4L9 9"
-              />
-            </svg>
-          </Link>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {SERVICIOS.map((servicio, index) => (
+            <RevealWrapper key={index}>
+              <Link href={servicio.link} className="group block">
+                <div className={`relative rounded-2xl overflow-hidden ${servicio.destacado ? 'ring-2 ring-fuchsia-pink-400' : ''}`}>
+                  <div className="aspect-[4/3] relative">
+                    <Image
+                      src={servicio.imagen}
+                      alt={servicio.titulo}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    {servicio.destacado && (
+                      <span className="absolute top-4 left-4 bg-fuchsia-pink-500 text-white text-xs font-semibold px-3 py-1 rounded-full inline-flex items-center gap-1">
+                        <StarIcon className="w-3 h-3" />
+                        Especializado
+                      </span>
+                    )}
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <h3 className="text-xl font-bold text-white mb-1 group-hover:text-fuchsia-pink-200 transition-colors">
+                      {servicio.titulo}
+                    </h3>
+                    <p className="text-white/80 text-sm">
+                      {servicio.descripcion}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </RevealWrapper>
+          ))}
         </div>
-        <div className="grid  md:grid-cols-2 gap-8">
-          <div className="bg-gray-50 transform transition duration-500  hover:scale-105 shadow-xl border-gray-200  rounded-lg p-8 md:p-12">
-            <h2 className="text-gray-900  text-3xl font-extrabold mb-2">
-              Post Parto
-            </h2>
-            <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
-            ¿Puedes recuperar tu cuerpo en el post parto? Con nuestro Programa Postparto por fisioterapia pélvica ha demostrado ser eficaz en el tratamiento faja abdominal, DIÁSTASIS ABDOMINAL y afecciones del piso pélvico.
-            </p>
+
+        {/* HIPOPOWER Banner */}
+        <RevealWrapper>
+          <div className="mt-16">
+            <Link href="/hipo-power" className="block group">
+              <div className="relative rounded-2xl overflow-hidden">
+                <div className="relative w-full h-[300px] md:h-[400px]">
+                  <Image
+                    src="/images/home/hipopower.jpg"
+                    alt="HIPOPOWER - Taller de Hipopresivos"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-secondary-900/80 via-purple-secondary-800/70 to-transparent" />
+                  <div className="absolute inset-0 flex items-center justify-center md:justify-start md:pl-12 lg:pl-20">
+                    <div className="text-center md:text-left px-4">
+                      <p className="text-fuchsia-pink-400 font-semibold uppercase text-sm mb-2 tracking-wider">
+                        Taller Presencial + Online
+                      </p>
+                      <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 leading-tight">
+                        HIPO<span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-pink-300 to-pink-secondary-200">POWER</span>
+                      </h3>
+                      <p className="text-white/90 text-lg md:text-xl mb-6 max-w-xl">
+                        Fortalece tu abdomen y piso pélvico de forma funcional y segura
+                      </p>
+                      <div className="inline-flex items-center gap-2 bg-white text-purple-secondary-700 font-bold px-6 py-3 rounded-full hover:bg-fuchsia-pink-50 transition-colors group-hover:gap-3">
+                        Conocer más
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </RevealWrapper>
+
+        <RevealWrapper>
+          <div className="text-center mt-10">
             <Link
-              href="/servicios/postparto"
-              className=" text-purple-secondary-600 hover:underline font-medium text-lg inline-flex items-center"
+              href="/servicios"
+              className="inline-flex items-center gap-2 text-fuchsia-pink-600 hover:text-fuchsia-pink-700 font-semibold transition-colors"
             >
-              Más info
-              <svg
-                className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M1 5h12m0 0L9 1m4 4L9 9"
-                />
+              Ver todos los servicios
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
           </div>
-          <div className="bg-gray-50 shadow-xl transform transition duration-500 hover:scale-105   rounded-lg p-8 md:p-12">
-            <h2 className="text-gray-900  text-3xl font-extrabold mb-2">
-              Embarazo
-            </h2>
-            <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
-            ¡Felicidades mamá! A través de sesiones individuales te acompaño durante todo tu proceso con calidez y cercanía. Brindado las herramientas para la preparación de parto o cesárea. Cómo calmar los dolores, orientación de posturas y más.
-            </p>
-            <Link
-              href="/servicios/embarazo-y-preparacion-al-parto"
-              className="text-purple-secondary-600 hover:underline font-medium text-lg inline-flex items-center"
-            >
-              Más info
-              <svg
-                className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M1 5h12m0 0L9 1m4 4L9 9"
-                />
-              </svg>
-            </Link>
-          </div>
-        </div>
-        <div className="relative mt-8 shadow-xl transform transition duration-500 hover:scale-105 rounded-2xl p-8 md:p-12 mb-8 overflow-hidden bg-purple-secondary-700">
-          <div className="absolute -right-10 -top-10 w-40 h-40 rounded-full border-2 border-white/15" />
-          <div className="absolute -left-5 -bottom-5 w-24 h-24 rounded-full border-2 border-white/10" />
-          <div className="relative z-10">
-            <p className="text-fuchsia-pink-200 font-medium tracking-wide uppercase text-xs mb-3">
-              ⭐ Servicio Especializado
-            </p>
-            <h1 className="text-white text-3xl md:text-4xl font-bold mb-3">
-              Dolor en Endometriosis y Adenomiosis
-            </h1>
-            <p className="text-lg font-normal text-purple-secondary-100 mb-6 max-w-2xl">
-              Tu dolor es real, tu experiencia es válida. Ofrecemos un abordaje especializado desde la fisioterapia pélvica para el manejo del dolor, la función y la recuperación corporal.
-            </p>
-            <Link
-              href="/servicios/endometriosis-adenomiosis"
-              className="inline-flex justify-center items-center py-3 px-6 text-base font-semibold text-center text-purple-secondary-700 rounded-full bg-white hover:bg-gray-100 transition-colors"
-            >
-              Conocer más sobre este servicio
-              <svg
-                className="w-4 h-4 ms-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </Link>
-          </div>
-        </div>
+        </RevealWrapper>
       </div>
     </section>
-    </RevealWrapper>
   );
 };
 

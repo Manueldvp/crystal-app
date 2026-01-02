@@ -10,11 +10,23 @@ const LINKS = [
   {
     title: "Servicios",
     items: [
-      { name: "Dolor en Endometriosis", url: "/servicios/endometriosis-adenomiosis" },
-      { name: "Embarazo y Parto", url: "/servicios/embarazo-y-preparacion-al-parto" },
+      {
+        name: "Dolor en Endometriosis",
+        url: "/servicios/endometriosis-adenomiosis",
+      },
+      {
+        name: "Embarazo y Parto",
+        url: "/servicios/embarazo-y-preparacion-al-parto",
+      },
       { name: "Postparto", url: "/servicios/postparto" },
-      { name: "Disfunciones Pélvicas", url: "/servicios/disfunciones-pelvicas-en-el-adulto" },
-      { name: "Diástasis Abdominal", url: "/servicios/rehabilitacion-de-diastasis-abdominal" },
+      {
+        name: "Disfunciones Pélvicas",
+        url: "/servicios/disfunciones-pelvicas-en-el-adulto",
+      },
+      {
+        name: "Diástasis Abdominal",
+        url: "/servicios/rehabilitacion-de-diastasis-abdominal",
+      },
     ],
   },
   {
@@ -29,6 +41,7 @@ const LINKS = [
     items: [
       { name: "Contacto", url: "/contacto" },
       { name: "Sobre mi", url: "/about" },
+      { name: "Preguntas Frecuentes", url: "/preguntas-frecuentes" },
     ],
   },
 ];
@@ -43,7 +56,7 @@ export function FooterWithSocialLinks() {
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
           <div className="">
             <Image
-              alt="img"
+              alt="Cristal Sarabia - Fisioterapia Pélvica Especializada"
               src="/LogoDesktop.png"
               height={400}
               width={400}

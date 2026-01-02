@@ -1,19 +1,11 @@
 import { useState, useEffect } from "react";
-import { Link as ScrollLink } from 'react-scroll';
 import Link from "next/link";
 import routes from "../routes";
 import SubMenu from "./SubMenu";
 
-function Menu({ isOpen, setIsOpen, isDesktop, handleOnClick }) {
+function Menu({ isOpen, setIsOpen, isDesktop }) {
   const [hoveredLabel, setHoveredLabel] = useState(null);
   const [clickedLabel, setClickedLabel] = useState(null);
-  const [mainLocation, setMainLocation] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setMainLocation(window.location.pathname === '/');
-    }
-  }, []);
 
   const handleMouseEnter = (label) => {
     if (isDesktop) {
@@ -28,7 +20,7 @@ function Menu({ isOpen, setIsOpen, isDesktop, handleOnClick }) {
   };
 
   const handleIsOpen = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(false);
   };
 
   const handleIconClick = (e, label) => {
@@ -50,39 +42,34 @@ function Menu({ isOpen, setIsOpen, isDesktop, handleOnClick }) {
 
   return (
     <div
-      className={`items-center border-r ${
-        isOpen || isDesktop ? "" : "hidden"
-      } w-full mr-0 md:w-auto md:order-1`}
+      className={`${isOpen || isDesktop ? "" : "hidden"} ${isDesktop ? "" : "w-full"}`}
       id="navbar-cta"
     >
       <ul
-        className={`flex flex-col font-medium p-4 mt-4 rounded-lg rtl:space-x-reverse md:flex-row md:mt-0 ${
-          isDesktop === false ? "shadow-lg" : ""
-        } md:bg-white bg-transparent`}
+        className={`flex ${isDesktop ? "flex-row items-center gap-1" : "flex-col mt-4 py-4 border-t border-gray-100"}`}
       >
-        {routes.map(({ label, route, scroll, mainRoute, icon, subRoutes, miniRoutes }) => (  
-          
+        {routes.map(({ label, route, icon, subRoutes }) => (
           <li
-            className="p-2  text-grey-cristal-400"
+            className="relative"
             key={route}
             onMouseEnter={() => handleMouseEnter(label)}
             onMouseLeave={handleMouseLeave}
           >
-            
               <Link
-              
-              className={`flex items-center ${
-                isDesktop ? "" : "justify-between border-b mt-2 p-2"
-              } hover:text-purple-secondary-500`}
+              className={`flex items-center gap-1 px-3 py-2 text-gray-600 hover:text-purple-secondary-600 rounded-lg hover:bg-gray-50 transition-colors ${
+                !isDesktop ? "justify-between" : ""
+              }`}
               href={route}
             >
-              <div onClick={handleIsOpen}>{label}</div>
+              <span onClick={handleIsOpen}>{label}</span>
+              {icon && (
               <span
-                className={`${isDesktop ? "ml-2" : "ml-4"} `}
+                  className="text-gray-400"
                 onClick={(e) => handleIconClick(e, label)}
               >
                 {icon}
               </span>
+              )}
             </Link>
                 
             {showSubRoutes(label) && (
@@ -90,12 +77,8 @@ function Menu({ isOpen, setIsOpen, isDesktop, handleOnClick }) {
                 handleIsOpen={handleIsOpen}
                 isDesktop={isDesktop}
                 subRoutes={subRoutes}
-                icon={icon}
-                handleOnClick={handleOnClick}
                 showSubRoutes={showSubRoutes}
                 label={label}
-                handleIconClick={handleIconClick}
-                miniRoutes={miniRoutes}
               />
             )}
           </li>

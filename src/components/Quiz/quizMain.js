@@ -177,7 +177,7 @@ const Quiz = () => {
     if (nuevoProblema === "" || nuevoProblema === "null") {
       setProblemaSeleccionado(null);
     } else {
-      setProblemaSeleccionado(nuevoProblema);
+    setProblemaSeleccionado(nuevoProblema);
     }
     setPreguntaActual(0);
     setRespuestasUsuario({});
