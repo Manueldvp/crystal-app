@@ -6,7 +6,7 @@ function SubMenu({ subRoutes, handleIsOpen, isDesktop, showSubRoutes, label }) {
       {showSubRoutes(label) && subRoutes && (
         <ul 
           className={`bg-white rounded-lg shadow-lg border border-gray-100 py-2 min-w-[240px] ${
-            isDesktop ? 'absolute top-full left-0 mt-1 z-50' : 'mt-2 ml-4'
+            isDesktop ? 'absolute top-full left-0 mt-0 pt-1 z-50' : 'mt-2 ml-4'
           }`}
         >
           {subRoutes.map(({ label, route }) => (

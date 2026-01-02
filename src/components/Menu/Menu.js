@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import routes from "../routes";
 import SubMenu from "./SubMenu";
@@ -6,18 +6,36 @@ import SubMenu from "./SubMenu";
 function Menu({ isOpen, setIsOpen, isDesktop }) {
   const [hoveredLabel, setHoveredLabel] = useState(null);
   const [clickedLabel, setClickedLabel] = useState(null);
+  const timeoutRef = useRef(null);
 
   const handleMouseEnter = (label) => {
     if (isDesktop) {
+      // Clear any pending timeout
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
       setHoveredLabel(label);
     }
   };
 
   const handleMouseLeave = () => {
     if (isDesktop) {
-      setHoveredLabel(null);
+      // Add a small delay before hiding to allow mouse movement to dropdown
+      timeoutRef.current = setTimeout(() => {
+        setHoveredLabel(null);
+      }, 150);
     }
   };
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const handleIsOpen = () => {
     setIsOpen(false);
@@ -73,13 +91,18 @@ function Menu({ isOpen, setIsOpen, isDesktop }) {
             </Link>
                 
             {showSubRoutes(label) && (
-              <SubMenu
-                handleIsOpen={handleIsOpen}
-                isDesktop={isDesktop}
-                subRoutes={subRoutes}
-                showSubRoutes={showSubRoutes}
-                label={label}
-              />
+              <div
+                onMouseEnter={() => handleMouseEnter(label)}
+                onMouseLeave={handleMouseLeave}
+              >
+                <SubMenu
+                  handleIsOpen={handleIsOpen}
+                  isDesktop={isDesktop}
+                  subRoutes={subRoutes}
+                  showSubRoutes={showSubRoutes}
+                  label={label}
+                />
+              </div>
             )}
           </li>
         ))}

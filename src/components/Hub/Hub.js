@@ -39,7 +39,7 @@ const Hub = () => {
                   href="/quiz"
                   className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-gray-900 font-semibold py-4 px-8 rounded-full border-2 border-gray-200 transition-all hover:scale-105"
                 >
-                  Empieza aquí
+                  Haz nuestro quiz
       </Link>
     </div>
     
