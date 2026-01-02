@@ -9,10 +9,10 @@ const SITE_NAME = 'Cristal Sarabia - Fisioterapia Pélvica'
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Cristal Sarabia | Fisioterapia Pélvica Especializada en Puebla, México | Tratamiento de Suelo Pélvico',
+    default: 'Cristal Sarabia | Fisioterapia Pélvica en Puebla',
     template: '%s | Cristal Sarabia'
   },
-  description: 'Fisioterapeuta especializada en Uroginecología y Sexualidad Funcional. Tratamiento de dolor pélvico, endometriosis, incontinencia, embarazo y postparto en Puebla, México.',
+  description: 'Fisioterapeuta especializada en Uroginecología y Sexualidad Funcional. Tratamiento de dolor pélvico, endometriosis, incontinencia, embarazo y postparto.',
   keywords: [
     'fisioterapia pélvica',
     'fisioterapeuta pélvica puebla',
