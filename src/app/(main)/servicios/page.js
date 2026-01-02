@@ -20,7 +20,7 @@ const SERVICIOS = [
   {
     titulo: "Embarazo y Preparación al Parto",
     descripcion: "Durante el embarazo, el cuerpo experimenta cambios importantes a nivel musculoesquelético, hormonal y postural. El acompañamiento fisioterapéutico busca preparar al cuerpo para el parto, mejorar la movilidad, favorecer la conciencia corporal y prevenir disfunciones del piso pélvico.",
-    imagen: "/15.jpg",
+    imagen: "/images/servicios/embarazo.jpg",
     slug: "embarazo-y-preparacion-al-parto",
     icono: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -31,7 +31,7 @@ const SERVICIOS = [
   {
     titulo: "Postparto y Recuperación",
     descripcion: "El postparto es una etapa de grandes cambios físicos y emocionales. La fisioterapia pélvica acompaña la recuperación del piso pélvico, la faja abdominal, cicatrices y el retorno progresivo a la actividad física, respetando los tiempos del cuerpo.",
-    imagen: "/13.jpg",
+    imagen: "/images/servicios/postparto.png",
     slug: "postparto",
     icono: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,7 +60,7 @@ const SERVICIOS = [
   {
     titulo: "Rehabilitación de Diástasis Abdominal",
     descripcion: "La evaluación y tratamiento de la faja abdominal es fundamental para la estabilidad, el movimiento y la salud pélvica. El abordaje integra ejercicio terapéutico, respiración y control motor.",
-    imagen: "/99.png",
+    imagen: "/images/servicios/diastasis.png",
     slug: "rehabilitacion-de-diastasis-abdominal",
     icono: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -71,7 +71,7 @@ const SERVICIOS = [
   {
     titulo: "Disfunción Sexual",
     descripcion: "La fisioterapia en sexualidad funcional aborda las disfunciones que afectan la vida sexual desde una perspectiva integral y basada en evidencia.",
-    imagen: "/29.jpg",
+    imagen: "/images/servicios/disfuncion.png",
     slug: "disfuncion-sexual",
     icono: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -187,7 +187,7 @@ const Servicios = () => {
                   <div className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                     {/* Imagen */}
                     <div className={`relative ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                      <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+                      <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-fuchsia-pink-200">
                         <Image
                           src={servicio.imagen}
                           alt={servicio.titulo}
@@ -196,7 +196,7 @@ const Servicios = () => {
                         />
                       </div>
                       {/* Decorative element */}
-                      <div className={`absolute -z-10 w-full h-full top-4 rounded-2xl bg-fuchsia-pink-200 ${index % 2 === 1 ? '-left-4' : 'left-4'}`} />
+                      <div className={`absolute -z-10 w-full h-full top-4 aspect-[4/3] rounded-2xl bg-fuchsia-pink-200 ${index % 2 === 1 ? '-left-4' : 'left-4'}`} />
                     </div>
 
                     {/* Contenido */}

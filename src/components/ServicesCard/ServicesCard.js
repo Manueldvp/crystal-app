@@ -15,13 +15,13 @@ const SERVICIOS = [
   {
     titulo: "Embarazo",
     descripcion: "Preparación al parto y acompañamiento",
-    imagen: "/bg-2.png",
+    imagen: "/images/servicios/embarazo.jpg",
     link: "/servicios/embarazo-y-preparacion-al-parto"
   },
   {
     titulo: "Postparto",
     descripcion: "Recuperación y rehabilitación",
-    imagen: "/bg-3.png",
+    imagen: "/images/servicios/postparto.png",
     link: "/servicios/postparto"
   },
   {
@@ -33,13 +33,13 @@ const SERVICIOS = [
   {
     titulo: "Diástasis Abdominal",
     descripcion: "Rehabilitación de la faja abdominal",
-    imagen: "/99.png",
+    imagen: "/images/servicios/diastasis.png",
     link: "/servicios/rehabilitacion-de-diastasis-abdominal"
   },
   {
     titulo: "Disfunción Sexual",
     descripcion: "Dolor, vaginismo y dispareunia",
-    imagen: "/13.jpg",
+    imagen: "/images/servicios/disfuncion.png",
     link: "/servicios/disfuncion-sexual"
   }
 ];
@@ -48,7 +48,7 @@ const ServicesCard = () => {
   return (
     <section className="w-full py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
-        <RevealWrapper>
+    <RevealWrapper>
           <div className="text-center mb-12">
             <p className="text-fuchsia-pink-600 font-semibold uppercase text-sm mb-3">
               Servicios especializados
@@ -95,6 +95,44 @@ const ServicesCard = () => {
             </RevealWrapper>
           ))}
         </div>
+
+        {/* HIPOPOWER Banner */}
+        <RevealWrapper>
+          <div className="mt-16">
+            <Link href="/hipo-power" className="block group">
+              <div className="relative rounded-2xl overflow-hidden">
+                <div className="relative w-full h-[300px] md:h-[400px]">
+                  <Image
+                    src="/images/home/hipopower.jpg"
+                    alt="HIPOPOWER - Taller de Hipopresivos"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-secondary-900/80 via-purple-secondary-800/70 to-transparent" />
+                  <div className="absolute inset-0 flex items-center justify-center md:justify-start md:pl-12 lg:pl-20">
+                    <div className="text-center md:text-left px-4">
+                      <p className="text-fuchsia-pink-400 font-semibold uppercase text-sm mb-2 tracking-wider">
+                        Taller Presencial + Online
+                      </p>
+                      <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 leading-tight">
+                        HIPO<span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-pink-300 to-pink-secondary-200">POWER</span>
+                      </h3>
+                      <p className="text-white/90 text-lg md:text-xl mb-6 max-w-xl">
+                        Fortalece tu abdomen y piso pélvico de forma funcional y segura
+                      </p>
+                      <div className="inline-flex items-center gap-2 bg-white text-purple-secondary-700 font-bold px-6 py-3 rounded-full hover:bg-fuchsia-pink-50 transition-colors group-hover:gap-3">
+                        Conocer más
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </RevealWrapper>
 
         <RevealWrapper>
           <div className="text-center mt-10">

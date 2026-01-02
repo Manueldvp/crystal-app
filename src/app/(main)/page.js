@@ -44,19 +44,19 @@ export default function Home() {
       <Hub />
       
       {/* Features */}
-      <section className="w-full py-12 bg-white border-b border-gray-100">
+      <section className="w-full py-12 bg-gradient-to-r from-purple-secondary-700 to-purple-secondary-800">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {FEATURES.map((feature, index) => (
               <RevealWrapper key={index}>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-fuchsia-pink-100 rounded-xl flex items-center justify-center mx-auto mb-3">
-                    <feature.icon className="w-6 h-6 text-fuchsia-pink-600" />
+                  <div className="w-12 h-12 bg-white/20 backdrop-blur rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <feature.icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="font-semibold text-gray-800 text-sm mb-1">
+                  <h3 className="font-semibold text-white text-sm mb-1">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-500 text-xs">
+                  <p className="text-purple-secondary-100 text-xs">
                     {feature.description}
                   </p>
                 </div>
@@ -76,7 +76,7 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute -top-6 -left-6 w-full h-full bg-fuchsia-pink-300 rounded-3xl" />
                 <Image
-                  src="/99.png"
+                  src="/images/endometriosis/main.png"
                   alt="Fisioterapia pélvica especializada para mujeres - Tratamiento de suelo pélvico en Puebla"
                   width={500}
                   height={600}
@@ -126,7 +126,7 @@ export default function Home() {
         
         <div className="max-w-2xl mx-auto px-4 text-center relative z-10">
           <RevealWrapper>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
               ¿Necesitas fisioterapia pélvica?
             </h2>
             <p className="text-lg md:text-xl text-gray-700 mb-2">
@@ -149,24 +149,24 @@ export default function Home() {
       </section>
       
       {/* Programas - Banner */}
-      <section className="w-full py-8 bg-white">
+      <section className="w-full py-12 bg-gradient-to-r from-purple-secondary-700 to-purple-secondary-800">
         <div className="max-w-6xl mx-auto px-4">
           <Link href='/programas' className="block group">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4 p-6 bg-gradient-to-r from-purple-secondary-50 to-fuchsia-pink-50 rounded-2xl hover:shadow-lg transition-shadow">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4 p-6 rounded-2xl bg-purple-secondary-600/50 hover:bg-purple-secondary-600/70 transition-all">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-purple-secondary-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-14 h-14 bg-white/20 backdrop-blur rounded-xl flex items-center justify-center flex-shrink-0">
                   <AcademicCapIcon className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-800">
+                  <h3 className="text-xl font-bold text-white">
                     Fórmate conmigo
                   </h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-purple-secondary-100 text-sm">
                     Talleres de hipopresivos, preparación al parto y más
                   </p>
                 </div>
               </div>
-              <div className="flex items-center gap-2 text-purple-secondary-600 font-semibold group-hover:gap-3 transition-all whitespace-nowrap">
+              <div className="flex items-center gap-2 text-white font-semibold group-hover:gap-3 transition-all whitespace-nowrap">
                 Ver programas
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

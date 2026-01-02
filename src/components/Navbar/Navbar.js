@@ -27,8 +27,8 @@ function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo - left */}
           <Link href="/" className="flex-shrink-0">
-            <Logo />
-          </Link>
+          <Logo />
+        </Link>
 
           {/* Right side: HIPOPOWER + Menu + Mobile button */}
           <div className="flex items-center gap-4">
@@ -47,25 +47,25 @@ function Navbar() {
             
             {/* Mobile menu button */}
             {!isDesktop && (
-              <button
-                type="button"
+            <button
+              type="button"
                 className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
-                aria-expanded={isOpen}
-                onClick={handleOnClick}
-              >
-                {!isOpen ? (
+              aria-expanded={isOpen}
+              onClick={handleOnClick}
+            >
+              {!isOpen ? (
                   <Bars3Icon className="h-6 w-6 text-gray-600" />
-                ) : (
+              ) : (
                   <XMarkIcon className="h-6 w-6 text-gray-600" />
-                )}
-              </button>
+              )}
+            </button>
             )}
           </div>
         </div>
 
         {/* Mobile menu - below when open */}
         {!isDesktop && (
-          <Menu isOpen={isOpen} setIsOpen={setIsOpen} isDesktop={isDesktop} />
+        <Menu isOpen={isOpen} setIsOpen={setIsOpen} isDesktop={isDesktop} />
         )}
       </div>
 
@@ -87,10 +87,10 @@ function Navbar() {
             <div className="flex items-center gap-1.5">
               <PhoneIcon className="w-4 h-4 text-purple-secondary-500"/>
               <span>{isDesktop ? "Teléfono: " : ""}+52 222 423 7337</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
+    </div>
+    </div>
+    </div>
     </nav>
   );
 }

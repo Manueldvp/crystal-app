@@ -20,7 +20,7 @@ import {
 export default function EmbarazoActivoPage() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="relative w-full min-h-[85vh] md:min-h-[90vh] overflow-hidden">
+      <div className="relative w-full min-h-[60vh] md:min-h-[70vh] overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/taller-embarazo/hero.jpg"
@@ -35,7 +35,7 @@ export default function EmbarazoActivoPage() {
         <div className="absolute top-20 right-10 w-72 h-72 bg-pink-secondary-300/30 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-fuchsia-pink-300/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
 
-        <div className="relative h-full min-h-[85vh] md:min-h-[90vh] flex items-center justify-center">
+        <div className="relative h-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center">
           <div className="text-center px-4 py-16 max-w-6xl mx-auto">
             <RevealWrapper>
               <div className="inline-block mb-6 px-6 py-2 bg-white/20 backdrop-blur-md rounded-full border border-white/30">

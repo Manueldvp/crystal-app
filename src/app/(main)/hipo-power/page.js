@@ -20,14 +20,14 @@ export default function HipoPowerPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section - POWER EDITION */}
-      <div className="relative w-full min-h-[85vh] md:min-h-[90vh] overflow-hidden bg-gradient-to-br from-fuchsia-pink-600 via-purple-secondary-700 to-pink-secondary-800">
+      <div className="relative w-full min-h-[50vh] md:min-h-[60vh] overflow-hidden bg-gradient-to-br from-fuchsia-pink-600 via-purple-secondary-700 to-pink-secondary-800">
         {/* Animated Background Layers */}
         <div className="absolute inset-0">
           <Image
-            src="/bg-3.png"
+            src="/images/hipopower/hero.webp"
             alt="Hero Background"
             fill
-            className="object-cover opacity-20 mix-blend-overlay"
+            className="object-cover opacity-30"
             priority
           />
         </div>
@@ -37,15 +37,15 @@ export default function HipoPowerPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-fuchsia-pink-500/20 via-transparent to-purple-secondary-900/40"></div>
 
         {/* Animated circles/shapes for visual interest */}
-        <div className="absolute top-20 right-10 w-72 h-72 bg-fuchsia-pink-400/30 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-purple-secondary-400/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-10 right-5 md:top-20 md:right-10 w-32 h-32 md:w-72 md:h-72 bg-fuchsia-pink-400/30 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-10 left-5 md:bottom-20 md:left-10 w-40 h-40 md:w-96 md:h-96 bg-purple-secondary-400/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
 
-        <div className="relative h-full min-h-[85vh] md:min-h-[90vh] flex items-center justify-center">
-          <div className="text-center px-4 py-20 max-w-6xl mx-auto">
+        <div className="relative h-full min-h-[50vh] md:min-h-[60vh] flex items-center justify-center">
+          <div className="text-center px-4 py-8 md:py-12 max-w-6xl mx-auto">
             <RevealWrapper>
               {/* Badge/Tag */}
-              <div className="inline-block mb-6 px-6 py-2 bg-white/20 backdrop-blur-md rounded-full border border-white/30">
-                <p className="text-sm md:text-base text-white font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
+              <div className="inline-block mb-4 md:mb-6 px-4 py-1.5 md:px-6 md:py-2 bg-white/20 backdrop-blur-md rounded-full border border-white/30">
+                <p className="text-xs md:text-sm lg:text-base text-white font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
                   <span className="text-fuchsia-pink-200">●</span>
                   Taller de Hipopresivos
                   <span className="text-fuchsia-pink-200">●</span>
@@ -53,7 +53,7 @@ export default function HipoPowerPage() {
               </div>
 
               {/* Main Title */}
-              <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white mb-6 tracking-tight leading-none">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-3 md:mb-4 tracking-tight leading-none">
                 HIPO
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-pink-200 via-pink-secondary-100 to-purple-secondary-200 animate-pulse">
                   POWER
@@ -61,22 +61,22 @@ export default function HipoPowerPage() {
               </h1>
 
               {/* Subtitle */}
-              <p className="text-xl md:text-2xl lg:text-3xl text-purple-secondary-100 font-bold mb-8 tracking-wide">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-purple-secondary-100 font-bold mb-4 md:mb-6 tracking-wide">
                 FORTALECE • TRANSFORMA • EMPODERA
               </p>
 
               {/* Próxima fecha */}
-              <div className="mb-8 inline-block px-6 py-3 bg-white/10 backdrop-blur-md rounded-2xl border-2 border-white/30">
-                <p className="text-sm text-purple-secondary-100 uppercase tracking-wider mb-1">
+              <div className="mb-4 md:mb-6 inline-block px-4 py-2 md:px-6 md:py-3 bg-white/10 backdrop-blur-md rounded-2xl border-2 border-white/30">
+                <p className="text-xs md:text-sm text-purple-secondary-100 uppercase tracking-wider mb-1">
                   Próxima fecha
                 </p>
-                <p className="text-2xl md:text-3xl font-black text-white">
+                <p className="text-xl md:text-2xl lg:text-3xl font-black text-white">
                   {process.env.NEXT_PUBLIC_HIPOPOWER_DATE || "Por confirmar"}
                 </p>
               </div>
 
               {/* Description */}
-              <p className="text-base md:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-3xl mx-auto mb-6 md:mb-8 leading-relaxed px-2">
                 El taller más completo de entrenamiento hipopresivo y
                 fortalecimiento del core.
                 <span className="block mt-2 font-semibold text-fuchsia-pink-200">
@@ -92,7 +92,7 @@ export default function HipoPowerPage() {
                 <Link
                   href="https://api.whatsapp.com/send?phone=5212224237337&text=Hola%20Cristal%20%F0%9F%91%8B%20quiero%20inscribirme%20a%20HIPOPOWER"
                   target="_blank"
-                  className="group relative px-8 py-4 bg-white text-fuchsia-pink-600 font-bold text-lg rounded-full hover:bg-fuchsia-pink-50 transition-all duration-300 hover:scale-110 hover:shadow-2xl shadow-xl"
+                  className="group relative px-6 py-3 md:px-8 md:py-4 bg-white text-fuchsia-pink-600 font-bold text-base md:text-lg rounded-full hover:bg-fuchsia-pink-50 transition-all duration-300 hover:scale-110 hover:shadow-2xl shadow-xl"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     INSCRÍBETE AHORA
@@ -103,7 +103,7 @@ export default function HipoPowerPage() {
 
                 <a
                   href="#videos"
-                  className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold text-lg rounded-full hover:bg-white hover:text-fuchsia-pink-600 transition-all duration-300 hover:scale-105"
+                  className="px-6 py-3 md:px-8 md:py-4 bg-transparent border-2 border-white text-white font-bold text-base md:text-lg rounded-full hover:bg-white hover:text-fuchsia-pink-600 transition-all duration-300 hover:scale-105"
                 >
                   VER VIDEOS ▼
                 </a>

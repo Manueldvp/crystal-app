@@ -7,7 +7,7 @@ export const SERVICIOS_DATA = {
   "embarazo-y-preparacion-al-parto": {
     titulo: "Embarazo y Preparación al Parto",
     subtitulo: "Acompañamiento fisioterapéutico durante el embarazo",
-    imagen: "/15.jpg",
+    imagen: "/images/servicios/embarazo.jpg",
     intro: "El embarazo es una etapa de profundos cambios físicos, hormonales y emocionales. A nivel musculoesquelético, el cuerpo se adapta progresivamente para sostener el crecimiento del bebé, modificar el centro de gravedad y prepararse para el parto.",
     destacado: "La fisioterapia pélvica durante el embarazo tiene como objetivo acompañar estos cambios, no intervenirlos de forma agresiva ni forzar procesos para los que el cuerpo aún no está listo.",
     secciones: [
@@ -56,7 +56,7 @@ export const SERVICIOS_DATA = {
   "postparto": {
     titulo: "Postparto y Recuperación",
     subtitulo: "Acompañamiento respetuoso en tu recuperación",
-    imagen: "/13.jpg",
+    imagen: "/images/servicios/postparto.png",
     intro: "El postparto es una etapa frecuentemente subestimada. A menudo se espera que el cuerpo \"regrese a la normalidad\" sin un acompañamiento real, normalizando dolor, escapes urinarios o debilidad abdominal.",
     destacado: "La fisioterapia pélvica en el postparto busca acompañar la recuperación de forma respetuosa, sin prisas ni exigencias irreales.",
     secciones: [
@@ -165,7 +165,7 @@ export const SERVICIOS_DATA = {
   "rehabilitacion-de-diastasis-abdominal": {
     titulo: "Rehabilitación Abdominal y Diástasis",
     subtitulo: "Recuperación funcional de la faja abdominal",
-    imagen: "/99.png",
+    imagen: "/images/servicios/diastasis.png",
     intro: "La diástasis abdominal es la separación de los músculos rectos del abdomen. No es únicamente una condición estética, sino funcional.",
     destacado: "El objetivo es mejorar la función y la confianza corporal, no solo \"cerrar\" la diástasis.",
     secciones: [
@@ -207,7 +207,7 @@ export const SERVICIOS_DATA = {
   "disfuncion-sexual": {
     titulo: "Disfunción Sexual",
     subtitulo: "Abordaje fisioterapéutico de la sexualidad funcional",
-    imagen: "/29.jpg",
+    imagen: "/images/servicios/disfuncion.png",
     intro: "La sexualidad es parte integral de la salud y el bienestar. La disfunción sexual puede manifestarse como dolor, incomodidad, dificultad para la penetración, disminución del placer o miedo al contacto.",
     destacado: "La fisioterapia pélvica no impone, acompaña.",
     secciones: [

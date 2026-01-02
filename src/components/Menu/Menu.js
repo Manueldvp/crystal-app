@@ -55,7 +55,7 @@ function Menu({ isOpen, setIsOpen, isDesktop }) {
             onMouseEnter={() => handleMouseEnter(label)}
             onMouseLeave={handleMouseLeave}
           >
-            <Link
+              <Link
               className={`flex items-center gap-1 px-3 py-2 text-gray-600 hover:text-purple-secondary-600 rounded-lg hover:bg-gray-50 transition-colors ${
                 !isDesktop ? "justify-between" : ""
               }`}
@@ -63,15 +63,15 @@ function Menu({ isOpen, setIsOpen, isDesktop }) {
             >
               <span onClick={handleIsOpen}>{label}</span>
               {icon && (
-                <span
+              <span
                   className="text-gray-400"
-                  onClick={(e) => handleIconClick(e, label)}
-                >
-                  {icon}
-                </span>
+                onClick={(e) => handleIconClick(e, label)}
+              >
+                {icon}
+              </span>
               )}
             </Link>
-
+                
             {showSubRoutes(label) && (
               <SubMenu
                 handleIsOpen={handleIsOpen}
