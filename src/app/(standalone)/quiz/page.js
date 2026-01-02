@@ -1132,6 +1132,14 @@ export default function QuizPage() {
                   />
                 </svg>
               </a>
+              {(diagnosis.level === "high" || diagnosis.level === "medium") && (
+                <Link
+                  href="/agendar-cita"
+                  className="w-full text-center py-3 px-8 text-fuchsia-pink-600 hover:text-fuchsia-pink-700 font-medium transition-colors"
+                >
+                  ¿Ya eres paciente? Agenda aquí
+                </Link>
+              )}
               <button
                 onClick={handleRestart}
                 className="w-full py-4 px-8 bg-white border-2 border-gray-200 rounded-xl font-semibold text-gray-700 hover:border-fuchsia-pink-300 transition-all"
