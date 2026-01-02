@@ -166,7 +166,7 @@ const Contacto = () => {
           <iframe
             className="flex items-center rounded-lg shadow-2xl justify-center"
             style={iframeStyle}
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAR8NpMLAirFo4Hi1oEfxs-IBNAja7ayNw&q=place_id:ChIJ4dhTKFS5z4UR3fEa8TxPeGw"
+            src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=place_id:ChIJ4dhTKFS5z4UR3fEa8TxPeGw`}
           ></iframe>
         </div>
       </RevealWrapper>

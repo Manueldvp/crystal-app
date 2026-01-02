@@ -72,7 +72,7 @@ export default function Testimonials() {
               WebkitLineClamp: 7,
               WebkitBoxOrient: 'vertical',
             }}>
-              "{testimonial.text}"
+              &ldquo;{testimonial.text}&rdquo;
             </p>
 
             {/* Author */}
