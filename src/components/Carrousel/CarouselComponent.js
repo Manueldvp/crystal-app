@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Carousel } from "@material-tailwind/react";
- 
+
 export function CarouselComponent() {
   return (
     <Carousel
