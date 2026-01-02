@@ -159,7 +159,8 @@ const Eventos = () => {
                       HIPOPOWER
                     </h3>
                     <p className="text-gray-600 mb-4 line-clamp-2">
-                      Fortalece tu abdomen y piso pélvico de forma funcional, firme y estética.
+                      Fortalece tu abdomen y piso pélvico de forma funcional,
+                      firme y estética.
                     </p>
                     <div className="flex items-center justify-between">
                       <span className="text-sm font-semibold text-purple-secondary-600">
@@ -191,9 +192,7 @@ const Eventos = () => {
                       <h3 className="text-3xl font-black text-white mb-2">
                         EMBARAZO ACTIVO
                       </h3>
-                      <p className="text-white text-sm">
-                        Taller Presencial
-                      </p>
+                      <p className="text-white text-sm">Taller Presencial</p>
                     </div>
                   </div>
                   <div className="p-6">
@@ -201,7 +200,8 @@ const Eventos = () => {
                       Preparación al Parto
                     </h3>
                     <p className="text-gray-600 mb-4 line-clamp-2">
-                      Conecta con tu cuerpo, tu bebé y tu poder interior en 4 clases presenciales.
+                      Conecta con tu cuerpo, tu bebé y tu poder interior en 4
+                      clases presenciales.
                     </p>
                     <div className="flex items-center justify-between">
                       <span className="text-sm font-semibold text-pink-secondary-600">
@@ -237,8 +237,9 @@ const Eventos = () => {
               Taller Presencial + Online
             </h1>
             <p className="text-lg font-medium text-center text-gray-600  mt-4 max-w-3xl">
-              Fortalece tu abdomen y piso pélvico de forma funcional, firme y estética. 
-              Una experiencia integral que combina teoría, práctica y seguimiento personalizado.
+              Fortalece tu abdomen y piso pélvico de forma funcional, firme y
+              estética. Una experiencia integral que combina teoría, práctica y
+              seguimiento personalizado.
             </p>
           </RevealWrapper>
         </div>
@@ -263,30 +264,43 @@ const Eventos = () => {
               <h2 className="text-3xl text-gray-800 font-bold tracking-wider mb-6">
                 ¿Qué incluye el programa?
               </h2>
-              
+
               <div className="space-y-4 mb-8">
                 <div className="flex items-start gap-3">
-                  <span className="text-fuchsia-pink-500 font-bold text-xl">+</span>
+                  <span className="text-fuchsia-pink-500 font-bold text-xl">
+                    +
+                  </span>
                   <p className="text-gray-700 text-base lg:text-lg">
-                    <strong>Taller presencial de 3 horas</strong> - Aprende la técnica correcta de hipopresivos
+                    <strong>Taller presencial de 3 horas</strong> - Aprende la
+                    técnica correcta de hipopresivos
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-fuchsia-pink-500 font-bold text-xl">+</span>
+                  <span className="text-fuchsia-pink-500 font-bold text-xl">
+                    +
+                  </span>
                   <p className="text-gray-700 text-base lg:text-lg">
-                    <strong>8 clases online en vivo</strong> - Miércoles 9:00 PM durante 8 semanas
+                    <strong>8 clases online en vivo</strong> - Miércoles 9:00 PM
+                    durante 8 semanas
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-aquamarine-blue-500 font-bold text-xl">+</span>
+                  <span className="text-aquamarine-blue-500 font-bold text-xl">
+                    +
+                  </span>
                   <p className="text-gray-700 text-base lg:text-lg">
-                    <strong>Acceso a Hipopower Academy por 2 meses</strong> - Plataforma digital con videos on-demand y seguimiento de progreso
+                    <strong>Acceso a Hipopower Academy por 2 meses</strong> -
+                    Plataforma digital con videos on-demand y seguimiento de
+                    progreso
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-fuchsia-pink-500 font-bold text-xl">+</span>
+                  <span className="text-fuchsia-pink-500 font-bold text-xl">
+                    +
+                  </span>
                   <p className="text-gray-700 text-base lg:text-lg">
-                    <strong>Material exclusivo</strong> - E-book, material impreso y bolsa HIPOPOWER
+                    <strong>Material exclusivo</strong> - E-book, material
+                    impreso y bolsa HIPOPOWER
                   </p>
                 </div>
               </div>
@@ -297,7 +311,9 @@ const Eventos = () => {
               <div className="grid md:grid-cols-2 gap-3 mb-8">
                 <div className="flex items-center gap-2">
                   <span className="text-purple-secondary-500">●</span>
-                  <p className="text-gray-700">Tonifica abdomen y piso pélvico</p>
+                  <p className="text-gray-700">
+                    Tonifica abdomen y piso pélvico
+                  </p>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-purple-secondary-500">●</span>
@@ -309,7 +325,9 @@ const Eventos = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-purple-secondary-500">●</span>
-                  <p className="text-gray-700">Ideal para postparto y diástasis</p>
+                  <p className="text-gray-700">
+                    Ideal para postparto y diástasis
+                  </p>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-purple-secondary-500">●</span>
@@ -322,14 +340,17 @@ const Eventos = () => {
               </div>
 
               <p className="text-gray-600 text-base lg:text-lg mb-6 italic">
-                Guiado por Cristal Sarabia, fisioterapeuta experta en piso pélvico con más de 6 años de experiencia 
-                y certificaciones internacionales en España y Brasil.
+                Guiado por Cristal Sarabia, fisioterapeuta experta en piso
+                pélvico con más de 6 años de experiencia y certificaciones
+                internacionales en España y Brasil.
               </p>
 
               <div className="flex justify-between items-center">
                 <div className="text-left">
                   <p className="text-sm text-gray-500">Próxima fecha:</p>
-                  <p className="text-lg font-bold text-fuchsia-pink-600">{process.env.NEXT_PUBLIC_HIPOPOWER_DATE || "Por confirmar"}</p>
+                  <p className="text-lg font-bold text-fuchsia-pink-600">
+                    {process.env.NEXT_PUBLIC_HIPOPOWER_DATE || "Por confirmar"}
+                  </p>
                 </div>
                 <Link href="/hipo-power">
                   <div className="flex items-center cursor-pointer group">
@@ -357,14 +378,18 @@ const Eventos = () => {
           </div>
         </RevealWrapper>
 
-        <div id="embarazo-activo" className="flex flex-col items-center mt-20 scroll-mt-20">
+        <div
+          id="embarazo-activo"
+          className="flex flex-col items-center mt-20 scroll-mt-20"
+        >
           <RevealWrapper className="flex py-14 lg:w-2/3 px-4 flex-col items-center justify-center">
-            <h1 className="text-4xl text-center font-bold text-gray-800">
+            <h2 className="text-4xl text-center font-bold text-gray-800">
               Embarazo Activo y Preparación al Parto
-            </h1>
+            </h2>
             <p className="text-lg font-medium text-center text-gray-600 mt-4 max-w-3xl">
-              Conecta con tu cuerpo, tu bebé y tu poder interior. 4 clases presenciales 
-              para fortalecer tu cuerpo y vivir un embarazo más consciente.
+              Conecta con tu cuerpo, tu bebé y tu poder interior. 4 clases
+              presenciales para fortalecer tu cuerpo y vivir un embarazo más
+              consciente.
             </p>
           </RevealWrapper>
         </div>
@@ -390,36 +415,51 @@ const Eventos = () => {
               <h2 className="text-3xl text-gray-800 font-bold tracking-wider mb-6">
                 ¿Qué incluye el taller?
               </h2>
-              
+
               <div className="space-y-4 mb-8">
                 <div className="flex items-start gap-3">
-                  <span className="text-pink-secondary-500 font-bold text-xl">●</span>
+                  <span className="text-pink-secondary-500 font-bold text-xl">
+                    ●
+                  </span>
                   <p className="text-gray-700 text-base lg:text-lg">
-                    <strong>4 clases presenciales de 1 hora</strong> - Todos los viernes a las 6:00 PM
+                    <strong>4 clases presenciales de 1 hora</strong> - Todos los
+                    viernes a las 6:00 PM
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-pink-secondary-500 font-bold text-xl">●</span>
+                  <span className="text-pink-secondary-500 font-bold text-xl">
+                    ●
+                  </span>
                   <p className="text-gray-700 text-base lg:text-lg">
-                    <strong>Cambios corporales y pelvis libre</strong> - Movimiento y conciencia del cuerpo durante el embarazo
+                    <strong>Cambios corporales y pelvis libre</strong> -
+                    Movimiento y conciencia del cuerpo durante el embarazo
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-fuchsia-pink-500 font-bold text-xl">●</span>
+                  <span className="text-fuchsia-pink-500 font-bold text-xl">
+                    ●
+                  </span>
                   <p className="text-gray-700 text-base lg:text-lg">
-                    <strong>Fortalecimiento y flexibilidad</strong> - Ejercicios seguros adaptados a cada trimestre
+                    <strong>Fortalecimiento y flexibilidad</strong> - Ejercicios
+                    seguros adaptados a cada trimestre
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-pink-secondary-500 font-bold text-xl">●</span>
+                  <span className="text-pink-secondary-500 font-bold text-xl">
+                    ●
+                  </span>
                   <p className="text-gray-700 text-base lg:text-lg">
-                    <strong>Respiración y técnicas de relajación</strong> - Manejo del dolor con herramientas naturales
+                    <strong>Respiración y técnicas de relajación</strong> -
+                    Manejo del dolor con herramientas naturales
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-fuchsia-pink-500 font-bold text-xl">●</span>
+                  <span className="text-fuchsia-pink-500 font-bold text-xl">
+                    ●
+                  </span>
                   <p className="text-gray-700 text-base lg:text-lg">
-                    <strong>Preparación física y emocional</strong> - Masaje perineal y técnicas para el parto y postparto
+                    <strong>Preparación física y emocional</strong> - Masaje
+                    perineal y técnicas para el parto y postparto
                   </p>
                 </div>
               </div>
@@ -430,11 +470,15 @@ const Eventos = () => {
               <div className="grid md:grid-cols-2 gap-3 mb-8">
                 <div className="flex items-center gap-2">
                   <span className="text-pink-secondary-500">●</span>
-                  <p className="text-gray-700">Salud física óptima durante el embarazo</p>
+                  <p className="text-gray-700">
+                    Salud física óptima durante el embarazo
+                  </p>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-pink-secondary-500">●</span>
-                  <p className="text-gray-700">Fortalecimiento abdomino-pélvico</p>
+                  <p className="text-gray-700">
+                    Fortalecimiento abdomino-pélvico
+                  </p>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-pink-secondary-500">●</span>
@@ -442,27 +486,36 @@ const Eventos = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-pink-secondary-500">●</span>
-                  <p className="text-gray-700">Confianza y conexión con tu bebé</p>
+                  <p className="text-gray-700">
+                    Confianza y conexión con tu bebé
+                  </p>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-pink-secondary-500">●</span>
-                  <p className="text-gray-700">Preparación integral para el parto</p>
+                  <p className="text-gray-700">
+                    Preparación integral para el parto
+                  </p>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-pink-secondary-500">●</span>
-                  <p className="text-gray-700">Comunidad de apoyo entre madres</p>
+                  <p className="text-gray-700">
+                    Comunidad de apoyo entre madres
+                  </p>
                 </div>
               </div>
 
               <p className="text-gray-600 text-base lg:text-lg mb-6 italic">
-                Guiado por Cristal Sarabia, fisioterapeuta pélvica y educadora perinatal con más de 6 años de experiencia 
-                y certificaciones internacionales.
+                Guiado por Cristal Sarabia, fisioterapeuta pélvica y educadora
+                perinatal con más de 6 años de experiencia y certificaciones
+                internacionales.
               </p>
 
               <div className="flex justify-between items-center">
                 <div className="text-left">
                   <p className="text-sm text-gray-500">Inversión:</p>
-                  <p className="text-lg font-bold text-pink-secondary-600">$1,600 - 4 clases completas</p>
+                  <p className="text-lg font-bold text-pink-secondary-600">
+                    $1,600 - 4 clases completas
+                  </p>
                 </div>
                 <Link href="/embarazo-activo">
                   <div className="flex items-center cursor-pointer group">

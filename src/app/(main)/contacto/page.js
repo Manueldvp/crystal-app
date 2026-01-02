@@ -51,8 +51,11 @@ const Contacto = () => {
                 <div className="w-full flex  flex-col items-start  xl:justify-start  relative z-20 xl:px-0 px-4 xl:py-0 py-4">
                   <div className="w-full  2xl:pl-48 xl:pt-1">
                     <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-wider text-gray-800">
-                      Aquí puedes localizarme
+                      Contacto
                     </h1>
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider text-gray-700 mt-6 mb-4">
+                      Aquí puedes localizarme
+                    </h2>
                     <div className="w-full md:w-10/12 mt-3">
                       <div className="mt-4 md:mt-8">
                         <h2 className="text-sm md:text-base text-fuchsia-pink-500 font-semibold">
@@ -89,9 +92,9 @@ const Contacto = () => {
               </div>
               <div className="w-full lg:w-1/2   xl:pt-10 lg:pl-24">
                 <div className="flex flex-col items-start xl:justify-start 2xl:justify-end xl:px-0 px-4">
-                  <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-wider text-fuchsia-pink-400">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider text-fuchsia-pink-400">
                     Contáctame
-                  </h1>
+                  </h2>
                   <div className="w-full 2xl:w-8/12 mt-3">
                     <h2 className="text-gray-800 text-base md:text-lg leading-8 tracking-wider">
                       Para consultas, envíenos un correo electrónico utilizando
