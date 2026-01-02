@@ -98,10 +98,14 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'MedicalBusiness',
-              name: 'Cristal Sarabia - Fisioterapia Pélvica',
-              description: 'Fisioterapeuta especializada en Uroginecología y Sexualidad Funcional',
+              name: 'Cristal Sarabia - Fisioterapia Pélvica Especializada',
+              description: 'Fisioterapeuta especializada en Uroginecología y Sexualidad Funcional en Puebla, México',
               url: SITE_URL,
-              logo: `${SITE_URL}/LogoDesktop.png`,
+              logo: {
+                '@type': 'ImageObject',
+                url: `${SITE_URL}/LogoDesktop.png`,
+                name: 'Cristal Sarabia Logo'
+              },
               image: `${SITE_URL}/43.png`,
               telephone: '+52 222 423 7337',
               address: {
