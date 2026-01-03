@@ -262,7 +262,7 @@ const QUESTIONS = {
       id: 15,
       type: "slider",
       question:
-        "¿Con qué frecuencia sientes entumecimiento o molestia en la vulva al sentarte?",
+        "¿Con qué frecuencia sientes dolor o molestia en la vulva al sentarte?",
       min: "Ocasionalmente",
       max: "Cada vez",
       steps: 5,
@@ -271,7 +271,7 @@ const QUESTIONS = {
         return (
           Array.isArray(otherSymptoms) &&
           otherSymptoms.includes(
-            'Mi vulva se siente "entumecida" cuando me siento o ando en bicicleta'
+            "Siento dolor cuando me siento o ando en bicicleta"
           )
         );
       },
