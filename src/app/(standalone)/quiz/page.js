@@ -252,7 +252,7 @@ const QUESTIONS = {
         "Selecciona todos los que apliquen — incluso si solo ocasionalmente",
       options: [
         "Siento dolor cuando me siento o ando en bicicleta",
-        "Mi vulva pica o arde y he descartado uinna infección de piel",
+        "Mi vulva pica o arde y he descartado posibles infecciones",
         "Siento que algo se está cayendo de mi vagina",
         "Me duele/me molesta el coxis cuando me siento",
         "Ninguno de los anteriores",
