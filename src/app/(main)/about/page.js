@@ -64,28 +64,39 @@ const CERTIFICACIONES = [
 
 const SERVICIOS_DESTACADOS = [
   {
-    title: "Fisioterapia Pélvica",
+    title: "Dolor en Endometriosis y Adenomiosis",
+    description: "Abordaje especializado desde la fisioterapia pélvica para el manejo del dolor.",
+    slug: "endometriosis-adenomiosis",
+    image: "/images/endometriosis/main.png",
+    isService: true,
+  },
+  {
+    title: "Disfunciones Pélvicas",
     description: "Tratamiento especializado para disfunciones del suelo pélvico.",
-    slug: "fisioterapia-pelvica",
-    image: "/13.jpg",
-  },
-  {
-    title: "Embarazo y Postparto",
-    description: "Acompañamiento integral durante el embarazo y recuperación.",
-    slug: "embarazo-postparto",
-    image: "/15.jpg",
-  },
-  {
-    title: "Sexualidad Funcional",
-    description: "Abordaje fisioterapéutico de disfunciones sexuales.",
-    slug: "sexualidad-funcional",
+    slug: "disfunciones-pelvicas-en-el-adulto",
     image: "/25.jpg",
+    isService: true,
   },
   {
-    title: "Hipopresivos",
+    title: "Embarazo y Preparación al Parto",
+    description: "Acompañamiento integral durante el embarazo.",
+    slug: "embarazo-y-preparacion-al-parto",
+    image: "/images/servicios/embarazo.jpg",
+    isService: true,
+  },
+  {
+    title: "Disfunción Sexual",
+    description: "Abordaje fisioterapéutico de disfunciones sexuales.",
+    slug: "disfuncion-sexual",
+    image: "/images/servicios/disfuncion.png",
+    isService: true,
+  },
+  {
+    title: "HIPOPOWER",
     description: "Entrenamiento para salud abdominal y pélvica.",
-    slug: "hipopresivos",
-    image: "/29.jpg",
+    slug: "hipo-power",
+    image: "/images/hipopower/hero.webp",
+    isService: false,
   },
 ];
 
@@ -445,11 +456,11 @@ const About = () => {
               Conoce los servicios que ofrezco para acompañarte en tu proceso de salud pélvica.
             </p>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
               {SERVICIOS_DESTACADOS.map((servicio, index) => (
-          <Link
+                <Link
                   key={index}
-                  href={`/servicios/${servicio.slug}`}
+                  href={servicio.isService ? `/servicios/${servicio.slug}` : `/${servicio.slug}`}
                   className="group"
                 >
                   <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full border border-gray-100">
