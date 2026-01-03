@@ -646,6 +646,23 @@ const QUESTIONS = {
       min: "Raramente",
       max: "Siempre",
       steps: 5,
+      condition: (answers, getAnswer) => {
+        const painTimes = getAnswer(4);
+        // Helper to check if an option is a "none" option
+        const isNoneOption = (option) => {
+          if (typeof option !== "string") return false;
+          return (
+            option.toLowerCase().includes("ninguno") ||
+            option.toLowerCase().includes("ninguna")
+          );
+        };
+        // Only show if user selected pain times and didn't select "Ninguno de los anteriores"
+        return (
+          Array.isArray(painTimes) &&
+          painTimes.length > 0 &&
+          !painTimes.some((item) => isNoneOption(item))
+        );
+      },
       infoMessage:
         "El dolor crónico puede cambiar la forma en que te relacionas con tu cuerpo. Hay esperanza.",
     },
@@ -726,6 +743,23 @@ const QUESTIONS = {
       min: "Nunca",
       max: "Siempre",
       steps: 5,
+      condition: (answers, getAnswer) => {
+        const painTimes = getAnswer(4);
+        // Helper to check if an option is a "none" option
+        const isNoneOption = (option) => {
+          if (typeof option !== "string") return false;
+          return (
+            option.toLowerCase().includes("ninguno") ||
+            option.toLowerCase().includes("ninguna")
+          );
+        };
+        // Only show if user selected pain times and didn't select "Ninguno de los anteriores"
+        return (
+          Array.isArray(painTimes) &&
+          painTimes.length > 0 &&
+          !painTimes.some((item) => isNoneOption(item))
+        );
+      },
       infoMessage:
         "Tu dolor es real y válido. Mereces ser escuchada y recibir el tratamiento adecuado.",
     },
