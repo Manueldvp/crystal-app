@@ -6,17 +6,17 @@ import Image from "next/image";
 const QUIZZES = [
   {
     value: "pelvic-health",
-    label: "Test Salud Pélvica",
+    label: "Salud Pélvica",
     description: "Evalúa el estado general de tu piso pélvico",
   },
   {
     value: "postpartum",
-    label: "Test Postparto",
+    label: "Postparto",
     description: "Para mamás en etapa de recuperación",
   },
   {
     value: "endometriosis",
-    label: "Test Endometriosis",
+    label: "Endometriosis",
     description: "Identifica síntomas relacionados",
   },
 ];
@@ -1160,7 +1160,7 @@ function ContactForm({
             d="M15 19l-7-7 7-7"
           />
         </svg>
-        Volver
+        Vuelve
       </button>
     </div>
   );
@@ -1451,7 +1451,7 @@ export default function QuizPage() {
               onClick={() => setStep("select")}
               className="inline-flex items-center gap-2 bg-fuchsia-pink-500 hover:bg-fuchsia-pink-600 text-white font-semibold py-4 px-10 rounded-xl transition-all hover:scale-105"
             >
-              Comenzar
+              Comienza
               <svg
                 className="w-4 h-4"
                 fill="none"
@@ -1517,7 +1517,7 @@ export default function QuizPage() {
                   d="M15 19l-7-7 7-7"
                 />
               </svg>
-              Volver
+              Vuelve
             </button>
           </div>
         )}
@@ -1571,7 +1571,7 @@ export default function QuizPage() {
                     : "bg-gray-200 text-gray-400 cursor-not-allowed"
                 }`}
               >
-                Siguiente
+                Continúa
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -1594,7 +1594,7 @@ export default function QuizPage() {
                 onClick={handleNext}
                 className="w-full mt-8 py-4 px-8 rounded-xl font-semibold bg-fuchsia-pink-500 hover:bg-fuchsia-pink-600 text-white transition-all flex items-center justify-center gap-2"
               >
-                Siguiente
+                Continúa
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -1629,7 +1629,7 @@ export default function QuizPage() {
                   d="M15 19l-7-7 7-7"
                 />
               </svg>
-              Volver
+              Vuelve
             </button>
           </div>
         )}
@@ -1645,7 +1645,7 @@ export default function QuizPage() {
               onClick={handleInfoContinue}
               className="inline-flex items-center gap-2 bg-fuchsia-pink-500 hover:bg-fuchsia-pink-600 text-white font-semibold py-4 px-10 rounded-xl transition-all hover:scale-105"
             >
-              Continuar
+              Continúa
               <svg
                 className="w-4 h-4"
                 fill="none"
@@ -1679,7 +1679,7 @@ export default function QuizPage() {
                   d="M15 19l-7-7 7-7"
                 />
               </svg>
-              Volver
+              Vuelve
             </button>
           </div>
         )}
