@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -26,17 +26,268 @@ const QUESTIONS = {
     {
       id: 1,
       type: "single",
-      question: "¿Cuál es tu principal preocupación?",
+      question: "Primero, cuéntanos qué te trae aquí hoy",
       options: [
-        "Escapes de orina",
-        "Dolor pélvico",
-        "Molestias en relaciones sexuales",
-        "Sensación de pesadez",
-        "Solo quiero evaluar mi salud pélvica",
+        "Estoy experimentando dolor o molestias físicas",
+        "Quiero aprender más sobre mi piso pélvico",
+        "No estoy segura si mis síntomas están relacionados con el piso pélvico",
+        "Mi médico me sugirió explorar fisioterapia pélvica",
       ],
     },
     {
       id: 2,
+      type: "multi",
+      question: "¿Tienes algún problema de vejiga?",
+      subtitle:
+        "Selecciona todos los que apliquen — incluso si solo ocasionalmente",
+      options: [
+        "Me escapo cuando toso, estornudo o hago ejercicio",
+        "Cuando tengo que orinar, apenas puedo aguantar",
+        "Orino más de una vez cada 2 horas",
+        "Me cuesta empezar el flujo de orina",
+        "Orino y luego tengo que orinar de nuevo inmediatamente",
+        "Tengo infecciones urinarias crónicas (y los antibióticos no ayudan)",
+        "Ninguno de los anteriores",
+      ],
+      infoMessage: "Esa sensación frustrante podría ser urgencia urinaria.",
+    },
+    {
+      id: 3,
+      type: "slider",
+      question: "¿Con qué frecuencia te preocupa no llegar al baño a tiempo?",
+      min: "Nunca",
+      max: "Siempre",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const bladderIssues = getAnswer(2); // respuesta de pregunta 2
+        return (
+          Array.isArray(bladderIssues) &&
+          (bladderIssues.includes(
+            "Cuando tengo que orinar, apenas puedo aguantar"
+          ) ||
+            bladderIssues.includes("Orino más de una vez cada 2 horas"))
+        );
+      },
+    },
+    {
+      id: 4,
+      type: "single",
+      question: "¿Cuántas veces sueles orinar en un período de 2 horas?",
+      options: [
+        "2 veces",
+        "3 veces",
+        "4 veces",
+        "5 veces",
+        "6 veces",
+        "7 veces",
+        "8 o más veces",
+      ],
+      condition: (answers, getAnswer) => {
+        const bladderIssues = getAnswer(2); // respuesta de pregunta 2
+        return (
+          Array.isArray(bladderIssues) &&
+          bladderIssues.includes("Orino más de una vez cada 2 horas")
+        );
+      },
+      infoMessage:
+        "Sentir que siempre necesitas un baño cerca puede ser una señal de frecuencia urinaria.",
+    },
+    {
+      id: 5,
+      type: "slider",
+      question: "Cuando te escapa orina, ¿cuánta cantidad sale?",
+      min: "Solo unas gotas",
+      max: "Una cantidad considerable",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const bladderIssues = getAnswer(2); // respuesta de pregunta 2
+        return (
+          Array.isArray(bladderIssues) &&
+          bladderIssues.includes(
+            "Me escapo cuando toso, estornudo o hago ejercicio"
+          )
+        );
+      },
+      infoMessage:
+        "No eres la única. 1 de cada 3 mujeres tiene escapes de orina, también conocido como incontinencia urinaria.",
+    },
+    {
+      id: 6,
+      type: "slider",
+      question: "¿Con qué frecuencia es difícil empezar el flujo de orina?",
+      min: "Ocasionalmente",
+      max: "Cada vez",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const bladderIssues = getAnswer(2); // respuesta de pregunta 2
+        return (
+          Array.isArray(bladderIssues) &&
+          bladderIssues.includes("Me cuesta empezar el flujo de orina")
+        );
+      },
+      infoMessage:
+        "Este síntoma está relacionado con la hesitancia urinaria y lo vemos *todo* el tiempo.",
+    },
+    {
+      id: 7,
+      type: "multi",
+      question:
+        "Tu piso pélvico impacta el sexo y el orgasmo. ¿Tienes algún problema?",
+      subtitle:
+        "Selecciona todos los que apliquen — incluso si solo ocasionalmente",
+      options: [
+        "Tengo dolor con el sexo (penetración vaginal/anal o contacto externo)",
+        "Me toma mucho tiempo llegar al orgasmo",
+        "Tengo orgasmos insatisfactorios",
+        "Tengo dolor durante o después del orgasmo",
+        "No puedo llegar al orgasmo",
+        "Ninguno de los anteriores",
+      ],
+    },
+    {
+      id: 8,
+      type: "slider",
+      question: "¿Con qué frecuencia tus orgasmos son insatisfactorios?",
+      min: "Ocasionalmente",
+      max: "Cada vez",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const sexualIssues = getAnswer(7); // respuesta de pregunta 7
+        return (
+          Array.isArray(sexualIssues) &&
+          sexualIssues.includes("Tengo orgasmos insatisfactorios")
+        );
+      },
+      infoMessage:
+        "No eres la única. La fisioterapia pélvica puede potenciar tus orgasmos.",
+    },
+    {
+      id: 9,
+      type: "slider",
+      question: "¿Con qué frecuencia no puedes llegar al orgasmo?",
+      min: "Ocasionalmente",
+      max: "Cada vez",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const sexualIssues = getAnswer(7); // respuesta de pregunta 7
+        return (
+          Array.isArray(sexualIssues) &&
+          sexualIssues.includes("No puedo llegar al orgasmo")
+        );
+      },
+      infoMessage:
+        "Eso es probablemente más común de lo que piensas. Más de 1 de cada 10 mujeres nunca ha tenido un orgasmo.",
+    },
+    {
+      id: 10,
+      type: "slider",
+      question:
+        "¿Con qué frecuencia tienes dolor durante o después del orgasmo?",
+      min: "Ocasionalmente",
+      max: "Cada vez",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const sexualIssues = getAnswer(7); // respuesta de pregunta 7
+        return (
+          Array.isArray(sexualIssues) &&
+          sexualIssues.includes("Tengo dolor durante o después del orgasmo")
+        );
+      },
+      infoMessage:
+        "Hemos ayudado a innumerables pacientes a superar el dolor con el orgasmo.",
+    },
+    {
+      id: 11,
+      type: "multi",
+      question: "Ahora hablemos de evacuación. ¿Tienes algún problema?",
+      subtitle:
+        "Selecciona todos los que apliquen — incluso si solo ocasionalmente",
+      options: [
+        "Me escapo de heces o gases",
+        "Tengo que hacer esfuerzo para evacuar",
+        "Siento que no puedo evacuar todo",
+        "Me duele cuando evacuo",
+        "Ninguno de los anteriores",
+      ],
+      infoMessage:
+        "Esa sensación de evacuación incompleta puede ser un síntoma de estreñimiento.",
+    },
+    {
+      id: 12,
+      type: "slider",
+      question: "¿Con qué frecuencia sientes que no puedes evacuar todo?",
+      min: "Ocasionalmente",
+      max: "Cada vez",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const bowelIssues = getAnswer(11); // respuesta de pregunta 11
+        return (
+          Array.isArray(bowelIssues) &&
+          bowelIssues.includes("Siento que no puedo evacuar todo")
+        );
+      },
+      infoMessage:
+        "Hacer esfuerzo no es divertido — tu piso pélvico podría ser parte del problema.",
+    },
+    {
+      id: 13,
+      type: "slider",
+      question: "¿Con qué frecuencia tienes que hacer esfuerzo para evacuar?",
+      min: "Ocasionalmente",
+      max: "Cada vez",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const bowelIssues = getAnswer(11); // respuesta de pregunta 11
+        return (
+          Array.isArray(bowelIssues) &&
+          bowelIssues.includes("Tengo que hacer esfuerzo para evacuar")
+        );
+      },
+    },
+    {
+      id: 14,
+      type: "multi",
+      question: "¿Tienes alguno de estos otros síntomas pélvicos comunes?",
+      subtitle:
+        "Selecciona todos los que apliquen — incluso si solo ocasionalmente",
+      options: [
+        'Mi vulva se siente "entumecida" cuando me siento o ando en bicicleta',
+        "Mi vulva pica o arde y he descartado una infección de piel/levadura",
+        "Siento que algo se está cayendo de mi vagina",
+        "Me duele/me molesta el coxis cuando me siento",
+        "Ninguno de los anteriores",
+      ],
+    },
+    {
+      id: 15,
+      type: "slider",
+      question:
+        "¿Con qué frecuencia sientes entumecimiento o molestia en la vulva al sentarte?",
+      min: "Ocasionalmente",
+      max: "Cada vez",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const otherSymptoms = getAnswer(14); // respuesta de pregunta 14
+        return (
+          Array.isArray(otherSymptoms) &&
+          otherSymptoms.includes(
+            'Mi vulva se siente "entumecida" cuando me siento o ando en bicicleta'
+          )
+        );
+      },
+      infoMessage:
+        "Esa molestia de entumecimiento puede ser una señal de un piso pélvico demasiado tenso.",
+    },
+    {
+      id: 16,
+      type: "boolean",
+      question:
+        "¿Haces ejercicios de Kegel u otros ejercicios de piso pélvico?",
+      infoMessage:
+        "Útiles en algunos casos, los Kegels también pueden empeorar ciertos síntomas pélvicos. Consulta con un fisioterapeuta antes de hacer Kegels.",
+    },
+    {
+      id: 17,
       type: "multi",
       question: "¿Cuáles de estos factores aplican a tu caso?",
       subtitle: "Selecciona todos los que apliquen",
@@ -47,36 +298,19 @@ const QUESTIONS = {
         "Tengo sobrepeso",
         "Sufro de estreñimiento crónico",
         "He tenido cirugía ginecológica",
+        "Estoy en la menopausia o perimenopausia",
       ],
     },
     {
-      id: 3,
+      id: 18,
       type: "slider",
-      question: "¿Con qué frecuencia experimentas escapes de orina?",
-      min: "Nunca",
-      max: "Constantemente",
-      steps: 5,
-    },
-    {
-      id: 4,
-      type: "boolean",
-      question: "¿Sientes urgencia repentina de ir al baño?",
-    },
-    {
-      id: 5,
-      type: "slider",
-      question: "¿Qué tanto afecta esto tu calidad de vida?",
+      question: "¿Qué tanto afectan estos síntomas tu calidad de vida?",
       min: "Nada",
       max: "Muchísimo",
       steps: 5,
     },
     {
-      id: 6,
-      type: "boolean",
-      question: "¿Has notado cambios en tu función sexual?",
-    },
-    {
-      id: 7,
+      id: 19,
       type: "single",
       question: "¿Has consultado antes con un especialista en piso pélvico?",
       options: [
@@ -91,6 +325,17 @@ const QUESTIONS = {
     {
       id: 1,
       type: "single",
+      question: "Primero, cuéntanos qué te trae aquí hoy",
+      options: [
+        "Estoy experimentando síntomas físicos después del parto",
+        "Quiero evaluar mi recuperación postparto",
+        "Tengo dudas sobre cuándo retomar actividad física",
+        "Mi médico me recomendó fisioterapia pélvica",
+      ],
+    },
+    {
+      id: 2,
+      type: "single",
       question: "¿Hace cuánto tiempo fue tu último parto?",
       options: [
         "Menos de 6 semanas",
@@ -101,31 +346,153 @@ const QUESTIONS = {
       ],
     },
     {
-      id: 2,
+      id: 3,
       type: "single",
       question: "¿Qué tipo de parto tuviste?",
       options: [
         "Parto vaginal",
         "Cesárea",
         "Parto instrumentado (fórceps/ventosa)",
-      ],
-    },
-    {
-      id: 3,
-      type: "multi",
-      question: "¿Qué síntomas estás experimentando?",
-      subtitle: "Selecciona todos los que apliquen",
-      options: [
-        "Incontinencia urinaria",
-        "Dolor en la cicatriz (cesárea o episiotomía)",
-        "Dolor durante relaciones sexuales",
-        "Sensación de debilidad abdominal",
-        "Dolor lumbar o pélvico",
-        "Diástasis abdominal",
+        "Parto vaginal con episiotomía",
       ],
     },
     {
       id: 4,
+      type: "multi",
+      question: "¿Qué síntomas estás experimentando?",
+      subtitle:
+        "Selecciona todos los que apliquen — incluso si solo ocasionalmente",
+      options: [
+        "Me escapo de orina al toser, estornudar o hacer ejercicio",
+        "Siento urgencia para ir al baño",
+        "Dolor en la cicatriz (cesárea o episiotomía)",
+        "Dolor durante las relaciones sexuales",
+        "Sensación de debilidad o pesadez en el abdomen",
+        "Dolor lumbar o pélvico",
+        "Siento que algo se está cayendo de mi vagina",
+        "Dificultad para evacuar",
+        "Ninguno de los anteriores",
+      ],
+      infoMessage:
+        "El postparto es una etapa de grandes cambios. No estás sola en esto.",
+    },
+    {
+      id: 5,
+      type: "slider",
+      question: "¿Con qué frecuencia experimentas escapes de orina?",
+      min: "Nunca",
+      max: "Constantemente",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const symptoms = getAnswer(4);
+        return (
+          Array.isArray(symptoms) &&
+          symptoms.includes(
+            "Me escapo de orina al toser, estornudar o hacer ejercicio"
+          )
+        );
+      },
+      infoMessage:
+        "La incontinencia postparto es común pero no normal. La fisioterapia puede ayudarte.",
+    },
+    {
+      id: 6,
+      type: "slider",
+      question: "¿Con qué frecuencia sientes urgencia para ir al baño?",
+      min: "Nunca",
+      max: "Siempre",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const symptoms = getAnswer(4);
+        return (
+          Array.isArray(symptoms) &&
+          symptoms.includes("Siento urgencia para ir al baño")
+        );
+      },
+    },
+    {
+      id: 7,
+      type: "slider",
+      question: "¿Qué tan intenso es el dolor en tu cicatriz?",
+      min: "Sin dolor",
+      max: "Muy intenso",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const symptoms = getAnswer(4);
+        return (
+          Array.isArray(symptoms) &&
+          symptoms.includes("Dolor en la cicatriz (cesárea o episiotomía)")
+        );
+      },
+      infoMessage:
+        "El dolor en la cicatriz puede limitar tu movilidad. La fisioterapia puede ayudar a mejorar la cicatrización.",
+    },
+    {
+      id: 8,
+      type: "slider",
+      question:
+        "¿Con qué frecuencia tienes dolor durante las relaciones sexuales?",
+      min: "Nunca",
+      max: "Siempre",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const symptoms = getAnswer(4);
+        return (
+          Array.isArray(symptoms) &&
+          symptoms.includes("Dolor durante las relaciones sexuales")
+        );
+      },
+      infoMessage:
+        "El dolor durante el sexo postparto es más común de lo que piensas. Hay soluciones.",
+    },
+    {
+      id: 9,
+      type: "slider",
+      question: "¿Qué tan intenso es el dolor lumbar o pélvico?",
+      min: "Sin dolor",
+      max: "Muy intenso",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const symptoms = getAnswer(4);
+        return (
+          Array.isArray(symptoms) && symptoms.includes("Dolor lumbar o pélvico")
+        );
+      },
+    },
+    {
+      id: 10,
+      type: "slider",
+      question:
+        "¿Con qué frecuencia sientes pesadez o sensación de que algo se cae?",
+      min: "Nunca",
+      max: "Siempre",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const symptoms = getAnswer(4);
+        return (
+          Array.isArray(symptoms) &&
+          symptoms.includes("Siento que algo se está cayendo de mi vagina")
+        );
+      },
+      infoMessage:
+        "Esta sensación puede indicar un prolapso. La fisioterapia pélvica puede ayudar a fortalecer el soporte.",
+    },
+    {
+      id: 11,
+      type: "boolean",
+      question: "¿Has notado una separación en tu abdomen (diástasis)?",
+      condition: (answers, getAnswer) => {
+        const symptoms = getAnswer(4);
+        return (
+          Array.isArray(symptoms) &&
+          symptoms.includes("Sensación de debilidad o pesadez en el abdomen")
+        );
+      },
+      infoMessage:
+        "La diástasis abdominal es común después del parto. Con el tratamiento adecuado puede mejorar significativamente.",
+    },
+    {
+      id: 12,
       type: "slider",
       question: "¿Qué tanto te preocupa tu recuperación?",
       min: "Poco",
@@ -133,7 +500,7 @@ const QUESTIONS = {
       steps: 5,
     },
     {
-      id: 5,
+      id: 13,
       type: "single",
       question: "¿Te gustaría retomar la actividad física?",
       options: [
@@ -141,45 +508,58 @@ const QUESTIONS = {
         "No, prefiero no entrenar",
         "Tengo dudas sobre si es seguro",
       ],
+      infoMessage:
+        "Retomar el ejercicio de forma segura es posible con la guía adecuada.",
+    },
+    {
+      id: 14,
+      type: "multi",
+      question: "¿Cuáles de estos factores aplican a tu caso?",
+      subtitle: "Selecciona todos los que apliquen",
+      options: [
+        "Fue mi primer parto",
+        "Tuve múltiples partos",
+        "Tuve un parto muy largo",
+        "Tuve un parto muy rápido",
+        "Tuve un bebé grande (más de 3.5 kg)",
+        "Tuve gemelos o múltiples",
+        "Tuve complicaciones durante el embarazo",
+      ],
+    },
+    {
+      id: 15,
+      type: "slider",
+      question: "¿Qué tanto afectan estos síntomas tu calidad de vida?",
+      min: "Nada",
+      max: "Muchísimo",
+      steps: 5,
+    },
+    {
+      id: 16,
+      type: "single",
+      question: "¿Has consultado antes con un especialista en piso pélvico?",
+      options: [
+        "Sí, y recibí tratamiento",
+        "Sí, pero no continué",
+        "No, pero me interesa",
+        "No sabía que existía esta especialidad",
+      ],
     },
   ],
   endometriosis: [
     {
       id: 1,
-      type: "slider",
-      question: "¿Qué tan intenso es tu dolor menstrual?",
-      min: "Leve",
-      max: "Incapacitante",
-      steps: 5,
-    },
-    {
-      id: 2,
-      type: "multi",
-      question: "¿Cuándo experimentas dolor?",
-      subtitle: "Selecciona todos los que apliquen",
+      type: "single",
+      question: "Primero, cuéntanos qué te trae aquí hoy",
       options: [
-        "Durante la menstruación",
-        "Durante las relaciones sexuales",
-        "Al evacuar",
-        "Al orinar",
-        "De forma constante, sin importar el momento",
+        "Estoy experimentando dolor pélvico intenso",
+        "Tengo diagnóstico de endometriosis o adenomiosis",
+        "Sospecho que puedo tener endometriosis",
+        "Quiero entender mejor mi dolor",
       ],
     },
     {
-      id: 3,
-      type: "boolean",
-      question: "¿Tienes sangrados muy abundantes o prolongados?",
-    },
-    {
-      id: 4,
-      type: "slider",
-      question: "¿Con qué frecuencia el dolor afecta tus actividades diarias?",
-      min: "Raramente",
-      max: "Siempre",
-      steps: 5,
-    },
-    {
-      id: 5,
+      id: 2,
       type: "single",
       question: "¿Tienes diagnóstico de endometriosis o adenomiosis?",
       options: [
@@ -190,9 +570,200 @@ const QUESTIONS = {
       ],
     },
     {
+      id: 3,
+      type: "slider",
+      question: "¿Qué tan intenso es tu dolor menstrual?",
+      min: "Leve",
+      max: "Incapacitante",
+      steps: 5,
+      infoMessage:
+        "El dolor menstrual intenso no es normal. Tu experiencia es válida.",
+    },
+    {
+      id: 4,
+      type: "multi",
+      question: "¿Cuándo experimentas dolor?",
+      subtitle:
+        "Selecciona todos los que apliquen — incluso si solo ocasionalmente",
+      options: [
+        "Durante la menstruación",
+        "Durante las relaciones sexuales",
+        "Al evacuar",
+        "Al orinar",
+        "De forma constante, sin importar el momento",
+        "Durante la ovulación",
+        "Ninguno de los anteriores",
+      ],
+    },
+    {
+      id: 5,
+      type: "slider",
+      question:
+        "¿Con qué frecuencia tienes dolor durante las relaciones sexuales?",
+      min: "Nunca",
+      max: "Siempre",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const painTimes = getAnswer(4);
+        return (
+          Array.isArray(painTimes) &&
+          painTimes.includes("Durante las relaciones sexuales")
+        );
+      },
+      infoMessage:
+        "El dolor durante el sexo en endometriosis es común. La fisioterapia pélvica puede ayudar.",
+    },
+    {
       id: 6,
+      type: "slider",
+      question: "¿Con qué frecuencia tienes dolor al evacuar?",
+      min: "Nunca",
+      max: "Siempre",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const painTimes = getAnswer(4);
+        return Array.isArray(painTimes) && painTimes.includes("Al evacuar");
+      },
+    },
+    {
+      id: 7,
+      type: "slider",
+      question: "¿Con qué frecuencia tienes dolor al orinar?",
+      min: "Nunca",
+      max: "Siempre",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const painTimes = getAnswer(4);
+        return Array.isArray(painTimes) && painTimes.includes("Al orinar");
+      },
+    },
+    {
+      id: 8,
+      type: "slider",
+      question: "¿Con qué frecuencia el dolor afecta tus actividades diarias?",
+      min: "Raramente",
+      max: "Siempre",
+      steps: 5,
+      infoMessage:
+        "El dolor crónico puede cambiar la forma en que te relacionas con tu cuerpo. Hay esperanza.",
+    },
+    {
+      id: 9,
       type: "boolean",
-      question: "¿Has sentido que tu dolor no es tomado en serio?",
+      question: "¿Tienes sangrados muy abundantes o prolongados?",
+      infoMessage:
+        "Los sangrados abundantes pueden ser parte de la endometriosis o adenomiosis.",
+    },
+    {
+      id: 10,
+      type: "multi",
+      question: "¿Tienes alguno de estos otros síntomas?",
+      subtitle:
+        "Selecciona todos los que apliquen — incluso si solo ocasionalmente",
+      options: [
+        "Fatiga constante",
+        "Distensión abdominal (hinchazón)",
+        "Náuseas o vómitos durante la menstruación",
+        "Dolor de espalda baja",
+        "Dificultad para quedar embarazada",
+        "Dolor al sentarse",
+        "Ninguno de los anteriores",
+      ],
+    },
+    {
+      id: 11,
+      type: "slider",
+      question: "¿Con qué frecuencia experimentas fatiga?",
+      min: "Nunca",
+      max: "Siempre",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const otherSymptoms = getAnswer(10);
+        return (
+          Array.isArray(otherSymptoms) &&
+          otherSymptoms.includes("Fatiga constante")
+        );
+      },
+      infoMessage:
+        'La fatiga en endometriosis es real y puede ser debilitante. No es solo "estar cansada".',
+    },
+    {
+      id: 12,
+      type: "slider",
+      question: "¿Con qué frecuencia experimentas distensión abdominal?",
+      min: "Nunca",
+      max: "Siempre",
+      steps: 5,
+      condition: (answers, getAnswer) => {
+        const otherSymptoms = getAnswer(10);
+        return (
+          Array.isArray(otherSymptoms) &&
+          otherSymptoms.includes("Distensión abdominal (hinchazón)")
+        );
+      },
+    },
+    {
+      id: 13,
+      type: "boolean",
+      question: "¿Has tenido cirugía por endometriosis?",
+      condition: (answers, getAnswer) => {
+        const diagnosis = getAnswer(2);
+        return (
+          diagnosis === "Sí, tengo diagnóstico confirmado" ||
+          diagnosis === "Estoy en proceso de diagnóstico"
+        );
+      },
+      infoMessage:
+        "La fisioterapia pélvica postquirúrgica puede ayudar a mejorar la recuperación y reducir el dolor residual.",
+    },
+    {
+      id: 14,
+      type: "slider",
+      question:
+        "¿Con qué frecuencia sientes que tu dolor no es tomado en serio?",
+      min: "Nunca",
+      max: "Siempre",
+      steps: 5,
+      infoMessage:
+        "Tu dolor es real y válido. Mereces ser escuchada y recibir el tratamiento adecuado.",
+    },
+    {
+      id: 15,
+      type: "multi",
+      question: "¿Qué tratamientos has probado?",
+      subtitle: "Selecciona todos los que apliquen",
+      options: [
+        "Anticonceptivos hormonales",
+        "Analgésicos (ibuprofeno, paracetamol, etc.)",
+        "Cirugía",
+        "Terapia hormonal",
+        "Ninguno",
+        "Otros tratamientos médicos",
+      ],
+    },
+    {
+      id: 16,
+      type: "slider",
+      question: "¿Qué tanto afecta el dolor tu calidad de vida?",
+      min: "Nada",
+      max: "Muchísimo",
+      steps: 5,
+    },
+    {
+      id: 17,
+      type: "boolean",
+      question: "¿Has consultado antes con un fisioterapeuta pélvico?",
+      infoMessage:
+        "La fisioterapia pélvica es parte fundamental del manejo multidisciplinario de la endometriosis.",
+    },
+    {
+      id: 18,
+      type: "slider",
+      question:
+        "¿Qué tanto te preocupa el impacto de estos síntomas en tu futuro?",
+      min: "Poco",
+      max: "Mucho",
+      steps: 5,
     },
   ],
 };
@@ -201,6 +772,8 @@ const INFO_MESSAGES = [
   "No estás sola. La fisioterapia pélvica puede ayudarte.",
   "Tu cuerpo merece atención especializada.",
   "El dolor no es normal. Hay soluciones.",
+  "1 de cada 3 mujeres tiene problemas de piso pélvico. No eres la única.",
+  "La fisioterapia pélvica puede mejorar significativamente tu calidad de vida.",
 ];
 
 function getDiagnosis(answers, quizType) {
@@ -596,10 +1169,29 @@ function ContactForm({
   );
 }
 
+// Helper function to get answer by question ID
+function getAnswerByQuestionId(answers, allQuestions, questionId) {
+  const questionIndex = allQuestions.findIndex((q) => q.id === questionId);
+  return questionIndex >= 0 ? answers[questionIndex] : undefined;
+}
+
+// Helper function to get visible questions based on conditions
+function getVisibleQuestions(allQuestions, answers) {
+  return allQuestions.filter((question, index) => {
+    // If no condition, always show
+    if (!question.condition) return true;
+
+    // Check condition - it receives all answers and helper function to get answers by ID
+    return question.condition(answers, (questionId) =>
+      getAnswerByQuestionId(answers, allQuestions, questionId)
+    );
+  });
+}
+
 export default function QuizPage() {
   const [step, setStep] = useState("welcome");
   const [selectedQuiz, setSelectedQuiz] = useState(null);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showInfo, setShowInfo] = useState(false);
   const [infoIndex, setInfoIndex] = useState(0);
@@ -611,11 +1203,37 @@ export default function QuizPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const questions = selectedQuiz ? QUESTIONS[selectedQuiz] : [];
-  const totalQuestions = questions.length;
+  // Get all questions for selected quiz
+  const allQuestions = useMemo(() => {
+    return selectedQuiz ? QUESTIONS[selectedQuiz] : [];
+  }, [selectedQuiz]);
+
+  // Recalculate visible questions when answers change
+  const visibleQuestions = useMemo(() => {
+    return getVisibleQuestions(allQuestions, answers);
+  }, [allQuestions, answers]);
+
+  const totalQuestions = visibleQuestions.length;
   const progress =
-    totalQuestions > 0 ? ((currentQuestion + 1) / totalQuestions) * 100 : 0;
-  const currentQ = questions[currentQuestion];
+    totalQuestions > 0
+      ? ((currentQuestionIndex + 1) / totalQuestions) * 100
+      : 0;
+  const currentQ = visibleQuestions[currentQuestionIndex];
+
+  // Map visible index to original question index for answers
+  const originalQuestionIndex = currentQ
+    ? allQuestions.findIndex((q) => q.id === currentQ.id)
+    : -1;
+
+  // Reset question index if current question is no longer visible
+  useEffect(() => {
+    if (
+      currentQuestionIndex >= visibleQuestions.length &&
+      visibleQuestions.length > 0
+    ) {
+      setCurrentQuestionIndex(visibleQuestions.length - 1);
+    }
+  }, [visibleQuestions.length, currentQuestionIndex]);
 
   const isContactValid =
     contactData.name.trim() !== "" && contactData.email.includes("@");
@@ -623,24 +1241,40 @@ export default function QuizPage() {
   const handleSelectQuiz = (quizValue) => {
     setSelectedQuiz(quizValue);
     setAnswers({});
-    setCurrentQuestion(0);
+    setCurrentQuestionIndex(0);
     setStep("questions");
   };
 
   const handleAnswer = (value) => {
-    setAnswers({ ...answers, [currentQuestion]: value });
+    // Use original question index for storing answers
+    setAnswers({ ...answers, [originalQuestionIndex]: value });
   };
 
   const handleNext = () => {
-    // Show info every 3 questions
-    if (
-      (currentQuestion + 1) % 3 === 0 &&
-      currentQuestion < totalQuestions - 1
-    ) {
-      setInfoIndex(Math.floor((currentQuestion + 1) / 3) - 1);
+    const answer = answers[originalQuestionIndex];
+
+    // Check if current question has an info message and user answered
+    const hasValidAnswer =
+      answer !== undefined &&
+      answer !== null &&
+      answer !== "" &&
+      !(Array.isArray(answer) && answer.length === 0);
+
+    if (currentQ?.infoMessage && hasValidAnswer) {
       setShowInfo(true);
-    } else if (currentQuestion < totalQuestions - 1) {
-      setCurrentQuestion(currentQuestion + 1);
+      return;
+    }
+
+    // Show general info every 5 questions (less frequent now that we have contextual messages)
+    if (
+      (currentQuestionIndex + 1) % 5 === 0 &&
+      currentQuestionIndex < totalQuestions - 1 &&
+      !currentQ?.infoMessage
+    ) {
+      setInfoIndex(Math.floor((currentQuestionIndex + 1) / 5) - 1);
+      setShowInfo(true);
+    } else if (currentQuestionIndex < totalQuestions - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
       setStep("contact");
     }
@@ -648,8 +1282,9 @@ export default function QuizPage() {
 
   const handleInfoContinue = () => {
     setShowInfo(false);
-    if (currentQuestion < totalQuestions - 1) {
-      setCurrentQuestion(currentQuestion + 1);
+    // If we showed a contextual message, advance to next question
+    if (currentQuestionIndex < totalQuestions - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
       setStep("contact");
     }
@@ -660,15 +1295,15 @@ export default function QuizPage() {
       setShowInfo(false);
       return;
     }
-    if (step === "questions" && currentQuestion > 0) {
-      setCurrentQuestion(currentQuestion - 1);
-    } else if (step === "questions" && currentQuestion === 0) {
+    if (step === "questions" && currentQuestionIndex > 0) {
+      setCurrentQuestionIndex(currentQuestionIndex - 1);
+    } else if (step === "questions" && currentQuestionIndex === 0) {
       setStep("select");
     } else if (step === "select") {
       setStep("welcome");
     } else if (step === "contact") {
       setStep("questions");
-      setCurrentQuestion(totalQuestions - 1);
+      setCurrentQuestionIndex(Math.max(0, totalQuestions - 1));
     } else if (step === "results") {
       setStep("contact");
     }
@@ -681,7 +1316,7 @@ export default function QuizPage() {
     const diagnosisResult = getDiagnosis(answers, selectedQuiz);
 
     // Format answers with questions for readability
-    const formattedAnswers = questions
+    const formattedAnswers = allQuestions
       .map((q, idx) => {
         const answer = answers[idx];
         let answerText = "";
@@ -740,7 +1375,7 @@ export default function QuizPage() {
 
   const canProceed = () => {
     if (!currentQ) return false;
-    const answer = answers[currentQuestion];
+    const answer = answers[originalQuestionIndex];
     if (currentQ.type === "multi") return answer && answer.length > 0;
     if (currentQ.type === "slider") return true;
     return answer !== undefined && answer !== null && answer !== "";
@@ -795,7 +1430,7 @@ export default function QuizPage() {
             />
           </div>
           <p className="text-center text-sm text-gray-500 mt-2">
-            Pregunta {currentQuestion + 1} de {totalQuestions}
+            Pregunta {currentQuestionIndex + 1} de {totalQuestions}
           </p>
         </div>
       )}
@@ -909,7 +1544,7 @@ export default function QuizPage() {
             {currentQ.type === "single" && (
               <SingleSelect
                 question={currentQ}
-                value={answers[currentQuestion]}
+                value={answers[originalQuestionIndex]}
                 onChange={handleAnswer}
               />
             )}
@@ -917,7 +1552,7 @@ export default function QuizPage() {
             {currentQ.type === "multi" && (
               <MultiSelect
                 question={currentQ}
-                value={answers[currentQuestion] || []}
+                value={answers[originalQuestionIndex] || []}
                 onChange={handleAnswer}
               />
             )}
@@ -925,14 +1560,14 @@ export default function QuizPage() {
             {currentQ.type === "slider" && (
               <SliderSelect
                 question={currentQ}
-                value={answers[currentQuestion] || 3}
+                value={answers[originalQuestionIndex] || 3}
                 onChange={handleAnswer}
               />
             )}
 
             {currentQ.type === "boolean" && (
               <BooleanSelect
-                value={answers[currentQuestion]}
+                value={answers[originalQuestionIndex]}
                 onChange={handleAnswer}
               />
             )}
@@ -966,7 +1601,7 @@ export default function QuizPage() {
             )}
 
             {/* Auto-advance for boolean after selection */}
-            {currentQ.type === "boolean" && answers[currentQuestion] && (
+            {currentQ.type === "boolean" && answers[originalQuestionIndex] && (
               <button
                 onClick={handleNext}
                 className="w-full mt-8 py-4 px-8 rounded-xl font-semibold bg-fuchsia-pink-500 hover:bg-fuchsia-pink-600 text-white transition-all flex items-center justify-center gap-2"
@@ -1018,7 +1653,8 @@ export default function QuizPage() {
               className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 leading-tight"
               style={{ fontFamily: "Georgia, serif" }}
             >
-              {INFO_MESSAGES[infoIndex % INFO_MESSAGES.length]}
+              {currentQ?.infoMessage ||
+                INFO_MESSAGES[infoIndex % INFO_MESSAGES.length]}
             </h2>
             <button
               onClick={handleInfoContinue}
@@ -1109,36 +1745,38 @@ export default function QuizPage() {
             </div>
 
             <div className="flex flex-col gap-4">
-              <a
-                href={`https://api.whatsapp.com/send?phone=5212224237337&text=Hola%20Cristal%20%F0%9F%91%8B%20Soy%20${encodeURIComponent(
-                  contactData.name
-                )}%20y%20realicé%20el%20cuestionario.%20Me%20gustaría%20agendar%20una%20valoración.`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 bg-fuchsia-pink-500 hover:bg-fuchsia-pink-600 text-white font-semibold py-4 px-8 rounded-xl transition-all"
-              >
-                {diagnosis.cta}
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </a>
               {(diagnosis.level === "high" || diagnosis.level === "medium") && (
-                <Link
-                  href="/agendar-cita"
-                  className="w-full text-center py-3 px-8 text-fuchsia-pink-600 hover:text-fuchsia-pink-700 font-medium transition-colors"
-                >
-                  ¿Ya eres paciente? Agenda aquí
-                </Link>
+                <>
+                  <Link
+                    href="/agendar-cita"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-fuchsia-pink-500 hover:bg-fuchsia-pink-600 text-white font-semibold py-4 px-8 rounded-xl transition-all"
+                  >
+                    {diagnosis.cta}
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </Link>
+                  <a
+                    href={`https://api.whatsapp.com/send?phone=5212224237337&text=Hola%20Cristal%20%F0%9F%91%8B%20Soy%20${encodeURIComponent(
+                      contactData.name
+                    )}%20y%20realicé%20el%20cuestionario.%20Me%20gustaría%20agendar%20una%20valoración.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-center text-gray-600 hover:text-fuchsia-pink-600 font-medium transition-colors text-sm"
+                  >
+                    ¿Todavía tienes dudas? Te ayudamos a aclararlas
+                  </a>
+                </>
               )}
               <button
                 onClick={handleRestart}
