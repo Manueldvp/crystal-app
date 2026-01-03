@@ -42,7 +42,7 @@ const SERVICIOS = [
   {
     titulo: "Disfunciones Pélvicas en el Adulto",
     descripcion: "Abordaje integral de incontinencia urinaria, incontinencia fecal, prolapsos de órganos pélvicos, disfunción sexual y disfunciones coloproctológicas. Cada tratamiento se adapta al diagnóstico, síntomas y objetivos del paciente.",
-    imagen: "/25.jpg",
+    imagen: "/images/endometriosis/main.png",
     slug: "disfunciones-pelvicas-en-el-adulto",
     icono: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -151,7 +151,7 @@ const Servicios = () => {
                   /* Servicio Destacado */
                   <div className="bg-gradient-to-r from-purple-secondary-700 to-purple-secondary-800 rounded-3xl overflow-hidden shadow-2xl">
                     <div className="grid lg:grid-cols-2">
-                      <div className="relative aspect-[4/3] lg:aspect-[3/4]">
+                      <div className="relative aspect-[4/3]">
                         <Image
                           src={servicio.imagen}
                           alt={servicio.titulo}
@@ -185,10 +185,10 @@ const Servicios = () => {
                   </div>
                 ) : (
                   /* Servicio Normal */
-                  <div className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                  <div className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center group ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                     {/* Imagen */}
                     <div className={`relative ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                      <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-fuchsia-pink-200">
+                      <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-gray-100">
                         <Image
                           src={servicio.imagen}
                           alt={servicio.titulo}
@@ -196,8 +196,6 @@ const Servicios = () => {
                           className="object-cover"
                         />
                       </div>
-                      {/* Decorative element */}
-                      <div className={`absolute -z-10 w-full h-full top-4 aspect-[4/3] rounded-2xl bg-fuchsia-pink-200 ${index % 2 === 1 ? '-left-4' : 'left-4'}`} />
                     </div>
 
                     {/* Contenido */}
