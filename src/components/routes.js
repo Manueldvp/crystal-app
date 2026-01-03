@@ -53,7 +53,7 @@ const routes = [
     subRoutes: [
       {
         label: "Hipopower",
-        route: "/hipo-power",
+        route: "/hipopower",
       },
       {
         label: "Embarazo Activo",

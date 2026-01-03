@@ -99,7 +99,7 @@ const ServicesCard = () => {
         {/* HIPOPOWER Banner */}
         <RevealWrapper>
           <div className="mt-16">
-            <Link href="/hipo-power" className="block group">
+            <Link href="/hipopower" className="block group">
               <div className="relative rounded-2xl overflow-hidden">
                 <div className="relative w-full h-[300px] md:h-[400px]">
                   <Image

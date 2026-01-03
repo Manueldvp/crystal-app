@@ -54,7 +54,7 @@ export function AccordionComponent() {
                   por 2 meses.
                 </p>
                 <a
-                  href="/hipo-power"
+                  href="/hipopower"
                   className="text-fuchsia-pink-500 hover:underline font-semibold text-sm"
                 >
                   Ver más información →

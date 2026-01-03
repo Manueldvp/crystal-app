@@ -69,7 +69,7 @@ export default function sitemap() {
     priority: 0.8,
   }));
 
-  const programasPages = ["hipo-power", "embarazo-activo"].map((slug) => ({
+  const programasPages = ["hipopower", "embarazo-activo"].map((slug) => ({
     url: `${SITE_URL}/${slug}`,
     lastModified: recentDate,
     changeFrequency: "monthly",

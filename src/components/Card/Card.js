@@ -29,7 +29,7 @@ const Card = ({ course }) => {
       >
         <Link 
           className="flex items-center justify-center" 
-          href={isHipopower ? "/hipo-power" : "/programas"}
+          href={isHipopower ? "/hipopower" : "/programas"}
         >
           <Image
             className="rounded-t-lg h-64 object-cover"
@@ -42,7 +42,7 @@ const Card = ({ course }) => {
         </Link>
         <div className="p-5">
           <Link
-            href={isHipopower ? "/hipo-power" : "/programas"}
+            href={isHipopower ? "/hipopower" : "/programas"}
             className="hover:underline hover:transition-all hover:duration-500"
           >
             <h5 className={`mb-2 text-2xl font-bold tracking-tight ${
@@ -65,7 +65,7 @@ const Card = ({ course }) => {
             </div>
           )}
           <Link
-            href={isHipopower ? "/hipo-power" : "https://api.whatsapp.com/send?phone=5212224237337&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta"}
+            href={isHipopower ? "/hipopower" : "https://api.whatsapp.com/send?phone=5212224237337&text=Hola%20Cristal%20%F0%9F%91%8B%20te%20sigo%20en%20Instagram%20y%20quisiera%20agendar%20una%20consulta"}
             className={`inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white ${
               isHipopower 
                 ? "bg-gradient-to-r from-fuchsia-pink-500 to-purple-secondary-600 hover:from-fuchsia-pink-600 hover:to-purple-secondary-700" 

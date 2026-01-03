@@ -32,7 +32,7 @@ const LINKS = [
   {
     title: "Programas",
     items: [
-      { name: "Hipopower", url: "/hipo-power" },
+      { name: "Hipopower", url: "/hipopower" },
       { name: "Embarazo Activo", url: "/embarazo-activo" },
     ],
   },

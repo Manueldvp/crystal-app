@@ -36,7 +36,7 @@ export function generateBreadcrumbsSchema(pathname, pageTitle) {
       'rehabilitacion-de-diastasis-abdominal': 'Diástasis Abdominal',
       'quiz': 'Test de Salud Pélvica',
       'programas': 'Programas',
-      'hipo-power': 'HIPOPOWER',
+      'hipopower': 'HIPOPOWER',
       'embarazo-activo': 'Embarazo Activo',
       'preguntas-frecuentes': 'Preguntas Frecuentes',
       'contacto': 'Contacto',

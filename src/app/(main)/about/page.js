@@ -94,7 +94,7 @@ const SERVICIOS_DESTACADOS = [
   {
     title: "HIPOPOWER",
     description: "Entrenamiento para salud abdominal y pélvica.",
-    slug: "hipo-power",
+    slug: "hipopower",
     image: "/images/hipopower/hero.webp",
     isService: false,
   },

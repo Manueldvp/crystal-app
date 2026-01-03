@@ -352,7 +352,7 @@ const Eventos = () => {
                     {process.env.NEXT_PUBLIC_HIPOPOWER_DATE || "Por confirmar"}
                   </p>
                 </div>
-                <Link href="/hipo-power">
+                <Link href="/hipopower">
                   <div className="flex items-center cursor-pointer group">
                     <h3 className="bg-gradient-to-r from-fuchsia-pink-500 to-purple-secondary-600 hover:from-fuchsia-pink-600 hover:to-purple-secondary-700 p-4 rounded-lg text-lg lg:text-xl font-bold text-white transition-all duration-300">
                       Ver más información
