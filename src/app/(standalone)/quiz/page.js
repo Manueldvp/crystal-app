@@ -299,6 +299,7 @@ const QUESTIONS = {
         "Sufro de estreñimiento crónico",
         "He tenido cirugía ginecológica",
         "Estoy en la menopausia o perimenopausia",
+        "Ninguno de los anteriores",
       ],
     },
     {
@@ -524,6 +525,7 @@ const QUESTIONS = {
         "Tuve un bebé grande (más de 3.5 kg)",
         "Tuve gemelos o múltiples",
         "Tuve complicaciones durante el embarazo",
+        "Ninguno de los anteriores",
       ],
     },
     {
@@ -779,11 +781,59 @@ const INFO_MESSAGES = [
 function getDiagnosis(answers, quizType) {
   let score = 0;
 
+  // Helper to check if an option is a "none" option
+  const isNoneOption = (option) => {
+    if (typeof option !== "string") return false;
+    return (
+      option.toLowerCase().includes("ninguno") ||
+      option.toLowerCase().includes("ninguna")
+    );
+  };
+
   Object.values(answers).forEach((answer) => {
-    if (answer === "yes" || answer === true) score += 2;
-    if (typeof answer === "number" && answer >= 3) score += answer - 2;
-    if (Array.isArray(answer)) score += answer.length;
-    if (typeof answer === "string" && answer.includes("Sí")) score += 1;
+    // Boolean answers: only "yes" adds points
+    if (answer === "yes" || answer === true) {
+      score += 2;
+    } else if (answer === "no" || answer === false) {
+      // "no" doesn't add points
+      return;
+    }
+
+    // Number answers (sliders): only values >= 3 add points
+    // Values 1-2 (lowest options) don't add points
+    if (typeof answer === "number") {
+      if (answer >= 3) {
+        score += answer - 2; // Value 3 = 1 point, value 4 = 2 points, value 5 = 3 points
+      }
+      return;
+    }
+
+    // Array answers (multi-select)
+    if (Array.isArray(answer)) {
+      // Filter out "none" options
+      const validAnswers = answer.filter((item) => !isNoneOption(item));
+      // Only count non-"none" selections
+      if (validAnswers.length > 0) {
+        score += validAnswers.length;
+      }
+      return;
+    }
+
+    // String answers: only positive answers add points
+    if (typeof answer === "string") {
+      // Don't count "none" options
+      if (isNoneOption(answer)) {
+        return;
+      }
+      // Count "Sí" or positive indicators
+      if (answer.includes("Sí") || answer.toLowerCase().includes("yes")) {
+        score += 1;
+      }
+      // Don't count "No" or negative answers
+      if (answer.includes("No") || answer.toLowerCase().includes("no")) {
+        return;
+      }
+    }
   });
 
   if (score >= 10) {
@@ -807,8 +857,8 @@ function getDiagnosis(answers, quizType) {
     level: "low",
     title: "tu salud pélvica parece estar bien",
     message:
-      "Según tus respuestas, no hay indicadores urgentes. Sin embargo, si en algún momento notas cambios o tienes dudas, no dudes en consultar. La prevención siempre es una buena inversión.",
-    cta: "Conocer más",
+      "Según tus respuestas, no hay indicadores urgentes. Aun así, una valoración preventiva puede ayudarte a mantener tu bienestar pélvico y detectar cualquier cambio a tiempo. La prevención siempre es una buena inversión.",
+    cta: "Agendar valoración preventiva",
   };
 }
 
@@ -876,12 +926,50 @@ function SingleSelect({ question, value, onChange }) {
 }
 
 function MultiSelect({ question, value = [], onChange }) {
+  // Check if an option is a "none" option
+  const isNoneOption = (option) => {
+    return (
+      option.toLowerCase().includes("ninguno") ||
+      option.toLowerCase().includes("ninguna")
+    );
+  };
+
   const toggleOption = (option) => {
+    const isNone = isNoneOption(option);
+    const hasNoneSelected = value.some((v) => isNoneOption(v));
+
     if (value.includes(option)) {
+      // Deselecting: just remove the option
       onChange(value.filter((v) => v !== option));
     } else {
-      onChange([...value, option]);
+      // Selecting
+      if (isNone) {
+        // If selecting "none", clear all other options
+        onChange([option]);
+      } else {
+        // If selecting a regular option, remove any "none" option first
+        const filteredValue = value.filter((v) => !isNoneOption(v));
+        onChange([...filteredValue, option]);
+      }
     }
+  };
+
+  // Check if an option should be disabled
+  const isDisabled = (option) => {
+    const isNone = isNoneOption(option);
+    const hasNoneSelected = value.some((v) => isNoneOption(v));
+
+    // Disable regular options if "none" is selected
+    if (!isNone && hasNoneSelected) {
+      return true;
+    }
+
+    // Disable "none" if any regular option is selected
+    if (isNone && value.length > 0 && !hasNoneSelected) {
+      return true;
+    }
+
+    return false;
   };
 
   return (
@@ -889,42 +977,52 @@ function MultiSelect({ question, value = [], onChange }) {
       {question.subtitle && (
         <p className="text-gray-500 text-sm mb-4">{question.subtitle}</p>
       )}
-      {question.options.map((option, idx) => (
-        <button
-          key={idx}
-          onClick={() => toggleOption(option)}
-          className={`w-full text-left p-4 rounded-xl border-2 transition-all flex items-center gap-4 ${
-            value.includes(option)
-              ? "border-fuchsia-pink-500 bg-fuchsia-pink-50"
-              : "border-gray-200 bg-white hover:border-fuchsia-pink-300"
-          }`}
-        >
-          <div
-            className={`w-5 h-5 rounded-md border-2 flex items-center justify-center transition-colors ${
+      {question.options.map((option, idx) => {
+        const disabled = isDisabled(option);
+        return (
+          <button
+            key={idx}
+            onClick={() => !disabled && toggleOption(option)}
+            disabled={disabled}
+            className={`w-full text-left p-4 rounded-xl border-2 transition-all flex items-center gap-4 ${
               value.includes(option)
-                ? "border-fuchsia-pink-500 bg-fuchsia-pink-500"
-                : "border-gray-300"
+                ? "border-fuchsia-pink-500 bg-fuchsia-pink-50"
+                : disabled
+                ? "border-gray-100 bg-gray-50 cursor-not-allowed opacity-50"
+                : "border-gray-200 bg-white hover:border-fuchsia-pink-300"
             }`}
           >
-            {value.includes(option) && (
-              <svg
-                className="w-3 h-3 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={3}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-            )}
-          </div>
-          <span className="text-gray-800">{option}</span>
-        </button>
-      ))}
+            <div
+              className={`w-5 h-5 rounded-md border-2 flex items-center justify-center transition-colors ${
+                value.includes(option)
+                  ? "border-fuchsia-pink-500 bg-fuchsia-pink-500"
+                  : disabled
+                  ? "border-gray-200 bg-gray-100"
+                  : "border-gray-300"
+              }`}
+            >
+              {value.includes(option) && (
+                <svg
+                  className="w-3 h-3 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={3}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              )}
+            </div>
+            <span className={disabled ? "text-gray-400" : "text-gray-800"}>
+              {option}
+            </span>
+          </button>
+        );
+      })}
     </div>
   );
 }
@@ -1016,7 +1114,7 @@ function ContactForm({
   onBack,
 }) {
   return (
-    <div className="w-full max-w-lg">
+    <div className="w-full max-w-xl">
       <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 leading-tight">
         Tus resultados están casi listos.
       </h2>
@@ -1250,6 +1348,26 @@ export default function QuizPage() {
   const handleNext = () => {
     const answer = answers[originalQuestionIndex];
 
+    // Helper to check if an option is a "none" option
+    const isNoneOption = (option) => {
+      if (typeof option !== "string") return false;
+      return (
+        option.toLowerCase().includes("ninguno") ||
+        option.toLowerCase().includes("ninguna")
+      );
+    };
+
+    // Check if answer contains "none" option
+    const hasNoneOption = () => {
+      if (Array.isArray(answer)) {
+        return answer.some((item) => isNoneOption(item));
+      }
+      if (typeof answer === "string") {
+        return isNoneOption(answer);
+      }
+      return false;
+    };
+
     // Check if current question has an info message and user answered
     const hasValidAnswer =
       answer !== undefined &&
@@ -1257,7 +1375,8 @@ export default function QuizPage() {
       answer !== "" &&
       !(Array.isArray(answer) && answer.length === 0);
 
-    if (currentQ?.infoMessage && hasValidAnswer) {
+    // Don't show info message if user selected "none" option
+    if (currentQ?.infoMessage && hasValidAnswer && !hasNoneOption()) {
       setShowInfo(true);
       return;
     }
@@ -1436,7 +1555,7 @@ export default function QuizPage() {
       <main className="flex-1 flex flex-col items-center justify-center px-6 py-8 relative">
         {/* Welcome Screen */}
         {step === "welcome" && (
-          <div className="text-center max-w-lg animate-fadeIn pb-32 relative z-10">
+          <div className="text-center max-w-xl animate-fadeIn pb-32 relative z-10">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
               Bienvenida. Me alegra que estés aquí.
             </h1>
@@ -1471,7 +1590,7 @@ export default function QuizPage() {
 
         {/* Select Quiz Screen */}
         {step === "select" && (
-          <div className="w-full max-w-lg animate-fadeIn">
+          <div className="w-full max-w-xl animate-fadeIn">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 leading-tight">
               ¿Qué te gustaría evaluar?
             </h2>
@@ -1524,7 +1643,7 @@ export default function QuizPage() {
 
         {/* Questions Screen */}
         {step === "questions" && !showInfo && currentQ && (
-          <div className="w-full max-w-lg animate-fadeIn">
+          <div className="w-full max-w-xl animate-fadeIn">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 leading-tight">
               {currentQ.question}
             </h2>
@@ -1636,7 +1755,7 @@ export default function QuizPage() {
 
         {/* Info Screen */}
         {showInfo && (
-          <div className="text-center max-w-lg animate-fadeIn pb-32 relative z-10">
+          <div className="text-center max-w-xl animate-fadeIn pb-32 relative z-10">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 leading-tight">
               {currentQ?.infoMessage ||
                 INFO_MESSAGES[infoIndex % INFO_MESSAGES.length]}
@@ -1703,7 +1822,7 @@ export default function QuizPage() {
 
         {/* Results Screen */}
         {step === "results" && (
-          <div className="w-full max-w-lg animate-fadeIn">
+          <div className="w-full max-w-xl animate-fadeIn">
             <div
               className={`p-1 rounded-2xl mb-6 ${
                 diagnosis.level === "high"
@@ -1727,38 +1846,36 @@ export default function QuizPage() {
             </div>
 
             <div className="flex flex-col gap-4">
+              <Link
+                href="/agendar-cita"
+                className="w-full inline-flex items-center justify-center gap-2 bg-fuchsia-pink-500 hover:bg-fuchsia-pink-600 text-white font-semibold py-4 px-8 rounded-xl transition-all"
+              >
+                {diagnosis.cta}
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </Link>
               {(diagnosis.level === "high" || diagnosis.level === "medium") && (
-                <>
-                  <Link
-                    href="/agendar-cita"
-                    className="w-full inline-flex items-center justify-center gap-2 bg-fuchsia-pink-500 hover:bg-fuchsia-pink-600 text-white font-semibold py-4 px-8 rounded-xl transition-all"
-                  >
-                    {diagnosis.cta}
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                  </Link>
-                  <a
-                    href={`https://api.whatsapp.com/send?phone=5212224237337&text=Hola%20Cristal%20%F0%9F%91%8B%20Soy%20${encodeURIComponent(
-                      contactData.name
-                    )}%20y%20realicé%20el%20cuestionario.%20Me%20gustaría%20agendar%20una%20valoración.`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-center text-gray-600 hover:text-fuchsia-pink-600 font-medium transition-colors text-sm"
-                  >
-                    ¿Todavía tienes dudas? Te ayudamos a aclararlas
-                  </a>
-                </>
+                <a
+                  href={`https://api.whatsapp.com/send?phone=5212224237337&text=Hola%20Cristal%20%F0%9F%91%8B%20Soy%20${encodeURIComponent(
+                    contactData.name
+                  )}%20y%20realicé%20el%20cuestionario.%20Me%20gustaría%20agendar%20una%20valoración.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-center text-gray-600 hover:text-fuchsia-pink-600 font-medium transition-colors text-sm"
+                >
+                  ¿Todavía tienes dudas? Te ayudamos a aclararlas
+                </a>
               )}
               <button
                 onClick={handleRestart}
