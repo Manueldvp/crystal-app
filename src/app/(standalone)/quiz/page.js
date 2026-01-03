@@ -41,7 +41,7 @@ const QUESTIONS = {
       subtitle:
         "Selecciona todos los que apliquen — incluso si solo ocasionalmente",
       options: [
-        "Me escapo cuando toso, estornudo o hago ejercicio",
+        "Tengo fugas cuando toso, estornudo o hago ejercicio",
         "Cuando tengo que orinar, apenas puedo aguantar",
         "Orino más de una vez cada 2 horas",
         "Me cuesta empezar el flujo de orina",
@@ -104,7 +104,7 @@ const QUESTIONS = {
         return (
           Array.isArray(bladderIssues) &&
           bladderIssues.includes(
-            "Me escapo cuando toso, estornudo o hago ejercicio"
+            "Tengo fugas cuando toso, estornudo o hago ejercicio"
           )
         );
       },
@@ -203,7 +203,7 @@ const QUESTIONS = {
       subtitle:
         "Selecciona todos los que apliquen — incluso si solo ocasionalmente",
       options: [
-        "Me escapo de heces o gases",
+        "Tengo fugas de heces o gases",
         "Tengo que hacer esfuerzo para evacuar",
         "Siento que no puedo evacuar todo",
         "Me duele cuando evacuo",
@@ -251,8 +251,8 @@ const QUESTIONS = {
       subtitle:
         "Selecciona todos los que apliquen — incluso si solo ocasionalmente",
       options: [
-        'Mi vulva se siente "entumecida" cuando me siento o ando en bicicleta',
-        "Mi vulva pica o arde y he descartado una infección de piel/levadura",
+        "Siento dolor cuando me siento o ando en bicicleta",
+        "Mi vulva pica o arde y he descartado uinna infección de piel",
         "Siento que algo se está cayendo de mi vagina",
         "Me duele/me molesta el coxis cuando me siento",
         "Ninguno de los anteriores",
@@ -363,7 +363,7 @@ const QUESTIONS = {
       subtitle:
         "Selecciona todos los que apliquen — incluso si solo ocasionalmente",
       options: [
-        "Me escapo de orina al toser, estornudar o hacer ejercicio",
+        "Tengo fugas de orina al toser, estornudar o hacer ejercicio",
         "Siento urgencia para ir al baño",
         "Dolor en la cicatriz (cesárea o episiotomía)",
         "Dolor durante las relaciones sexuales",
@@ -388,7 +388,7 @@ const QUESTIONS = {
         return (
           Array.isArray(symptoms) &&
           symptoms.includes(
-            "Me escapo de orina al toser, estornudar o hacer ejercicio"
+            "Tengo fugas de orina al toser, estornudar o hacer ejercicio"
           )
         );
       },
@@ -1017,10 +1017,7 @@ function ContactForm({
 }) {
   return (
     <div className="w-full max-w-lg">
-      <h2
-        className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 leading-tight"
-        style={{ fontFamily: "Georgia, serif" }}
-      >
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 leading-tight">
         Tus resultados están casi listos.
       </h2>
       <p className="text-gray-600 mb-8">
@@ -1440,10 +1437,7 @@ export default function QuizPage() {
         {/* Welcome Screen */}
         {step === "welcome" && (
           <div className="text-center max-w-lg animate-fadeIn pb-32 relative z-10">
-            <h1
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
               Bienvenida. Me alegra que estés aquí.
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-2">
@@ -1478,10 +1472,7 @@ export default function QuizPage() {
         {/* Select Quiz Screen */}
         {step === "select" && (
           <div className="w-full max-w-lg animate-fadeIn">
-            <h2
-              className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 leading-tight"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 leading-tight">
               ¿Qué te gustaría evaluar?
             </h2>
             <div className="space-y-4">
@@ -1534,10 +1525,7 @@ export default function QuizPage() {
         {/* Questions Screen */}
         {step === "questions" && !showInfo && currentQ && (
           <div className="w-full max-w-lg animate-fadeIn">
-            <h2
-              className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 leading-tight"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 leading-tight">
               {currentQ.question}
             </h2>
 
@@ -1649,10 +1637,7 @@ export default function QuizPage() {
         {/* Info Screen */}
         {showInfo && (
           <div className="text-center max-w-lg animate-fadeIn pb-32 relative z-10">
-            <h2
-              className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 leading-tight"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 leading-tight">
               {currentQ?.infoMessage ||
                 INFO_MESSAGES[infoIndex % INFO_MESSAGES.length]}
             </h2>
@@ -1729,10 +1714,7 @@ export default function QuizPage() {
               }`}
             >
               <div className="bg-white rounded-xl p-6">
-                <h2
-                  className="text-2xl md:text-3xl font-bold text-gray-900 mb-4"
-                  style={{ fontFamily: "Georgia, serif" }}
-                >
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                   {contactData.name},{" "}
                   <span className="text-fuchsia-pink-600">
                     {diagnosis.title}
