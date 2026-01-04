@@ -1114,10 +1114,10 @@ function SliderSelect({ question, value = 3, onChange }) {
 
 function BooleanSelect({ value, onChange }) {
   return (
-    <div className="flex gap-4 justify-center">
+    <div className="flex gap-4">
       <button
         onClick={() => onChange("yes")}
-        className={`flex-1 max-w-[160px] py-4 px-8 rounded-xl font-semibold transition-all ${
+        className={`flex-1 py-4 px-8 rounded-xl font-semibold transition-all ${
           value === "yes"
             ? "bg-fuchsia-pink-500 text-white"
             : "bg-white border-2 border-gray-200 text-gray-700 hover:border-fuchsia-pink-300"
@@ -1127,7 +1127,7 @@ function BooleanSelect({ value, onChange }) {
       </button>
       <button
         onClick={() => onChange("no")}
-        className={`flex-1 max-w-[160px] py-4 px-8 rounded-xl font-semibold transition-all ${
+        className={`flex-1 py-4 px-8 rounded-xl font-semibold transition-all ${
           value === "no"
             ? "bg-gray-700 text-white"
             : "bg-white border-2 border-gray-200 text-gray-700 hover:border-gray-300"
