@@ -72,7 +72,7 @@ export default function HipoPowerPage() {
                   Próxima fecha
                 </p>
                 <p className="text-xl md:text-2xl lg:text-3xl font-black text-white">
-                  {process.env.NEXT_PUBLIC_HIPOPOWER_DATE || "Por confirmar"}
+                  {process.env.NEXT_PUBLIC_HIPOPOWER_DATE || "25 de enero de 2026"}
                 </p>
               </div>
 
@@ -630,7 +630,7 @@ export default function HipoPowerPage() {
                   </span>
                   <span>
                     <span className="font-semibold">Próxima fecha:</span>{" "}
-                    {process.env.NEXT_PUBLIC_HIPOPOWER_DATE || "Por confirmar"}
+                    {process.env.NEXT_PUBLIC_HIPOPOWER_DATE || "25 de enero de 2026"}
                   </span>
                 </p>
                 <p className="text-base md:text-lg flex items-start gap-2">
