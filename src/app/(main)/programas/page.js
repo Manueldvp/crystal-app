@@ -349,7 +349,7 @@ const Eventos = () => {
                 <div className="text-left">
                   <p className="text-sm text-gray-500">Próxima fecha:</p>
                   <p className="text-lg font-bold text-fuchsia-pink-600">
-                    {process.env.NEXT_PUBLIC_HIPOPOWER_DATE || "25 de enero de 2026"}
+                    25 de enero de 2026
                   </p>
                 </div>
                 <Link href="/hipopower">
